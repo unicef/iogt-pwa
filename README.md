@@ -1,5 +1,16 @@
 # iogt-pwa
 
+## Installing
+
+For settings up a local copy:
+
+```bash
+git clone https://github.com/unicef/iogt-pwa.git
+npm install
+npm start
+```
+
+
 
 ## Credits
 
