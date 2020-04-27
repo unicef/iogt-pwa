@@ -17,6 +17,9 @@ npm test
 ```
 
 
+## Roadmap
+
+For details on our planned features and future direction please refer to our [roadmap](https://github.com/uniccef/iogt-pwa).
 
 ## Credits
 
