@@ -2,7 +2,7 @@
 
 ## Installing
 
-For settings up a local copy:
+For setting up a local copy:
 
 ```bash
 git clone https://github.com/unicef/iogt-pwa.git
