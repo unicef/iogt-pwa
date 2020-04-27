@@ -10,6 +10,12 @@ npm install
 npm start
 ```
 
+For running tests:
+
+```bash
+npm test
+```
+
 
 
 ## Credits
