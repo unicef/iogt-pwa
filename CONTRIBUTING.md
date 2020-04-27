@@ -12,7 +12,7 @@ In order to contribute you will need to have a basic understanding of [Polymer](
 
 Good pull requests, such as patches, improvements, and new features, are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
-Please **ask first** if somebody else is already working on this or the core developers think your feature is in-scope for Cboard. Generally always have a related issue with discussions for whatever you are including.
+Please **ask first** if somebody else is already working on this or the core developers think your feature is in-scope for IOGT-PWA. Generally always have a related issue with discussions for whatever you are including.
 
 ## Setting Up a Local Copy
 
