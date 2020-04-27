@@ -2,9 +2,7 @@
 
 Interested in contributing to IOGT-PWA? Thanks! There are plenty of ways you can help.
 
-Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved.
-
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
+Thank you for helping us make this project great and being a part of the IOGT-PWA community. Here are a few guidelines that will help you along the way.
 
 ## What you need to know
 
@@ -23,3 +21,23 @@ Please **ask first** if somebody else is already working on this or the core dev
 2. Run `npm install` in the root `iogt-pwa` folder.
 
 Once it is done, you can modify any file locally and run `npm start`, `npm test` or `npm run build`.
+
+### Coding style
+
+Please follow the coding style of the project. IOGT-PWA uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
+
+- `npm prettier` reformats the code.
+- `npm lint` runs manually the linting rules.
+
+Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
+
+## Roadmap
+
+To get a sense of where IOGT-PWA is heading, or for ideas on where you could contribute, take a look at the [roadmap](https://github.com/unicef/iogt-pwa/).
+
+## License
+
+By contributing your code to the unicef/iogt-pwa GitHub repository, you agree to license your contribution under the GNU Affero General Public License.
+
+
+
