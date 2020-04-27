@@ -4,6 +4,11 @@ Interested in contributing to IOGT-PWA? Thanks! There are plenty of ways you can
 
 Thank you for helping us make this project great and being a part of the IOGT-PWA community. Here are a few guidelines that will help you along the way.
 
+## Code of Conduct
+
+IOGT-PWA has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) as its Code of Conduct, and we expect project participants to adhere to it.
+Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
 ## What you need to know
 
 In order to contribute you will need to have a basic understanding of [Polymer](https://polymer-library.polymer-project.org/), [Redux](https://egghead.io/courses/getting-started-with-redux), and [Typescript](https://www.typescriptlang.org/).
@@ -30,10 +35,6 @@ Please follow the coding style of the project. IOGT-PWA uses prettier and eslint
 - `npm lint` runs manually the linting rules.
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
-
-## Roadmap
-
-To get a sense of where IOGT-PWA is heading, or for ideas on where you could contribute, take a look at the [roadmap](https://github.com/unicef/iogt-pwa/).
 
 ## License
 
