@@ -16,6 +16,12 @@ For running tests:
 npm test
 ```
 
+For builds:
+
+```bash
+npm build
+```
+
 
 ## Roadmap
 
