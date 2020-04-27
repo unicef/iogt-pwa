@@ -17,8 +17,10 @@ Thank you to all the people who have already contributed to IOGT-PWA!
 <table rules=none">
     <tbody>
         <tr>
-            <td><a href="https://allcontributors.org/docs/en/overview">English</a></td>
-            <td><a href="https://allcontributors.org/docs/pt-BR/overview">Português</a></td>
+            <td>
+<a href="graphs/contributors"><img src="https://avatars1.githubusercontent.com/u/6149957?v=4" width=40 style="border-radius: 50%;"></a></td>
+            <td>
+<a href="graphs/contributors"><img src="https://avatars2.githubusercontent.com/u/8824104?v=4" width=40 style="border-radius: 50%;"></a></td>
             <td><a href="https://allcontributors.org/docs/es-ES/overview">Español</a></td>
             <td><a href="https://allcontributors.org/docs/fr/overview">Français</a></td>
             <td><a href="https://allcontributors.org/docs/ru/overview">Русский</a></td>
