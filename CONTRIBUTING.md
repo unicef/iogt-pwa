@@ -17,7 +17,11 @@ IoGT-PWA uses Drupal as the CMS and web services API provider, and React to to p
 ## Issue tracking
 
 IoGT-PWA uses GitHub’s tracker called [Issues](https://github.com/unicef/iogt-pwa/issues) to keep track of tasks, enhancements, and bugs as well as manage collaboration better for the project.
-* **Clone the repository**
+* A **title** and **description** describe what the issue is all about.
+* Color-coded labels help you categorize and filter your issues (just like labels in email).
+* A **milestone** acts like a container for issues. This is useful for associating a group of issues with specific features or time period (e.g. Weekly Sprint 9/7-7/20 or PWA 1.0). 
+* One **assignee** is responsible for working on the issue at any given time.
+* **Comments** allow anyone with access to the repository to provide feedback.
 
 ## Setting Up a Local Copy
 
