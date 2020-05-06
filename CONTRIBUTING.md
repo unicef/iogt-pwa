@@ -47,7 +47,7 @@ Please **ask first** if somebody else is already working on this or the core dev
 
 
 ## Continous Integration
-We use [CircleCI](https://circleci.com/) for continuous integration to automatically run unit & integration tests and create releases for IoGT-PWA.
+We use [CircleCI](https://circleci.com/) for continuous integration to automatically run unit tests and create releases for IoGT-PWA.
 
 ## License
 
