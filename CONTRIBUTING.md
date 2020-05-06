@@ -11,7 +11,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 
 ## What you need to know
 
-In order to contribute you will need to have a basic understanding of [Polymer](https://polymer-library.polymer-project.org/), [Redux](https://egghead.io/courses/getting-started-with-redux), and [Typescript](https://www.typescriptlang.org/).
+In order to contribute you will need to have a basic understanding of [Drupal](https://www.drupal.org/documentation), [React](https://reactjs.org/docs/getting-started.html), and [JavaScript](https://www.javascript.com/resources).
 
 
 ## Setting Up a Local Copy
