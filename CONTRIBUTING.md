@@ -46,6 +46,9 @@ Good pull requests, such as patches, improvements, and new features, are a fanta
 Please **ask first** if somebody else is already working on this or the core developers think your feature is in-scope for IOGT-PWA. Generally always have a related issue with discussions for whatever you are including.
 
 
+## Continous Integration
+We use Circle CI for continuous integration to automatically run unit & integration tests and create releases for IoGT-PWA.
+
 ## License
 
 By contributing your code to the unicef/iogt-pwa GitHub repository, you agree to license your contribution under the GNU Affero General Public License.
