@@ -12,7 +12,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 ## What you need to know
 
 In order to contribute as a developer you will need to have a basic understanding of [Drupal](https://www.drupal.org/documentation), [React](https://reactjs.org/docs/getting-started.html), and [JavaScript](https://www.javascript.com/resources). 
-IoGT-PWA uses Drupal as the CMS and web services API provider, and React to provide UX enhancements as well as PWA functionality.
+IoGT-PWA uses Drupal as the CMS and web services API provider, and React to provide UX enhancements and PWA functionality.
 
 ## Issue tracking
 
