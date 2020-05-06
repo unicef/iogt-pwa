@@ -51,7 +51,7 @@ In summary, if you want to contribute to IOGT-PWA, the simplest way is to:
 5. Make your changes.
 6. Try as much as you can to include unit tests for your changes. 
 7. Push it back to your repo.
-8 Click the Compare & pull request button.
+8. Click the Compare & pull request button.
 9. Click Create pull request to open a new pull request.
 
 
