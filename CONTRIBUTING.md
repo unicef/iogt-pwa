@@ -49,6 +49,9 @@ Please **ask first** if somebody else is already working on this or the core dev
 ## Continous Integration
 We use [CircleCI](https://circleci.com/) for continuous integration to automatically run unit tests and create releases for IoGT-PWA.
 
+## Project Wiki
+Our wiki has several pages of information for developers, and people contributing to IOGT-PWA. Check it out for your authoritative source of information about the IOGT-PWA community.
+
 ## License
 
 By contributing your code to the unicef/iogt-pwa GitHub repository, you agree to license your contribution under the GNU Affero General Public License.
