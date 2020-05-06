@@ -12,11 +12,12 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 ## What you need to know
 
 In order to contribute you will need to have a basic understanding of [Drupal](https://www.drupal.org/documentation), [React](https://reactjs.org/docs/getting-started.html), and [JavaScript](https://www.javascript.com/resources). 
-IoGT-PWA uses Drupal as CMS and web services API provider, and React to to provide UX enhancements.
+IoGT-PWA uses Drupal as the CMS and web services API provider, and React to to provide UX enhancements.
 
 ## Issue tracking
 
 IoGT-PWA uses GitHub’s tracker called [Issues](https://github.com/unicef/iogt-pwa/issues) to keep track of tasks, enhancements, and bugs as well as manage collaboration better for the project.
+* **Clone the repository**
 
 ## Setting Up a Local Copy
 
