@@ -44,15 +44,15 @@ Finally, when you submit a Pull Request, they are run again by our continuous in
 Good pull requests, such as patches, improvements, and new features, are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
 In summary, if you want to contribute to IOGT-PWA, the simplest way is to:
-* Claim an [issue](https://github.com/unicef/iogt-pwa/issues) you want to contribute to.
-* Fork the IoGT-PWA project.
-* Clone it to your local system.
-* Make a new branch.
-* Make your changes.
-* Try as much as you can to include unit tests for your changes. 
-* Push it back to your repo.
-* Click the Compare & pull request button.
-* Click Create pull request to open a new pull request.
+1. Claim an [issue](https://github.com/unicef/iogt-pwa/issues) you want to contribute to.
+2. Fork the IoGT-PWA project.
+3. Clone it to your local system.
+4. Make a new branch.
+5. Make your changes.
+6. Try as much as you can to include unit tests for your changes. 
+7. Push it back to your repo.
+8 Click the Compare & pull request button.
+9. Click Create pull request to open a new pull request.
 
 
 
