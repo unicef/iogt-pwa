@@ -12,7 +12,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 ## What you need to know
 
 In order to contribute as a developer you will need to have a basic understanding of [Drupal](https://www.drupal.org/documentation), [React](https://reactjs.org/docs/getting-started.html), [JavaScript](https://www.javascript.com/resources) and [Redux](https://redux.js.org/).
-IoGT-PWA uses Drupal as the content management system and web services API provider, React to provide UX enhancements and PWA functionality and Redux for providing a predictable state container for the frontend app.
+IoGT-PWA uses: Drupal as the content management system and web services API provider; React to provide UX enhancements and PWA functionality; and Redux to provide a predictable state container for the frontend app.
 
 ## Issue tracking
 
