@@ -23,7 +23,7 @@ IoGT-PWA uses GitHub’s tracker called [Issues](https://github.com/unicef/iogt-
 * One **assignee** is responsible for working on the issue at any given time.
 * **Comments** allow anyone with access to the repository to provide feedback.
 
-## Setting Up a Local Copy
+## Setting up your development environment
 
 1. Clone the repo with `git clone https://github.com/unicef/iogt-pwa.git`
 
