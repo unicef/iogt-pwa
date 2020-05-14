@@ -2,7 +2,7 @@
 
 ## Documentation
 
-To check out our detailed docs, visit [wiki](https://github.com/unicef/iogt-pwa/wiki)
+Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of information for developers, and people contributing to IOGT-PWA. Check it out for your authoritative source of information about the IOGT-PWA community.
 
 ## Questions
 
