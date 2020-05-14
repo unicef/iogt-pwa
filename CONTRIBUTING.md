@@ -46,7 +46,7 @@ Good pull requests, such as patches, improvements, and new features, are a fanta
 
 In summary, if you want to contribute to IOGT-PWA, the simplest way is to:
 1. Claim an [issue](https://github.com/unicef/iogt-pwa/issues) from the issue tracker.
-2. Fork the IoGT-PWA project.
+2. Fork the [IoGT-PWA](https://github.com/unicef/iogt-pwa) project.
 3. Clone it to your local system.
 4. Make a new branch.
 5. Make your changes.
