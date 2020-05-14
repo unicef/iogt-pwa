@@ -10,7 +10,7 @@ For questions and support please use the [community chat](https://discord.gg/phu
 
 ## Issues
 
-Please make sure to read the [issue tracker](https://github.com/unicef/iogt-pwa/issues) before making a pull request. If you have a IoGT-PWA related feature/improvement/bug fix/suggestion, please send an email to the Community Manager via t4dbaecar@gmail.com to add it [curated list](https://github.com/unicef/iogt-pwa/issues).
+Please make sure to read the [Issue Reporting Checklist](https://github.com/unicef/iogt-pwa/blob/master/CONTRIBUTING.md) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 
 ## Changelog
