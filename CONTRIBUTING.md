@@ -11,7 +11,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 
 ## What you need to know
 
-In order to contribute as a developer you will need to have a basic understanding of [Python](https://docs.python.org/3/), [Django](https://docs.djangoproject.com/en/3.0/), [Molo](https://molo.readthedocs.io/getting-started.html),[JavaScript](https://www.javascript.com/resources) and [Github](https://help.github.com/en/github). Molo scaffolds a Django application for you with sensible defaults, packages, basic feature phone template set and configuration to help you get going as soon as possible. This quickly sets up the content management system(Wagtail) and web services API provider; while JavaScript provides UX enhancements and PWA functionality using a [service worker.](https://developers.google.com/web/fundamentals/primers/service-workers)
+In order to contribute as a developer you will need to have a basic understanding of [Python](https://docs.python.org/3/), [Django](https://docs.djangoproject.com/en/3.0/), [Molo](https://molo.readthedocs.io/getting-started.html), [JavaScript](https://www.javascript.com/resources) and [Github](https://help.github.com/en/github). Molo scaffolds a Django application for you with sensible defaults, packages, basic feature phone template set and configuration to help you get going as soon as possible. This quickly sets up the content management system(Wagtail) and web services API provider; while JavaScript provides UX enhancements and PWA functionality using a [service worker.](https://developers.google.com/web/fundamentals/primers/service-workers)
 
 
 
