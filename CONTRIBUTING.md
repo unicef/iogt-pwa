@@ -1,8 +1,8 @@
-# Contributing to IOGT-PWA
+# Contributing to IoGT-PWA
 
-Interested in contributing to IOGT-PWA? Thanks! There are plenty of ways you can help.
+Interested in contributing to IoGT-PWA? Thanks! There are plenty of ways you can help.
 
-Thank you for helping us make this project great and being a part of the IOGT-PWA community. Here are a few guidelines that will help you along the way.
+Thank you for helping us make this project great and being a part of the IoGT-PWA community. Here are a few guidelines that will help you along the way.
 
 ## Code of Conduct
 
