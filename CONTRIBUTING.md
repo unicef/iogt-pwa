@@ -16,6 +16,9 @@ In order to contribute as a developer you will need to have a basic understandin
 ## Issue reporting guidelines
 Always use the [templates](https://github.com/unicef/iogt-pwa/issues/new/choose) to create new issues.
 
+
+![Issue reporting template diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/new-issue-template.png)
+
 ## Issue tracking
 
 IoGT-PWA uses GitHub’s tracker called [Issues](https://github.com/unicef/iogt-pwa/issues) for easy collaboration among developers to keep track of tasks, enhancements, and bugs during software sprints. A typical issue looks like this:
