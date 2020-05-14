@@ -25,7 +25,7 @@ Detailed changes for each release are documented in the [release notes.](https:/
 
 ## Contribution
 
-Please make sure to read the [Contributing Guide](https://github.com/unicef/iogt-pwa/blob/master/CONTRIBUTING.md) before making a pull request. 
+Please make sure to read the [contributing guide](https://github.com/unicef/iogt-pwa/blob/master/CONTRIBUTING.md) before making a pull request. 
 
 Thank you to all the people who already contributed to IOGT-PWA!
 
