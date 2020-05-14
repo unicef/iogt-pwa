@@ -39,7 +39,8 @@ Please follow the coding style of the project. IOGT-PWA uses prettier and eslint
 - `npm lint` runs manually the linting rules.
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
-## Submitting a Pull Request
+
+## Submitting a Pull Request(Guidelines)
 
 Good pull requests, such as patches, improvements, and new features, are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
