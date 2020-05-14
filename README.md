@@ -10,9 +10,12 @@ For questions and support please use the [community chat](https://discord.gg/phu
 
 ## Changelog
 
-Detailed changes for each release are documented in the [release notes](https://github.com/unicef/iogt-pwa/releases)
+Detailed changes for each release are documented in the [release notes.](https://github.com/unicef/iogt-pwa/releases)
 
 
+## Stay In Touch
+
+- [Twitter](https://twitter.com/hashtag/iogt)
 
 
 ## Contribution
