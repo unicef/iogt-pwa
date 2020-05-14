@@ -6,7 +6,7 @@ Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of informa
 
 ## Questions
 
-For questions and support please use the [community chat](https://discord.com/). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
+For questions and support please use the [community chat](https://discord.gg/phuq48). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
 
 
 ## Contribution
