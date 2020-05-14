@@ -8,6 +8,11 @@ Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of informa
 
 For questions and support please use the [community chat](https://discord.gg/phuq48). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
 
+## Issues
+
+Please make sure to read the [Issue Tracker](https://github.com/unicef/iogt-pwa/issues) before making a pull request. If you have a IoGT-PWA related feature/imporovement/bug fix suggestion, please send an email to the Community Manager via t4dbaecar@gmail.com to add it [curated list](https://github.com/unicef/iogt-pwa/issues).
+
+
 ## Changelog
 
 Detailed changes for each release are documented in the [release notes.](https://github.com/unicef/iogt-pwa/releases)
