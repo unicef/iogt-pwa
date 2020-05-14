@@ -29,9 +29,7 @@ You will need [Python 3 Runtime Environment](https://www.python.org/downloads/) 
 
 1. Clone the repo with `git clone https://github.com/unicef/iogt-pwa.git`
 
-2. Run `npm install` in the root `iogt-pwa` folder.
-
-Once it is done, you can modify any file locally and run `npm start`, `npm test` or `npm run build`.
+Once it is done, you can modify any file locally and run `python manage.py runserver`
 
 ### Coding style
 
