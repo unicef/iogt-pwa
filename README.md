@@ -23,9 +23,9 @@ npm build
 ```
 
 
-## Roadmap
+## Documentation
 
-For details on our planned features and future direction please refer to our [roadmap](https://github.com/uniccef/iogt-pwa).
+To check out our detailed docs, visit [wiki](https://github.com/unicef/iogt-pwa/wiki)
 
 ## Credits
 
