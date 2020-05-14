@@ -27,6 +27,12 @@ npm build
 
 To check out our detailed docs, visit [wiki](https://github.com/unicef/iogt-pwa/wiki)
 
+
+## Questions
+
+For questions and support please use the [community chat](https://discord.com/). The issue list of this repo is exclusively for bug reports and feature requests.
+
+
 ## Credits
 
 
