@@ -25,7 +25,7 @@ IoGT-PWA uses GitHub’s tracker called [Issues](https://github.com/unicef/iogt-
 * **Comments** allow anyone with access to the repository to provide feedback.
 
 ## Setting up your development environment
-You will need [Python 3 Runtime Environment](https://www.python.org/downloads/), [Node.js version 10+](https://nodejs.org/en/download/releases/) and npm.
+You will need [Python 3 Runtime Environment](https://www.python.org/downloads/) and [Node.js version 10+.](https://nodejs.org/en/download/releases/)
 
 1. Clone the repo with `git clone https://github.com/unicef/iogt-pwa.git`
 
