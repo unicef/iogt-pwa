@@ -11,8 +11,7 @@ Please read [the full text](/CODE_OF_CONDUCT.md) so that you can understand what
 
 ## What you need to know
 
-In order to contribute as a developer you will need to have a basic understanding of [Python](https://docs.python.org/3/), [Django](https://docs.djangoproject.com/en/3.0/), [Molo](https://molo.readthedocs.io/getting-started.html) and [JavaScript](https://www.javascript.com/resources).
-IoGT-PWA uses: Molo scaffolds a Django application for you with sensible defaults, packages and configuration to help you get going as soon as possible. This also serves as the content management system and web services API provider; JavaScript provides UX enhancements and PWA functionality.
+In order to contribute as a developer you will need to have a basic understanding of [Python](https://docs.python.org/3/), [Django](https://docs.djangoproject.com/en/3.0/), [Molo](https://molo.readthedocs.io/getting-started.html) and [JavaScript](https://www.javascript.com/resources). Molo scaffolds a Django application for you with sensible defaults, packages and configuration to help you get going as soon as possible. This quickly sets up the content management system and web services API provider; while JavaScript provides UX enhancements and PWA functionality such as the [service worker.](https://developers.google.com/web/fundamentals/primers/service-workers)
 
 ## Issue tracking
 
