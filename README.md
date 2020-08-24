@@ -7,16 +7,19 @@ Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of informa
 
 ## Local installation
 
-### Activate your virtual environment
+#### Activate your virtual environment
 ```bash
 $ virtualenv iogt
 $ source iogt/bin/activate
 ```
 
+#### Install necessary dependencies & setup database
 ```bash
 git clone https://github.com/unicef/iogt-pwa.git
 cd iogt-pwa
 pip install -r requirements.txt
+
+python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
