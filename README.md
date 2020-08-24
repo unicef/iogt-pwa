@@ -16,7 +16,7 @@ $ source iogt/bin/activate
 #### Install necessary dependencies & setup database
 ```bash
 git clone https://github.com/unicef/iogt-pwa.git
-cd iogt-pwa
+cd iogt-pwa/iogt
 pip install -r requirements.txt
 
 python manage.py migrate
