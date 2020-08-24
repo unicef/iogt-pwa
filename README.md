@@ -4,6 +4,29 @@
 
 Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of information for developers, and people contributing to IoGT-PWA. Check it out for your authoritative source of information about the IoGT-PWA community.
 
+
+## Local installation
+
+### Activate your virtual environment
+```bash
+$ virtualenv iogt
+$ source iogt/bin/activate
+```
+
+```bash
+git clone https://github.com/unicef/iogt-pwa.git
+cd iogt-pwa
+pip install -r requirements.txt
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+The demo site will now be accessible at [http://localhost:8000/](http://localhost:8000/) and the Wagtail admin
+interface at [http://localhost:8000/admin/](http://localhost:8000/admin/).
+
+Log into the admin with the credentials you set while creating the superuser account.
+
+Use `Ctrl+c` to stop the local server. 
 ## Questions
 
 For questions and support please use the [community chat](https://discord.gg/phuq48). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
