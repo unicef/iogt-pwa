@@ -18,6 +18,7 @@ $ source iogt/bin/activate
 git clone https://github.com/unicef/iogt-pwa.git
 cd iogt-pwa/iogt
 pip install -r requirements.txt
+cd ..
 
 python manage.py migrate
 python manage.py createsuperuser
