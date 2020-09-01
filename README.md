@@ -58,6 +58,7 @@ Thank you to all the people who already contributed to IOGT-PWA!
 
 <a href="https://github.com/bppanwar"><img src="https://avatars1.githubusercontent.com/u/6149957?v=4" width=40></a>
 <a href="https://github.com/nathanbaleeta"><img src="https://avatars2.githubusercontent.com/u/8824104?v=4" width=40></a>
+<a href="https://github.com/hahntrn"><img src="https://avatars0.githubusercontent.com/u/16748538?v=4" width=40></a>
             
 
 ## License
