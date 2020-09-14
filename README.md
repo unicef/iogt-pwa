@@ -35,7 +35,7 @@ Use `Ctrl+c` to stop the local server.
 ## Agile development cycle
 IoGT development team follows an agile development cycle as illustrated below in the steps to deliver working software as quickly as possible.
 
-![Agile development cycle diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/devops2.png)
+![Agile development cycle diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/devops1.png)
 
 ## Questions
 
