@@ -33,12 +33,22 @@ Log into the admin with the credentials you set while creating the superuser acc
 Use `Ctrl+c` to stop the local server. 
 
 
+
+#### Setup nodejs environment (frontend)
+```bash
+npm install -g yarn 
+npm install -g preact-cli 
+```
 #### Install necessary dependencies in a separate terminal window (frontend)
 ```bash
-cd ..
+# Navigate to frontend folder
 cd frontend
+
+# Install frontend dependencies
 yarn install
-yarn run
+
+# Start a development server
+yarn run dev
 ```
 
 ## Agile development cycle
