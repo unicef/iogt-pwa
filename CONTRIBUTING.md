@@ -62,7 +62,7 @@ In summary, if you want to contribute to IoGT-PWA, the simplest way is to:
 
 
 ## CI/CD
-We use [CircleCI](https://circleci.com/) for continuous integration to automatically run unit tests while [Docker](https://www.docker.com/) does the continous delivery of releases for IoGT-PWA.
+We use [Github Actions](https://github.com/features/actions) for continuous integration to automatically run unit tests and [Heroku](https://www.heroku.com/) to host the continous delivery releases.
 
 ## Project Wiki
 Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of information for developers, and people contributing to IOGT-PWA. Check it out for your authoritative source of information about the IOGT-PWA community.
