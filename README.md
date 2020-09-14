@@ -7,13 +7,13 @@ Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of informa
 
 ## Local installation
 
-#### Activate your virtual environment
+#### Activate your virtual environment(backend)
 ```bash
 $ virtualenv iogt
 $ source iogt/bin/activate
 ```
 
-#### Install necessary dependencies & setup database
+#### Install necessary dependencies & setup database(backend)
 ```bash
 git clone https://github.com/unicef/iogt-pwa.git
 cd iogt-pwa/iogt
@@ -31,6 +31,14 @@ interface at [http://localhost:8000/admin/](http://localhost:8000/admin/).
 Log into the admin with the credentials you set while creating the superuser account.
 
 Use `Ctrl+c` to stop the local server. 
+
+
+#### Install necessary dependencies in a separate terminal window(frontend)
+```bash
+cd .. && cd frontend
+yarn install
+yarn run
+```
 
 ## Agile development cycle
 IoGT development team follows an agile development cycle as illustrated below in the steps to deliver working software as quickly as possible.
