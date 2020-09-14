@@ -7,13 +7,13 @@ Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of informa
 
 ## Local installation
 
-#### Activate your virtual environment(backend)
+#### Activate your virtual environment (backend)
 ```bash
 $ virtualenv iogt
 $ source iogt/bin/activate
 ```
 
-#### Install necessary dependencies & setup database(backend)
+#### Install necessary dependencies & setup database (backend)
 ```bash
 git clone https://github.com/unicef/iogt-pwa.git
 cd iogt-pwa/iogt
@@ -33,9 +33,10 @@ Log into the admin with the credentials you set while creating the superuser acc
 Use `Ctrl+c` to stop the local server. 
 
 
-#### Install necessary dependencies in a separate terminal window(frontend)
+#### Install necessary dependencies in a separate terminal window (frontend)
 ```bash
-cd .. && cd frontend
+cd ..
+cd frontend
 yarn install
 yarn run
 ```
