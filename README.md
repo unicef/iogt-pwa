@@ -33,8 +33,9 @@ Log into the admin with the credentials you set while creating the superuser acc
 Use `Ctrl+c` to stop the local server. 
 
 ## Agile development cycle
+IoGT development team follows an agile development cycle as illustrated below in the steps to deliver working software as quickly as possible.
 
-![Issue reporting template diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/devops1.png)
+![Issue reporting template diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/devops2.png)
 ## Questions
 
 For questions and support please use the [community chat](https://discord.gg/phuq48). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
