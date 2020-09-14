@@ -34,7 +34,7 @@ Use `Ctrl+c` to stop the local server.
 
 
 
-#### Setup yarn package manager (frontend)
+#### Setup yarn package manager (Depends on [nodejs](https://nodejs.org/en/download/) environment)
 ```bash
 # May require administrator privileges to the command
 npm install -g yarn 
