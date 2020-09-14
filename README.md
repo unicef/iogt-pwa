@@ -31,6 +31,10 @@ interface at [http://localhost:8000/admin/](http://localhost:8000/admin/).
 Log into the admin with the credentials you set while creating the superuser account.
 
 Use `Ctrl+c` to stop the local server. 
+
+## Agile development cycle
+
+![Issue reporting template diagram](https://raw.githubusercontent.com/unicef/iogt-pwa/master/docs/devops1.png)
 ## Questions
 
 For questions and support please use the [community chat](https://discord.gg/phuq48). The [issue list](https://github.com/unicef/iogt-pwa/issues) of this repo is exclusively for bug reports and feature requests.
