@@ -62,7 +62,7 @@ In summary, if you want to contribute to IoGT-PWA, the simplest way is to:
 
 
 ## CI/CD
-We use [Github Actions](https://github.com/features/actions) for continuous integration to automatically run unit tests while [Heruko](https://www.heroku.com/) does the hosting of the releases for continous delivery.
+We use [Github Actions](https://github.com/features/actions) for continuous integration to automatically run unit tests while [Heroku](https://www.heroku.com/) does the hosting of the releases for continous delivery.
 
 ## Project Wiki
 Our [wiki](https://github.com/unicef/iogt-pwa/wiki) has several pages of information for developers, and people contributing to IOGT-PWA. Check it out for your authoritative source of information about the IOGT-PWA community.
