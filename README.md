@@ -52,6 +52,7 @@ yarn install
 # Start a development server
 yarn run dev
 ```
+Once the server has started, it will print a local development URL to open in your browser. Now you're ready to test drive IoGT website!
 
 ## Agile development cycle
 IoGT development team follows an agile development cycle as illustrated below in the steps to deliver working software as quickly as possible.
