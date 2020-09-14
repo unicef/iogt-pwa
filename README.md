@@ -36,11 +36,13 @@ Use `Ctrl+c` to stop the local server.
 
 #### Setup nodejs environment (frontend)
 ```bash
+# May require administrator privileges to the command
 npm install -g yarn 
 npm install -g preact-cli 
 ```
 #### Install necessary dependencies in a separate terminal window (frontend)
 ```bash
+
 # Navigate to frontend folder
 cd frontend
 
