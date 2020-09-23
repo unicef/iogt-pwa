@@ -16,28 +16,7 @@ const Header = () => (
 	<header class={style.header}>
 		<img src="/assets/icons/Logo-with-text.png" />
 
-		<Button variant="primary">Primary</Button>
-		<Button variant="secondary">Secondary</Button>
-		<Button variant="primary" disabled>
-			Disabled
-      </Button>
-		<Dropdown>
-			<Dropdown.Toggle variant="success" id="dropdown-basic">asdfasdf
-			</Dropdown.Toggle>
-
-			<Dropdown.Menu>
-				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-			</Dropdown.Menu>
-		</Dropdown>
-
-
-		<Button variant="flat" size="xxl">
-			flat button
-  </Button>
 		<nav>
-
 			<Link activeClassName={style.active} href="/">
 				Top Stories
 	      </Link>
