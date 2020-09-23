@@ -1,27 +1,22 @@
+
 .header {
-	position: fixed;
+	/* position: fixed; */
+	/* flex-direction: row; */
+	display: inline-flex;
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 56px;
+	/* height: 56px; */
+	height: auto;
 	padding: 0;
-	background: #673AB7;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	background: #fff;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
 	z-index: 50;
 }
 
-.header h1 {
-	float: left;
-	margin: 0;
-	padding: 0 15px;
-	font-size: 24px;
-	line-height: 56px;
-	font-weight: 400;
-	color: #FFF;
-}
-
 .header nav {
-	float: right;
+	/* float: left; */
+	display: inline-block;
 	font-size: 100%;
 }
 
@@ -34,15 +29,31 @@
 	text-align: center;
 	background: rgba(255,255,255,0);
 	text-decoration: none;
-	color: #FFF;
+	color: #6B6B6B;
 	will-change: background-color;
 }
 
+/* Tab hovered on */
 .header nav a:hover,
 .header nav a:active {
-	background: rgba(0,0,0,0.2);
+	border-bottom: 2px solid #20CD84;
 }
 
+/* Current tab */
 .header nav a.active {
-	background: rgba(0,0,0,0.4);
+	border-bottom: 2px solid #20CD84;	
+}
+
+.header dropdown {
+	/* background: black; */
+}
+
+.btn-flat {
+	background-color: purple;
+	color: white;
+}
+
+.btn-xxl {
+	padding: 1rem 1.5rem;
+	font-size: 1.5rem;
 }
