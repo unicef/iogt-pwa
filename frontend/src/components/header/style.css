@@ -1,59 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-.header {
-	/* position: fixed; */
-	/* flex-direction: row; */
-	display: inline-flex;
-	left: 0;
-	top: 0;
-	width: 100%;
-	/* height: 56px; */
-	height: auto;
-	padding: 0;
-	background: #fff;
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-	z-index: 50;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
+
+/*CSS for the Header - for the upper portion (consisting of the the logo, search bar, and Sign) and for the Navbar - default settings her apply to desktop and is adjusted below for other devices and screen sizes in media queries*/
+
+
+/* The header elements, both top and bottom, are arranged with Flexbox. Border is drawn around it*/
 .header nav {
-	/* float: left; */
-	display: inline-block;
-	font-size: 100%;
-}
-
-.header nav a {
-	display: inline-block;
+	display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+	min-width: 1050px;
 	height: 56px;
-	line-height: 56px;
-	padding: 0 15px;
-	min-width: 50px;
+	width: 100%;
+  left: 0;
+  top: 0;
+  font-family: 'Open Sans';
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+  border: 1px solid #ececec;
+}
+
+/* Every link is wrapped in a div for styling purposes - mainly to achieve a perfect table border */
+.header nav > div {
 	text-align: center;
-	background: rgba(255,255,255,0);
-	text-decoration: none;
-	color: #6B6B6B;
-	will-change: background-color;
+  height: 56px;
+  width: 100%;
+  border-left: 1px solid #ececec;
+  word-wrap: break-word;
 }
 
-/* Tab hovered on */
-.header nav a:hover,
-.header nav a:active {
-	border-bottom: 2px solid #20CD84;
+/* Applies to Language drop down menu */
+.header nav > div > a > select {
+  border: none;
+  font-family: 'Poppins';
+  color: #6b6b6b;
 }
 
-/* Current tab */
-.header nav a.active {
-	border-bottom: 2px solid #20CD84;	
+/* Applies to individual links listed on navbar*/
+.header nav > div > a {
+	min-width: 50px;
+	height: 100%;
+	display: inline-block;
+	padding: 15px;
+	position: relative;
+	text-align-last: center;
+  vertical-align: center;
+	font-size: 14px;
+  font-weight: bold;
+  /* background: rgba(255,255,255,0); */
+  text-decoration: none;
+  color: #6b6b6b;
+  will-change: background-color;
 }
 
-.header dropdown {
-	/* background: black; */
+/* Applied when are links hovered on / Links are active */
+.header nav > div > a:hover,
+.header nav > div > a.active {
+  border-bottom: 2px solid #20cd84;
+  color: #303030;
 }
+
 
 .btn-flat {
-	background-color: purple;
-	color: white;
+  background-color: purple;
+  color: white;
 }
 
 .btn-xxl {
-	padding: 1rem 1.5rem;
-	font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
 }
+
+/******** CATEGORIES DROP DOWN MENU CSS FOR DESKTOP*******/
+
+/* Two buttons arranged in a split button style */
+.categories-btn {
+  align-self: left;
+  margin-top: 15px;
+  background-color: #20cd84;
+  color: white;
+  font-size: 14px;
+  border: none;
+  padding: 6px 14px 7px 14px;
+  border-radius: 2px 0 0 2px;
+}
+
+.categories-btn-caret {
+  font-size: 14px;
+  margin-top: 15px;
+  background-color: #199a64;
+  border: none;
+  padding: 6px 14px 7px 14px;
+  border-radius: 0 2px 2px 0;
+}
+
+.categories-btn:hover,
+.categories-dropdown:hover .categories-btn .categories-btn-caret {
+  background-color: #199a64;
+}
+
+.categories-btn:focus,
+.categories-btn-caret:focus {
+  outline-color: #199a64;
+}
+
+/* Drop down content is hidden out of view, when user hovers over it, it appears. Items were arranged in a dl tag (description list) in the code for both accessibility and convenient formatting. */
+.categories-dropdown-content {
+  font-family: 'Open Sans';
+  font-size: 12px;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  min-width: 160px;
+  z-index: 1;
+  text-align: left;
+  margin-left: 20px;
+}
+
+/* Applies to every Topic title in the Drop Down List */
+.categories-dropdown-content dt {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px 0 10px;
+}
+
+/* Applies to every Topic item in the Drop Down List */
+.categories-dropdown-content dd {
+  line-height: 18px;
+  margin-left: 20px;
+}
+
+.categories-dropdown-content a {
+  /* width: 100%; */
+  color: black;
+  padding: 5px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.categories-dropdown-content a:hover {
+  background-color: #fafafa;
+}
+
+.categories-dropdown:hover .categories-dropdown-content {
+  display: block;
+}
+
+/******** SEARCH BAR CSS FOR DESKTOP *******/
+
+/* Arranged top portion of header in a flexbox arrangement */
+.header-logo-search-signin {
+  min-width: 1050px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px;
+}
+
+/* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
+.search-bar {
+  flex-grow: 0.8;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: 'Open Sans';
+  border: 1px solid #ececec;
+  border-radius: 2px;
+  justify-self: center;
+}
+
+.search-bar > input {
+  /* background-color: #6B6B6B; */
+  width: 100%;
+  padding: 9px 0px 10px 20px;
+  border: 2px solid white;
+  outline: 2px white;
+}
+
+.search-bar > button {
+  background-color: white;
+  border: 2px solid white;
+  padding: 9px;
+}
+
+/* Test for sign in is adjusted */
+.signin {
+  font-size: 15px;
+  text-decoration: none;
+  color: #20cd84;
+  padding-right: 30px;
+}
+
+/* Placed to try to align the logo with the categories button */
+.logo {
+  text-align: left;
+}
+
+/****** FOR TABLETS - LANDSCAPE AND PORTRAIT******/
+/*Also adjusts for desktops and screens*/
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px),
+  screen and (max-width: 1024px) {
+  .header nav {
+    min-width: 768px;
+    height: 50px;
+  }
+
+  .header nav > div {
+    border: 0px;
+  }
+
+  .header nav > div > a {
+    font-size: 12px;
+  }
+
+  .categories-btn,
+  .categories-btn-caret {
+    padding: 4px 10px 4px 7px;
+    font-size: 12px;
+    margin-top: 19px;
+  }
+  /*adjust top portion of header*/
+  .header-logo-search-signin {
+    min-width: 768px;
+    padding: 24px;
+  }
+}
+
+/** /
+
+/**** FOR MOBILE DEVICES, FOR LANDSCAPE AND PORTRAIT ***/
+/* Should also adjust in different screens*/
+/*The mobile navbar is different from the desktop/ laptop. It uses icons along with link names. The link names are different as well*/
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 767px) {
+  .header nav {
+    min-width: 360px;
+    height: 58px;
+    justify-content: space-around;
+    border: 2px solid #20cd84;
+    color: #20cd84;
+  }
+
+  /* Tab hovered on and active tab settings*/
+  .header nav > div > a:hover,
+  .header nav > div > a.active {
+    border-bottom: 0px;
+    color: #20cd84;
+  }
+  .header nav > div > a:hover {
+    color: #ffffff;
+    background-color: #20cd84;
+  }
+
+  .header nav > div > a {
+    /* color: #20CD84; */
+
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins';
+    font-size: 8px;
+    padding: 0;
+    top: 0;
+    color: #20cd84;
+  }
+
+  /* .header nav > div:hover{
+			background-color: #20CD84;
+			color: white;
+		} */
+
+  .header nav > div > a.focus {
+    color: #ffffff;
+    background-color: #20cd84;
+  }
+
+  /*adjust top portion of header*/
+  .header-logo-search-signin {
+    min-width: 360px;
+    padding: 49px;
+  }
+  /*adjust sign in*/
+  .signin {
+    font-size: 13px;
+    padding: 0 15px 0 15px;
+  }
+
+  .mobile-nav-bar {
+    display: block;
+    text-align: center;
+  }
+
+  .mobile-nav-bar > a {
+    display: block;
+    text-align: center;
+    padding-left: 2px;
+  }
+
+  .mobile-nav-bar > a > img {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 0 2px 0;
+  }
+}
+
+/******* FOR FEATURE PHONES, PORTRAIT AND LANDSCAPE ********/
+@media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 359px) {
+  .header nav {
+    min-width: 240px;
+    height: 37px;
+    border: 1px solid #20cd84;
+    color: #20cd84;
+    display: inline-flex;
+  }
+
+  .header nav > div > a {
+    height: 37px;
+    font-size: 5px;
+    top: 10px;
+  }
+
+  .mobile-nav-bar {
+    height: 37px;
+    display: block;
+  }
+
+  .mobile-nav-bar > a {
+    text-align: center;
+    padding-left: 2px;
+  }
+
+  .mobile-nav-bar > a > img {
+    text-align: center;
+    padding: 5px 0 0px 0;
+  }
+
+  /*Adjust top portion of header */
+  .header-logo-search-signin {
+    min-width: 240px;
+		padding: 0;
+		font-size: 5px;
+	}
+
+
+}
+
+/*Need to adjust top portion of header for feature phones and mobile to align with design specifications*/
