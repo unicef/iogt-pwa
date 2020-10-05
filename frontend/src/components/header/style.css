@@ -1,48 +1,1085 @@
-.header {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 56px;
-	padding: 0;
-	background: #673AB7;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	z-index: 50;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+/* This files contains CSS code for the Header consisting of the the logo, search bar, and Sign in and, as well as for the Navbar - default settings here apply to feature phones in a mobile first fashion and is adjusted below for other devices and screen sizes via media queries*/
+
+/**********************************************************
+                     CSS FOR FEATURE PHONES
+  Adjusts for devices that have a  width of less than 320. Adjusts for screen sizes as small as 128-160px in size. It is possible feature phones may not support media queries. So this CSS file is implemented mobile first and the media query for the feature phones is taken out ********
+  @media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 359px)
+**********************************************************/
+
+.tablet-ellipsis,
+.language,
+.categories-dropdown {
+  visibility: collapse;
+  display: none;
+  flex-basis: 100%;
 }
 
-.header h1 {
-	float: left;
-	margin: 0;
-	padding: 0 15px;
-	font-size: 24px;
-	line-height: 56px;
-	font-weight: 400;
-	color: #FFF;
+.signin,
+.signin-language,
+.search-menu,
+.logo-full, .tabletDesktopSignin{
+  visibility: collapse;
+  display: none;
 }
 
-.header nav {
-	float: right;
-	font-size: 100%;
+/* Header: Top  */
+.header-top {
+  max-width: 320px;
+  padding: 0;
+  font-size: 5px;
+  font-family: 'Poppins';
 }
 
-.header nav a {
-	display: inline-block;
-	height: 56px;
-	line-height: 56px;
-	padding: 0 15px;
-	min-width: 50px;
-	text-align: center;
-	background: rgba(255,255,255,0);
-	text-decoration: none;
-	color: #FFF;
-	will-change: background-color;
+/*Header: Top Top - Language */
+
+.header-top .header-language-brief {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
 }
 
-.header nav a:hover,
-.header nav a:active {
-	background: rgba(0,0,0,0.2);
+.current-language,
+.change-language {
+  height: 100%;
+  width: 100%;
+  padding: 4px 12px 4px 12px;
+  font-family: 'Poppins';
+  font-size: 8px;
+  color: #20cd84;
+  /* border-bottom: 1px solid #DADADA; */
 }
 
-.header nav a.active {
-	background: rgba(0,0,0,0.4);
+.current-language span {
+  font-weight: bold;
 }
+
+.change-language > label {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.change-language i {
+  vertical-align: text-bottom;
+  font-size: 10px;
+}
+
+.change-language > input {
+  display: none;
+}
+
+.content > .language-list-menu-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content > .language-list-menu-content ul > li > a {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 8px;
+  color: #000000;
+}
+
+.content > .language-list-menu-content {
+  background: #ffffff;
+  width: 235%;
+  margin-left: -125%;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+  border-bottom: 1px solid #dadada;
+}
+
+.change-language label {
+  cursor: pointer;
+}
+.change-language label:hover,
+.change-language label:focus {
+  /* background: #252525; */
+}
+.change-language .handle1 label:before {
+  content: '\f107';
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1em;
+  line-height: 1.556em;
+  vertical-align: middle;
+  transition: 0.4s;
+}
+.change-language > .collapse:checked ~ .handle1 label:before {
+  transition: 0.4s;
+}
+
+.change-language > .collapse:checked ~ .content > .language-list-menu-content {
+  height: 175px;
+  transition: height 0.5s;
+}
+
+/* Header - Middle */
+
+.header-middle {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-rows: 54px 20px;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+
+.search-bar {
+  grid-area: 2 / 1 / 3 / 4;
+}
+.logo-small {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.join-menu {
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.header-top .logo-small {
+  padding: 6px;
+  padding-left: 12px;
+}
+
+.header-top .logo-small img {
+  display: inline-block;
+  height: 100%;
+}
+
+.header-top .join-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-top .join-menu a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #20cd84;
+  text-decoration: underline;
+}
+
+/* Header: Top - Search Bar */
+
+.search-bar {
+  /* flex-grow: 0.8; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* border-radius: 2px; */
+  justify-self: center;
+  font-size: 8px;
+  font-family: 'Poppins';
+  font-style: 'italic';
+  border-top: 1px solid #dadada;
+}
+
+.search-bar > input {
+  /* background-color: #6B6B6B; */
+  width: 100%;
+  padding: 9px 0px 10px 20px;
+  border: 0px solid white;
+  outline: 0;
+}
+
+.search-bar button {
+  background-color: white;
+  border: 2px solid white;
+}
+
+.search-bar button > i {
+  font-size: 9px;
+  color: #20cd84;
+}
+
+/* Header: Navbar */
+.header .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
+  height: 37px;
+  border: 1px solid #20cd84;
+  font-family: 'Poppins';
+  color: #20cd84;
+}
+
+.articles,
+.parents,
+.girls,
+.youth,
+.health-providers,
+.see-more {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.nav div a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  top: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 5px;
+  font-weight: bold;
+  color: #20cd84;
+}
+
+.nav > div > a > img,
+.nav > div > a > i {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15px;
+}
+
+.nav div a > i {
+  font-size: 15px;
+  color: #20cd84;
+  padding-top: 2px;
+}
+
+.nav div a:hover {
+  background-color: #20cd84;
+  color: #ffffff;
+}
+
+.nav div a:hover img {
+  display: none;
+}
+
+.nav div a .imgSwap {
+  display: none;
+  position: relative;
+  left: 0;
+  z-index: 99;
+}
+
+.nav div a:hover .imgSwap {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15px;
+}
+
+.nav div a:hover > i {
+  color: #ffffff;
+}
+
+/* Emphasize legibility over rendering speed and geometric precision. */
+.material-icons {
+  text-rendering: optimizeLegibility;
+}
+
+/*****************************************************************
+/*********************** FOR MOBILE DEVICES ********************
+          (min-width: 321px) and (max-width: 767px)
+   Should also adjust for devices with similar screen viewport
+/*The mobile navbar is different from the desktop/ laptop. It uses icons along with link names. The link names are different as well*/
+/* Alternate min value: 360
+*****************************************************************/
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  .header-middle {
+    visibility: visible;
+  }
+
+  .header-language-brief,
+  .header-top-language,
+  .join-menu,
+  .logo-full, .tabletDesktopSignin {
+    display: none;
+    visibility: collapse;
+    width: 0;
+  }
+
+  .header-top {
+    min-width: 321px;
+    max-width: 767px;
+    width: 100%;
+  }
+
+  .signin-language,
+  .signin,
+  .search-menu {
+    visibility: visible;
+    display: inline-block;
+  }
+
+  .header {
+    min-width: 321px;
+    max-width: 767px;
+    width: 100%;
+  }
+
+  .header-middle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+  }
+
+  .search-menu > a {
+    padding: 5px;
+  }
+
+  .logo-small {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .signin-language {
+    grid-area: 1 / 3 / 2 / 5;
+  }
+  .search-menu {
+    grid-area: 1 / 5 / 2 / 7;
+  }
+
+  .header-top .logo-small {
+    margin: auto;
+  }
+
+  .header-top .logo-small img {
+    display: inline-block;
+    height: 40px;
+  }
+
+  .signin-language {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signin {
+    line-height: 19.5px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #20cd84;
+    padding: 3px;
+  }
+
+  .signin-language > select,
+  .language > select {
+    background-color: transparent;
+    border: 0px;
+    width: 30%;
+  }
+
+  .signin-language > select > option,
+  .language > select > option {
+    font-family: 'Poppins';
+  }
+
+  .search-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-menu > a > i {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .my_checkbox:checked + .search-bar {
+    display: block;
+  }
+
+  .header .nav {
+    max-width: 767px;
+    height: 58px;
+    border: 2px solid #20cd84;
+  }
+
+  .nav div {
+    height: 58px;
+  }
+
+  .nav div a,
+  .nav div a:hover {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 'Semi-bold';
+  }
+
+  .nav > div > a > img,
+  .nav > div > a > i {
+    padding-top: 9.41px;
+    height: 24px;
+  }
+
+  .nav > div > a:hover > img,
+  .nav > div > a:hover > i {
+    padding-top: 9.41px;
+    height: 24px;
+  }
+
+  .nav div a:hover .imgSwap {
+    height: 24px;
+  }
+}
+
+/***********************************************************
+****++++++** CSS FOR TABLETS  and other devices ************
+with similar viewport measurments ***************************
+      (min-width: 768px) and (max-width: 1024px)
+*************************************************************/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-language-brief,
+  .header-top-language,
+  .join-menu,
+  .logo-small,
+  .youth,
+  .health-providers,
+  .see-more {
+    display: none;
+    visibility: collapse;
+    width: 0;
+  }
+
+  .nav div a > i {
+    font-size: 48px;
+    color: #20cd84;
+    padding: 0;
+    line-height: 50%;
+  }
+
+  .nav div a:hover > i {
+    font-size: 48px;
+    color: #20cd84;
+    line-height: 100%;
+    /* line-height: 50px; */
+  }
+  .header .nav div > a > img {
+    display: none;
+    visibility: collapse;
+  }
+
+  .categories-dropdown,
+  .language,
+  .logo-full,
+  .tablet-ellipsis,
+  .tabletDesktopSignin, .signin {
+    visibility: visible;
+    display: inline-block;
+    height: 100%;
+  }
+
+  /* Arranged top portion of header in a flexbox arrangement */
+  .header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 768px;
+    max-width: 1024px;
+    width: 100%;
+    background: #fff;
+    padding: 24px;
+  }
+
+  .logo-full{
+    height: 41px;
+    margin: auto;
+  }
+  /* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
+  .search-bar {
+    font-size: 12px;
+    font-family: 'Open Sans';
+    border: 1px solid #ececec;
+    border-radius: 2px;
+    justify-self: center;
+
+  }
+
+  .search-bar > input {
+    /* background-color: #6B6B6B; */
+    width: 100%;
+    padding: 9px 0px 10px 20px;
+    border: 2px solid white;
+    outline: 2px white;
+  }
+
+  .search-bar > button {
+    background-color: white;
+    border: 2px solid white;
+    padding: 9px;
+  }
+
+  /* Test for sign in is adjusted */
+  .signin {
+    font-size: 15px;
+    text-decoration: none;
+    color: #20cd84;
+  }
+
+  .tabletDesktopSignin > a > img{
+    height: 20px;
+  }
+  .tabletDesktopSignin {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  /* Placed to try to align the logo with the categories button */
+  .logo-full {
+    text-align: left;
+  }
+
+  .header .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 768px;
+    max-width: 1024px;
+    height: 50px;
+    width: 100%;
+    font-family: 'Open Sans';
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    z-index: 50;
+    border: 1px solid #ececec;
+  }
+
+  .header .nav > div {
+    height: 50px;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+  }
+  .header .nav > div > a {
+    font-size: 12px;
+    top: 12px;
+    color: #6b6b6b;
+    display: block;
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+  }
+
+  /* Applies to Language drop down menu */
+  .header nav > div > a > select,
+  select {
+    border: none;
+    background-color: 'white';
+    color: #6b6b6b;
+    font-family: 'Poppins';
+  }
+
+  /* Applied when are links hovered on / Links are active */
+  .header .nav > div > a:hover,
+  .header .nav > div > a.active {
+    background-color: transparent;
+    border-bottom: 2px solid #20cd84;
+    background-color: transparent;
+    color: #303030;
+  }
+
+  .header .nav > div > a:hover {
+    padding: 0;
+  }
+
+  .tablet-ellipsis > a {
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+  }
+  .tablet-ellipsis i {
+    color: '#000000';
+  }
+
+  .language > a {
+    white-space: nowrap;
+    padding: 0;
+    line-height: 5%;
+  }
+
+  .language > a {
+    top: 2px;
+  }
+
+  .search-bar > button > i {
+    font-size: 12px;
+    color: #959bac;
+  }
+  /* Two buttons arranged in a split button style */
+  .categories-dropdown .btn-group {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .categories-btn {
+    height: 25px;
+    font-family: 'Open Sans';
+    padding: 4px 10px 4px 7px;
+    margin-top: 10px;
+    border: none;
+    font-size: 12px;
+    background-color: #20cd84;
+    color: white;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .categories-btn-arrow {
+    height: 25px;
+    padding: 0;
+    vertical-align: middle;
+    border: none;
+    background-color: #199a64;
+    color: white;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .categories-btn-arrow > i {
+    position: relative;
+    /* font-size: 22px; */
+  }
+
+  .categories-btn:hover,
+  .categories-dropdown:hover .categories-btn .categories-btn-arrow {
+    background-color: #199a64;
+  }
+
+  .categories-btn:focus,
+  .categories-btn-arrow:focus {
+    outline-color: #199a64;
+  }
+
+  /* Drop down content is hidden from view, when user hovers over it, it appears. Items are arranged in a dl tag (description list) in the code for both accessibility and for it's convenient formatting. */
+  .categories-dropdown-content {
+    font-family: 'Open Sans';
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    min-width: 160px;
+    z-index: 1;
+    text-align: left;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  /* Applies to every topic title in the drop down List */
+  .categories-dropdown-content dt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    padding: 15px 5px 0 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+  }
+
+  /* Applies to each topic item in the drop down list */
+  .categories-dropdown-content dd {
+    line-height: 18px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #303030;
+  }
+
+  .categories-dropdown-content a {
+    /* width: 100%; */
+    color: #303030;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .categories-dropdown:hover .categories-dropdown-content {
+    display: block;
+    max-width: 300px;
+  }
+
+  .dl-title > dt > i {
+    color: #20cd84;
+  }
+
+  .dl-title > dt:hover > i {
+    color: #ffffff;
+    transition: 0.3s;
+  }
+  .categories-dropdown-content a:hover {
+    background-color: #fafafa;
+    transition: 0.1s;
+  }
+}
+/***********************************************************
+DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
+
+@media only screen and (min-width: 1024px) and (max-width: 2400px) {
+  .header-language-brief,
+  .header-top-language,
+  .join-menu,
+  .logo-small,
+  .see-more,
+  .tablet-ellipsis {
+    visibility: collapse;
+    display: none;
+  }
+
+  .articles img,
+  .girls img,
+  .parents img,
+  .youth img,
+  .health-providers img,
+  .see-more {
+    visibility: collapse;
+    display: none;
+  }
+
+  .categories-dropdown,
+  .language,
+  .logo-full, .tabletDesktopSignin, .signin {
+    visibility: visible;
+    display: inline-block;
+  }
+
+  .header-top {
+    min-width: 1025px;
+    max-width: 2400px;
+    height: 80px;
+    padding: 0;
+    font-size: 5px;
+    font-family: 'Poppins';
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 80 px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .logo-full {
+    grid-area: 1 / 2 / 2 / 4;
+  }
+
+  .tabletDesktopSignin {
+    grid-area: 1 / 8 / 2 / 10;
+  }
+  .search-bar {
+    grid-area: 1 / 4 / 2 / 8;
+  }
+
+  .header .nav {
+    min-width: 1025px;
+    max-width: 2400px;
+    height: 60px;
+    font-family: 'Open Sans';
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    z-index: 50;
+    border: 1px solid #ececec;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 60 px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .categories-dropdown {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .articles {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .parents {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  .girls {
+    grid-area: 1 / 5 / 2 / 6;
+  }
+  .youth {
+    grid-area: 1 / 6 / 2 / 7;
+  }
+  .health-providers {
+    grid-area: 1 / 7 / 2 / 8;
+  }
+  .div8 {
+    grid-area: 1 / 8 / 2 / 9;
+  }
+  .language {
+    grid-area: 1 / 9 / 2 / 10;
+  }
+
+  /* Every link is wrapped in a div for styling purposes - mainly to achieve a perfect table border */
+  .header .nav > div {
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    border-left: 1px solid #ececec;
+    word-wrap: break-word;
+  }
+
+  /* Applies to Language drop down menu */
+  .header .nav > div > a > select {
+    border: none;
+    font-family: 'Poppins';
+    color: #6b6b6b;
+  }
+
+  .header .nav > div {
+    display: block;
+  }
+
+  /* Applies to individual links listed on navbar*/
+  .header .nav > div > a {
+    /* min-width: 50px; */
+
+    display: inline-block;
+   height: 56px;
+   width: 75%;
+   top: 0px;
+    position: relative;
+    text-align: center;
+    /* margin-left: auto;
+    margin-right: auto; */
+    vertical-align: top;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    color: #6b6b6b;
+    will-change: background-color;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Applied when are links hovered on / Links are active */
+  .header .nav > div > a:hover,
+  .header .nav > div > a.active {
+    border-bottom: 2px solid #20cd84;
+    color: #303030;
+    background-color: transparent;
+  }
+
+  .tabletDesktopSignin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tabletDesktopSignin > a > img{
+    height: 20px;
+  }
+
+  .logo-full {
+    align-self: left;
+    height: 47px;
+    margin: 14px 30px 14px 0;
+    margin-right: 20px;
+  }
+  .categories-dropdown {
+    border-left: 0px;
+  }
+
+  /******** CATEGORIES DROP DOWN MENU CSS FOR DESKTOP*******/
+
+  .categories-dropdown .btn-group {
+    white-space: nowrap;
+    padding: 14px;
+  }
+
+  /* Two buttons arranged in a split button style */
+  .categories-btn {
+    font-family: 'Open Sans';
+    background-color: #20cd84;
+    color: white;
+    font-size: 14px;
+    border: none;
+    padding: 6px 15px 7px 15px;
+    border-radius: 2px 0 0 2px;
+  }
+
+  .categories-btn-arrow {
+    background-color: #20cd84;
+    color: white;
+    border: none;
+    padding: 7px 14px 8px 14px;
+    background-color: #199a64;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .categories-btn-arrow > i {
+    font-size: 14px;
+  }
+
+  /* Drop down content is hidden from view, when user hovers over it, it appears. Items are arranged in a dl tag (description list) in the code for both accessibility and for it's convenient formatting. */
+  .categories-dropdown-content {
+    font-family: 'Open Sans';
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    min-width: 160px;
+    z-index: 1;
+    text-align: left;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  /* Applies to every topic title in the drop down List */
+  .categories-dropdown-content dt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    padding: 15px 5px 0 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #303030;
+  }
+
+  /* Applies to each topic item in the drop down list */
+  .categories-dropdown-content dd {
+    line-height: 18px;
+    margin-left: 20px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 12px;
+    color: #303030;
+  }
+
+  .categories-dropdown-content a {
+    /* width: 100%; */
+    color: #303030;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .categories-dropdown:hover .categories-dropdown-content {
+    display: block;
+    max-width: 300px;
+  }
+
+  .dl-title > dt > i {
+    color: #20cd84;
+  }
+
+  .dl-title > dt:hover > i {
+    color: #ffffff;
+    transition: 0.3s;
+  }
+  .categories-dropdown-content a:hover {
+    background-color: #fafafa;
+    transition: 0.1s;
+  }
+
+  /* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
+  .search-bar {
+    height: 35px;
+    margin: 22px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    border: 1px solid #ececec;
+    border-radius: 2px;
+  }
+
+  .search-bar > input {
+    /* background-color: #6B6B6B; */
+    width: 100%;
+    padding: 9px 0px 10px 20px;
+    border: 2px solid white;
+    outline: 2px white;
+  }
+
+  .search-bar > button {
+    background-color: white;
+    border: 2px solid white;
+    padding: 9px;
+  }
+
+  .search-bar > button > i {
+    font-size: 24px;
+    line-height: 50%;
+    color: #959BAC;
+  }
+
+  /* Test for sign in is adjusted */
+  .signin {
+    font-size: 15px;
+    text-decoration: none;
+    color: #20cd84;
+    padding-right: 30px;
+  }
+
+  .language > div  {
+    top: 7px;
+  }
+}
+
+/******* FOR FEATURE PHONES, PORTRAIT AND LANDSCAPE ********/
+@media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 359px) {
+  .header nav {
+    min-width: 240px;
+    height: 37px;
+    border: 1px solid #20cd84;
+    color: #20cd84;
+    display: inline-flex;
+  }
+
+  .header nav > div > a {
+    height: 37px;
+    font-size: 5px;
+    top: 10px;
+  }
+
+  .mobile-nav-bar {
+    height: 37px;
+    display: block;
+  }
+
+  .mobile-nav-bar > a {
+    text-align: center;
+    padding-left: 2px;
+  }
+
+  .mobile-nav-bar > a > img {
+    text-align: center;
+    padding: 5px 0 0px 0;
+  }
+
+  /*Adjust top portion of header */
+  .header-logo-search-signin {
+    min-width: 240px;
+		padding: 0;
+		font-size: 5px;
+	}
+
+
+}
+
+/*Need to adjust top portion of header for feature phones and mobile to align with design specifications*/
