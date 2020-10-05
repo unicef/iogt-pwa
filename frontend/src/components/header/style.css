@@ -1039,3 +1039,47 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     top: 7px;
   }
 }
+
+/******* FOR FEATURE PHONES, PORTRAIT AND LANDSCAPE ********/
+@media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
+  screen and (max-width: 359px) {
+  .header nav {
+    min-width: 240px;
+    height: 37px;
+    border: 1px solid #20cd84;
+    color: #20cd84;
+    display: inline-flex;
+  }
+
+  .header nav > div > a {
+    height: 37px;
+    font-size: 5px;
+    top: 10px;
+  }
+
+  .mobile-nav-bar {
+    height: 37px;
+    display: block;
+  }
+
+  .mobile-nav-bar > a {
+    text-align: center;
+    padding-left: 2px;
+  }
+
+  .mobile-nav-bar > a > img {
+    text-align: center;
+    padding: 5px 0 0px 0;
+  }
+
+  /*Adjust top portion of header */
+  .header-logo-search-signin {
+    min-width: 240px;
+		padding: 0;
+		font-size: 5px;
+	}
+
+
+}
+
+/*Need to adjust top portion of header for feature phones and mobile to align with design specifications*/
