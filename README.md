@@ -50,6 +50,9 @@ yarn install
 
 # Start a development server
 yarn run dev
+
+# Making a production build
+yarn run build
 ```
 Once the server has started, it will print a local development URL to open in your browser. Now you're ready to test drive IoGT website!
 
