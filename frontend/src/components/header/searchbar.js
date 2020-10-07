@@ -6,9 +6,9 @@ import style from './style.css'
 const SearchBar = () => {
   return (
     <form role='search' class={style['search-bar']}>
-      <input type='text' placeholder='Search' />
+      <input type='text' placeholder='Enter your search here...' />
       <button type='submit'>
-      <i class="material-icons">search</i>
+        <i class='material-icons'>search</i>
       </button>
     </form>
   )

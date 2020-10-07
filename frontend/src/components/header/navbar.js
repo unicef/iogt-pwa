@@ -3,11 +3,13 @@ import { Link } from 'preact-router/match'
 // import { Layout, Section } from "preact-layout";
 import style from './style.css'
 
-import { Component } from 'react'
-
 import CategoriesDropdown from './categories-dropdown.js'
+import LanguageDropdownMenu from './language-dropdown-menu'
 
 const NavBar = (props) => {
+  let currentLanguage = props.currentLanguage
+  let languageList = props.languageList
+
   const navLinks = [
     {
       text: 'All Articles',
@@ -59,7 +61,6 @@ const NavBar = (props) => {
       icon: 'more_vert',
       hrefText: '/7',
     },
-    { text: 'Language:\n ', class: style.language, imgSrc: '', hrefText: '/8' },
   ]
 
   return (
@@ -82,21 +83,16 @@ const NavBar = (props) => {
               ''
             )}
             {link.text}
-            {link.text == 'Language:\n ' ? (
-              <select>
-                <option value='English'>English</option>
-                <option value='Arabic'> العربيّة</option>
-                <option value='FRANÇAIS'>FRANÇAIS</option>
-                <option value='ESPAÑOL'>ESPAÑOL</option>
-                <option value='PORTUGUÊS'>PORTUGUÊS</option>
-                <option value='РУССКИЙ'> РУССКИЙ</option>
-              </select>
-            ) : (
-              ''
-            )}
           </Link>
         </div>
       ))}
+      <Link class={style.language}>
+        Language:
+        <LanguageDropdownMenu
+          currentLanguage={currentLanguage}
+          languageList={languageList}
+        />
+      </Link>
     </nav>
   )
 }

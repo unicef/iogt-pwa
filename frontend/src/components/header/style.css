@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -13,6 +15,9 @@
   @media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
   screen and (max-width: 359px)
 **********************************************************/
+.header {
+  font-family: 'Poppins';
+}
 
 .tablet-ellipsis,
 .language,
@@ -25,41 +30,46 @@
 .signin,
 .signin-language,
 .search-menu,
-.logo-full, .tabletDesktopSignin{
+.logo-full,
+.tabletDesktopSignin {
   visibility: collapse;
   display: none;
 }
 
-/* Header: Top  */
+/* Feature - Header: Top  */
 .header-top {
-  max-width: 320px;
+  /* max-width: 320px; */
   padding: 0;
   font-size: 5px;
   font-family: 'Poppins';
 }
 
-/*Header: Top Top - Language */
+/* Feature Header: Top Top - Language and Language Dropdown specifically for feature phones- slides other contents down as well*/
 
-.header-top .header-language-brief {
+.header-top .header-top-language-strip {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* align-items: center; */
 }
 
 .current-language,
 .change-language {
   height: 100%;
   width: 100%;
-  padding: 4px 12px 4px 12px;
-  font-family: 'Poppins';
+  padding: 4px 0 4px 12px;
   font-size: 8px;
   color: #20cd84;
   /* border-bottom: 1px solid #DADADA; */
 }
 
+/* Feature selected language */
 .current-language span {
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.change-language {
+  padding-right: 11px;
+  text-align: right;
 }
 
 .change-language > label {
@@ -77,29 +87,32 @@
   display: none;
 }
 
-.content > .language-list-menu-content ul {
+.change-language .content > .language-list-menu-content ul {
   list-style-type: none;
   padding: 0;
 }
 
-.content > .language-list-menu-content ul > li > a {
+.change-language .content > .language-list-menu-content ul > li > a {
   display: block;
   width: 100%;
   padding: 7px;
   text-align: center;
   text-decoration: none;
   font-size: 8px;
-  color: #000000;
+  color: #303030;
 }
 
-.content > .language-list-menu-content {
+.change-language .content > .language-list-menu-content ul > li > a:hover {
+  background: #f7f9f9;
+}
+
+.change-language .content > .language-list-menu-content {
   background: #ffffff;
   width: 235%;
   margin-left: -125%;
   overflow: hidden;
   height: 0;
   transition: 0.5s;
-  border-bottom: 1px solid #dadada;
 }
 
 .change-language label {
@@ -127,9 +140,11 @@
   transition: height 0.5s;
 }
 
-/* Header - Middle */
+/* Feature: Header - Middle (Logo - Join - Sign In */
 
 .header-middle {
+  border-top: 1px solid #dadada;
+  height: 55px;
   display: grid;
   grid-template-columns: 2fr repeat(2, 1fr);
   grid-template-rows: 54px 20px;
@@ -161,6 +176,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-weight: 600;
 }
 
 .header-top .join-menu a {
@@ -170,11 +186,18 @@
   text-decoration: underline;
 }
 
+.logo-small {
+  padding: 6px;
+}
+
+.logo-small > img {
+  height: 40px;
+}
 /* Header: Top - Search Bar */
 
 .search-bar {
   /* flex-grow: 0.8; */
-  height: 100%;
+  height: 21px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -204,17 +227,25 @@
   color: #20cd84;
 }
 
-/* Header: Navbar */
+::placeholder {
+  font-size: 8px;
+  font-style: italic;
+  color: #979797;
+}
+
+/* Feature: Header: Navbar */
 .header .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  max-width: 320px;
+  /* max-width: 320px; */
   width: 100%;
   height: 37px;
   border: 1px solid #20cd84;
   font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 5px;
   color: #20cd84;
 }
 
@@ -237,8 +268,6 @@
   top: 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 5px;
-  font-weight: bold;
   color: #20cd84;
 }
 
@@ -298,23 +327,27 @@
 /* Alternate min value: 360
 *****************************************************************/
 @media only screen and (min-width: 321px) and (max-width: 767px) {
-  .header-middle {
-    visibility: visible;
-  }
-
-  .header-language-brief,
-  .header-top-language,
-  .join-menu,
-  .logo-full, .tabletDesktopSignin {
-    display: none;
-    visibility: collapse;
-    width: 0;
-  }
-
-  .header-top {
+  .header {
     min-width: 321px;
     max-width: 767px;
     width: 100%;
+  }
+
+  .header-middle {
+    visibility: visible;
+    display: block;
+    height: 100px;
+    border-top: none;
+  }
+
+  .header-top-language-strip,
+  .current-language,
+  .change-language,
+  .join-menu,
+  .logo-full,
+  .tabletDesktopSignin {
+    display: none;
+    visibility: collapse;
   }
 
   .signin-language,
@@ -330,6 +363,7 @@
     width: 100%;
   }
 
+  /* Mobile: Header Middle: Logo - Signin - Search/Menu icons*/
   .header-middle {
     width: 100%;
     display: grid;
@@ -338,11 +372,6 @@
     grid-column-gap: 1px;
     grid-row-gap: 1px;
   }
-
-  .search-menu > a {
-    padding: 5px;
-  }
-
   .logo-small {
     grid-area: 1 / 1 / 2 / 3;
   }
@@ -355,11 +384,77 @@
 
   .header-top .logo-small {
     margin: auto;
+    margin-left: 13px;
   }
 
   .header-top .logo-small img {
-    display: inline-block;
     height: 40px;
+    text-align: left;
+  }
+
+  /* Mobile: Header - Language Drop Down */
+  .language-dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 500;
+  }
+
+  .language-dropdown-content {
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 100vw;
+    margin: auto;
+    z-index: 1;
+    text-align: left;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .language-dropdown a {
+    font-weight: 600px;
+  }
+
+  .language-dropdown a > i::before {
+    content: 'keyboard_arrow_down';
+  }
+
+  .language-dropdown:hover a > i::before {
+    content: 'keyboard_arrow_up';
+  }
+
+  .language-dropdown a > i {
+    position: relative;
+    line-height: 50%;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .language-dropdown-content a {
+    color: #303030;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .language-dropdown-content a:hover {
+    background-color: #fafafa;
+    transition: 0.1s;
+  }
+
+  .language-dropdown:hover .language-dropdown-content {
+    display: block;
+  }
+
+  .search-menu > a {
+    padding: 5px;
   }
 
   .signin-language {
@@ -370,40 +465,32 @@
   }
 
   .signin {
-    line-height: 19.5px;
     font-size: 13px;
     text-decoration: none;
     color: #20cd84;
     padding: 3px;
   }
 
-  .signin-language > select,
-  .language > select {
-    background-color: transparent;
-    border: 0px;
-    width: 30%;
-  }
-
-  .signin-language > select > option,
-  .language > select > option {
-    font-family: 'Poppins';
-  }
-
   .search-menu {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 13px;
   }
   .search-menu > a > i {
-    padding: 5px;
     font-size: 14px;
+  }
+  .search-menu > a:hover {
+    background-color: #f7f9f9;
+    border-radius: 50%;
   }
 
   .search-bar {
     display: none;
   }
 
+  /* Testing making search bar disappear / appear, so far need to work on it more */
   .my_checkbox:checked + .search-bar {
     display: block;
   }
@@ -412,22 +499,24 @@
     max-width: 767px;
     height: 58px;
     border: 2px solid #20cd84;
+    font-size: 8px;
+    font-weight: 600;
   }
 
   .nav div {
-    height: 58px;
+    height: 100%;
   }
 
   .nav div a,
   .nav div a:hover {
     display: inline-block;
-    font-size: 8px;
-    font-weight: 'Semi-bold';
+    line-height: 8px;
   }
 
   .nav > div > a > img,
   .nav > div > a > i {
     padding-top: 9.41px;
+    margin-bottom: 4.5px;
     height: 24px;
   }
 
@@ -449,16 +538,161 @@ with similar viewport measurments ***************************
 *************************************************************/
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .header-language-brief,
-  .header-top-language,
+  .header-top-language-strip,
+  .current-language,
+  .change-language,
   .join-menu,
   .logo-small,
+  .search-menu,
+  .signin-language,
   .youth,
   .health-providers,
   .see-more {
     display: none;
+    visibility: hidden;
     visibility: collapse;
     width: 0;
+  }
+
+  .header .nav div > a > img {
+    display: none;
+    visibility: collapse;
+  }
+
+  .categories-dropdown,
+  .language,
+  .logo-full,
+  .tablet-ellipsis,
+  .tabletDesktopSignin,
+  .signin {
+    visibility: visible;
+    display: inline-block;
+  }
+
+  .header {
+    font-family: 'Open-Sans';
+  }
+
+  .header-middle {
+    border-top: 0;
+  }
+  /* Arranged top portion of header in a flexbox arrangement */
+  .header-top {
+    min-width: 768px;
+    max-width: 1024px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .search-bar {
+    font-family: 'Open Sans';
+    border: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    border-radius: 2px;
+    justify-self: center;
+    flex-grow: 0.5;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .search-bar > input {
+    /* background-color: #6B6B6B; */
+    width: 100%;
+    padding: 9px 0px 10px 20px;
+    /* border: 2px solid white; */
+    outline: 2px white;
+  }
+
+  .search-bar > button {
+    background-color: white;
+    border: 2px solid white;
+    padding: 9px;
+  }
+
+  ::placeholder {
+    font-style: normal;
+  }
+
+  /* Test for sign in is adjusted */
+  .signin {
+    font-size: 15px;
+    text-decoration: none;
+    color: #20cd84;
+  }
+
+  .tabletDesktopSignin > a > img {
+    height: 20px;
+  }
+
+  .tabletDesktopSignin {
+    padding-left: 0px;
+    margin-left: 70px;
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+  }
+  /* Placed to try to align the logo with the categories button */
+  .logo-full > a {
+    text-align: left;
+  }
+
+  .header .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 768px;
+    max-width: 1024px;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    z-index: 50;
+    border: 1px solid #ececec;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    background: #fff;
+  }
+  .header .nav > div > a:hover {
+    padding: 0;
+  }
+
+  .header .nav > div {
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    vertical-align: middle;
+  }
+
+  /* Applies to Language drop down menu */
+  .header nav > div > a > select,
+  select {
+    border: none;
+    background-color: 'white';
+    color: #6b6b6b;
+    font-family: 'Poppins';
+  }
+
+  /* Applied when are links hovered on / Links are active */
+  .header .nav > div > a:hover,
+  .header .nav > div > a.active {
+    border-bottom: 2px solid #20cd84;
+    color: #303030;
+  }
+
+  .header > .nav > div > a {
+    font-size: 12px;
+    color: #6b6b6b;
+    height: 100%;
+    text-align: center;
+    padding: 15px;
   }
 
   .nav div a > i {
@@ -474,157 +708,13 @@ with similar viewport measurments ***************************
     line-height: 100%;
     /* line-height: 50px; */
   }
-  .header .nav div > a > img {
-    display: none;
-    visibility: collapse;
-  }
 
-  .categories-dropdown,
-  .language,
-  .logo-full,
-  .tablet-ellipsis,
-  .tabletDesktopSignin, .signin {
-    visibility: visible;
-    display: inline-block;
-    height: 100%;
-  }
-
-  /* Arranged top portion of header in a flexbox arrangement */
-  .header-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 768px;
-    max-width: 1024px;
-    width: 100%;
-    background: #fff;
-    padding: 24px;
-  }
-
-  .logo-full{
-    height: 41px;
-    margin: auto;
-  }
-  /* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
-  .search-bar {
-    font-size: 12px;
-    font-family: 'Open Sans';
-    border: 1px solid #ececec;
-    border-radius: 2px;
-    justify-self: center;
-
-  }
-
-  .search-bar > input {
-    /* background-color: #6B6B6B; */
-    width: 100%;
-    padding: 9px 0px 10px 20px;
-    border: 2px solid white;
-    outline: 2px white;
-  }
-
-  .search-bar > button {
-    background-color: white;
-    border: 2px solid white;
-    padding: 9px;
-  }
-
-  /* Test for sign in is adjusted */
-  .signin {
-    font-size: 15px;
-    text-decoration: none;
-    color: #20cd84;
-  }
-
-  .tabletDesktopSignin > a > img{
-    height: 20px;
-  }
-  .tabletDesktopSignin {
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  /* Placed to try to align the logo with the categories button */
-  .logo-full {
-    text-align: left;
-  }
-
-  .header .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    min-width: 768px;
-    max-width: 1024px;
-    height: 50px;
-    width: 100%;
-    font-family: 'Open Sans';
-    padding: 0;
-    background: #fff;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-    z-index: 50;
-    border: 1px solid #ececec;
-  }
-
-  .header .nav > div {
-    height: 50px;
-    text-align: center;
-    width: 100%;
-    word-wrap: break-word;
-  }
-  .header .nav > div > a {
-    font-size: 12px;
-    top: 12px;
-    color: #6b6b6b;
-    display: block;
-    height: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-  }
-
-  /* Applies to Language drop down menu */
-  .header nav > div > a > select,
-  select {
-    border: none;
-    background-color: 'white';
-    color: #6b6b6b;
-    font-family: 'Poppins';
-  }
-
-  /* Applied when are links hovered on / Links are active */
-  .header .nav > div > a:hover,
-  .header .nav > div > a.active {
-    background-color: transparent;
-    border-bottom: 2px solid #20cd84;
+  .nav div a:hover,
+  .language div a i,
+  .language div:hover a i {
     background-color: transparent;
     color: #303030;
-  }
-
-  .header .nav > div > a:hover {
-    padding: 0;
-  }
-
-  .tablet-ellipsis > a {
-    display: inline-block;
-    height: 100%;
-    padding: 0;
-  }
-  .tablet-ellipsis i {
-    color: '#000000';
-  }
-
-  .language > a {
-    white-space: nowrap;
-    padding: 0;
-    line-height: 5%;
-  }
-
-  .language > a {
-    top: 2px;
+    font-size: 12px;
   }
 
   .search-bar > button > i {
@@ -632,15 +722,20 @@ with similar viewport measurments ***************************
     color: #959bac;
   }
   /* Two buttons arranged in a split button style */
+  .categories-dropdown {
+    margin-left: 45px; /* allows margin at beginning of flex box*/
+  }
   .categories-dropdown .btn-group {
     display: inline-block;
+    margin-top: 12px;
     white-space: nowrap;
   }
+
   .categories-btn {
     height: 25px;
     font-family: 'Open Sans';
-    padding: 4px 10px 4px 7px;
-    margin-top: 10px;
+    padding: 3px 10px 4px 7px;
+    vertical-align: middle;
     border: none;
     font-size: 12px;
     background-color: #20cd84;
@@ -693,11 +788,10 @@ with similar viewport measurments ***************************
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: normal;
     padding: 15px 5px 0 10px;
     font-weight: bold;
     font-size: 12px;
-    color: #000000;
+    color: #303030;
   }
 
   /* Applies to each topic item in the drop down list */
@@ -710,7 +804,7 @@ with similar viewport measurments ***************************
   }
 
   .categories-dropdown-content a {
-    /* width: 100%; */
+    width: 100%;
     color: #303030;
     padding: 5px 16px;
     text-decoration: none;
@@ -730,17 +824,118 @@ with similar viewport measurments ***************************
     color: #ffffff;
     transition: 0.3s;
   }
-  .categories-dropdown-content a:hover {
+  .categories-dropdown-content > a:hover {
+    background-color: #fafafa;
+    /* transition: 0.1s; */
+  }
+
+  .tablet-ellipsis > a {
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+  }
+  .tablet-ellipsis i {
+    color: '#000000';
+  }
+
+  /* Last Item in flexbox */
+  .language {
+    margin-right: 60px;
+    font-size: 12px;
+    /* margin-top: 150px; */
+    color: #6b6b6b;
+    text-align: left;
+  }
+  .language > a {
+    color: #6b6b6b;
+    text-align: left;
+  }
+
+  .language a:hover,
+  .language > a.active {
+    border-bottom: 0;
+    /* background: transparent; */
+  }
+
+  /* Tablet: Header - Language Drop Down */
+  /* Feature: Header - Language Drop Down */
+  .language-dropdown {
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b6b6b;
+  }
+  .language-dropdown a {
+    padding: 0;
+  }
+
+  .language-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 150;
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    text-align: left;
+    white-space: nowrap;
+    text-align: center;
+    color: #303030;
+    /* padding:10px; */
+  }
+
+  .language-dropdown a {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 600px;
+    color: #303030;
+  }
+
+  .language-dropdown a > i::before {
+    content: 'keyboard_arrow_down';
+    font-size: 12px;
+  }
+
+  .language-dropdown:hover a > i::before {
+    content: 'keyboard_arrow_up';
+    font-size: 12px;
+  }
+
+  .language-dropdown a i {
+    position: relative;
+    font-weight: bold;
+    color: #6b6b6b;
+  }
+
+  .language-dropdown-content a {
+    padding: 0;
+    text-decoration: none;
+    display: block;
+  }
+
+  .language-dropdown-content a:hover {
     background-color: #fafafa;
     transition: 0.1s;
+  }
+
+  .language-dropdown:hover .language-dropdown-content {
+    display: block;
+    display: flex;
+    flex-direction: column;
   }
 }
 /***********************************************************
 DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
 
-@media only screen and (min-width: 1024px) and (max-width: 2400px) {
-  .header-language-brief,
-  .header-top-language,
+@media only screen and (min-width: 1025px) and (max-width: 2400px) {
+  .header-top-language-strip,
+  .current-language,
+  .change-language,
   .join-menu,
   .logo-small,
   .see-more,
@@ -761,118 +956,136 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   .categories-dropdown,
   .language,
-  .logo-full, .tabletDesktopSignin, .signin {
+  .logo-full,
+  .tabletDesktopSignin,
+  .signin {
     visibility: visible;
     display: inline-block;
   }
 
-  .header-top {
-    min-width: 1025px;
-    max-width: 2400px;
-    height: 80px;
-    padding: 0;
-    font-size: 5px;
-    font-family: 'Poppins';
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 80 px;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-  .logo-full {
-    grid-area: 1 / 2 / 2 / 4;
+  .header .nav div > a > img {
+    display: none;
+    visibility: collapse;
   }
 
-  .tabletDesktopSignin {
-    grid-area: 1 / 8 / 2 / 10;
+  .categories-dropdown,
+  .language,
+  .logo-full,
+  .tabletDesktopSignin,
+  .signin {
+    visibility: visible;
+    display: inline-block;
   }
+
+  .header {
+    font-family: 'Open-Sans';
+  }
+
+  .header-middle {
+    border-top: 0;
+  }
+  /* Arranged top portion of header in a flexbox arrangement */
+  .header-top {
+    min-width: 1025px;
+    padding-left: 75px;
+    padding-right: 135px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 0 22px 45px;
+    /* display: grid; */
+    /* grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 80px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; */
+  }
+
+  /* .logo-full > a { grid-area: 1 / 1 / 2 / 2; } */
+  /* .tabletDesktopSignin{ grid-area: 1 / 8 / 2 / 10;  padding: 0}
+.search-bar { grid-area: 1 / 3 / 2 / 8;  padding: 0} */
+
+  /* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
   .search-bar {
-    grid-area: 1 / 4 / 2 / 8;
+    font-family: 'Open Sans';
+    border: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    border-radius: 2px;
+    justify-self: center;
+    flex-grow: 0.5;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .search-bar > input {
+    /* background-color: #6B6B6B; */
+    width: 100%;
+    padding: 9px 0px 10px 20px;
+    /* border: 2px solid white; */
+    outline: 2px white;
+  }
+
+  .search-bar > button {
+    background-color: white;
+    border: 2px solid white;
+    padding: 9px;
+  }
+
+  ::placeholder {
+    font-style: normal;
+    font-size: 12px;
+  }
+
+  /* Test for sign in is adjusted */
+  .signin {
+    font-size: 15px;
+    text-decoration: none;
+    color: #20cd84;
+  }
+
+  .tabletDesktopSignin > a > img {
+    width: 40%;
+  }
+  .tabletDesktopSignin {
+    padding: 0px;
+    margin-left: 80px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Placed to try to align the logo with the categories button */
+  .logo-full > a {
+    text-align: left;
   }
 
   .header .nav {
-    min-width: 1025px;
-    max-width: 2400px;
-    height: 60px;
-    font-family: 'Open Sans';
-    padding: 0;
-    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 1024px;
+    height: 59px;
+    width: 100%;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     z-index: 50;
     border: 1px solid #ececec;
-
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 60 px;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  .categories-dropdown {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .articles {
-    grid-area: 1 / 3 / 2 / 4;
-  }
-  .parents {
-    grid-area: 1 / 4 / 2 / 5;
-  }
-  .girls {
-    grid-area: 1 / 5 / 2 / 6;
-  }
-  .youth {
-    grid-area: 1 / 6 / 2 / 7;
-  }
-  .health-providers {
-    grid-area: 1 / 7 / 2 / 8;
-  }
-  .div8 {
-    grid-area: 1 / 8 / 2 / 9;
-  }
-  .language {
-    grid-area: 1 / 9 / 2 / 10;
-  }
-
-  /* Every link is wrapped in a div for styling purposes - mainly to achieve a perfect table border */
-  .header .nav > div {
-    width: 100%;
-    height: 56px;
-    text-align: center;
-    border-left: 1px solid #ececec;
-    word-wrap: break-word;
-  }
-
-  /* Applies to Language drop down menu */
-  .header .nav > div > a > select {
-    border: none;
-    font-family: 'Poppins';
-    color: #6b6b6b;
-  }
-
-  .header .nav > div {
-    display: block;
-  }
-
-  /* Applies to individual links listed on navbar*/
-  .header .nav > div > a {
-    /* min-width: 50px; */
-
-    display: inline-block;
-   height: 56px;
-   width: 75%;
-   top: 0px;
-    position: relative;
-    text-align: center;
-    /* margin-left: auto;
-    margin-right: auto; */
-    vertical-align: top;
-    font-weight: bold;
-    text-decoration: none;
+    font-family: 'Open Sans';
+    font-weight: 400;
     font-size: 14px;
-    color: #6b6b6b;
-    will-change: background-color;
+    background: #fff;
+  }
+  .header .nav > div > a:hover {
     padding: 0;
-    margin: 0;
+  }
+
+  .header .nav > div {
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+    vertical-align: middle;
   }
 
   /* Applied when are links hovered on / Links are active */
@@ -880,58 +1093,90 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .header .nav > div > a.active {
     border-bottom: 2px solid #20cd84;
     color: #303030;
+  }
+
+  .header > .nav > div > a {
+    font-size: 12px;
+    color: #6b6b6b;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    border-left: 1px solid #ececec;
+  }
+
+  .nav div a > i {
+    font-size: 48px;
+    color: #20cd84;
+    padding: 0;
+    line-height: 50%;
+  }
+
+  .nav div a:hover > i {
+    font-size: 48px;
+    color: #20cd84;
+    line-height: 100%;
+    /* line-height: 50px; */
+  }
+
+  .nav div a:hover,
+  .language div a i,
+  .language div:hover a i {
     background-color: transparent;
+    color: #303030;
+    font-size: 12px;
   }
 
-  .tabletDesktopSignin {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  .search-bar > button > i {
+    font-size: 12px;
+    color: #959bac;
   }
-  .tabletDesktopSignin > a > img{
-    height: 20px;
-  }
-
-  .logo-full {
-    align-self: left;
-    height: 47px;
-    margin: 14px 30px 14px 0;
-    margin-right: 20px;
-  }
+  /* Two buttons arranged in a split button style */
   .categories-dropdown {
-    border-left: 0px;
+    margin-left: 45px; /* allows margin at beginning of flex box*/
+    font-size: 14px;
   }
-
-  /******** CATEGORIES DROP DOWN MENU CSS FOR DESKTOP*******/
 
   .categories-dropdown .btn-group {
+    display: inline-block;
+    margin-top: 12px;
     white-space: nowrap;
-    padding: 14px;
   }
 
-  /* Two buttons arranged in a split button style */
   .categories-btn {
+    height: 25px;
     font-family: 'Open Sans';
+    padding: 3px 10px 4px 7px;
+    vertical-align: middle;
+    border: none;
+    font-size: 12px;
     background-color: #20cd84;
     color: white;
-    font-size: 14px;
-    border: none;
-    padding: 6px 15px 7px 15px;
     border-radius: 2px 0 0 2px;
   }
 
   .categories-btn-arrow {
-    background-color: #20cd84;
-    color: white;
+    height: 25px;
+    padding: 0;
+    vertical-align: middle;
     border: none;
-    padding: 7px 14px 8px 14px;
     background-color: #199a64;
+    color: white;
     border-radius: 0 2px 2px 0;
   }
 
   .categories-btn-arrow > i {
-    font-size: 14px;
+    position: relative;
+    /* font-size: 22px; */
+  }
+
+  .categories-btn:hover,
+  .categories-dropdown:hover .categories-btn .categories-btn-arrow {
+    background-color: #199a64;
+  }
+
+  .categories-btn:focus,
+  .categories-btn-arrow:focus {
+    outline-color: #199a64;
   }
 
   /* Drop down content is hidden from view, when user hovers over it, it appears. Items are arranged in a dl tag (description list) in the code for both accessibility and for it's convenient formatting. */
@@ -954,7 +1199,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: normal;
     padding: 15px 5px 0 10px;
     font-weight: bold;
     font-size: 12px;
@@ -966,13 +1210,12 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     line-height: 18px;
     margin-left: 20px;
     text-align: left;
-    font-weight: normal;
     font-size: 12px;
     color: #303030;
   }
 
   .categories-dropdown-content a {
-    /* width: 100%; */
+    width: 100%;
     color: #303030;
     padding: 5px 16px;
     text-decoration: none;
@@ -992,94 +1235,115 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #ffffff;
     transition: 0.3s;
   }
-  .categories-dropdown-content a:hover {
+  .categories-dropdown-content > a:hover {
+    background-color: #fafafa;
+    /* transition: 0.1s; */
+  }
+
+  .tablet-ellipsis > a {
+    display: inline-block;
+    height: 100%;
+    padding: 0;
+  }
+  .tablet-ellipsis i {
+    color: '#000000';
+  }
+
+  /* Last Item in flexbox */
+  .language {
+    margin-right: 60px;
+    font-size: 12px;
+    /* margin-top: 150px; */
+    color: #6b6b6b;
+    text-align: left;
+    padding: 20px;
+  }
+  .language > a {
+    color: #6b6b6b;
+    text-align: left;
+  }
+
+  .language a:hover,
+  .language > a.active {
+    border-bottom: 0;
+    /* background: transparent; */
+  }
+
+  /* Tablet: Header - Language Drop Down */
+  /* Feature: Header - Language Drop Down */
+  .language-dropdown {
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b6b6b;
+  }
+  .language-dropdown a {
+    padding: 0;
+  }
+
+  .language-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 150;
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    text-align: left;
+    white-space: nowrap;
+    text-align: center;
+    color: #303030;
+    /* padding:10px; */
+  }
+
+  .language-dropdown a {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 600px;
+    color: #303030;
+  }
+
+  .language-dropdown a > i::before {
+    content: 'keyboard_arrow_down';
+    font-size: 12px;
+  }
+
+  .language-dropdown:hover a > i::before {
+    content: 'keyboard_arrow_up';
+    font-size: 12px;
+  }
+
+  .language-dropdown a i {
+    position: relative;
+    font-weight: bold;
+    color: #6b6b6b;
+  }
+
+  .language-dropdown-content a {
+    padding: 0;
+    text-decoration: none;
+    display: block;
+  }
+
+  .language-dropdown-content a:hover {
     background-color: #fafafa;
     transition: 0.1s;
   }
 
-  /* Search bar items (such as button and input area housed in form) are organized to seem seamless via flexbox. Search bar takes up most of the space*/
-  .search-bar {
-    height: 35px;
-    margin: 22px;
-    font-size: 12px;
-    font-family: 'Open Sans';
-    border: 1px solid #ececec;
-    border-radius: 2px;
-  }
-
-  .search-bar > input {
-    /* background-color: #6B6B6B; */
-    width: 100%;
-    padding: 9px 0px 10px 20px;
-    border: 2px solid white;
-    outline: 2px white;
-  }
-
-  .search-bar > button {
-    background-color: white;
-    border: 2px solid white;
-    padding: 9px;
-  }
-
-  .search-bar > button > i {
-    font-size: 24px;
-    line-height: 50%;
-    color: #959BAC;
-  }
-
-  /* Test for sign in is adjusted */
-  .signin {
-    font-size: 15px;
-    text-decoration: none;
-    color: #20cd84;
-    padding-right: 30px;
-  }
-
-  .language > div  {
-    top: 7px;
-  }
-}
-
-/******* FOR FEATURE PHONES, PORTRAIT AND LANDSCAPE ********/
-@media only screen and (min-device-width: 240px) and (max-device-width: 359px) and (-webkit-min-device-pixel-ratio: 3),
-  screen and (max-width: 359px) {
-  .header nav {
-    min-width: 240px;
-    height: 37px;
-    border: 1px solid #20cd84;
-    color: #20cd84;
-    display: inline-flex;
-  }
-
-  .header nav > div > a {
-    height: 37px;
-    font-size: 5px;
-    top: 10px;
-  }
-
-  .mobile-nav-bar {
-    height: 37px;
+  .language-dropdown:hover .language-dropdown-content {
     display: block;
+    display: flex;
+    flex-direction: column;
   }
 
-  .mobile-nav-bar > a {
-    text-align: center;
-    padding-left: 2px;
+  .health-providers {
+    border-right: 1px solid #ececec;
   }
-
-  .mobile-nav-bar > a > img {
-    text-align: center;
-    padding: 5px 0 0px 0;
-  }
-
-  /*Adjust top portion of header */
-  .header-logo-search-signin {
-    min-width: 240px;
-		padding: 0;
-		font-size: 5px;
-	}
-
-
 }
 
 /*Need to adjust top portion of header for feature phones and mobile to align with design specifications*/
