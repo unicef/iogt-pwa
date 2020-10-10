@@ -1,11 +1,22 @@
-import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style.css';
+import { h } from 'preact'
+import { Link } from 'preact-router/match'
+import style from './style.css'
 
 import NavBar from './navbar.js'
 import HeaderTop from './header-top.js'
 
 const Header = () => {
+  let currentLanguage = 'English'
+
+  let languageList = [
+    'English',
+    'العربيّة',
+    'FRANÇAIS',
+    'ESPAÑOL',
+    'PORTUGUÊS',
+    'РУССКИЙ',
+  ]
+
   let categoriesArray = [
     {
       topicTitle: 'Coronavirus (Covid-19)',
@@ -45,11 +56,23 @@ const Header = () => {
   ]
   return (
     <header class={style.header}>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
-      <HeaderTop />
-      <NavBar categories={categoriesArray} />
+      <link
+        href='https://fonts.googleapis.com/icon?family=Material+Icons'
+        rel='stylesheet'
+      />
+      <link
+        href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap'
+        rel='stylesheet'
+      />
+      <HeaderTop
+        currentLanguage={currentLanguage}
+        languageList={languageList}
+      />
+      <NavBar
+        currentLanguage={currentLanguage}
+        languageList={languageList}
+        categories={categoriesArray}
+      />
     </header>
   )
 }
