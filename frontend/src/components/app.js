@@ -16,7 +16,6 @@ const App = () => (
         <Profile path='/profile/' user='me' />
         <Profile path='/profile/:user' />
       </Router>
-
       <Footer />
     </div>
   </div>
