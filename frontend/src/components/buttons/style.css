@@ -1,0 +1,14 @@
+.primaryButton {
+  background-color: #20cd84;
+  border: none;
+  outline: none;
+  padding: 7px 15px;
+  position: relative;
+  margin-left: 50%;
+}
+
+.buttonLabel {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
