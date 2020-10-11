@@ -9,6 +9,7 @@
 *~
 /logs
 /data
+node_modules/
 .~*
 common/CACHE
 *.sqlite3
