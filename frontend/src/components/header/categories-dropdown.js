@@ -21,7 +21,7 @@ const CategoriesDropdown = (props) => (
               </dt>
             </Link>
             {topic.topicList.map((topicItem) => (
-              <Link activeClassName={style.active} href='/'>
+              <Link activeClassName={'dl-item'} href='/'>
                 <dd>{topicItem}</dd>
               </Link>
             ))}
