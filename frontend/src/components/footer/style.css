@@ -1,3 +1,4 @@
+/* DESKTOP VIEW */
 .footer {
   font-family: 'Poppins', sans-serif;
   flex-shrink: 0;
@@ -9,7 +10,7 @@
 
 .footer nav {
   display: flex;
-  justify-content: space-between; /*space-evenly*/
+  justify-content: space-between;
   font-size: 100%;
   border-bottom: 1px solid #dadada;
   margin-bottom: 3%;
@@ -57,6 +58,7 @@
   margin-right: 3%;
 }
 
+/* TABLET VIEW */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .footer nav {
     display: grid;
@@ -76,6 +78,7 @@
   }
 }
 
+/* MOBILE VIEW */
 @media only screen and (max-width: 600px) {
   .footer {
     display: flex;
@@ -115,6 +118,7 @@
   }
 }
 
+/* FEATURE PHONE VIEW */
 @media only screen and (max-width: 300px) {
   .footer .copyright .links {
     display: none;
