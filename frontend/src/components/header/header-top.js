@@ -9,7 +9,9 @@ const HeaderTop = (props) => {
   let languageList = props.languageList
   let currentLanguage = props.currentLanguage //ideally this would be a prop sent in
 
+
   let signedIn = false //default value to be replaced
+
   let joinStatus = signedIn ? 'My Profile' : 'Join'
 
   return (
@@ -42,9 +44,6 @@ const HeaderTop = (props) => {
         <Link class={style['logo-small']} href='/'>
           <img src='/assets/icons/logo-small.png' />
         </Link>
-        <Link class={style['logo-full']} href='/'>
-          <img src='/assets/icons/Logo-with-text.png' />
-        </Link>
         <div class={style['join-menu']}>
           <Link>{joinStatus} </Link>
           <Link>Menu </Link>
@@ -63,6 +62,7 @@ const HeaderTop = (props) => {
             languageList={languageList}
           />
         </div>
+
         <div class={style['search-menu']}>
           <Link>
             <icon class='material-icons'>search</icon>
@@ -73,16 +73,25 @@ const HeaderTop = (props) => {
         </div>
       </div>
 
-      <SearchBar />
-      {/* Sign in is placed near footer on Feature Phone */}
+
+      {/* Top Header in tablet and desktop*/}
       <div class={style['tabletDesktopSignin']}>
+      <Link class={style['logo-full']} href='/'>
+          <img src='/assets/icons/Logo-with-text.png' />
+        </Link>
+        <SearchBar />
+
         <Link
           class={style['signin']}
           activeClassName={style.active}
           href='/signin'
         >
-          <img src='../../assets/icons/nav-icons/profile-icon-green.png' />
-          Sign out
+
+          {/* If signed in display icon if not dont' */}
+         {signedIn? <img src='../../assets/icons/nav-icons/profile-icon-grey.png' />: ''}
+
+          {signedIn? 'Sign out': 'Sign in'}
+
         </Link>
       </div>
     </div>

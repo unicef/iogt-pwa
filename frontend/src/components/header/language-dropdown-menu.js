@@ -15,7 +15,6 @@ const LanguageDropdownMenu = (props) => {
         {languageList.map((language) => (
           <Link
             class={style['language-name']}
-            activeClassName={style.active}
             href='/'
           >
             {language}
