@@ -21,7 +21,10 @@ const Article = ({ img_src, tag, date, author, title, desc }) => {
   return (
     <div class={style.container}>
       <div class={style.image}>
+        {/* Link dynamically goes to a Single Article link based on category and title of article */}
+        <Link href={`/section/${tag.toLowerCase().split(' ').join('-').split('|').join('/')}/${title}/`}>
         <img class={style.mainImage} src={img_src} />
+        </Link>
       </div>
       <div class={style.content}>
         <p
