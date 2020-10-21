@@ -18,12 +18,29 @@ export const articleInfo = [
     title: 'Talking about COVID-19',
     desc:
       'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
-   text: `
-      <h1>${this.title}<h1>
+   text:
+   `<b>Be willing to talk</b> They will already have heard something. Silence and secrets do. Silence and secrets do not protect our children. Honesty and openness do. Think about how much they will understand. You know them best.
+   <br/> <br/>
 
+   <b>Be open and listen</b> Allow your child to talk freely. Ask them open questions and find out how much they already know.
+   <br/> <br/>
 
+   <b>Be honest</b> Always answer their questions truthfully. Think about how old your child is and how much they can understand.
+   <br/> <br/>
 
-    `
+   <b>Be supportive</b> Your child may be scared or confused. Give them space to share how they are feeling and let them know you are there for them.
+   <br/> <br/>
+
+   <b>It is OK to not know the answers</b> It is fine to say “We don’t know, but we are working on it; or we don’t know, ‘but we think’.” Use this as an opportunity to learn something new with your child!
+   <br/> <br/>
+
+   <b>Heroes not bullies</b> Explain that COVID-19 has nothing to do with the way someone looks, where they are from, or what language they speak. Tell your child that we can be compassionate to people who are sick and those who are caring for them.
+   <br/> <br/>
+
+   Look for stories of people who are working to stop the outbreak and are caring for sick people.
+   <br/> <br/>
+
+   <b>End on a Good Note</b> Check to see if your child is okay. Remind them that you care and that they can talk to you anytime. Then do something fun together!`
   },
   {
     id: 2,

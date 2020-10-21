@@ -32,6 +32,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "bootstrap": "^4.5.2",
+    "history": "^5.0.0",
     "preact": "^10.3.2",
     "preact-layout": "^1.0.2",
     "preact-render-to-string": "^5.1.4",

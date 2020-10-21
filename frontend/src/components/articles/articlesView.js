@@ -8,6 +8,7 @@ import PrimaryButton from '../buttons/primaryButton';
 const ArticlesView = () => {
   const articlesList = articleInfo.map((article) => (
     <Article
+      id={article.id}
       key={article.id}
       img_src={article.img_src}
       tag={article.tag}

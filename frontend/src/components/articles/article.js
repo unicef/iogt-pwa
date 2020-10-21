@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-const Article = ({ img_src, tag, date, author, title, desc }) => {
+const Article = ({ id, img_src, tag, date, author, title, desc }) => {
   const [myTag, setMyTag] = useState('');
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Article = ({ img_src, tag, date, author, title, desc }) => {
     <div class={style.container}>
       <div class={style.image}>
         {/* Link dynamically goes to a Single Article link based on category and title of article */}
-        <Link href={`/section/${tag.toLowerCase().split(' ').join('-').split('|').join('/')}/${title}/`}>
+        <Link href={`/section/${tag.toLowerCase().split(' ').join('-').split('|').join('/')}/${title.split(' ').join('-')}/${id}`}>
         <img class={style.mainImage} src={img_src} />
         </Link>
       </div>
