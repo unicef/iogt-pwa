@@ -1,61 +1,134 @@
-import { h } from 'preact';
-import {useEffect, useState} from "preact/hooks";
+import { h } from 'preact'
+import { useEffect, useState } from 'preact/hooks'
 import { Link } from 'preact-router/match'
-import { route } from 'preact-router';
-import style from './style.css';
-import { articleInfo } from './articleInfo';
-
+import { route } from 'preact-router'
+import style from './style.css'
+import { articleInfo } from './articleInfo'
 
 //'/section/:section/:topic/:articleTitle/:articleId
 
 // Note: `user` comes from the URL, courtesy of our router
 const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
+  const [myTag, setMyTag] = useState('')
+  let currentArticle = articleInfo[articleId]
 
-	const [time, setTime] = useState(Date.now());
-	const [count, setCount] = useState(10);
+  useEffect(() => {
+    if (currentArticle.tag.includes('CORONA')) {
+      setMyTag('emergency')
+    } else if (tag.includes('YOUTH')) {
+      setMyTag('youth')
+    } else if (tag.includes('PARENTS')) {
+      setMyTag('parents')
+    } else {
+      setMyTag('default')
+    }
+  })
 
-	useEffect(() => {
-		let timer = setInterval(() => setTime(Date.now()), 1000);
-		return () => clearInterval(timer);
-	}, []);
+  let colorTheme = myTag === 'emergency' ? '#BF0012'
+            : myTag === 'youth'? '#00A4CB'
+            : myTag === 'parents' ? '#48AB5D'
+            : 'black';
 
-	let currentArticle = articleInfo[articleId];
+  return (
+    <div class={style['single-article']}>
+      {/* Breadcrumb from Feature Phone */}
+      <div class={style.breadcrumb}>
+        <Link href='/'>HOME</Link> {' > '}
+        <Link href={`/section/${section}`}>
+          {section.split('-').join(' ').toUpperCase()}
+        </Link>
+        {' > '}
+        <Link href={`/section/${section}/${topic}`}>
+          {topic.split('-').join(' ').toUpperCase()}
+        </Link>
+        {' > '}
+        <Link href={`section/${section}/${topic}/${articleTitle}`}>
+          {' '}
+          {currentArticle.title.toUpperCase()}
+        </Link>
+      </div>
 
-	return (
-		<div class={style['single-article']}>
+      {/* Banner for Mobile Phones */}
+      <div class={style['mobile-banner']}>
+        <span>
+          <Link href='/'>{' < '}</Link>
+          <Link href={`/section/${section}`}>
+            {section.split('-').join(' ').toUpperCase()}
+          </Link>
+          {': '}
+          {/* <Link href={`/section/${section}/${topic}`}>{topic.split('-').join(' ').toUpperCase()}</Link>{' > '} */}
+          <Link href={`section/${section}/${topic}/${articleTitle}`}>
+            {' '}
+            {currentArticle.title.toUpperCase()}
+          </Link>
+        </span>
+      </div>
 
-			<div class={style.breadcrumb}>
-				<Link href='/'>HOME</Link> {' > '}
-				<Link href={`/section/${section}`}>{section.split('-').join(' ').toUpperCase()}</Link>{' > '}
-				<Link href={`/section/${section}/${topic}`}>{topic.split('-').join(' ').toUpperCase()}</Link>{' > '}
-				<Link href={`section/${section}/${topic}/${articleTitle}`} > {currentArticle.title.toUpperCase()}</Link>
-				</div>
+      <section class={style['article-content']}>
+        <img class={style['main-image-phone']} src={currentArticle.img_src} />
 
-			<section class={style["article-content"]}>
+        <div class={style['tag-section']}>
+          <Link
+				   	class={style.tag}
+            style={ { color: colorTheme, borderBottom: `1px solid ${colorTheme}`}}
+            href={`/section/${currentArticle.tag}`}
+          >
+            {currentArticle.tag}
+          </Link>
+          <Link
+				   	class={style.tag_meta}
+             style={ { color: colorTheme, borderBottom: `1px solid ${colorTheme}`}}
+            href={`/section/${currentArticle.tag}/${currentArticle.tag_meta}`}
+          >
+            &nbsp;{`|`}&nbsp;
+            {currentArticle.tag_meta}
+          </Link>
 
-			<img class={style["main-image"]} src={currentArticle.img_src} />
+          <img
+            class={style['forward-button']}
+            src='../../assets/icons/nav-icons/forward-rename.png'
+          />
+        </div>
 
-			<h1>{currentArticle.title}</h1>
+        <h1>{currentArticle.title}</h1>
 
-			<div class={style["main-text"]} dangerouslySetInnerHTML={{__html: currentArticle.text}} />
+        <p class={style['date-and-author']}>
+          <span class={style.date}>on {currentArticle.date} </span>
+          <span class={style.author}>/ by {currentArticle.author}</span>
+        </p>
 
-			</section>
+				<img class={style['main-image-tablet-desktop']} src={currentArticle.img_src} />
 
-			<p>This is the section for a topic { articleTitle }.</p>
+        <hr class={style['horizontal-line-desktop']}style={{border: `1px solid ${colorTheme}`}}/>
+
+
+      {/* Desktop content is sectioned out into a grid of 3 columns (1 servers as gap). Adjusted in style sheet. */}
+      <div class= {style['content-grid']}>
+        <div class = {style['content-grid-left']}>
+          <div
+            class= {style['main-text']}
+            dangerouslySetInnerHTML={{ __html: currentArticle.text }}
+          />
+        </div>
+
+        <div class= {style['content-grid-right']}>
+          <div class= {style['article-info-desktop-card']}>
+                <p><span class={style.pheader}>Date Published:</span> {currentArticle.date}</p>
+                <p> <span class={style.pheader}>Author:</span> {currentArticle.author}</p>
+                <p> <span class={style.pheader}>Category:</span> {`${currentArticle.tag} ${currentArticle.tag_meta}`}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      </section>
+
+      <p>This is the section for a topic {articleTitle}.</p>
 
       <p>10/21 Setting this up to display a single article.</p>
-			<div>Current time: {new Date(time).toLocaleString()}</div>
-
-
-			<p>
-				<button onClick={() => setCount((count) => count + 1)}>Click Me</button>
-				{' '}
-				Clicked {count} times.
-			</p>
-		</div>
-
-	);
-
+    </div>
+  )
 }
 
-export default SingleArticle;
+export default SingleArticle
