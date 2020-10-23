@@ -4,6 +4,7 @@ import { Link } from 'preact-router/match'
 import { route } from 'preact-router'
 import style from './style.css'
 import { articleInfo } from './articleInfo'
+import ShareSaveButtons from './share-save-buttons'
 
 //'/section/:section/:topic/:articleTitle/:articleId
 
@@ -31,6 +32,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
 
   return (
     <div class={style['single-article']}>
+
       {/* Breadcrumb from Feature Phone */}
       <div class={style.breadcrumb}>
         <Link href='/'>HOME</Link> {' > '}
@@ -64,6 +66,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
         </span>
       </div>
 
+      {/* The Main Article Content */}
       <section class={style['article-content']}>
         <img class={style['main-image-phone']} src={currentArticle.img_src} />
 
@@ -86,7 +89,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
 
           <img
             class={style['forward-button']}
-            src='../../assets/icons/nav-icons/forward-rename.png'
+            src='../../assets/icons/nav-icons/forward-green.png'
           />
         </div>
 
@@ -117,7 +120,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
                 <p> <span class={style.pheader}>Author:</span> {currentArticle.author}</p>
                 <p> <span class={style.pheader}>Category:</span> {`${currentArticle.tag} ${currentArticle.tag_meta}`}</p>
           </div>
-
+              <ShareSaveButtons />
         </div>
 
       </div>

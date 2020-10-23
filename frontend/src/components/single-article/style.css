@@ -13,13 +13,14 @@
 
 /*  For Feature Phones */
 
-.mobile-banner, .date-and-author, .tag-section, .main-image-tablet-desktop, .horizontal-line-desktop, .article-info-desktop-card{
+.mobile-banner, .date-and-author, .tag-section, .main-image-tablet-desktop, .horizontal-line-desktop, .article-info-desktop-card, .share-save-section{
   display: none;
   visibility: collapse;
 }
 
 .single-article {
   max-width: 240;
+  font-family: 'Open Sans';
 }
 
 .single-article .breadcrumb {
@@ -108,7 +109,7 @@
     visibility: collapse;
   }
 
-  .mobile-banner, .date-and-author, .tag-section {
+  .mobile-banner, .date-and-author, .tag-section, .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -219,6 +220,57 @@
     font-weight: 700;
   }
 
+  .share-save-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans';
+    padding: 19px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #303030;
+  }
+
+  .share-save-section button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 9px 11px 9px;
+    background-color: #F2F2F2;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .share-save-section button i{
+    font-size: 17px;
+    color: #20CD84;
+  }
+
+  .share-save-section button img{
+    height: 17px;
+  }
+
+  .share-save-section .share {
+    margin-right: 5px;
+  }
+
+  .share-save-section .save{
+    margin-left: 5px;
+  }
+
+  .share-save-section button span{
+    margin-left: 5px;
+  }
+
+
+
 
 }
 
@@ -241,7 +293,7 @@ with similar viewport measurments ***************************
     visibility: collapse;
   }
 
-  .date-and-author, .tag-section, .tag_meta, .main-image-tablet-desktop {
+  .date-and-author, .tag-section, .tag_meta, .main-image-tablet-desktop, .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -321,6 +373,56 @@ with similar viewport measurments ***************************
     font-weight: 700;
   }
 
+  .share-save-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans';
+    padding: 19px 0;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #303030;
+  }
+
+  .share-save-section button {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 9px 11px 9px;
+    background-color: #F2F2F2;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17.7px;
+
+  }
+
+  .share-save-section button i{
+    font-size: 20px;
+    color: #20CD84;
+  }
+
+  .share-save-section button img{
+    height: 17px;
+  }
+
+  .share-save-section .share {
+    margin-right: 5px;
+  }
+
+  .share-save-section .save{
+    margin-left: 5px;
+  }
+
+  .share-save-section button span{
+    margin-left: 20px;
+  }
 
 }
 
@@ -341,7 +443,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     visibility: collapse;
   }
 
-  .tag-section, .tag_meta, .main-image-tablet-desktop, .article-info-desktop-card {
+  .tag-section, .tag_meta, .main-image-tablet-desktop, .article-info-desktop-card, .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -456,4 +558,59 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .article-info-desktop-card .pheader {
     font-weight: 700;
   }
+
+  .share-save-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans';
+    padding: 19px 0;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #303030;
+  }
+
+  .share-save-section button {
+    width: 100%;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 9px 11px 9px;
+    background-color: #F2F2F2;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17.7px;
+    color: #303030;
+  }
+
+  .share-save-section button i{
+    font-size: 23px;
+    color: #20CD84;
+  }
+
+  .share-save-section button img{
+    height: 20px;
+    width: 20px;
+  }
+
+  .share-save-section .share {
+    margin-right: 0px;
+  }
+
+  .share-save-section .save{
+    margin-left: 0px;
+  }
+
+  .share-save-section button span{
+    margin-left: 20px;
+  }
+
+
 }
