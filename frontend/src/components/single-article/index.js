@@ -5,7 +5,7 @@ import { route } from 'preact-router'
 import style from './style.css'
 import { articleInfo } from './articleInfo'
 import ShareSaveButtons from './share-save-buttons'
-
+import CommentsSection from './comments-section'
 //'/section/:section/:topic/:articleTitle/:articleId
 
 // Note: `user` comes from the URL, courtesy of our router
@@ -16,9 +16,9 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
   useEffect(() => {
     if (currentArticle.tag.includes('CORONA')) {
       setMyTag('emergency')
-    } else if (tag.includes('YOUTH')) {
+    } else if (currentArticle.tag.includes('YOUTH')) {
       setMyTag('youth')
-    } else if (tag.includes('PARENTS')) {
+    } else if (currentArticle.tag.includes('PARENTS')) {
       setMyTag('parents')
     } else {
       setMyTag('default')
@@ -112,6 +112,8 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
             class= {style['main-text']}
             dangerouslySetInnerHTML={{ __html: currentArticle.text }}
           />
+          <ShareSaveButtons />
+          <CommentsSection />
         </div>
 
         <div class= {style['content-grid-right']}>

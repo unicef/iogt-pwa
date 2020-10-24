@@ -13,13 +13,20 @@
 
 /*  For Feature Phones */
 
-.mobile-banner, .date-and-author, .tag-section, .main-image-tablet-desktop, .horizontal-line-desktop, .article-info-desktop-card, .share-save-section{
+.mobile-banner,
+.date-and-author,
+.tag-section,
+.main-image-tablet-desktop,
+.horizontal-line-desktop,
+.article-info-desktop-card,
+.share-save-section,
+.content-grid-right .share-save-section {
   display: none;
   visibility: collapse;
 }
 
 .single-article {
-  max-width: 240;
+  min-width: 200;
   font-family: 'Open Sans';
 }
 
@@ -53,7 +60,7 @@
 }
 
 .article-content {
-  max-width: 240px;
+  min-width: 200px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 12px;
@@ -83,11 +90,59 @@
 }
 
 .article-content .main-text {
-  padding: 0 12px 0 12px;
+  padding: 0 12px 12px 12px;
 }
 
 .article-content .main-text b {
   font-weight: 700;
+}
+
+/***** Feature phone - Comments Section ****/
+.comments-section {
+  min-width: 200px;
+  margin: 12px;
+}
+
+.comments-input-section label {
+  margin-bottom: 12px;
+}
+
+.comments-input-form {
+  width: 100%;
+  margin-top: 12px;
+  background-color: #f3f3f3;
+  overflow: hidden; /*allows button to show up*/
+}
+
+/* send button */
+.comments-input-form input {
+  position: relative;
+  float: right;
+  margin: 0px 8px 8px 0px;
+  padding: 4px 30px 4px 30px;
+  border: 0;
+  border-radius: 2px;
+  background-color: #ffffff;
+  font-size: 10px;
+}
+
+/* feature - text area */
+.comments-input {
+  resize: none;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  background-color: #f3f3f3;
+  color: #303030;
+  font-family: 'Open Sans';
+  font-size: 10px;
+}
+
+.comments-input::placeholder {
+  color: #979797;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-size: 9px;
 }
 
 /*****************************************************************
@@ -98,18 +153,24 @@
 /* Alternate min value: 360
 *****************************************************************/
 @media only screen and (min-width: 321px) and (max-width: 767px) {
-
   .single-article {
     max-width: 767px;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
   }
 
-  .breadcrumb, .tag_meta, .main-image-tablet-desktop, .horizontal-line-desktop, .article-info-desktop-card {
+  .breadcrumb,
+  .tag_meta,
+  .main-image-tablet-desktop,
+  .horizontal-line-desktop,
+  .article-info-desktop-card {
     display: none;
     visibility: collapse;
   }
 
-  .mobile-banner, .date-and-author, .tag-section, .share-save-section {
+  .mobile-banner,
+  .date-and-author,
+  .tag-section,
+  .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -133,10 +194,10 @@
     mix-blend-mode: normal;
   }
 
-  .mobile-banner > span{
+  .mobile-banner > span {
     margin: auto;
     width: 100%;
-   }
+  }
 
   .mobile-banner a {
     text-decoration: none;
@@ -177,8 +238,7 @@
     color: #000000;
   }
 
-
-  .article-content .tag-section{
+  .article-content .tag-section {
     display: flex;
     justify-content: space-between;
     font-family: 'Open Sans';
@@ -188,18 +248,18 @@
     letter-spacing: -0.336px;
   }
 
-  .article-content .tag{
+  .article-content .tag {
     text-decoration: none;
   }
 
-  .article-content .tag-section img{
+  .article-content .tag-section img {
     width: 18.86px;
     height: 16px;
   }
 
-  .article-content .date-and-author{
+  .article-content .date-and-author {
     font-family: 'Open Sans';
-    color: #6B6B6B;
+    color: #6b6b6b;
     font-size: 16px;
     padding-left: 19px;
     padding-right: 19px;
@@ -213,7 +273,7 @@
   }
 
   .article-content .main-text {
-    padding: 0 19px 0 19px;
+    padding: 0 19px 19px 19px;
   }
 
   .article-content .main-text b {
@@ -222,7 +282,7 @@
 
   .share-save-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-family: 'Open Sans';
     padding: 19px;
@@ -241,19 +301,19 @@
     border: 0;
     border-radius: 4px;
     padding: 10px 9px 11px 9px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
   }
 
-  .share-save-section button i{
+  .share-save-section button i {
     font-size: 17px;
-    color: #20CD84;
+    color: #20cd84;
   }
 
-  .share-save-section button img{
+  .share-save-section button img {
     height: 17px;
   }
 
@@ -261,19 +321,63 @@
     margin-right: 5px;
   }
 
-  .share-save-section .save{
+  .share-save-section .save {
     margin-left: 5px;
   }
 
-  .share-save-section button span{
-    margin-left: 5px;
+  .share-save-section button span {
+    margin-left: 2px;
   }
 
+  /***** Mobile phone - Comments Section ****/
+  .comments-section {
+    min-width: 200px;
+    margin: 22px;
+  }
 
+  .comments-input-section label {
+    margin-bottom: 12px;
+  }
 
+  .comments-input-form {
+    width: 100%;
+    margin-top: 12px;
+    background-color: #f3f3f3;
+    overflow: hidden; /*allows send button to show up*/
+  }
 
+  /* send button */
+  .comments-input-form input {
+    position: relative;
+    float: right;
+    margin: 0px 8px 8px 0px;
+    padding: 4px 30px 4px 30px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 13px;
+  }
+
+  /* feature - text area */
+  .comments-input {
+    resize: none;
+    width: 100%;
+    height: 112px;
+    padding: 8px 10px;
+    border: 0;
+    background-color: #f3f3f3;
+    color: #303030;
+    font-family: 'Open Sans';
+    font-size: 12px;
+  }
+
+  .comments-input::placeholder {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    color: #979797;
+  }
 }
-
 
 /***********************************************************
 ****++++++** CSS FOR TABLETS  and other devices ************
@@ -282,18 +386,26 @@ with similar viewport measurments ***************************
 *************************************************************/
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
   .single-article {
     max-width: 1024px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
-  .breadcrumb, .mobile-banner, .article-content .tag-section img, .main-image-phone, .horizontal-line-desktop, .article-info-desktop-card {
+  .breadcrumb,
+  .mobile-banner,
+  .article-content .tag-section img,
+  .main-image-phone,
+  .horizontal-line-desktop,
+  .article-info-desktop-card {
     display: none;
     visibility: collapse;
   }
 
-  .date-and-author, .tag-section, .tag_meta, .main-image-tablet-desktop, .share-save-section {
+  .date-and-author,
+  .tag-section,
+  .tag_meta,
+  .main-image-tablet-desktop,
+  .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -330,8 +442,7 @@ with similar viewport measurments ***************************
     color: #000000;
   }
 
-
-  .article-content .tag-section{
+  .article-content .tag-section {
     font-family: 'Open Sans';
     font-size: 14px;
     padding-right: 20px;
@@ -341,20 +452,19 @@ with similar viewport measurments ***************************
     height: 23px;
   }
 
-  .tag-section a{
-    display:inline-block;
+  .tag-section a {
+    display: inline-block;
     text-decoration: none;
-
   }
 
-  .article-content .tag-section img{
+  .article-content .tag-section img {
     width: 18.86px;
     height: 16px;
   }
 
-  .article-content .date-and-author{
+  .article-content .date-and-author {
     font-family: 'Open Sans';
-    color: #6B6B6B;
+    color: #6b6b6b;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.384px;
@@ -395,20 +505,19 @@ with similar viewport measurments ***************************
     border: 0;
     border-radius: 4px;
     padding: 10px 9px 11px 9px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 13px;
     line-height: 17.7px;
-
   }
 
-  .share-save-section button i{
+  .share-save-section button i {
     font-size: 20px;
-    color: #20CD84;
+    color: #20cd84;
   }
 
-  .share-save-section button img{
+  .share-save-section button img {
     height: 17px;
   }
 
@@ -416,16 +525,63 @@ with similar viewport measurments ***************************
     margin-right: 5px;
   }
 
-  .share-save-section .save{
+  .share-save-section .save {
     margin-left: 5px;
   }
 
-  .share-save-section button span{
+  .share-save-section button span {
     margin-left: 20px;
   }
 
-}
+  /****************** tablet phone - COMMENTS SECTION *******************/
+  .comments-section {
+    width: 100%;
+    margin: 0;
+  }
 
+  .comments-input-section label {
+    margin-bottom: 12px;
+  }
+
+  .comments-input-form {
+    width: 100%;
+    margin-top: 12px;
+    background-color: #f3f3f3;
+    overflow: hidden; /*allows send button to show up*/
+  }
+
+  /* send button */
+  .comments-input-form input {
+    position: relative;
+    float: right;
+    margin: 0px 8px 8px 0px;
+    padding: 4px 30px 4px 30px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 13px;
+  }
+
+  /* tablet - text area */
+  .comments-input {
+    resize: none;
+    width: 100%;
+    height: 112px;
+    padding: 8px 10px;
+    border: 0;
+    background-color: #f3f3f3;
+    color: #303030;
+    font-family: 'Open Sans';
+    font-size: 12px;
+  }
+
+  .comments-input::placeholder {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 13px;
+    color: #979797;
+  }
+}
 
 /***********************************************************
 DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
@@ -435,15 +591,25 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     max-width: 2000px;
     margin-left: 135px;
     margin-right: 135px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
-  .breadcrumb, .mobile-banner, .article-content .tag-section img, .main-image-phone, .date-and-author {
+  .breadcrumb,
+  .mobile-banner,
+  .article-content .tag-section img,
+  .main-image-phone,
+  .date-and-author,
+  .single-article .share-save-section {
     display: none;
     visibility: collapse;
   }
 
-  .tag-section, .tag_meta, .main-image-tablet-desktop, .article-info-desktop-card, .share-save-section {
+  .tag-section,
+  .tag_meta,
+  .main-image-tablet-desktop,
+  .article-info-desktop-card,
+  .share-save-section,
+  .content-grid-right .share-save-section {
     visibility: visible;
     display: inline-block;
   }
@@ -456,7 +622,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .article-content {
     min-width: 100%;
     /* width: 81%; */
-     /* 1169px/1445px*/
+    /* 1169px/1445px*/
     padding-bottom: 97px;
     font-family: 'Open Sans';
     /* or 108% */
@@ -481,8 +647,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-bottom: 28px;
   }
 
-
-  .article-content .tag-section{
+  .article-content .tag-section {
     font-family: 'Open Sans';
     font-size: 20px;
     padding-right: 20px;
@@ -493,19 +658,18 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .article-content .tag-section a {
-    display:inline-block;
+    display: inline-block;
     text-decoration: none;
-
   }
 
-  .article-content .tag-section img{
+  .article-content .tag-section img {
     width: 18.86px;
     height: 16px;
   }
 
-  .article-content .date-and-author{
+  .article-content .date-and-author {
     font-family: 'Open Sans';
-    color: #6B6B6B;
+    color: #6b6b6b;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: -0.384px;
@@ -522,17 +686,21 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   .content-grid {
     display: grid;
-    grid-template-columns: .652fr .055fr .292fr;
+    grid-template-columns: 0.652fr 0.055fr 0.292fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
 
-  .content-grid-left{ grid-area: 1 / 1 / 2 / 2; }
-  .content-grid-right { grid-area: 1 / 3 / 2 / 4; }
+  .content-grid-left {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .content-grid-right {
+    grid-area: 1 / 3 / 2 / 4;
+  }
 
   .article-content .main-text {
-    padding: 0 0 0 0px;
+    padding: 0 0 22px 0;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
@@ -543,7 +711,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: 700;
   }
 
-
   .article-info-desktop-card {
     display: flex;
     flex-direction: column;
@@ -551,7 +718,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     align-items: center;
     text-align: center;
     padding: 10px 31px;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     line-height: 18px;
   }
 
@@ -559,7 +726,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: 700;
   }
 
-  .share-save-section {
+  .content-grid-right .share-save-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -572,7 +739,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #303030;
   }
 
-  .share-save-section button {
+  .content-grid-right .share-save-section button {
     width: 100%;
     margin-top: 13px;
     margin-bottom: 13px;
@@ -582,7 +749,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     border: 0;
     border-radius: 4px;
     padding: 10px 9px 11px 9px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 13px;
@@ -590,27 +757,77 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #303030;
   }
 
-  .share-save-section button i{
+  .content-grid-right .share-save-section button i {
     font-size: 23px;
-    color: #20CD84;
+    color: #20cd84;
   }
 
-  .share-save-section button img{
+  .content-grid-right .share-save-section button img {
     height: 20px;
     width: 20px;
   }
 
-  .share-save-section .share {
+  .content-grid-right .share-save-section .share {
     margin-right: 0px;
   }
 
-  .share-save-section .save{
+  .content-grid-right .share-save-section .save {
     margin-left: 0px;
   }
 
-  .share-save-section button span{
+  .content-grid-right .share-save-section button span {
     margin-left: 20px;
   }
 
+
+    /****************** desktop - COMMENTS SECTION *******************/
+    .comments-section {
+      width: 100%;
+      margin: 10px 0 10px 0;
+      font-size: 18px;
+    }
+
+    .comments-input-section label {
+      margin-bottom: 12px;
+    }
+
+    .comments-input-form {
+      width: 100%;
+      margin-top: 12px;
+      background-color: #f3f3f3;
+      overflow: hidden; /*allows send button to show up*/
+    }
+
+    /* send button */
+    .comments-input-form input {
+      position: relative;
+      float: right;
+      margin: 10px 26px 10px 0px;
+      padding: 4px 85px 4px 85px;
+      border: 0;
+      border-radius: 4px;
+      background-color: #ffffff;
+      font-size: 13px;
+    }
+
+    /* desktop - text area */
+    .comments-input {
+      resize: none;
+      width: 100%;
+      height: 112px;
+      padding: 8px 10px;
+      border: 0;
+      background-color: #f3f3f3;
+      color: #303030;
+      font-family: 'Open Sans';
+      font-size: 13px;
+    }
+
+    .comments-input::placeholder {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-size: 13px;
+      color: #979797;
+    }
 
 }
