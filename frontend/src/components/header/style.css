@@ -31,14 +31,9 @@
 .signin,
 .signin-language,
 .search-menu,
-.logo-full{
+.logo-full {
   visibility: collapse;
   display: none;
-}
-
-.search-bar{
-  visibility: visible;
-  display: inline-block;
 }
 /* Feature - Header: Top  */
 .header-top {
@@ -246,7 +241,8 @@
   /* max-width: 320px; */
   width: 100%;
   height: 37px;
-  border: 1px solid #20cd84;
+  border-bottom: 1px solid #20cd84;
+  border-top: 1px solid #20cd84;
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 5px;
@@ -348,15 +344,14 @@
   .current-language,
   .change-language,
   .join-menu,
-  .logo-full,
-  .tabletDesktopSignin {
+  .logo-full, .tabletDesktopSignin .signin {
     display: none;
     visibility: collapse;
   }
 
   .signin-language,
   .signin,
-  .search-menu {
+  .search-menu{
     visibility: visible;
     display: inline-block;
   }
@@ -489,15 +484,12 @@
     background-color: #f7f9f9;
     border-radius: 50%;
   }
-
-  .search-bar {
-    display: none;
-  }
+  
 
   /* Testing making search bar disappear / appear, so far need to work on it more */
-  .my_checkbox:checked + .search-bar {
+  /* .my_checkbox:checked + .search-bar {
     display: block;
-  }
+  } */
 
   .header .nav {
     max-width: 767px;
@@ -567,7 +559,6 @@ with similar viewport measurments ***************************
   .language,
   .logo-full,
   .tablet-ellipsis,
-  .tabletDesktopSignin,
   .signin {
     visibility: visible;
     display: inline-block;
@@ -642,6 +633,7 @@ with similar viewport measurments ***************************
     white-space: nowrap;
   }
 
+
   .signin i,
   .signin img {
     font-size: 20px;
@@ -711,6 +703,7 @@ with similar viewport measurments ***************************
 
   .header > .nav > div > a {
     display: inline-block;
+    white-space: nowrap;
     padding-top: 15px;
     font-size: 12px;
     color: #6b6b6b;
@@ -838,6 +831,7 @@ with similar viewport measurments ***************************
     font-size: 12px;
     color: #303030;
   }
+
 
   .categories-dropdown-content span a {
     width: 100%;
@@ -1120,17 +1114,20 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .header > .nav > div > a {
+    white-space: nowrap;
     font-size: 12px;
     color: #6b6b6b;
     height: 100%;
     text-align: center;
-    padding: 20px 0 20px 0;
+    padding: 20px 5px 20px 5px;
     border-left: 1px solid #ececec;
   }
 
   .header > .nav > div > a:hover {
-    padding: 0;
     padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+
   }
 
   .nav div a > i {
@@ -1163,6 +1160,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .categories-dropdown {
     padding-left: 0;
     padding-right: 20px;
+    padding-top: 5px;
     font-size: 14px;
   }
 
@@ -1246,6 +1244,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #303030;
   }
 
+
   .categories-dropdown-content span a {
     width: 100%;
     color: #303030;
@@ -1293,6 +1292,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   /* Tablet: Header - Language Drop Down */
   /* Feature: Header - Language Drop Down */
+
   .nav .language-dropdown {
     text-align: left;
     position: relative;
@@ -1302,6 +1302,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: 600;
     color: #6b6b6b;
   }
+
   .nav .language-dropdown a {
     padding: 0;
   }
@@ -1346,6 +1347,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #6b6b6b;
   }
 
+
   .nav .language-dropdown-content > a {
     padding: 0;
     text-decoration: none;
@@ -1375,5 +1377,3 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     border-right: 1px solid #ececec;
   }
 }
-
-/*Need to adjust top portion of header for feature phones and mobile to align with design specifications*/

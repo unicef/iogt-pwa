@@ -357,11 +357,15 @@
     border: 0;
     border-radius: 4px;
     padding: 10px 9px 11px 9px;
-    background-color: #f2f2f2;
+    background-color: #f3f3f3;
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
+  }
+
+  .share-save-section button:hover{
+    background-color: #F7F9F9;
   }
 
   .share-save-section button i {
@@ -644,6 +648,10 @@ with similar viewport measurments ***************************
     font-weight: 400;
     font-size: 13px;
     line-height: 17.7px;
+  }
+
+  .share-save-section button:hover{
+    background-color: #F7F9F9;
   }
 
   .share-save-section button i {
@@ -964,6 +972,10 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 13px;
     line-height: 17.7px;
     color: #303030;
+  }
+
+  .share-save-section button:hover{
+    background-color: #F7F9F9;
   }
 
   .content-grid-right .share-save-section button i {
