@@ -20,6 +20,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    background: #f7f9f9;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

@@ -9,7 +9,9 @@ const HeaderTop = (props) => {
   let languageList = props.languageList
   let currentLanguage = props.currentLanguage //ideally this would be a prop sent in
 
-  let signedIn = true //default value to be replaced
+
+  let signedIn = false //default value to be replaced
+
   let joinStatus = signedIn ? 'My Profile' : 'Join'
 
   return (
@@ -78,15 +80,18 @@ const HeaderTop = (props) => {
           <img src='/assets/icons/Logo-with-text.png' />
         </Link>
         <SearchBar />
+
         <Link
           class={style['signin']}
           activeClassName={style.active}
           href='/signin'
         >
+
           {/* If signed in display icon if not dont' */}
          {signedIn? <img src='../../assets/icons/nav-icons/profile-icon-grey.png' />: ''}
 
           {signedIn? 'Sign out': 'Sign in'}
+
         </Link>
       </div>
     </div>

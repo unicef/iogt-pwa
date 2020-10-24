@@ -1,6 +1,6 @@
-/* Articules View Component */
+/* Articles View Component */
 
-.articlesContainer {
+/* .articlesContainer {
   margin-bottom: 25px;
 }
 
@@ -30,13 +30,17 @@
     display: flex;
     flex-direction: column;
   }
-}
+} */
 
 /* Article Component */
-.container {
+/* .container {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   margin-right: 5%;
+}
+.container .image {
+  width: 300px;
+  height: 200px;
 }
 
 .container .mainImage {
@@ -102,5 +106,280 @@
   }
   .container .hr {
     display: none;
+  }
+} */
+
+@media only screen and (min-device-width: 1025px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* DESKTOP ARTICLES VIEW COMPONENT */
+  .desktopArticles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5%;
+  }
+
+  .mobileAndFeatureArticleContainer {
+    display: none;
+  }
+
+  .tabletArticles {
+    display: none;
+  }
+
+  .mobileArticles {
+    display: none;
+  }
+
+  .featureArticles {
+    display: none;
+  }
+}
+
+/* TABLET ARTICLES VIEW COMPONENT */
+@media only screen and (min-device-width: 601px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .featureArticles {
+    display: none;
+  }
+
+  .mobileArticles {
+    display: none;
+  }
+
+  .desktopArticles {
+    display: none;
+  }
+
+  .tabletArticles {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    padding-top: 5%;
+  }
+
+  .tabletArticlesRowContainer {
+    margin-bottom: 5%;
+  }
+
+  .tabletArticlesRowContainer .tabletArticlesHeader {
+    display: flex;
+    text-align: center;
+  }
+
+  .articlesRow {
+    display: flex;
+  }
+}
+
+/* TABLET & DESKTOP ARTICLE COMPONENT */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .mobileAndFeatureArticleContainer {
+    display: none;
+  }
+
+  .tabletAndDesktopArticleContainer {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin-right: 5%;
+  }
+  .tabletAndDesktopArticleContainer .image {
+    width: 300px;
+    height: 200px;
+  }
+
+  .tabletAndDesktopArticleContainer .mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tabletAndDesktopArticleContainer .share {
+    display: none;
+  }
+
+  .tabletAndDesktopArticleContainer .content .tag {
+    font-size: 14px;
+  }
+
+  .tabletAndDesktopArticleContainer .content .byline {
+    color: #6b6b6b;
+    font-size: 16px;
+  }
+
+  .tabletAndDesktopArticleContainer .content .byline .author {
+    font-style: italic;
+  }
+
+  .tabletAndDesktopArticleContainer .content .title {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .tabletAndDesktopArticleContainer hr {
+    height: 0.5px;
+  }
+}
+
+/* MOBILE ARTICLES VIEW COMPONENT */
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px) {
+  .tabletAndDesktopArticleContainer {
+    display: none;
+  }
+
+  .tabletArticles {
+    display: none;
+  }
+
+  .desktopArticles {
+    display: none;
+  }
+
+  .featureArticles {
+    display: none;
+  }
+
+  .mobileArticles .articleBlock {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .mobileArticles .articleBlock .blockHeaderContainer {
+    display: flex;
+  }
+
+  .mobileArticles .articleBlock .blockHeader {
+    color: #bf0012;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .mobileArticles .articleBlock .articleBlockViewMore {
+    color: #bf0012;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    display: flex;
+  }
+}
+
+/* MOBILE ARTICLE COMPONENT */
+@media only screen and (min-device-width: 300px) and (max-width: 600px) {
+  .mobileAndFeatureArticleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+    padding: 0 12px;
+  }
+
+  .mobileAndFeatureArticleContainer .title {
+    width: 185px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 9.5px;
+    margin-top: -5px;
+    color: black;
+  }
+
+  .mobileAndFeatureArticleContainer .tag {
+    display: none;
+  }
+
+  .mobileAndFeatureArticleContainer .image {
+    width: 49px;
+    height: 26px;
+  }
+
+  .mobileAndFeatureArticleContainer .mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* FEATURE PHONE ARTICLES VIEW COMPONENT */
+@media only screen and (max-device-width: 300px) {
+  .tabletArticles {
+    display: none;
+  }
+
+  .mobileArticles {
+    display: none;
+  }
+
+  .desktopArticles {
+    display: none;
+  }
+
+  .blockHeaderContainer {
+    display: none;
+  }
+
+  .articleBlockViewMore {
+    display: none;
+  }
+
+  .featureLinksContainer {
+    padding: 0px 7px;
+  }
+
+  .featureLinksContainer a {
+    text-decoration-color: #20cd84;
+  }
+  .featureLinksContainer .featureLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #20cd84;
+    font-size: 11px;
+    font-weight: 500;
+    border-bottom: 1px solid #dadada;
+  }
+}
+
+/** FEATURE PHONE ARTICLE COMPONENT **/
+@media only screen and (max-width: 300px) {
+  .tabletAndDesktopArticleContainer {
+    display: none;
+  }
+
+  .mobileAndFeatureArticleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+    padding: 0 12px;
+  }
+
+  .mobileAndFeatureArticleContainer .title {
+    width: 185px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 9.5px;
+    margin-top: -5px;
+    color: black;
+  }
+
+  .mobileAndFeatureArticleContainer .tag {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 6.5px;
+    color: black;
+  }
+
+  .mobileAndFeatureArticleContainer .image {
+    width: 49px;
+    height: 26px;
+  }
+
+  .mobileAndFeatureArticleContainer .mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

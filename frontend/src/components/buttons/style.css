@@ -4,7 +4,9 @@
   outline: none;
   padding: 7px 15px;
   position: relative;
-  margin-left: 50%;
+  /* width: 100%; */
+  /* margin-left: 50%; */
+  align-self: center;
 }
 
 .buttonLabel {
