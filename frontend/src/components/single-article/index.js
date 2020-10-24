@@ -30,6 +30,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
             : myTag === 'parents' ? '#48AB5D'
             : 'black';
 
+
   return (
     <div class={style['single-article']}>
 
@@ -113,7 +114,7 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
             dangerouslySetInnerHTML={{ __html: currentArticle.text }}
           />
           <ShareSaveButtons />
-          <CommentsSection />
+          <CommentsSection comments={currentArticle.comments}/>
         </div>
 
         <div class= {style['content-grid-right']}>

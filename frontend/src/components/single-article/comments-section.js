@@ -5,6 +5,7 @@ import style from './style.css'
 
 // If user is signed in, will display input box. Otherwise, just the comments.
 const CommentsSection = (props) => {
+  let comments = props.comments;
   let isSignedIn = true
   return (
     <div class={style['comments-section']}>
@@ -24,7 +25,31 @@ const CommentsSection = (props) => {
 
       </div>
 
-     {/* Display all comments */}
+     {/* Display all comments and all comment replies */}
+      <div class={style['comments-listing']}>
+          <p>Comments (Most Popular)</p>
+          {comments.map(comment =>
+              <div>
+                <div class={style['comment-single']} >
+                <p class={style['comment-single-header']}><Link href={`/profile/${comment.userName}`}>{comment.userName}</Link> says:</p>
+                <p class={style['comment-single-text']}>{comment.comment}</p>
+                <p class={style['reply-prompt']} ><Link href='/reply' >Click Here to Reply</Link></p>
+                </div>
+                {comment.replies ? comment.replies.map(comment =>
+                    <div  class={style['comment-reply']}>
+                    <p class={style['comment-reply-header']}><Link href={`/profile/${comment.userName}`}>{comment.userName}</Link> says:</p>
+                    <p class={style['comment-reply-text']}>{comment.comment}</p>
+                    <p class={style['reply-prompt']} ><Link href='/reply' >Click Here to Reply</Link></p>
+                    </div>
+                ):''}
+              </div>
+        )}
+
+        <button class={style['load-more-button']}>Load More </button>
+
+        
+      </div>
+
     </div>
   )
 }

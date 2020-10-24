@@ -9,6 +9,8 @@ export const articleInfo = [
     title: 'About Coronavirus',
     desc:
       'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
+    text:  ``,
+    comments:[]
   },
   {
     id: 1,
@@ -42,7 +44,19 @@ export const articleInfo = [
    Look for stories of people who are working to stop the outbreak and are caring for sick people.
    <br/> <br/>
 
-   <b>End on a Good Note</b> Check to see if your child is okay. Remind them that you care and that they can talk to you anytime. Then do something fun together!`
+   <b>End on a Good Note</b> Check to see if your child is okay. Remind them that you care and that they can talk to you anytime. Then do something fun together!`,
+   comments: [
+    {userName: 'user2020',
+    comment: 'I love this article, but why should we look for people who are working to stop the spread? Do we have to tell them to stay at home?',
+    replies: [
+      {userName: 'iogtlover', comment: '@user2020 I think he means to show your children examples of heroes.'},
+      {userName: 'user2020', comment: '@iogtlover thank you!!'}
+    ]},
+
+    {userName: 'iogtlover',
+    comment: 'Please post more about COVID-19. Looking forward to reading more articles here.',
+    replies: []},
+  ]
   },
   {
     id: 2,
@@ -54,6 +68,9 @@ export const articleInfo = [
     title: 'Hear Asseta, Meleichi and Kharda’s stories',
     desc:
       'Sharing positive stories of change can be a good way to help mothers be more open...',
+    text:  ``,
+    comments: [
+    ]
   },
   {
     id: 3,
@@ -65,6 +82,9 @@ export const articleInfo = [
     title: 'Gaining increased movement control',
     desc:
       'Growing strong, healthily and with increasing movement control. Children at age four...',
+      text:  ``,
+      comments: [
+      ]
   },
   {
     id: 4,
@@ -76,6 +96,8 @@ export const articleInfo = [
     title: 'When to start with complementary solid foods',
     desc:
       'When to introduce your baby to complementary foods and why getting the...',
+      text:  ``,
+      comments: []
   },
   {
     id: 5,
@@ -87,5 +109,7 @@ export const articleInfo = [
     title: 'Which tips are useful to try with newborns?',
     desc:
       'Learning to communicate with your baby. Both parents should actively interact with the baby...',
+      text:  ``,
+      comments: []
   },
 ];
