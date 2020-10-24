@@ -12,6 +12,7 @@ const ArticlesView = () => {
       key={article.id}
       img_src={article.img_src}
       tag={article.tag}
+      tag_meta={article.tag_meta}
       date={article.date}
       author={article.author}
       title={article.title}

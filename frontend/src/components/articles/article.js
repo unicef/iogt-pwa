@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-const Article = ({ id, img_src, tag, date, author, title, desc }) => {
+const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
   const [myTag, setMyTag] = useState('');
 
   useEffect(() => {
@@ -21,8 +21,8 @@ const Article = ({ id, img_src, tag, date, author, title, desc }) => {
   return (
     <div class={style.container}>
       <div class={style.image}>
-        {/* Link dynamically goes to a Single Article link based on category and title of article */}
-        <Link href={`/section/${tag.toLowerCase().split(' ').join('-').split('|').join('/')}/${title.split(' ').join('-')}/${id}`}>
+        {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */}
+        <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
         <img class={style.mainImage} src={img_src} />
         </Link>
       </div>
