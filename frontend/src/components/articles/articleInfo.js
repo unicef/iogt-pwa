@@ -10,7 +10,7 @@ export const articleInfo = [
     desc:
       'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
   },
-  {
+  {  
     id: 1,
     img_src: '../../assets/mock-images/covid2.svg',
     tag: 'CORONAVIRUS (COVID-19)',
@@ -50,7 +50,7 @@ export const articleInfo = [
     tag_meta: 'NUTRITION',
     date: 'June 29, 2016',
     author: 'Florian Gendrault',
-    title: 'Establishing stronger connection with your three-year old',
+    title: 'Establishing stronger connection with your toddler',
     desc:
       'When to introduce your baby to complementary foods and why getting the...',
   },
@@ -66,3 +66,191 @@ export const articleInfo = [
       'Learning to communicate with your baby. Both parents should actively interact with the baby...',
   },
 ];
+
+export const aboutCoronavirusArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'About Coronavirus',
+    desc:
+      '',
+  },
+  {
+    id: 1,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Protecting Yourself and Others from COVID-19',
+    desc:
+      '',
+  },
+  {
+    id: 2,
+    img_src: '../../assets/mock-images/myths.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Myths',
+    desc:
+      '',
+  },
+  {
+    id: 3,
+    img_src: '',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      '',
+  },
+]
+
+export const studentToolkitArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/responsibility.svg',
+    tag: 'Student Toolkit',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Know Your Responsibility',
+    desc:
+      '',
+  },
+  {
+    id: 1,
+    img_src: '../../assets/mock-images/fact.svg',
+    tag: 'Student Toolkit',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'COVID-19 Myths and Facts (Student Edition)',
+    desc:
+      '',
+  },
+  {
+    id: 2,
+    img_src: '',
+    tag: 'Student Toolkit',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Feeling Lonely',
+    desc:
+      '',
+  },
+  {
+    id: 3,
+    img_src: '',
+    tag: 'Student Toolkit',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Become a COVID-19 Student Expert',
+    desc:
+      '',
+  },
+]
+
+export const covidParentingArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'COVID-19 Parenting',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Talking about COVID-19',
+    desc:
+      '',
+  },
+  {
+    id: 1,
+    img_src: '../../assets/mock-images/keep_calm.svg',
+    tag: 'COVID-19 Parenting',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Keep Calm & Manage Stress',
+    desc:
+      '',
+  },
+  {
+    id: 2,
+    img_src: '../../assets/mock-images/tip1.svg',
+    tag: 'COVID-19 Parenting',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Tip 1: One-on-One Time',
+    desc:
+      '',
+  },
+  {
+    id: 3,
+    img_src: '../../assets/mock-images/tip2.svg',
+    tag: 'COVID-19 Parenting',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Tip 2: Routine Up',
+    desc:
+      '',
+  },
+]
+
+export const healthWorkerArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'Heath Workers',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Facility Manager Guidelines',
+    desc:
+      '',
+  },
+  {
+    id: 1,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'Heath Workers',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Coping with COVID-19 Stress',
+    desc:
+      '',
+  },
+  {
+    id: 2,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'Heath Workers',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Protecting Yourself at Work From COVID-19',
+    desc:
+      '',
+  },
+  {
+    id: 3,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'Heath Workers',
+    tag_meta: '',
+    date: '',
+    author: '',
+    title: 'Communicating With COVID-19 Patients and Visitors',
+    desc:
+      '',
+  },
+]

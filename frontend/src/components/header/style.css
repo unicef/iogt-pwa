@@ -640,7 +640,6 @@ with similar viewport measurments ***************************
     white-space: nowrap;
   }
 
-
   .signin i,
   .signin img {
     font-size: 20px;
@@ -837,7 +836,6 @@ with similar viewport measurments ***************************
     font-size: 12px;
     color: #303030;
   }
-
 
   .categories-dropdown-content span a {
     width: 100%;
@@ -1246,7 +1244,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #303030;
   }
 
-
   .categories-dropdown-content span a {
     width: 100%;
     color: #303030;
@@ -1348,7 +1345,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: bold;
     color: #6b6b6b;
   }
-
 
   .nav .language-dropdown-content > a {
     padding: 0;
