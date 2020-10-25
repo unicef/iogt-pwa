@@ -1,7 +1,7 @@
 export const articleInfo = [
   {
     id: 0,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/covid.svg',
     tag: 'CORONAVIRUS (COVID-19)',
     tag_meta: 'ABOUT CORONAVIRUS',
     date: 'August 26, 2016',
@@ -14,7 +14,7 @@ export const articleInfo = [
   },
   {
     id: 1,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/covid2.svg',
     tag: 'CORONAVIRUS (COVID-19)',
     tag_meta: 'COVID-19 PARENTING',
     date: 'August 19, 2016',
@@ -60,7 +60,7 @@ export const articleInfo = [
   },
   {
     id: 2,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/youth1.svg',
     tag: 'YOUTH',
     tag_meta: 'FREEDOM FOR GIRLS',
     date: 'August 19, 2016',
@@ -74,7 +74,7 @@ export const articleInfo = [
   },
   {
     id: 3,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/youth2.svg',
     tag: 'PARENTS & CAREGIVERS',
     tag_meta: 'PRE-SCHOOL YEARS',
     date: 'July 14, 2016',
@@ -88,7 +88,7 @@ export const articleInfo = [
   },
   {
     id: 4,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/parent1.svg',
     tag: 'PARENTS & CAREGIVERS',
     tag_meta: 'NUTRITION',
     date: 'June 29, 2016',
@@ -101,7 +101,7 @@ export const articleInfo = [
   },
   {
     id: 5,
-    img_src: '../../assets/mock-images/placeholder.png',
+    img_src: '../../assets/mock-images/parent2.svg',
     tag: 'PARENTS & CAREGIVERS',
     tag_meta: 'EARLY LIFE TIPS',
     date: 'July 14, 2016',

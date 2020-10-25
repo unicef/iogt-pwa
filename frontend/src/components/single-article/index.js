@@ -130,9 +130,6 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
 
       </section>
 
-      <p>This is the section for a topic {articleTitle}.</p>
-
-      <p>10/21 Setting this up to display a single article.</p>
     </div>
   )
 }

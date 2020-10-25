@@ -5,7 +5,7 @@ import Article from './article';
 import { articleInfo } from './articleInfo';
 import PrimaryButton from '../buttons/primaryButton';
 import ViewMore from '../view-more/viewMore';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
 import { ChevronRight } from 'react-feather';
 
 const ArticlesView = () => {
@@ -78,6 +78,10 @@ const ArticlesView = () => {
     //   <PrimaryButton text='Load more' />
     // </div>
     <div class={style.articlesView}>
+            <link
+        href='https://fonts.googleapis.com/icon?family=Material+Icons'
+        rel='stylesheet'
+      />
       <div class={style.desktopArticles}>{articlesList}</div>
 
       <div class={style.tabletArticles}>
@@ -162,7 +166,7 @@ const ArticlesView = () => {
           <a href='#'>
             <div class={style.featureLink}>
               <p>Search</p>
-              <SearchIcon />
+              <i class='material-icons'>keyboard_arrow_down</i>
             </div>
           </a>
           <a href='#'>

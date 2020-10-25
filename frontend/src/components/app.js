@@ -1,6 +1,5 @@
-import { h } from 'preact';
+import { h, render } from 'preact';
 import { Router } from 'preact-router';
-import { createHashHistory } from 'history';
 import Header from './header';
 import Footer from './footer';
 import SingleArticle from './single-article';
@@ -10,13 +9,15 @@ import Home from '../routes/home';
 import Profile from '../routes/profile';
 import Section from '../routes/sections'
 
-// history.replaceState(0,0,'/');
-
 const App = () => (
   <div id='app'>
+    <link
+    href='https://fonts.googleapis.com/icon?family=Material+Icons'
+    rel='stylesheet'
+      />
     <div id='content-wrap'>
       <Header />
-      <Router history={createHashHistory()}>
+      <Router>
         <Home path='/' />
         <Profile path='/profile/' user='me' />
         <Profile path='/profile/:user' />
