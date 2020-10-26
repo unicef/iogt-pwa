@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-const Article = ({ img_src, tag, date, author, title, desc }) => {
+const Article = ({ img_src, tag, tag_meta, date, author, title, desc }) => {
   const [myTag, setMyTag] = useState('');
 
   useEffect(() => {
@@ -38,14 +38,18 @@ const Article = ({ img_src, tag, date, author, title, desc }) => {
           </p>
           <h1 class={style.title}>{title}</h1>
         </div>
+        {img_src !== '' &&
         <div class={style.image}>
           <img class={style.mainImage} src={img_src} />
-        </div>
+        </div>}
       </div>
 
-      <div class={style.tabletAndDesktopArticleContainer}>
+      <div class={style.tabletArticleContainer}>
         <div class={style.image}>
           <img class={style.mainImage} src={img_src} />
+          <div class={style.share}>
+            <img src='../../assets/mock-images/share.svg'/>
+          </div>
         </div>
         <div class={style.content}>
           <p
@@ -62,16 +66,10 @@ const Article = ({ img_src, tag, date, author, title, desc }) => {
           >
             <div
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
                 marginBottom: -15,
               }}
             >
-              <span>{tag}</span>
-              <img
-                class={style.share}
-                src='../../assets/mock-images/share.png'
-              />
+              <span>{tag} | {tag_meta}</span>
             </div>
 
             <br />
@@ -80,8 +78,61 @@ const Article = ({ img_src, tag, date, author, title, desc }) => {
             </span>
           </p>
 
-          <div style={{ borderColor: 'black' }}>
-            <span class={style.title}>{title}</span>
+          <div class={style.title}>
+            <span >{title}</span>
+          </div>
+          <p class={style.desc}>{desc}</p>
+          <hr
+            style={
+              myTag === 'emergency'
+                ? { borderColor: '#BF0012' }
+                : myTag === 'youth'
+                ? { borderColor: '#00A4CB' }
+                : myTag === 'parents'
+                ? { borderColor: '#48AB5D' }
+                : { borderColor: 'black' }
+            }
+            class={style.hr}
+          />
+        </div>
+      </div>
+
+      <div class={style.desktopArticleContainer}>
+        <div class={style.image}>
+          <img class={style.mainImage} src={img_src} />
+          <div class={style.share}>
+            <img src='../../assets/mock-images/share.svg'/>
+          </div>
+        </div>
+        <div class={style.content}>
+          <p
+            style={
+              myTag === 'emergency'
+                ? { color: '#BF0012' }
+                : myTag === 'youth'
+                ? { color: '#00A4CB' }
+                : myTag === 'parents'
+                ? { color: '#48AB5D' }
+                : { color: 'black' }
+            }
+            class={style.tag}
+          >
+            <div
+              style={{
+                marginBottom: -22,
+              }}
+            >
+              <span>{tag} | {tag_meta}</span>
+            </div>
+
+            <br />
+            <span class={style.byline}>
+              on {date} / <span class={style.author}>by {author}</span>
+            </span>
+          </p>
+
+          <div class={style.title}>
+            <span>{title}</span>
           </div>
           <p class={style.desc}>{desc}</p>
           <hr
