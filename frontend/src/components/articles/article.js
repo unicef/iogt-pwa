@@ -46,7 +46,7 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
             <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
             <img class={style.mainImage} src={img_src} />
             </Link>
-        </div>
+        </div>}
       </div>
 
       <div class={style.tabletArticleContainer}>
