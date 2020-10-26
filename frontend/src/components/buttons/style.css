@@ -1,16 +1,15 @@
 .primaryButton {
-  background-color: #20cd84;
   border: none;
   outline: none;
   padding: 7px 15px;
   position: relative;
-  /* width: 100%; */
-  /* margin-left: 50%; */
   align-self: center;
+  margin-bottom: 8px;
 }
 
 .buttonLabel {
   color: #ffffff;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
