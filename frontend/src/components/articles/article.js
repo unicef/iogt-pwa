@@ -3,7 +3,8 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-const Article = ({ img_src, tag, tag_meta, date, author, title, desc }) => {
+
+const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
   const [myTag, setMyTag] = useState('');
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const Article = ({ img_src, tag, tag_meta, date, author, title, desc }) => {
   });
 
   return (
+
     <div>
       <div class={style.mobileAndFeatureArticleContainer}>
         <div class={style.content}>
@@ -40,13 +42,18 @@ const Article = ({ img_src, tag, tag_meta, date, author, title, desc }) => {
         </div>
         {img_src !== '' &&
         <div class={style.image}>
-          <img class={style.mainImage} src={img_src} />
+            {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */}
+            <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
+            <img class={style.mainImage} src={img_src} />
+            </Link>
         </div>}
       </div>
 
       <div class={style.tabletArticleContainer}>
         <div class={style.image}>
+          <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
           <img class={style.mainImage} src={img_src} />
+          </Link>
           <div class={style.share}>
             <img src='../../assets/mock-images/share.svg'/>
           </div>

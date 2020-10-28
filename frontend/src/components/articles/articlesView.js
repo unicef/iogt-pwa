@@ -16,6 +16,7 @@ import { ChevronRight } from 'react-feather';
 const ArticlesView = () => {
   const articlesList = articleInfo.map((article) => (
     <Article
+      id={article.id}
       key={article.id}
       img_src={article.img_src}
       tag={article.tag}
@@ -143,6 +144,10 @@ const ArticlesView = () => {
     //   <PrimaryButton text='Load more' />
     // </div>
     <div class={style.articlesView}>
+            <link
+        href='https://fonts.googleapis.com/icon?family=Material+Icons'
+        rel='stylesheet'
+      />
       <div class={style.desktopArticles}>{articlesList}</div>
 
       <div class={style.tabletArticles}>
