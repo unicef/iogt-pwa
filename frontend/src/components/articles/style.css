@@ -140,8 +140,15 @@
     display:none;
   }
 
+  .articleContainer {
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   .desktopArticleContainer{
     margin: 10px;
+    height: 100%;
   }
 
   .desktopArticleContainer .image {
@@ -155,7 +162,7 @@
     width: 100%;
     height: 100%;
     /* object-fit: cover; */
-  
+
   }
 
   .desktopArticleContainer .share {
@@ -191,6 +198,11 @@
 
   .desktopArticleContainer .content .byline{
     color:#6B6B6B;
+  }
+
+  .desktopArticleContainer .title a{
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -242,7 +254,7 @@
   .desktopArticleContainer{
     display:none;
   }
-  
+
   .mobileAndFeatureArticleContainer {
     display: none;
   }
@@ -259,7 +271,7 @@
   }
 
   .tabletArticleContainer .content{
-    text-align: left; 
+    text-align: left;
   }
 
   .tabletArticleContainer .content .tag{
@@ -293,7 +305,7 @@
     width: 100%;
     height: 100%;
     /* object-fit: cover; */
-  
+
   }
 
   .tabletArticleContainer .share {
@@ -342,7 +354,7 @@
   .desktopArticleContainer{
     display: none;
   }
-  
+
   .tabletArticleContainer {
     display: none;
   }
@@ -397,6 +409,11 @@
 
 /* MOBILE ARTICLE COMPONENT */
 @media only screen and (min-device-width: 300px) and (max-width: 600px) {
+
+  .desktopArticleContainer {
+    display: none;
+  }
+
   .mobileAndFeatureArticleContainer {
     display: flex;
     flex-direction: row;
@@ -439,11 +456,19 @@
   }
 }
 
+
 /* FEATURE PHONE ARTICLES VIEW COMPONENT */
 @media only screen and (max-device-width: 300px) {
+
   .desktopArticleContainer{
-    display:none;
+    display: none;
   }
+
+  .tabletArticleContainer {
+    display: none;
+  }
+
+
 
   .tabletArticles {
     display: none;
@@ -514,6 +539,10 @@
     display: none;
   }
 
+  .desktopArticleContainer {
+    display: none;
+  }
+
   .mobileAndFeatureArticleContainer {
     display: flex;
     flex-direction: row;
@@ -521,6 +550,7 @@
     align-items: center;
     border-bottom: 1px solid #dadada;
     padding: 0 12px;
+    width: 100vw;
   }
 
   .mobileAndFeatureArticleContainer .title {
