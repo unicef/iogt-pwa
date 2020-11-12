@@ -34,6 +34,7 @@
 .logo-full {
   visibility: collapse;
   display: none;
+  cursor: pointer;
 }
 /* Feature - Header: Top  */
 .header-top {

@@ -1,11 +1,21 @@
 import { h } from 'preact'
 import { Link } from 'preact-router/match'
+import { useState, useEffect } from 'preact/hooks';
 import style from './style.css'
 
 import LanguageDropdownMenu from './language-dropdown-menu'
 import SearchBar from './searchbar'
+import Modal from 'react-modal';
+
+Modal.setAppElement('body');
 
 const HeaderTop = (props) => {
+  const [modalStatus,setModalStatus] = useState(false);
+
+  const openModal = () =>{
+    setModalStatus(true);
+  }
+
   let languageList = props.languageList
   let currentLanguage = props.currentLanguage //ideally this would be a prop sent in
 
@@ -84,7 +94,8 @@ const HeaderTop = (props) => {
         <Link
           class={style['signin']}
           activeClassName={style.active}
-          href='/signin'
+          // href=""
+          onClick={()=>setModalStatus(true)}
         >
 
           {/* If signed in display icon if not dont' */}
@@ -93,6 +104,11 @@ const HeaderTop = (props) => {
           {signedIn? 'Sign out': 'Sign in'}
 
         </Link>
+
+        <Modal isOpen={modalStatus}>
+          <h2>login</h2>
+          <button onClick={()=>setModalStatus(false)}>close</button>
+        </Modal>
       </div>
     </div>
   )
