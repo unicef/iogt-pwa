@@ -19,9 +19,15 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
     }
   });
 
+  let colorTheme = myTag === 'emergency' ? '#BF0012'
+  : myTag === 'youth'? '#00A4CB'
+  : myTag === 'parents' ? '#48AB5D'
+  : 'black';
+
+
   return (
 
-    <div>
+    <div class={style.articleContainer}>
       <div class={style.mobileAndFeatureArticleContainer}>
         <div class={style.content}>
           <p
@@ -55,20 +61,12 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
           <img class={style.mainImage} src={img_src} />
           </Link>
           <div class={style.share}>
-            <img src='../../assets/mock-images/share.svg'/>
+            <img src='../../assets/mock-images/share.svg' />
           </div>
         </div>
         <div class={style.content}>
           <p
-            style={
-              myTag === 'emergency'
-                ? { color: '#BF0012' }
-                : myTag === 'youth'
-                ? { color: '#00A4CB' }
-                : myTag === 'parents'
-                ? { color: '#48AB5D' }
-                : { color: 'black' }
-            }
+            style={ { color: colorTheme }}
             class={style.tag}
           >
             <div
@@ -86,42 +84,37 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
           </p>
 
           <div class={style.title}>
+
+          <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
             <span >{title}</span>
+          </Link>
+
           </div>
           <p class={style.desc}>{desc}</p>
           <hr
-            style={
-              myTag === 'emergency'
-                ? { borderColor: '#BF0012' }
-                : myTag === 'youth'
-                ? { borderColor: '#00A4CB' }
-                : myTag === 'parents'
-                ? { borderColor: '#48AB5D' }
-                : { borderColor: 'black' }
-            }
+            style={ {borderColor: colorTheme}}
+
             class={style.hr}
           />
         </div>
       </div>
 
-      <div class={style.desktopArticleContainer}>
+      <div class={style.desktopArticleContainer}
+           style={ { borderBottom: ` solid ${colorTheme}` } }
+      >
         <div class={style.image}>
-          <img class={style.mainImage} src={img_src} />
+
+        <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
+            <img class={style.mainImage} src={img_src} />
+            </Link>
+
           <div class={style.share}>
-            <img src='../../assets/mock-images/share.svg'/>
+            <img src='../../assets/mock-images/share.svg' />
           </div>
         </div>
         <div class={style.content}>
           <p
-            style={
-              myTag === 'emergency'
-                ? { color: '#BF0012' }
-                : myTag === 'youth'
-                ? { color: '#00A4CB' }
-                : myTag === 'parents'
-                ? { color: '#48AB5D' }
-                : { color: 'black' }
-            }
+            style={ { color: colorTheme } }
             class={style.tag}
           >
             <div
@@ -138,22 +131,20 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
             </span>
           </p>
 
+
           <div class={style.title}>
-            <span>{title}</span>
+            
+          <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
+            <span >{title}</span>
+          </Link>
+
           </div>
           <p class={style.desc}>{desc}</p>
-          <hr
-            style={
-              myTag === 'emergency'
-                ? { borderColor: '#BF0012' }
-                : myTag === 'youth'
-                ? { borderColor: '#00A4CB' }
-                : myTag === 'parents'
-                ? { borderColor: '#48AB5D' }
-                : { borderColor: 'black' }
+          {/* <hr
+            style={{ borderColor: colorTheme }
             }
             class={style.hr}
-          />
+          /> */}
         </div>
       </div>
     </div>

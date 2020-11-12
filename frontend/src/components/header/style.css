@@ -412,7 +412,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     width: 100vw;
     margin: auto;
-    z-index: 1;
+    z-index: 200;
     text-align: left;
     white-space: nowrap;
     text-align: center;
@@ -451,6 +451,7 @@
 
   .language-dropdown:hover .language-dropdown-content {
     display: block;
+    z-index: 200;
   }
 
   .search-menu > a {
@@ -768,6 +769,7 @@ with similar viewport measurments ***************************
     display: inline-block;
     margin-left: 60px; /* allows margin at beginning of flex box*/
     padding-bottom: 13px;
+    z-index: 200;
   }
   .categories-dropdown .btn-group {
     display: inline-block;
@@ -907,6 +909,7 @@ with similar viewport measurments ***************************
     font-weight: 600;
     color: #6b6b6b;
     padding-left: 5px;
+    z-index: 200;
   }
   .nav .language-dropdown a {
     padding: 0;
@@ -1177,6 +1180,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 20px;
     padding-top: 5px;
     font-size: 14px;
+    z-index: 200;
   }
 
   .categories-dropdown .btn-group {
@@ -1315,6 +1319,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 12px;
     font-weight: 600;
     color: #6b6b6b;
+    z-index: 200;
   }
 
   .nav .language-dropdown a {

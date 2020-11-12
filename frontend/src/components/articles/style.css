@@ -1,114 +1,3 @@
-/* Articles View Component */
-
-/* .articlesContainer {
-  margin-bottom: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 5%;
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 5%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .grid {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 300px) {
-  .grid {
-    display: flex;
-    flex-direction: column;
-  }
-} */
-
-/* Article Component */
-/* .container {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  margin-right: 5%;
-}
-.container .image {
-  width: 300px;
-  height: 200px;
-}
-
-.container .mainImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.container .share {
-  display: none;
-}
-
-.container .content .tag {
-  font-size: 14px;
-}
-
-.container .content .byline {
-  color: #6b6b6b;
-  font-size: 16px;
-}
-
-.container .content .byline .author {
-  font-style: italic;
-}
-
-.container .content .title {
-  color: black;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-}
-
-.container hr {
-  height: 0.5px;
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .container {
-    margin-bottom: 5%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .container {
-    margin-bottom: 12%;
-  }
-  .container .content .title {
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 45px;
-  }
-
-  .container .share {
-    display: inline-block;
-  }
-
-  .container .content .byline {
-    display: none;
-  }
-  .container .desc {
-    display: none;
-  }
-  .container .hr {
-    display: none;
-  }
-} */
-
 @media only screen and (min-device-width: 1025px) and (-webkit-min-device-pixel-ratio: 1) {
   /* DESKTOP ARTICLES VIEW COMPONENT */
   .desktopArticles {
@@ -140,8 +29,15 @@
     display:none;
   }
 
+  .articleContainer {
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   .desktopArticleContainer{
     margin: 10px;
+    height: 100%;
   }
 
   .desktopArticleContainer .image {
@@ -155,7 +51,7 @@
     width: 100%;
     height: 100%;
     /* object-fit: cover; */
-  
+
   }
 
   .desktopArticleContainer .share {
@@ -211,7 +107,11 @@
   }
 
   .articlesRow {
-    display: flex;
+    display: flex;}
+    
+  .desktopArticleContainer .title a{
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -263,7 +163,7 @@
   .desktopArticleContainer{
     display:none;
   }
-  
+
   .mobileAndFeatureArticleContainer {
     display: none;
   }
@@ -280,7 +180,7 @@
   }
 
   .tabletArticleContainer .content{
-    text-align: left; 
+    text-align: left;
   }
 
   .tabletArticleContainer .content .tag{
@@ -314,7 +214,7 @@
     width: 100%;
     height: 100%;
     /* object-fit: cover; */
-  
+
   }
 
   .tabletArticleContainer .share {
@@ -363,7 +263,7 @@
   .desktopArticleContainer{
     display: none;
   }
-  
+
   .tabletArticleContainer {
     display: none;
   }
@@ -446,6 +346,11 @@
     color: black;
   }
   
+
+  .desktopArticleContainer {
+    display: none;
+  }
+
   .mobileAndFeatureArticleContainer {
     display: flex;
     flex-direction: row;
@@ -488,11 +393,19 @@
   }
 }
 
+
 /* FEATURE PHONE ARTICLES VIEW COMPONENT */
 @media only screen and (max-device-width: 300px) {
+
   .desktopArticleContainer{
-    display:none;
+    display: none;
   }
+
+  .tabletArticleContainer {
+    display: none;
+  }
+
+
 
   .tabletArticles {
     display: none;
@@ -563,6 +476,10 @@
     display: none;
   }
 
+  .desktopArticleContainer {
+    display: none;
+  }
+
   .mobileAndFeatureArticleContainer {
     display: flex;
     flex-direction: row;
@@ -570,6 +487,7 @@
     align-items: center;
     border-bottom: 1px solid #dadada;
     padding: 0 12px;
+    width: 100vw;
   }
 
   .mobileAndFeatureArticleContainer .title {
