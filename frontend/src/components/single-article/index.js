@@ -6,6 +6,8 @@ import style from './style.css'
 import { articleInfo } from './articleInfo'
 import ShareSaveButtons from './share-save-buttons'
 import CommentsSection from './comments-section'
+import RelatedArticles from './related-articles'
+
 //'/section/:section/:topic/:articleTitle/:articleId
 
 // Note: `user` comes from the URL, courtesy of our router
@@ -114,7 +116,8 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
             dangerouslySetInnerHTML={{ __html: currentArticle.text }}
           />
           <ShareSaveButtons />
-          <CommentsSection comments={currentArticle.comments}/>
+          <CommentsSection comments={currentArticle.comments} />
+          <RelatedArticles relatedArticles={currentArticle.relatedArticles} />
         </div>
 
         <div class= {style['content-grid-right']}>
