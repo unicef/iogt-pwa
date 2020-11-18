@@ -57,12 +57,10 @@
   .desktopArticleContainer .share {
     background-color:white;
     border-radius: 200px;
-    z-index: 100;
     padding: 12px;
     display:flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
     position: absolute;
     top: 15%;
     left: 83%;
@@ -220,12 +218,10 @@
   .tabletArticleContainer .share {
     background-color:white;
     border-radius: 200px;
-    z-index: 100;
     padding: 12px;
     display:flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
     position: absolute;
     top: 15%;
     left: 83%;

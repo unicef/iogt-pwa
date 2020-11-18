@@ -1394,4 +1394,68 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .health-providers {
     border-right: 1px solid #ececec;
   }
+
+  /* LOGIN MODAL */
+  .loginHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginHeader h3 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 40px;
+    color: #474747;
+    margin-right: 3%;
+  }
+
+  .signupText {
+    color: #20CD84;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .loginContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .loginContent .textField{
+    font-family:'Roboto';
+    margin-top: 4%;
+    border: none;
+    border-bottom: 1px solid #D3D4D5;
+  }
+
+  .loginContent .forgotPin{
+    color: #20CD84;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 13px;
+    margin-top:1%;
+    margin-bottom: 5%;
+  }
+
+  .loginContent .checkbox {
+    display:flex;
+    align-items:center;
+    margin-bottom: 5%;
+  }
+
+  .loginContent label {
+    font-size:13px;
+    color: #979797;
+    margin-left: 0.5%;
+  }
+
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 18px;
+    padding:3px;
+  }
 }
