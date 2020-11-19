@@ -6,14 +6,18 @@ import { articleInfo,
          aboutCoronavirusArticles,
          studentToolkitArticles, 
          covidParentingArticles, 
-         healthWorkerArticles } 
+         healthWorkerArticles,
+         mobileHomeArticles,
+         desktopCoronaArticles,
+         desktopStudentArticles,
+         desktopParentingArticles } 
 from './articleInfo';
 import FullWidthButton from '../buttons/fullWidthButton';
 import ViewMore from '../view-more/viewMore';
 import SearchIcon from '@material-ui/icons/Search';
 import { ChevronRight } from 'react-feather';
 
-const ArticlesView = () => {
+const ArticlesView = ({section}) => {
   const articlesList = articleInfo.map((article) => (
     <Article
       id={article.id}
@@ -78,6 +82,24 @@ const ArticlesView = () => {
     );
   });
 
+  const homeMobileArticles = mobileHomeArticles.map((article)=>{
+    return(
+    <div class={style.mobileHomeArticleContainer}>
+      <div class={style.mobileTagContainer}>
+          <h1 class={style.mobileTag}>{article.tag}</h1>
+          <div class={style.share}>
+            <img src='../../assets/mock-images/share.svg'/>
+          </div> 
+      </div>
+      <div>
+        <img src={article.img_src}/>
+      </div>
+    <h1 class={style.mobileHeader}>{article.title}</h1>
+
+    </div>
+    )
+  });
+
   const mobileCovidArticles = aboutCoronavirusArticles.map((article)=>{
     return(
       <Article
@@ -138,6 +160,51 @@ const ArticlesView = () => {
     )
   })
 
+  const deskCoronaArticles = desktopCoronaArticles.map((article)=>{
+    return(
+      <Article
+      key={article.id}
+      img_src={article.img_src}
+      tag={article.tag}
+      tag_meta={article.tag_meta}
+      date={article.date}
+      author={article.author}
+      title={article.title}
+      desc={article.desc}
+  />
+    )
+  })
+
+  const deskStudentArticles = desktopStudentArticles.map((article)=>{
+    return(
+      <Article
+      key={article.id}
+      img_src={article.img_src}
+      tag={article.tag}
+      tag_meta={article.tag_meta}
+      date={article.date}
+      author={article.author}
+      title={article.title}
+      desc={article.desc}
+  />
+    )
+  })
+
+  const deskParentArticles = desktopParentingArticles.map((article)=>{
+    return(
+      <Article
+      key={article.id}
+      img_src={article.img_src}
+      tag={article.tag}
+      tag_meta={article.tag_meta}
+      date={article.date}
+      author={article.author}
+      title={article.title}
+      desc={article.desc}
+  />
+    )
+  })
+
   return (
     // <div class={style.articlesContainer}>
     //   <div class={style.grid}>{articlesList}</div>
@@ -148,8 +215,44 @@ const ArticlesView = () => {
         href='https://fonts.googleapis.com/icon?family=Material+Icons'
         rel='stylesheet'
       />
-      <div class={style.desktopArticles}>{articlesList}</div>
+      {/* -----DESKTOP ARTICLES----- */}
+      {!section &&
+      <div class={style.desktopArticles}>
+        {articlesList}
+      </div>
+      }
+      {section==="all-articles" &&
+      <div class={style.desktopArticles}>
+        {articlesList}
+      </div>
+      }
+      {/* {section==="health-providers" &&
+      <div style={{margin:'5%'}}>
+        <div class={style.tabletArticlesRowContainer}>
+            <div class={style.tabletArticlesHeader}>
+              <h1>About Coronavirus</h1>
+              <ChevronRight size="30"/>
+            </div>
+            <div class={style.articlesRow}>{deskCoronaArticles}</div>
+        </div>
+        <div class={style.tabletArticlesRowContainer}>
+            <div class={style.tabletArticlesHeader}>
+              <h1>Student Toolkit</h1>
+              <ChevronRight size="30"/>
+            </div>
+            <div class={style.articlesRow}>{deskStudentArticles}</div>
+        </div>
+        <div class={style.tabletArticlesRowContainer}>
+            <div class={style.tabletArticlesHeader}>
+              <h1>COVID-19 Parenting</h1>
+              <ChevronRight size="30"/>
+            </div>
+            <div class={style.articlesRow}>{deskParentArticles}</div>
+        </div>
+      </div>
+      } */}
 
+      {/* -----TABLET ARTICLES----- */}
       <div class={style.tabletArticles}>
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
@@ -170,11 +273,26 @@ const ArticlesView = () => {
             <h1>COVID-19 Parenting</h1>
             <ChevronRight size="30"/>
           </div>
-          <div class={style.articlesRow}>{coronaArticles}</div>
+          <div class={style.articlesRow}>{parentArticles}</div>
         </div>
       </div>
 
+      {/* -----MOBILE PHONE ARTICLES----- */}
       <div class={style.mobileArticles}>
+      {!section &&
+      <div>
+        <div>{homeMobileArticles}</div>
+      </div>
+      }
+      {section==="all-articles" &&
+      <div>
+        <div>{homeMobileArticles}</div>
+      </div>
+      }
+      {section === "youth" &&
+      <div></div>}
+      {section === "health-providers" &&
+        <div>
         <div class={style.articleBlock}>
           <div class={style.blockHeaderContainer}>
             <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
@@ -219,15 +337,89 @@ const ArticlesView = () => {
             <ChevronRight size="15"/>
           </div>
         </div>
+      </div>}
       </div>
 
+      {/* -----FEATURE PHONE ARTICLES----- */}
       <div class={style.featureArticles}>
-        <div>{coronaArticles}</div>
-        <ViewMore text='CORONAVIRUS (COVID-19)' />
-        <div>{youthArticles}</div>
-        <ViewMore text='YOUTH' />
-        <div>{parentArticles}</div>
-        <ViewMore text='PARENTS & CAREGIVERS' />
+        {/* PARENTS & CAREGIVERS FEATURE ARTICLES */}
+        {section==="parents-and-caregivers" &&
+        <div>
+          <div>{mobileCovidArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{mobileStudentArticles}</div>
+          <ViewMore text='STUDENT TOOLKIT' />
+          <div>{mobileParentingArticles}</div>
+          <ViewMore text='COVID-19 PARENTING' />
+          <div>{mobileHealthArticles}</div>
+          <ViewMore text='HEALTH WORKER RESOURCES' />
+        </div>
+        }
+
+        {/* GIRLS FEATURE ARTICLES */}
+        {section==="girls" &&
+        <div>
+          <div>{mobileCovidArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{mobileStudentArticles}</div>
+          <ViewMore text='STUDENT TOOLKIT' />
+          <div>{mobileParentingArticles}</div>
+          <ViewMore text='COVID-19 PARENTING' />
+          <div>{mobileHealthArticles}</div>
+          <ViewMore text='HEALTH WORKER RESOURCES' />
+        </div>
+        }
+
+        {/* HEALTH PROVIDERS FEATURE ARTICLES */}
+        {section==="health-providers" &&
+        <div>
+          <div>{mobileCovidArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{mobileStudentArticles}</div>
+          <ViewMore text='STUDENT TOOLKIT' />
+          <div>{mobileParentingArticles}</div>
+          <ViewMore text='COVID-19 PARENTING' />
+          <div>{mobileHealthArticles}</div>
+          <ViewMore text='HEALTH WORKER RESOURCES' />
+        </div>
+        }
+
+        {/* YOUTH FEATURE ARTICLES */}
+        {section==="youth" &&
+        <div>
+          <div>{mobileCovidArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{mobileStudentArticles}</div>
+          <ViewMore text='STUDENT TOOLKIT' />
+          <div>{mobileParentingArticles}</div>
+          <ViewMore text='COVID-19 PARENTING' />
+          <div>{mobileHealthArticles}</div>
+          <ViewMore text='HEALTH WORKER RESOURCES' />
+        </div>
+        }
+
+        {/* ALL FEATURE ARTICLES */}
+        {section==="all-articles" &&
+        <div>
+          <div>{coronaArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{youthArticles}</div>
+          <ViewMore text='YOUTH' />
+          <div>{parentArticles}</div>
+          <ViewMore text='PARENTS & CAREGIVERS' />
+        </div>}
+
+        {/* HOME FEATURE ARTICLES */}
+        {!section &&
+        <div>
+          <div>{coronaArticles}</div>
+          <ViewMore text='CORONAVIRUS (COVID-19)' />
+          <div>{youthArticles}</div>
+          <ViewMore text='YOUTH' />
+          <div>{parentArticles}</div>
+          <ViewMore text='PARENTS & CAREGIVERS' />
+        </div>}
+
         <div class={style.featureLinksContainer}>
           <div class={style.featureLinksWrapper}>
           <a class={style.noUnderline} href='#'>
