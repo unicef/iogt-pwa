@@ -169,7 +169,6 @@
 
 .header-top .logo-small img {
   display: inline-block;
-  height: 100%;
 }
 
 .header-top .join-menu {
@@ -658,11 +657,14 @@ with similar viewport measurments ***************************
   }
 
   /* Placed to try to align the logo with the categories button */
-  .logo-full > a > img {
-    width: 163;
-    height: 40px;
+  .logo-full{
+
   }
 
+  .logo-full > img {
+    width: 193px;
+    height: 60px;
+}
   .logo-full > a {
     height: 100%;
     text-align: left;
@@ -1019,6 +1021,11 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     display: inline-block;
   }
 
+  .logo-full > img {
+       width: 193px;
+       height: 60px;
+  }
+
   .header {
     font-family: 'Open-Sans';
   }
@@ -1091,6 +1098,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   /* Placed to try to align the logo with the categories button */
   .logo-full > a {
+
     text-align: left;
   }
 

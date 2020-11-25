@@ -10,7 +10,8 @@ export const articleInfo = [
     desc:
       'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
     text:  ``,
-    comments:[]
+    comments:[],
+    relatedArticles:[1, 2]
   },
   {
     id: 1,
@@ -55,8 +56,9 @@ export const articleInfo = [
 
     {userName: 'iogtlover',
     comment: 'Please post more about COVID-19. Looking forward to reading more articles here.',
-    replies: []},
-  ]
+    replies: [0]},
+    ],
+    relatedArticles:[]
   },
   {
     id: 2,
@@ -70,7 +72,8 @@ export const articleInfo = [
       'Sharing positive stories of change can be a good way to help mothers be more open...',
     text:  ``,
     comments: [
-    ]
+    ],
+    relatedArticles:[]
   },
   {
     id: 3,
@@ -84,7 +87,8 @@ export const articleInfo = [
       'Growing strong, healthily and with increasing movement control. Children at age four...',
       text:  ``,
       comments: [
-      ]
+      ],
+      relatedArticles:[]
   },
   {
     id: 4,
@@ -97,7 +101,8 @@ export const articleInfo = [
     desc:
       'When to introduce your baby to complementary foods and why getting the...',
       text:  ``,
-      comments: []
+      comments: [],
+      relatedArticles:[5]
   },
   {
     id: 5,
@@ -110,6 +115,7 @@ export const articleInfo = [
     desc:
       'Learning to communicate with your baby. Both parents should actively interact with the baby...',
       text:  ``,
-      comments: []
+      comments: [],
+      relatedArticles:[4]
   },
 ];
