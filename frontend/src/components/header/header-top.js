@@ -1,21 +1,56 @@
 import { h } from 'preact'
 import { Link } from 'preact-router/match'
+import { useState, useEffect } from 'preact/hooks';
 import style from './style.css'
+import modalStyle from '../modal/style.css';
 
 import LanguageDropdownMenu from './language-dropdown-menu'
 import SearchBar from './searchbar'
+// import Modal from '../modal/index';
+import FullWidthButton from '../buttons/fullWidthButton';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    paddingLeft           : '5%',
+    paddingRight          : '5%',
+    paddingBottom         : '3%',
+    backgroundColor       : 'white', 
+    border                : 'none'
+  },
+  overlay: {
+    background: "rgb(218,218,218, 0.5)"
+  }
+};
+
 
 const HeaderTop = (props) => {
   let languageList = props.languageList
   let currentLanguage = props.currentLanguage //ideally this would be a prop sent in
 
-
   let signedIn = false //default value to be replaced
 
   let joinStatus = signedIn ? 'My Profile' : 'Join'
 
+  // modal state and related functions
+  const [modalOpen, setModalOpen] = useState(false); 
+  const selectModal = (info) => {
+    setModalOpen(!modalOpen) // true/false toggle
+  }
+
+  function closeModal(){
+    setModalOpen(false);
+  }
+
   return (
     <div class={style['header-top']}>
+     
       {/* Only on Feature Phone: logo-small, current-language, change-language */}
       <div class={style['header-top-language-strip']}>
         <div class={style['current-language']}>
@@ -85,7 +120,7 @@ const HeaderTop = (props) => {
         <Link
           class={style['signin']}
           activeClassName={style.active}
-          href='/signin'
+          onClick={selectModal}
         >
 
           {/* If signed in display icon if not dont' */}
@@ -94,6 +129,33 @@ const HeaderTop = (props) => {
           {signedIn? 'Sign out': 'Sign in'}
 
         </Link>
+         <Modal
+          isOpen={modalOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Login Modal"
+        >
+          <div>
+            <div class={style.loginHeader}>
+              <h3>Login into</h3>
+              <img style={{ width: '35%'}} src={'../../assets/icons/iogt_logo.svg'} />
+            </div>
+            <div class={style.signupText}>
+              <span style={{fontWeight: 300}}>Need an account?</span>
+              <span style={{fontWeight: 400, textDecoration: 'underline', marginLeft: '1%', marginBottom:'3%'}}>Sign up.</span>
+            </div>
+            <div class={style.loginContent}>
+              <input class={style.textField} type="text" id="username" name="username" placeholder="USERNAME"></input>
+              <input class={style.textField} type="password" id="pass" name="password" placeholder="4-DIGIT PIN"></input>
+              <span class={style.forgotPin}>Forgot your pin?</span>
+              <div class={style.checkbox}>
+                <input type="checkbox" id="horns" name="horns"/>
+                <label for="logged-in">Stay logged in</label>
+              </div>
+              <FullWidthButton text='Sign In' width='100%' backgroundColor='#20cd84' />
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   )

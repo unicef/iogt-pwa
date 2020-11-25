@@ -118,7 +118,7 @@ export const studentToolkitArticles = [
   {
     id: 0,
     img_src: '../../assets/mock-images/responsibility.svg',
-    tag: 'Student Toolkit',
+    tag: 'STUDENT TOOLKIT',
     tag_meta: '',
     date: '',
     author: '',
@@ -129,7 +129,7 @@ export const studentToolkitArticles = [
   {
     id: 1,
     img_src: '../../assets/mock-images/fact.svg',
-    tag: 'Student Toolkit',
+    tag: 'STUDENT TOOLKIT',
     tag_meta: '',
     date: '',
     author: '',
@@ -140,7 +140,7 @@ export const studentToolkitArticles = [
   {
     id: 2,
     img_src: '',
-    tag: 'Student Toolkit',
+    tag: 'STUDENT TOOLKIT',
     tag_meta: '',
     date: '',
     author: '',
@@ -151,7 +151,7 @@ export const studentToolkitArticles = [
   {
     id: 3,
     img_src: '',
-    tag: 'Student Toolkit',
+    tag: 'STUDENT TOOLKIT',
     tag_meta: '',
     date: '',
     author: '',
@@ -165,7 +165,7 @@ export const covidParentingArticles = [
   {
     id: 0,
     img_src: '../../assets/mock-images/covid.svg',
-    tag: 'COVID-19 Parenting',
+    tag: 'COVID-19 PARENTING',
     tag_meta: '',
     date: '',
     author: '',
@@ -176,7 +176,7 @@ export const covidParentingArticles = [
   {
     id: 1,
     img_src: '../../assets/mock-images/keep_calm.svg',
-    tag: 'COVID-19 Parenting',
+    tag: 'COVID-19 PARENTING',
     tag_meta: '',
     date: '',
     author: '',
@@ -187,7 +187,7 @@ export const covidParentingArticles = [
   {
     id: 2,
     img_src: '../../assets/mock-images/tip1.svg',
-    tag: 'COVID-19 Parenting',
+    tag: 'COVID-19 PARENTING',
     tag_meta: '',
     date: '',
     author: '',
@@ -198,7 +198,7 @@ export const covidParentingArticles = [
   {
     id: 3,
     img_src: '../../assets/mock-images/tip2.svg',
-    tag: 'COVID-19 Parenting',
+    tag: 'COVID-19 PARENTING',
     tag_meta: '',
     date: '',
     author: '',
@@ -212,7 +212,7 @@ export const healthWorkerArticles = [
   {
     id: 0,
     img_src: '../../assets/mock-images/covid.svg',
-    tag: 'Heath Workers',
+    tag: 'HEALTH WORKERS',
     tag_meta: '',
     date: '',
     author: '',
@@ -223,7 +223,7 @@ export const healthWorkerArticles = [
   {
     id: 1,
     img_src: '../../assets/mock-images/covid.svg',
-    tag: 'Heath Workers',
+    tag: 'HEALTH WORKERS',
     tag_meta: '',
     date: '',
     author: '',
@@ -234,7 +234,7 @@ export const healthWorkerArticles = [
   {
     id: 2,
     img_src: '../../assets/mock-images/covid.svg',
-    tag: 'Heath Workers',
+    tag: 'HEALTH WORKERS',
     tag_meta: '',
     date: '',
     author: '',
@@ -245,12 +245,157 @@ export const healthWorkerArticles = [
   {
     id: 3,
     img_src: '../../assets/mock-images/covid.svg',
-    tag: 'Heath Workers',
+    tag: 'HEALTH WORKERS',
     tag_meta: '',
     date: '',
     author: '',
     title: 'Communicating With COVID-19 Patients and Visitors',
     desc:
       '',
+  },
+]
+
+export const mobileHomeArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'ABOUT CORONAVIRUS',
+    date: 'August 26, 2016',
+    author: 'Patrick Panuncillon',
+    title: 'Talking about COVID-19',
+    desc:
+      'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
+  },
+  {  
+    id: 1,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+  {
+    id: 2,
+    img_src: '../../assets/mock-images/youth1.svg',
+    tag: 'YOUTH',
+    tag_meta: 'FREEDOM FOR GIRLS',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Hear Asseta, Meleichi and Kharda’s stories',
+    desc:
+      'Sharing positive stories of change can be a good way to help mothers be more open...',
+  },
+]
+
+export const desktopCoronaArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'ABOUT CORONAVIRUS',
+    date: 'August 26, 2016',
+    author: 'Patrick Panuncillon',
+    title: 'Talking about COVID-19',
+    desc:
+      'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
+  },
+  {  
+    id: 1,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+  {  
+    id: 2,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+]
+
+
+export const desktopStudentArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'ABOUT CORONAVIRUS',
+    date: 'August 26, 2016',
+    author: 'Patrick Panuncillon',
+    title: 'Talking about COVID-19',
+    desc:
+      'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
+  },
+  {  
+    id: 1,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+  {  
+    id: 2,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+]
+
+export const desktopParentingArticles = [
+  {
+    id: 0,
+    img_src: '../../assets/mock-images/covid.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'ABOUT CORONAVIRUS',
+    date: 'August 26, 2016',
+    author: 'Patrick Panuncillon',
+    title: 'Talking about COVID-19',
+    desc:
+      'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
+  },
+  {  
+    id: 1,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
+  },
+  {  
+    id: 2,
+    img_src: '../../assets/mock-images/covid2.svg',
+    tag: 'CORONAVIRUS (COVID-19)',
+    tag_meta: 'COVID-19 PARENTING',
+    date: 'August 19, 2016',
+    author: 'Robyn Collinge',
+    title: 'Washing hands to ward off COVID-19',
+    desc:
+      'Be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do help...',
   },
 ]
