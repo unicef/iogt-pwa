@@ -11,7 +11,7 @@ export const articleInfo = [
       'What is a coronavirus? Coronaviruses are a large family of viruses which may cause illness in animals or humans. In humans, several...',
     text:  ``,
     comments:[],
-    relatedArticles:[1]
+    relatedArticles:[1, 2]
   },
   {
     id: 1,

@@ -6,7 +6,7 @@ import style from './style.css'
 // If user is signed in, will display input box. Otherwise, just the comments.
 const CommentsSection = (props) => {
   let comments = props.comments;
-  let isSignedIn = false;
+  let isSignedIn = true;
   return (
     <div class={style['comments-section']}>
 

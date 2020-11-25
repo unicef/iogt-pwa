@@ -42,7 +42,7 @@ const HeaderTop = (props) => {
 
       <div class={style['header-middle']}>
         <Link class={style['logo-small']} href='/'>
-          <img src='/assets/icons/logo-small.png' />
+          <img src='/assets/icons/IOGT-logo-two-lines.png' />
         </Link>
         <div class={style['join-menu']}>
           <Link>{joinStatus} </Link>
@@ -77,7 +77,8 @@ const HeaderTop = (props) => {
       {/* Top Header in tablet and desktop*/}
       <div class={style['tabletDesktopSignin']}>
       <Link class={style['logo-full']} href='/'>
-          <img src='/assets/icons/Logo-with-text.png' />
+      <img src='/assets/icons/IOGT-logo-two-lines.png' />
+
         </Link>
         <SearchBar />
 

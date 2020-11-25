@@ -19,6 +19,8 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
     }
   });
 
+
+
   let colorTheme = myTag === 'emergency' ? '#BF0012'
   : myTag === 'youth'? '#00A4CB'
   : myTag === 'parents' ? '#48AB5D'
@@ -133,7 +135,7 @@ const Article = ({ id, img_src, tag, tag_meta, date, author, title, desc }) => {
 
 
           <div class={style.title}>
-            
+
           <Link href={`/section/${tag.split(/\W/).join('-').toLowerCase()}/${tag_meta.split(' ').join('-').toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}>
             <span >{title}</span>
           </Link>

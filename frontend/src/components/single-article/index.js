@@ -7,7 +7,7 @@ import { articleInfo } from './articleInfo'
 import ShareSaveButtons from './share-save-buttons'
 import CommentsSection from './comments-section'
 import RelatedArticles from './related-articles'
-
+import Survey from './survey'
 //'/section/:section/:topic/:articleTitle/:articleId
 
 // Note: `user` comes from the URL, courtesy of our router
@@ -116,8 +116,9 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
             dangerouslySetInnerHTML={{ __html: currentArticle.text }}
           />
           <ShareSaveButtons />
+          <Survey />
           <CommentsSection comments={currentArticle.comments} />
-          <RelatedArticles relatedArticles={currentArticle.relatedArticles} />
+
         </div>
 
         <div class= {style['content-grid-right']}>
@@ -125,8 +126,10 @@ const SingleArticle = ({ section, topic, articleTitle, articleId }) => {
                 <p><span class={style.pheader}>Date Published:</span> {currentArticle.date}</p>
                 <p> <span class={style.pheader}>Author:</span> {currentArticle.author}</p>
                 <p> <span class={style.pheader}>Category:</span> {`${currentArticle.tag} ${currentArticle.tag_meta}`}</p>
+
           </div>
               <ShareSaveButtons />
+              <RelatedArticles relatedArticles={currentArticle.relatedArticles} />
         </div>
 
       </div>
