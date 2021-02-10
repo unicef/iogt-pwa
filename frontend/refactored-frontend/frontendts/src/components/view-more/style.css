@@ -1,0 +1,36 @@
+/** FEATURE PHONE ARTICLE VIEW COMPONENT **/
+.viewMoreContainer {
+  background-color: #f3f3f3;
+}
+
+.viewMoreContent {
+  text-align: right;
+  position: relative;
+  bottom: 5px;
+  padding: 0 5px;
+}
+
+.viewMore {
+  color: #20cd84;
+  font-size: 6px;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.covidTag {
+  font-family: 'Open Sans';
+  color: #bf0012;
+  font-size: 6px;
+}
+
+.youthTag {
+  font-family: 'Open Sans';
+  color: #00a4cb;
+  font-size: 6px;
+}
+
+.parentsTag {
+  font-family: 'Open Sans';
+  color: #48ab5d;
+  font-size: 6px;
+}
