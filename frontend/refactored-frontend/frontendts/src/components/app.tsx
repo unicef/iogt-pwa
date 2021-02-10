@@ -8,7 +8,7 @@ import NotFoundPage from '../routes/notfound';
 
 import Header from './header';
 // import Footer from './footer';
-// import SingleArticle from './single-article';
+import SingleArticle from './single-article';
 
 const App: FunctionalComponent = () => {
 
@@ -80,7 +80,7 @@ const App: FunctionalComponent = () => {
                     {/* UNCOMMENT when Section is added: <Route path='/section/' component={Section} />
             <Route path='/section/:section' component={Section} />
             <Route path='/section/:section/:topic' component={Section} /> */}
-                    {/* UNCOMMENT when SingleArticle added: <Route path='/section/:section/:topic/:articleTitle/:articleId' component={SingleArticle} /> */}
+            <Route path='/section/:section/:topic/:articleTitle/:articleId' component={SingleArticle} />
                 </Router>
                 {/* UNCOMMENT when Footer is added: <Footer /> */}
             </div>
