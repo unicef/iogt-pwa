@@ -2,21 +2,35 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
-const Header: FunctionalComponent = () => {
+import NavBar from './navbar';
+import HeaderTop from './header-top';
+
+type HeaderProps = {
+    currentLanguage: string;
+    languageList: string[]
+    categories: Topic[]
+    signedInStatus : boolean
+}
+
+interface Topic {
+    topicTitle: string
+    topicList: string[]
+}
+
+const Header: FunctionalComponent<HeaderProps> = ({ currentLanguage, languageList, categories, signedInStatus }: HeaderProps) => {
+
     return (
         <header class={style.header}>
-            <h1>Preact App</h1>
-            <nav>
-                <Link activeClassName={style.active} href="/">
-                    Home
-                </Link>
-                <Link activeClassName={style.active} href="/profile">
-                    Me
-                </Link>
-                <Link activeClassName={style.active} href="/profile/john">
-                    John
-                </Link>
-            </nav>
+            <HeaderTop
+                currentLanguage={currentLanguage}
+                languageList={languageList}
+                signedInStatus={signedInStatus}
+            />
+            <NavBar
+                currentLanguage={currentLanguage}
+                languageList={languageList}
+                categories={categories}
+            />
         </header>
     );
 };
