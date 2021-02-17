@@ -21,7 +21,7 @@ const RelatedArticles: FunctionalComponent<RelatedArticlesProps> = ({ relatedArt
       <h1>Related Articles</h1>
 
       <div>
-      {relatedArticles.map(relatedArticle =>
+      {relatedArticles &&relatedArticles.map(relatedArticle =>
          <div>
            <Link href={`/section/${articleInfo[relatedArticle].tag.split(/\W/).join('-').toLowerCase()}/${articleInfo[relatedArticle].tag_meta.split(' ').join('-').toLowerCase()}/${articleInfo[relatedArticle].title.split(/\W/).join('-')}/${articleInfo[relatedArticle].id}`}>
            <img class={style['related-article-img']} src={articleInfo[relatedArticle].img_src} />
