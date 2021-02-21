@@ -72,7 +72,7 @@ const App: FunctionalComponent = () => {
                 rel='stylesheet'
             />
             <div id='content-wrap'>
-                <Header currentLanguage={currentLanguage} languageList={languageList} categories={categories} signedInStatus={signedInStatus}/>
+                <Header currentLanguage={currentLanguage} languageList={languageList} categories={categories} signedInStatus={signedInStatus} />
                 <Router>
                     <Route path='/' component={Home} />
                     <Route path='/profile/' component={Profile} user='me' />

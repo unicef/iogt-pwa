@@ -8,6 +8,8 @@ import { useState, useEffect } from 'preact/hooks';
 import LanguageDropdown from './language-dropdown'
 import SearchBar from './searchbar'
 import modalStyle from '../modal/style.css';
+import Modal from '../modal';
+import FullWidthButton from '../buttons/fullWidthButton';
 
 // TODO: Uncomment when Modal and FulLWidthButton tsx files are converted
 // import Modal from 'react-modal';
@@ -134,9 +136,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
 
         </Link>
 
-        {/* Todo: Uncomment when Modal and FullWidthButton has been converted to Typescript
-
-         <Modal
+        <Modal
           isOpen={modalOpen}
           onRequestClose={closeModal}
           style={customStyles}
@@ -145,24 +145,24 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
           <div>
             <div class={style.loginHeader}>
               <h3>Login into</h3>
-              <img style={{ width: '35%'}} src={'../../assets/icons/iogt_logo.svg'} />
+              <img style={{ width: '35%' }} src={'../../assets/icons/iogt_logo.svg'} />
             </div>
             <div class={style.signupText}>
-              <span style={{fontWeight: 300}}>Need an account?</span>
-              <span style={{fontWeight: 400, textDecoration: 'underline', marginLeft: '1%', marginBottom:'3%'}}>Sign up.</span>
+              <span style={{ fontWeight: 300 }}>Need an account?</span>
+              <span style={{ fontWeight: 400, textDecoration: 'underline', marginLeft: '1%', marginBottom: '3%' }}>Sign up.</span>
             </div>
             <div class={style.loginContent}>
               <input class={style.textField} type="text" id="username" name="username" placeholder="USERNAME"></input>
               <input class={style.textField} type="password" id="pass" name="password" placeholder="4-DIGIT PIN"></input>
               <span class={style.forgotPin}>Forgot your pin?</span>
               <div class={style.checkbox}>
-                <input type="checkbox" id="horns" name="horns"/>
+                <input type="checkbox" id="horns" name="horns" />
                 <label for="logged-in">Stay logged in</label>
               </div>
-             <FullWidthButton text='Sign In' width='100%' backgroundColor='#20cd84' />
+              <FullWidthButton text='Sign In' width='100%' backgroundColor='#20cd84' />
             </div>
           </div>
-        </Modal> */}
+        </Modal>
       </div>
     </div>
   );
