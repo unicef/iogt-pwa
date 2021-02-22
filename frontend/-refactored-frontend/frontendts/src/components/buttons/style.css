@@ -1,0 +1,15 @@
+.primaryButton {
+  border: none;
+  outline: none;
+  padding: 7px 15px;
+  position: relative;
+  align-self: center;
+  margin-bottom: 8px;
+}
+
+.buttonLabel {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
