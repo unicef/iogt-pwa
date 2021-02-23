@@ -24,8 +24,10 @@ const Section: FunctionalComponent<{ section?: string }> = ({ section }) => {
       {section === 'health-providers' && (
         <ArticlesView section='health-providers' />
       )}
-      {/* <h1>Section: {section}</h1>
+
+      <h1>Section: {section}</h1>
 			<p>This is the section for a topic { section }.</p>
+      {/*
 
       <p>10/21 Setting this up to display each section.</p>
 			<div>Current time: {new Date(time).toLocaleString()}</div>

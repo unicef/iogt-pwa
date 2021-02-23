@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
+import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
 import Article from './article';
 import {
@@ -15,8 +16,7 @@ import {
 } from './articleInfo';
 import FullWidthButton from '../buttons/fullWidthButton';
 import ViewMore from '../view-more/viewMore';
-import SearchIcon from '@material-ui/icons/Search';
-import { ChevronRight } from 'react-feather';
+
 
 type Props = {
   section?: string;
@@ -265,21 +265,22 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>About Coronavirus</h1>
-            <ChevronRight size='30' />
+            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
+            {/* <ChevronRight size='30' /> */}
           </div>
           <div class={style.articlesRow}>{coronaArticles}</div>
         </div>
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>Student Toolkit</h1>
-            <ChevronRight size='30' />
+            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
           </div>
           <div class={style.articlesRow}>{youthArticles}</div>
         </div>
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>COVID-19 Parenting</h1>
-            <ChevronRight size='30' />
+            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
           </div>
           <div class={style.articlesRow}>{parentArticles}</div>
         </div>
@@ -303,45 +304,45 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileCovidArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>STUDENT TOOLKIT</h1>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileStudentArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>COVID-19 PARENTING</h1>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileParentingArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>HEALTH WORKER RESOURCES</h1>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileHealthArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <ChevronRight size='15' />
+                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
               </div>
             </div>
           </div>
@@ -435,49 +436,49 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
             <a class={style.noUnderline} href='#'>
               <div class={style.searchLink}>
                 <p>Search</p>
-                <SearchIcon fontSize='small' />
+                <Icon style={{ fontSize: 'small' }}class="material-icons">search</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Coronavirus</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Youth</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Parents & Caregivers</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Quizzes</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Surveys</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>How To Use Free Data</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>About Us</p>
-                <ChevronRight size='20' />
+                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
               </div>
             </a>
           </div>

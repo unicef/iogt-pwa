@@ -1,13 +1,13 @@
 import { FunctionalComponent, h } from 'preact';
-import { Route, Router } from 'preact-router';
+import Router, { Route } from 'preact-router';
 
 import Home from '../routes/home';
 import Profile from '../routes/profile';
-// import Section from '../routes/sections'
+import Section from '../routes/sections';
 import NotFoundPage from '../routes/notfound';
 
 import Header from './header';
-// import Footer from './footer';
+import Footer from './footer';
 import SingleArticle from './single-article';
 
 const App: FunctionalComponent = () => {
@@ -77,12 +77,13 @@ const App: FunctionalComponent = () => {
                     <Route path='/' component={Home} />
                     <Route path='/profile/' component={Profile} user='me' />
                     <Route path='/profile/:user' component={Profile} />
-                    {/* UNCOMMENT when Section is added: <Route path='/section/' component={Section} />
-            <Route path='/section/:section' component={Section} />
-            <Route path='/section/:section/:topic' component={Section} /> */}
-            <Route path='/section/:section/:topic/:articleTitle/:articleId' component={SingleArticle} />
+                    <Route path='/section/' component={Section} />
+                    <Route path='/section/:section' component={Section} />
+                    <Route path='/section/:section/:topic' component={Section} />
+                    <Route path='/section/:section/:topic/:articleTitle/:articleId' component={SingleArticle} />
+                    <NotFoundPage default />
                 </Router>
-                {/* UNCOMMENT when Footer is added: <Footer /> */}
+                <Footer />
             </div>
         </div>
     );

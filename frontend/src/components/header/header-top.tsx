@@ -11,9 +11,6 @@ import modalStyle from '../modal/style.css';
 import Modal from '../modal';
 import FullWidthButton from '../buttons/fullWidthButton';
 
-// TODO: Uncomment when Modal and FulLWidthButton tsx files are converted
-// import Modal from 'react-modal';
-// import FullWidthButton from '../buttons/fullWidthButton';
 
 const customStyles = {
   content: {
