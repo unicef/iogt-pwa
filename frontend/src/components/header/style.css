@@ -286,23 +286,23 @@
   padding-top: 2px;
 }
 
-.nav div a:hover {
+.nav div > a:hover {
   background-color: #20cd84;
   color: #ffffff;
 }
 
-.nav div a:hover img {
+.nav div > a:hover img {
   display: none;
 }
 
-.nav div a .imgSwap {
+.nav div > a .imgSwap {
   display: none;
   position: relative;
   left: 0;
   z-index: 99;
 }
 
-.nav div a:hover .imgSwap {
+.nav div > a:hover .imgSwap {
   display: block;
   text-align: center;
   margin-left: auto;
@@ -310,13 +310,174 @@
   height: 15px;
 }
 
-.nav div a:hover > i {
+.nav div > a:hover > i {
   color: #ffffff;
 }
+
 
 /* Emphasize legibility over rendering speed and geometric precision. */
 .material-icons {
   text-rendering: optimizeLegibility;
+}
+
+/* ------- Accordian feature ----------- */
+.subtopic-dropdown-content {
+  display: none;
+  list-style-type: none;
+  text-align: left;
+}
+
+.subsubtopic-content,
+.subsubsubtopic-content {
+  list-style-type: none;
+}
+
+
+.parents .subtopic-dropdown-content li {
+  background-color: #7a432a;
+}
+.parents .subtopic-dropdown-content:hover li {
+  background-color: #7a432a;
+}
+
+.health-providers .subtopic-dropdown-content li {
+  background-color: #bf0012;
+}
+.health-providers .subtopic-dropdown-content:hover li {
+  background-color: #bf0012;
+}
+
+.youth .subtopic-dropdown-content li {
+  background-color: #b39c4d;
+}
+.youth .subtopic-dropdown-content:hover li {
+  background-color: #b39c4d;
+}
+
+/* Subtopic dropdown on Topic hover */
+.subtopic-dropdown-content {
+  display: none;
+  position: absolute; /* make this relative in the desktop version */
+  left: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+  width: 100%;
+  font-family: 'Poppins';
+  list-style-type: none;
+  text-align: left;
+  height: 0;
+  transition: 0.5s;
+  z-index: 300;
+}
+
+.subtopic-dropdown-content li a {
+  display: block;
+  width: auto;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.subtopic-dropdown-content > li {
+  padding: 0px 28px;
+  text-align: left;
+  line-height: 35px;
+}
+
+.subtopic-dropdown-content li > a {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* 3nd Level of Navigation */
+.subsubtopic-content {
+  display: none;
+}
+.subsubtopic-content a {
+  margin-left: 0;
+}
+
+.subtopic-dropdown-content > li:hover .subsubtopic-content {
+  display: block;
+}
+
+/* 4th Level of Navigation */
+.subsubsubtopic-content {
+  display: none;
+}
+
+.subsubtopic-content > li {
+  /* margin-left: 50px; */
+}
+.subsubtopic-content > li:hover .subsubsubtopic-content {
+  display: block;
+  transition: 1s;
+}
+
+.nav .parents > a {
+  color: #7a432a;
+}
+.parents:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #7a432a;
+}
+
+/* Allows 1st level to be remain highlighted  when on subtopics*/
+.parents:hover > a:hover {
+  background-color: #7a432a;
+}
+
+.subtopic-dropdown-content:hover > li:hover > a:hover {
+  transition: 0.1s;
+  filter: brightness(85%);
+}
+
+/* Caregivers */
+.health-providers {
+  overflow: hidden;
+}
+
+.nav .health-providers > a {
+  color: #bf0012;
+}
+.health-providers:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #bf0012;
+}
+
+/* Allows 1st level to be remain highlighted  when on subtopics*/
+.health-providers:hover > a:hover {
+  background-color: #bf0012;
+}
+
+/* Youth subsections */
+.youth {
+  overflow: hidden;
+}
+
+.nav .youth > a {
+  color: #b39c4d;
+}
+.youth:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #b39c4d;
+}
+
+/* Allows 1st level to be remain highlighted  when on subtopics*/
+.youth:hover > a:hover {
+  background-color: #b39c4d;
 }
 
 /*****************************************************************
@@ -344,14 +505,15 @@
   .current-language,
   .change-language,
   .join-menu,
-  .logo-full, .tabletDesktopSignin .signin {
+  .logo-full,
+  .tabletDesktopSignin .signin {
     display: none;
     visibility: collapse;
   }
 
   .signin-language,
   .signin,
-  .search-menu{
+  .search-menu {
     visibility: visible;
     display: inline-block;
   }
@@ -486,17 +648,17 @@
     border-radius: 50%;
   }
 
-  .search-bar{
+  .search-bar {
     display: none;
   }
 
-  .mobile-search-bar{
-    border:0;
+  .mobile-search-bar {
+    border: 0;
     width: 0px;
     height: 0px;
   }
 
-  .mobile-search-bar:focus{
+  .mobile-search-bar:focus {
     width: 100%;
     height: 100%;
   }
@@ -518,8 +680,8 @@
     height: 100%;
   }
 
-  .nav div a,
-  .nav div a:hover {
+  .nav div > a,
+  .nav div > a:hover {
     display: inline-block;
     line-height: 8px;
   }
@@ -537,9 +699,60 @@
     height: 24px;
   }
 
-  .nav div a:hover .imgSwap {
+  .nav div > a:hover .imgSwap {
     height: 24px;
   }
+  /* ----------Accordian feature on Mobile ---------*/
+  input {
+    display: none;
+  }
+
+  label {
+    /* display: block;
+  cursor: pointer;
+  transition: ease .5s;
+  position: absolute; */
+    display: block;
+    padding: 8px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: ease 0.5s;
+    position: relative; /* ADDING THIS IS REQUIRED */
+  }
+
+  label::after {
+    /* font-weight: bold;
+  position: absolute;
+  content: '+'; */
+
+    content: '+';
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+  }
+
+  label:hover::after {
+    content: '-';
+    right: 14px;
+    top: 3px;
+  }
+
+  .subsubtopic-content {
+    font-size: 13px;
+  }
+
+  /* label:hover::after + .subsubtopic-content{visibility:visible;}
+
+.parents:hover .subtopic-dropdown-content .subsubtopic-content{
+ visibility: hidden;
+}
+
+.parents:hover .subtopic-dropdown-content label:hover + .subsubtopic-content{
+  visibility: visible;
+ } */
 }
 
 /***********************************************************
@@ -657,14 +870,13 @@ with similar viewport measurments ***************************
   }
 
   /* Placed to try to align the logo with the categories button */
-  .logo-full{
-
+  .logo-full {
   }
 
   .logo-full > img {
     width: 193px;
     height: 60px;
-}
+  }
   .logo-full > a {
     height: 100%;
     text-align: left;
@@ -689,8 +901,8 @@ with similar viewport measurments ***************************
   }
   .header .nav > div > a:hover {
     padding: 0;
-    padding-left:3px;
-    padding-right:3px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   .header .nav > div {
@@ -979,6 +1191,13 @@ with similar viewport measurments ***************************
     color: #6b6b6b;
     padding: 10px 25px 10px 25px;
   }
+
+    /* ------ Accordian Dropdown: Tablet ------ */
+    .subtopic-dropdown-content{
+      position: absolute;
+      width: 25%;
+      left: auto;
+    }
 }
 /***********************************************************
 DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
@@ -1022,8 +1241,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .logo-full > img {
-       width: 193px;
-       height: 60px;
+    width: 193px;
+    height: 60px;
   }
 
   .header {
@@ -1098,7 +1317,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   /* Placed to try to align the logo with the categories button */
   .logo-full > a {
-
     text-align: left;
   }
 
@@ -1153,7 +1371,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
-
   }
 
   .nav div a > i {
@@ -1419,7 +1636,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .signupText {
-    color: #20CD84;
+    color: #20cd84;
     font-size: 20px;
     text-align: center;
   }
@@ -1433,30 +1650,30 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 5%;
   }
 
-  .loginContent .textField{
-    font-family:'Roboto';
+  .loginContent .textField {
+    font-family: 'Roboto';
     margin-top: 4%;
     border: none;
-    border-bottom: 1px solid #D3D4D5;
+    border-bottom: 1px solid #d3d4d5;
   }
 
-  .loginContent .forgotPin{
-    color: #20CD84;
+  .loginContent .forgotPin {
+    color: #20cd84;
     font-weight: 500;
     text-decoration: underline;
     font-size: 13px;
-    margin-top:1%;
+    margin-top: 1%;
     margin-bottom: 5%;
   }
 
   .loginContent .checkbox {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     margin-bottom: 5%;
   }
 
   .loginContent label {
-    font-size:13px;
+    font-size: 13px;
     color: #979797;
     margin-left: 0.5%;
   }
@@ -1464,6 +1681,13 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   input,
   input::-webkit-input-placeholder {
     font-size: 18px;
-    padding:3px;
+    padding: 3px;
+  }
+
+  /* ------ Accordian Dropdown: Desktop ------ */
+  .subtopic-dropdown-content{
+    position: absolute;
+    width: 25%;
+    left: auto;
   }
 }

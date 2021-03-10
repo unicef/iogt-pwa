@@ -12,6 +12,7 @@ interface Topic {
   topicList: string[]
 }
 
+
 const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ categories }: CategoriesDropdownProps) => {
   return (
     <div class={style['categories-dropdown']}>

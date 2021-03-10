@@ -83,7 +83,7 @@ const App: FunctionalComponent = () => {
                     <Route path='/section/:section/:topic/:articleTitle/:articleId' component={SingleArticle} />
                     <NotFoundPage default />
                 </Router>
-                <Footer />
+                <Footer categories={categories} />
             </div>
         </div>
     );
