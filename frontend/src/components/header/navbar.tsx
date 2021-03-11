@@ -32,26 +32,26 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
 
   const navLinks: NavLinks[] = [
     {
-      text: 'All Articles',
+      text: 'Home',
       class: style.articles,
-      imgSrc: '../../assets/icons/nav-icons/globe-green.png',
-      imgSwap: '../../assets/icons/nav-icons/globe-white.png',
+      imgSrc: '../../assets/icons/nav-icons/star-yellow.svg',
+      imgSwap: '../../assets/icons/nav-icons/star-white.svg',
       hrefText: '/section/all-articles',
       subtopics: []
     },
     {
       text: 'Parents & Caregivers',
       class: style.parents,
-      imgSrc: '../../assets/icons/nav-icons/parent-green.png',
-      imgSwap: '../../assets/icons/nav-icons/parent-white.png',
+      imgSrc: '../../assets/icons/nav-icons/family-brown.svg',
+      imgSwap: '../../assets/icons/nav-icons/family-white.svg',
       hrefText: '/section/parents-and-caregivers',
       subtopics: []
     },
     {
       text: 'Girls',
       class: style.girls,
-      imgSrc: '../../assets/icons/nav-icons/girl-green.png',
-      imgSwap: '../../assets/icons/nav-icons/girl-white.png',
+      imgSrc: '../../assets/icons/nav-icons/woman-green.svg',
+      imgSwap: '../../assets/icons/nav-icons/woman-white.svg',
       hrefText: '/section/girls',
       subtopics: []
     },
@@ -67,16 +67,16 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
     {
       text: 'Youth',
       class: style.youth,
-      imgSrc: '../../assets/icons/nav-icons/boy-green.png',
-      imgSwap: '../../assets/icons/nav-icons/boy-white.png',
+      imgSrc: '../../assets/icons/nav-icons/youth-tan.svg',
+      imgSwap: '../../assets/icons/nav-icons/youth-white.svg',
       hrefText: '/section/youth',
       subtopics: []
     },
     {
       text: 'Coronavirus (Covid-19)',
       class: style['health-providers'],
-      imgSrc: '../../assets/icons/nav-icons/healthcare-green.png',
-      imgSwap: '../../assets/icons/nav-icons/healthcare-white.png',
+      imgSrc: '../../assets/icons/nav-icons/doctor-red.svg',
+      imgSwap: '../../assets/icons/nav-icons/doctor-white.svg',
       hrefText: '/section/health-providers',
       subtopics: []
     },
@@ -97,22 +97,18 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
     // Add in subtopics
     if (category[0]) navLink.subtopics = category[0].topicList
 
+  })
     // Add in subsubtopics / article titles
     //TODO: Will need to update this to match with database info
-    let articles = [
-      { articleTitle: "Read to Your Child about COVID" },
+    let thirdLevel = [
+      { title: "Read to Your Child about COVID", link: "" },
 
-      { articleTitle: "Children with Disabilities" },
-
-      { articleTitle: "Crowded Homes" },
-
-      { articleTitle: "How to Build a Family Budget" },
-
+      { title: "Children with Disabilities", link: "" }
     ]
 
-
-  })
-
+    let fourthLevel = [
+      { title: "Children with Disabilities", link: "" }
+    ]
   return (
     <nav aria-label="primary" class={style.nav}>
       <CategoriesDropdown
@@ -139,26 +135,28 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
               <ul class={style['subtopic-dropdown-content']}>
                 {link.subtopics.map((subtopic, index) =>
                   <li>
-                    <Link>
+                    <Link href={`${link.hrefText}/${subtopic.split(' ').join('-').toLowerCase()}`}>
                       <span>{subtopic}</span>
                       <label for={`${subtopic}${index}`}></label>
                     </Link>
                     <ul class={style['subsubtopic-content']}>
+                    {thirdLevel.map((subsubtopic, index:number) =>
                       <li>
-                        <Link>
-                          <span>Your content</span>
+                        <Link href={subsubtopic.link}>
+                          <span>{subsubtopic.title}</span>
                           <label for={`${index}`}></label>
                         </Link>
                         <ul class={style['subsubsubtopic-content']}>
+                        {fourthLevel.map((subsubsubtopic, index:number) =>
                           <li>
-                            <Link>
-                              <span>Your content</span>
-                              {/* <label for={`${index}`}></label> */}
-                            </Link>
-                          </li>
+                        <Link href={subsubsubtopic.link}>
+                          <span>{subsubsubtopic.title}</span>
+                          <label for={`${index}`}></label>
+                        </Link>
+                          </li>)}
                         </ul>
 
-                      </li>
+                      </li>)}
                     </ul>
                   </li>
                 )}
@@ -186,3 +184,4 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
 };
 
 export default NavBar;
+
