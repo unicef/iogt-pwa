@@ -1,0 +1,30 @@
+[
+  {
+    "url": "/",
+    "title": "IoGT homepage",
+  },
+  {
+    "url": "/profile/",
+    "title": ""
+  },
+  {
+    "url": "/profile/:user",
+    "title": ""
+  },
+  {
+    "url": "/section/",
+    "title": ""
+  },
+  {
+    "url": "/section/:section",
+    "title": ""
+  },
+  {
+    "url": "/section/:section/:topic",
+    "title": ""
+  },
+  {
+    "url": "/section/:section/:topic/:articleTitle/:articleId",
+    "title": ""
+  }
+]

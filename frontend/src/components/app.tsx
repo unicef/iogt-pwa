@@ -1,5 +1,8 @@
-import { FunctionalComponent, h } from 'preact';
 import Router, { Route } from 'preact-router';
+import {  createElement as h, FunctionalComponent} from 'preact';
+import renderToString from 'preact-render-to-string';
+import prepass from 'preact-ssr-prepass';
+
 
 import Home from '../routes/home';
 import Profile from '../routes/profile';
@@ -10,7 +13,7 @@ import Header from './header';
 import Footer from './footer';
 import SingleArticle from './single-article';
 
-const App: FunctionalComponent = () => {
+const App = () => {
 
     let signedInStatus = false;
     // Placeholder values used for now
@@ -89,4 +92,6 @@ const App: FunctionalComponent = () => {
     );
 };
 
+
 export default App;
+
