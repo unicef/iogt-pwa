@@ -1,3 +1,5 @@
+import React from 'react'
+
 import style from './style.css';
 import { ComponentChildren, FunctionalComponent, h } from 'preact';
 

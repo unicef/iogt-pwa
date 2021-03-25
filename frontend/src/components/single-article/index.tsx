@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { FunctionalComponent, h } from 'preact';
 import { useEffect, useState } from 'preact/hooks'
 import { route } from 'preact-router'

@@ -1,3 +1,4 @@
+import React from 'react'
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import { Icon } from 'preact-material-components/Icon';
@@ -90,7 +91,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
     );
   });
 
-  const homeMobileArticles = mobileHomeArticles.map((article) => {
+  const homeMobileArticles = mobileHomeArticles && mobileHomeArticles.map((article) => {
     return (
       <div class={style.mobileHomeArticleContainer}>
         <div class={style.mobileTagContainer}>

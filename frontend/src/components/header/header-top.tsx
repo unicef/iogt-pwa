@@ -1,3 +1,4 @@
+import React from 'react'
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
@@ -51,7 +52,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
   }
 
   return (
-    <div class={style['header-top']}>
+    <div className={style['header-top']}>
 
       {/* Only on Feature Phone: (menu pushes down page) logo-small, current-language, change-language */}
 

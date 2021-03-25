@@ -1,13 +1,14 @@
+import React from 'react'
 import Router, { Route } from 'preact-router';
 import {  createElement as h, FunctionalComponent} from 'preact';
 import renderToString from 'preact-render-to-string';
 import prepass from 'preact-ssr-prepass';
 
 
-import Home from '../routes/home';
-import Profile from '../routes/profile';
-import Section from '../routes/sections';
-import NotFoundPage from '../routes/notfound';
+import Home from '../pages/home';
+import Profile from '../pages/profile';
+import Section from '../pages/sections';
+import NotFoundPage from '../pages/notfound';
 
 import Header from './header';
 import Footer from './footer';

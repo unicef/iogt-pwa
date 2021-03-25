@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { FunctionalComponent, h } from 'preact';
 import style from './style.css';
 
