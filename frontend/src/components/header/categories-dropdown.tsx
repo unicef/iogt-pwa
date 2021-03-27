@@ -14,6 +14,19 @@ interface Topic {
 
 
 const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ categories }: CategoriesDropdownProps) => {
+
+  // Add in subsubtopics / article titles
+  //TODO: Will need to update this to match with database info
+  let thirdLevel = [
+    { title: "Read to Your Child about COVID", link: "" },
+
+    { title: "Children with Disabilities", link: "" }
+  ]
+
+  let fourthLevel = [
+    { title: "Children with Disabilities", link: "" }
+  ]
+
   return (
     <div class={style['categories-dropdown']}>
       <div class={style['btn-group']}>
@@ -23,22 +36,61 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
         </button>
       </div>
       <div class={style['categories-dropdown-content']}>
-        <dl>
-          {categories.map((topic) => (
-            <span>
-              <Link class={style['dl-title']} activeClassName={style.active} href='/'>
-                <dt>{topic.topicTitle}
-                  <i class="material-icons">arrow_drop_up</i>
-                </dt>
+        <ul >
+          {categories.map((topic, index) => (
+            <li>
+              <Link class={style['subtopic']} activeClassName={style.active} href={`/${topic.topicTitle.split(' ').join('-').toLowerCase()}`}
+              >
+                <span>
+                  {topic.topicTitle}
+                  <label for={`${topic}${index}`}></label>
+                </span>
+
+                <ul class={style['categories-subtopic-content']}>
+                  {topic.topicList.map((topicItem) => (
+                    <li>
+                      <Link activeClassName={'dl-item'} href='/'>
+                        <span>
+                          {topicItem}
+                          <label for={`${topic}${index}`}></label>
+                        </span>
+
+                        {/* Level 3 & 4 */}
+                        {/*  */}
+                        <ul class={style['categories-subsubtopic-content']} >
+                          {thirdLevel.map((subsubtopic, index: number) =>
+                            <li>
+                              <Link href={subsubtopic.link}>
+                                <span>{subsubtopic.title}
+                                  <label for={`subsubtopic${index}`}></label>
+                                </span>
+
+                                <ul class={style['categories-subsubsubtopic-content']}>
+
+                                  {fourthLevel.map((subsubsubtopic, index: number) =>
+                                    <li>
+                                      <Link href={subsubsubtopic.link}>
+                                        <span>{subsubsubtopic.title}</span>
+                                        {/* <label for={`subsubtopic${index}`}></label> */}
+                                      </Link>
+                                    </li>)}
+                                </ul>
+
+                              </Link>
+                            </li>)}
+                        </ul>
+
+
+
+                      </Link>
+                    </li>
+                  ))}
+
+                </ul>
               </Link>
-              {topic.topicList.map((topicItem) => (
-                <Link activeClassName={'dl-item'} href='/'>
-                  <dd>{topicItem}</dd>
-                </Link>
-              ))}
-            </span>
+            </li>
           ))}
-        </dl>
+        </ul>
       </div>
     </div>
   );

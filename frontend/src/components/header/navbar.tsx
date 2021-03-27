@@ -98,26 +98,24 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
     if (category[0]) navLink.subtopics = category[0].topicList
 
   })
-    // Add in subsubtopics / article titles
-    //TODO: Will need to update this to match with database info
-    let thirdLevel = [
-      { title: "Read to Your Child about COVID", link: "" },
+  // Add in subsubtopics / article titles
+  //TODO: Will need to update this to match with database info
+  let thirdLevel = [
+    { title: "Read to Your Child about COVID", link: "" },
 
-      { title: "Children with Disabilities", link: "" }
-    ]
+    { title: "Children with Disabilities", link: "" }
+  ]
 
-    let fourthLevel = [
-      { title: "Children with Disabilities", link: "" }
-    ]
+  let fourthLevel = [
+    { title: "Children with Disabilities", link: "" }
+  ]
   return (
     <nav aria-label="primary" class={style.nav}>
-      <CategoriesDropdown
-        // activeClassName={style.active}
-        categories={categories}
-      />
+      <CategoriesDropdown categories={categories} />
       {navLinks.map((link) => (
         // Nav Item and Subtopic dropdown
-        <div class={`${link.class} ${style}[nav-bar-item]`}>
+        <div class={`${link.class} ${style['nav-bar-item']}`}>
+
           <Link activeClassName={style.active} href={link.hrefText}>
             {link.imgSrc ? (
               <img src={link.imgSrc} />
@@ -129,35 +127,39 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
             ) : (
               ''
             )}
-            {link.text}
+            <span>{link.text}</span>
             {/* Subtopics - to appear on hover*/}
             {!!link.subtopics.length &&
               <ul class={style['subtopic-dropdown-content']}>
                 {link.subtopics.map((subtopic, index) =>
                   <li>
                     <Link href={`${link.hrefText}/${subtopic.split(' ').join('-').toLowerCase()}`}>
-                      <span>{subtopic}</span>
-                      <label for={`${subtopic}${index}`}></label>
-                    </Link>
-                    <ul class={style['subsubtopic-content']}>
-                    {thirdLevel.map((subsubtopic, index:number) =>
-                      <li>
-                        <Link href={subsubtopic.link}>
-                          <span>{subsubtopic.title}</span>
-                          <label for={`${index}`}></label>
-                        </Link>
-                        <ul class={style['subsubsubtopic-content']}>
-                        {fourthLevel.map((subsubsubtopic, index:number) =>
-                          <li>
-                        <Link href={subsubsubtopic.link}>
-                          <span>{subsubsubtopic.title}</span>
-                          <label for={`${index}`}></label>
-                        </Link>
-                          </li>)}
-                        </ul>
+                      <span>{subtopic}
+                        <label for={`${subtopic}${index}`}></label>
+                      </span>
 
-                      </li>)}
-                    </ul>
+                      <ul class={style['subsubtopic-content']}>
+                        {thirdLevel.map((subsubtopic, index: number) =>
+                          <li>
+                            <Link href={subsubtopic.link}>
+                              <span>{subsubtopic.title}
+                                <label for={`${index}`}></label>
+                              </span>
+
+                              <ul class={style['subsubsubtopic-content']}>
+                                {fourthLevel.map((subsubsubtopic, index: number) =>
+                                  <li>
+                                    <Link href={subsubsubtopic.link}>
+                                      <span>{subsubsubtopic.title}
+                                        <label for={`${index}`}></label>
+                                      </span>
+                                    </Link>
+                                  </li>)}
+                              </ul>
+                            </Link>
+                          </li>)}
+                      </ul>
+                    </Link>
                   </li>
                 )}
               </ul>
