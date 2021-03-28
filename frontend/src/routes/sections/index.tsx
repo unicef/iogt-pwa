@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import ArticlesView from '../../components/articles/articlesView';
+import ArticlesView from '../../components/articles/articleListing';
 import style from './style.css';
 
 // Note: `section` comes from the URL, courtesy of our router
@@ -15,6 +15,7 @@ const Section: FunctionalComponent<{ section?: string }> = ({ section }) => {
 
   return (
     <div>
+      {/* <h1>Section: {section}</h1> */}
       {section === 'all-articles' && <ArticlesView section='all-articles' />}
       {section === 'parents-and-caregivers' && (
         <ArticlesView section='parents-and-caregivers' />
@@ -25,10 +26,11 @@ const Section: FunctionalComponent<{ section?: string }> = ({ section }) => {
         <ArticlesView section='health-providers' />
       )}
 
-      <h1>Section: {section}</h1>
-			<p>This is the section for a topic { section }.</p>
+
+
       {/*
 
+			<p>This is the section for a topic { section }.</p>
       <p>10/21 Setting this up to display each section.</p>
 			<div>Current time: {new Date(time).toLocaleString()}</div>
 

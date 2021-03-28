@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-type Props = {
+type ArticleProps = {
   id: number;
   img_src: string;
   tag: string;
@@ -14,7 +14,7 @@ type Props = {
   desc: string;
 };
 
-const Article: FunctionalComponent<Props> = ({
+const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
   id,
   img_src,
   tag,
@@ -23,7 +23,7 @@ const Article: FunctionalComponent<Props> = ({
   author,
   title,
   desc,
-}) => {
+}: ArticleProps) => {
   const [myTag, setMyTag] = useState('');
 
   useEffect(() => {
@@ -42,10 +42,20 @@ const Article: FunctionalComponent<Props> = ({
     myTag === 'emergency'
       ? '#BF0012'
       : myTag === 'youth'
-      ? '#00A4CB'
-      : myTag === 'parents'
-      ? '#48AB5D'
-      : 'black';
+        ? '#00A4CB'
+        : myTag === 'parents'
+          ? '#48AB5D'
+          : 'black';
+
+  {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */ }
+  let singleArticleLink = `/section/${tag
+    .split(/\W/)
+    .join('-')
+    .toLowerCase()}/${tag_meta
+      .split(' ')
+      .join('-')
+      .toLowerCase()}/${title.split(/\W/).join('-').toLowerCase()}/${id}`
+
 
   return (
     <div class={style.articleContainer}>
@@ -56,10 +66,10 @@ const Article: FunctionalComponent<Props> = ({
               myTag === 'emergency'
                 ? { color: '#BF0012' }
                 : myTag === 'youth'
-                ? { color: '#00A4CB' }
-                : myTag === 'parents'
-                ? { color: '#48AB5D' }
-                : { color: 'black' }
+                  ? { color: '#00A4CB' }
+                  : myTag === 'parents'
+                    ? { color: '#48AB5D' }
+                    : { color: 'black' }
             }
             class={style.tag}
           >
@@ -69,15 +79,9 @@ const Article: FunctionalComponent<Props> = ({
         </div>
         {img_src !== '' && (
           <div class={style.image}>
-            {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */}
+
             <Link
-              href={`/section/${tag
-                .split(/\W/)
-                .join('-')
-                .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              href={singleArticleLink}
             >
               <img class={style.mainImage} src={img_src} />
             </Link>
@@ -88,13 +92,7 @@ const Article: FunctionalComponent<Props> = ({
       <div class={style.tabletArticleContainer}>
         <div class={style.image}>
           <Link
-            href={`/section/${tag
-              .split(/\W/)
-              .join('-')
-              .toLowerCase()}/${tag_meta
-              .split(' ')
-              .join('-')
-              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+            href={singleArticleLink}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -122,13 +120,7 @@ const Article: FunctionalComponent<Props> = ({
 
           <div class={style.title}>
             <Link
-              href={`/section/${tag
-                .split(/\W/)
-                .join('-')
-                .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              href={singleArticleLink}
             >
               <span>{title}</span>
             </Link>
@@ -144,13 +136,7 @@ const Article: FunctionalComponent<Props> = ({
       >
         <div class={style.image}>
           <Link
-            href={`/section/${tag
-              .split(/\W/)
-              .join('-')
-              .toLowerCase()}/${tag_meta
-              .split(' ')
-              .join('-')
-              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+            href={singleArticleLink}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -179,13 +165,7 @@ const Article: FunctionalComponent<Props> = ({
 
           <div class={style.title}>
             <Link
-              href={`/section/${tag
-                .split(/\W/)
-                .join('-')
-                .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              href={singleArticleLink}
             >
               <span>{title}</span>
             </Link>
@@ -202,4 +182,4 @@ const Article: FunctionalComponent<Props> = ({
   );
 };
 
-export default Article;
+export default ArticleThumbnail;

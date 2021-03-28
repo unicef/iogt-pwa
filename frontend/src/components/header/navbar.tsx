@@ -16,8 +16,6 @@ interface Topic {
   topicList: string[]
 }
 
-
-
 interface NavLinks {
   text: string
   class: string
@@ -50,25 +48,16 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
     {
       text: 'Girls',
       class: style.girls,
-      imgSrc: '../../assets/icons/nav-icons/woman-green.svg',
-      imgSwap: '../../assets/icons/nav-icons/woman-white.svg',
+      imgSrc: '../../assets/icons/nav-icons/face1-green.svg',
+      imgSwap: '../../assets/icons/nav-icons/face1-white.svg',
       hrefText: '/section/girls',
-      subtopics: []
-    },
-    {
-      text: '',
-      class: style['tablet-ellipsis'],
-      imgSrc: '',
-      // imgSrc: '../../assets/icons/nav-icons/horiz-ellipsis-green.png',
-      icon: 'more_horiz',
-      hrefText: '/section',
       subtopics: []
     },
     {
       text: 'Youth',
       class: style.youth,
-      imgSrc: '../../assets/icons/nav-icons/youth-tan.svg',
-      imgSwap: '../../assets/icons/nav-icons/youth-white.svg',
+      imgSrc: '../../assets/icons/nav-icons/robot-tan.svg',
+      imgSwap: '../../assets/icons/nav-icons/robot-white.svg',
       hrefText: '/section/youth',
       subtopics: []
     },
@@ -78,6 +67,15 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       imgSrc: '../../assets/icons/nav-icons/doctor-red.svg',
       imgSwap: '../../assets/icons/nav-icons/doctor-white.svg',
       hrefText: '/section/health-providers',
+      subtopics: []
+    },
+    {
+      text: '',
+      class: style['tablet-ellipsis'],
+      imgSrc: '',
+      // imgSrc: '../../assets/icons/nav-icons/horiz-ellipsis-green.png',
+      icon: 'more_horiz',
+      hrefText: '/section',
       subtopics: []
     },
     {
@@ -112,9 +110,9 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
   return (
     <nav aria-label="primary" class={style.nav}>
       <CategoriesDropdown categories={categories} />
-      {navLinks.map((link) => (
+      {navLinks.map((link, index) => (
         // Nav Item and Subtopic dropdown
-        <div class={`${link.class} ${style['nav-bar-item']}`}>
+        <div class={`${link.class} ${style['nav-bar-item']} ${style['nav-bar-item' +index]}`}>
 
           <Link activeClassName={style.active} href={link.hrefText}>
             {link.imgSrc ? (
@@ -151,7 +149,7 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
                                   <li>
                                     <Link href={subsubsubtopic.link}>
                                       <span>{subsubsubtopic.title}
-                                        <label for={`${index}`}></label>
+                                        {/* <label for={`${index}`}></label> */}
                                       </span>
                                     </Link>
                                   </li>)}

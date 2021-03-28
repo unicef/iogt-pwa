@@ -18,6 +18,8 @@
 **********************************************************/
 .header {
   font-family: 'Poppins';
+  min-width: 175px;
+
 }
 
 .tablet-ellipsis,
@@ -250,17 +252,20 @@
 }
 
 /* TODO: Make this more general - Like first item, second item, third item */
-.articles,
-.parents,
-.girls,
-.youth,
-.health-providers,
+.nav-bar-item0,
+.nav-bar-item1,
+.nav-bar-item2,
+.nav-bar-item3,
+.nav-bar-item4,
 .see-more {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
+.nav-bar-item3 img path{
+ fill: #20CD84;
+}
 .nav div a {
   display: inline-block;
   width: 100%;
@@ -345,27 +350,6 @@
   list-style-type: none;
 }
 
-.parents .subtopic-dropdown-content li {
-  background-color: #7a432a;
-}
-.parents .subtopic-dropdown-content:hover li {
-  background-color: #7a432a;
-}
-
-.health-providers .subtopic-dropdown-content li {
-  background-color: #bf0012;
-}
-.health-providers .subtopic-dropdown-content:hover li {
-  background-color: #bf0012;
-}
-
-.youth .subtopic-dropdown-content li {
-  background-color: #b39c4d;
-}
-.youth .subtopic-dropdown-content:hover li {
-  background-color: #b39c4d;
-}
-
 /* Navbar- Subtopic dropdown on Topic hover */
 
 /* for each item */
@@ -383,13 +367,13 @@
 
 .subtopic-dropdown-content li > a > span > label::after {
   content: '+';
-  font-size: 22px;
+  font-size: 10px;
   font-weight: bold;
   top: 2px;
 }
 
 .subtopic-dropdown-content li > a:hover > span > label::after {
-  content: '-';
+  content: '–';
   top: 3px;
 }
 
@@ -397,7 +381,7 @@
   display: block;
   width: auto;
   margin: 0px;
-  font-size: 14px;
+  font-size: 8px;
   font-weight: bold;
   text-align: left;
   color: #ffffff;
@@ -408,7 +392,7 @@
 .subtopic-dropdown-content > li {
   padding: 0px 28px;
   text-align: left;
-  line-height: 35px;
+  line-height: 10px;
 }
 
 
@@ -432,60 +416,88 @@
 .subsubtopic-content > li:hover .subsubsubtopic-content {
   display: block;}
 
+/* --- Nav Bar Items custom --- */
 
-.nav .parents > a {
+/*  Nab Bar Item 0, ex. Home */
+
+
+/*  Nab Bar Item 1, ex. Parents */
+/* Allows 1st level to be remain highlighted when hovering on subtopics*/
+.nav-bar-item1:hover > a:hover {
+  background-color: #7a432a;
+}
+
+.nav-bar-item1 .subtopic-dropdown-content li {
+  background-color: #7a432a;
+}
+.nav-bar-item1 .subtopic-dropdown-content:hover li {
+  background-color: #7a432a;
+}
+
+.nav .nav-bar-item1 > a {
   color: #7a432a;
 }
-.parents:hover .subtopic-dropdown-content,
+.nav-bar-item1:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
   background-color: #7a432a;
 }
 
-/* Allows 1st level to be remain highlighted  when on subtopics*/
-.parents:hover > a:hover {
-  background-color: #7a432a;
-}
+/*  Nab Bar Item 2, ex. Girls */
 
 
-
-/* Caregivers */
-
-.nav .health-providers > a {
-  color: #bf0012;
-}
-.health-providers:hover .subtopic-dropdown-content,
-.subtopic-dropdown-content:hover {
-  display: block;
-  z-index: 300;
-  background-color: #bf0012;
-}
-
-/* Allows 1st level to be remain highlighted  when on subtopics*/
-.health-providers:hover > a:hover {
-  background-color: #bf0012;
-}
-
-/* Youth subsections */
-.youth {
+/*  Nab Bar Item 3, ex. Youth */
+.nav-bar-item3 {
   overflow: hidden;
 }
 
-.nav .youth > a {
+.nav .nav-bar-item3 > a {
   color: #b39c4d;
 }
-.youth:hover .subtopic-dropdown-content,
+.nav-bar-item3:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
   background-color: #b39c4d;
 }
 
-/* Allows 1st level to be remain highlighted  when on subtopics*/
-.youth:hover > a:hover {
+.nav-bar-item3:hover > a:hover {
   background-color: #b39c4d;
 }
+.nav-bar-item3 .subtopic-dropdown-content li {
+  background-color: #b39c4d;
+}
+.nav-bar-item3 .subtopic-dropdown-content:hover li {
+  background-color: #b39c4d;
+}
+
+/*  Nab Bar Item 4 */
+
+.nav-bar-item4 .subtopic-dropdown-content li {
+  background-color: #bf0012;
+}
+.nav-bar-item4 .subtopic-dropdown-content:hover li {
+  background-color: #bf0012;
+}
+
+.nav .nav-bar-item4 > a {
+  color: #bf0012;
+}
+.nav-bar-item4:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #bf0012;
+}
+
+/* Allows 1st level to be remain highlighted  when on subtopics*/
+.nav-bar-item4:hover > a:hover {
+  background-color: #bf0012;
+}
+
+/*  Nab Bar Item 5 */
+
 
 /*****************************************************************
 /*********************** FOR MOBILE DEVICES ********************
@@ -721,15 +733,18 @@
     font-size: 13px;
   }
 
-  /* label:hover::after + .subsubtopic-content{visibility:visible;}
+  .subtopic-dropdown-content li a {
+    font-size: 14px;
+  }
 
-.parents:hover .subtopic-dropdown-content .subsubtopic-content{
- visibility: hidden;
-}
+  .subtopic-dropdown-content > li {
+    line-height: 35px;
+  }
 
-.parents:hover .subtopic-dropdown-content label:hover + .subsubtopic-content{
-  visibility: visible;
- } */
+  .subtopic-dropdown-content li > a > span > label::after {
+    font-size: 22px;
+  }
+
 }
 
 /***********************************************************
@@ -746,8 +761,8 @@ with similar viewport measurments ***************************
   .logo-small,
   .search-menu,
   .signin-language,
-  .youth,
-  .health-providers,
+  .nav-bar-item3,
+  .nav-bar-item4,
   .see-more {
     display: none;
     visibility: hidden;
@@ -1118,7 +1133,7 @@ with similar viewport measurments ***************************
   justify-content: space-between;}
 
   .categories-dropdown-content li > a:hover > span > label::after {
-    content: '-';
+    content: '–';
     top: 3px;
   }
   /* 3nd + 4th Level of Navigation */
@@ -1586,6 +1601,11 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     border-radius: 5px;
   }
 
+  .categories-dropdown-content li span
+  {  display: flex;
+  flex-direction: row;
+  justify-content: space-between;}
+
   /* toggle between plus and minus signs */
   .categories-dropdown-content li > a > span > label::after {
     content: '+';
@@ -1593,25 +1613,24 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: bold;
     top: 2px;
     color:#20cd84;
+    padding-left: 5px;
   }
-
-  .categories-dropdown-content li span
-  {  display: flex;
-  flex-direction: row;
-  justify-content: space-between;}
 
   .categories-dropdown-content li > a:hover > span > label::after {
-    content: '-';
+    content: '–';
     top: 3px;
   }
-  /* 3nd + 4th Level of Navigation */
+/* 3nd + 4th Level of Navigation */
+  /* .categories-subtopic-content, 2nd level*/
 .categories-subsubtopic-content,
 .categories-subsubsubtopic-content {
   display: none;
 }
 
+/* .categories-dropdown-content:hover li:hover .categories-subtopic-content, 2nd level */
 .categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content {
   display: block;
+  transition: .3s;
 }
 
 
@@ -1718,7 +1737,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding: 10px 50px 10px 50px;
   }
 
-  .health-providers {
+  .nav-bar-item4 {
     border-right: 1px solid #ececec;
   }
 

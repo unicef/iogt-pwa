@@ -6,8 +6,8 @@ import { Link } from 'preact-router/match';
 
 import style from './style.css'
 
-import { articles } from '../articleInfoData'
-
+import { articlesInfo } from '../articleInfoData'
+import { Article, Comment } from '../../types'
 import ShareSaveButtons from './share-save-buttons'
 import CommentsSection from './comments-section'
 import RelatedArticles from './related-articles'
@@ -23,44 +23,15 @@ type SingleArticleProps = {
   articleId: string
 
   // from props passed down by Parent
-  //articleInfo: any[] // Will need to update type for this when we find out official format of data
+  //articleInfo: Article[] // Will need to update type for this when we find out official format of data
   signedInStatus: boolean
 }
 
-interface Topic {
-  topicTitle: string
-  topicList: string[]
-}
 
-// Guess at how Article data will look like, will need to update this, or convert incoming Article text
-interface Article {
-  id: number
-  img_src: string
-  tag: string
-  tag_meta: string
-  date: string // possible make Date type in future
-  author: string
-  title: string
-  desc: string
-  text: string // assumes this will be markdown style text
-  comments: Comment[]|null
-  relatedArticles: number[]|null // stores article ids
-}
-
-interface Comment {
-  userName: string
-  comment: string
-  replies: Reply[] | null
-}
-
-interface Reply {
-  userName: string
-  comment: string
-}
 
 const SingleArticle: FunctionalComponent<SingleArticleProps> = ({ section, topic, articleTitle, articleId, signedInStatus }: SingleArticleProps) => {
 
-  let articleInfo: Article[] = articles;
+  let articleInfo: Article[] = articlesInfo;
   const [myTag, setMyTag] = useState('')
   let currentArticle = articleInfo[Number(articleId)]
 

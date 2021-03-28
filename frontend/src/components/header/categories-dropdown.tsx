@@ -27,6 +27,9 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
     { title: "Children with Disabilities", link: "" }
   ]
 
+  const formatUrl = (text: string) =>
+    text.split(' ').join('-').toLowerCase()
+
   return (
     <div class={style['categories-dropdown']}>
       <div class={style['btn-group']}>
@@ -39,7 +42,7 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
         <ul >
           {categories.map((topic, index) => (
             <li>
-              <Link class={style['subtopic']} activeClassName={style.active} href={`/${topic.topicTitle.split(' ').join('-').toLowerCase()}`}
+              <Link class={style['subtopic']} activeClassName={style.active} href={`/section/${formatUrl(topic.topicTitle)}`}
               >
                 <span>
                   {topic.topicTitle}
@@ -49,7 +52,7 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
                 <ul class={style['categories-subtopic-content']}>
                   {topic.topicList.map((topicItem) => (
                     <li>
-                      <Link activeClassName={'dl-item'} href='/'>
+                      <Link activeClassName={'dl-item'} href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem)}`}>
                         <span>
                           {topicItem}
                           <label for={`${topic}${index}`}></label>

@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from 'preact';
+import { FunctionalComponent, h, createContext } from 'preact';
 import Router, { Route } from 'preact-router';
 
 import Home from '../routes/home';
@@ -9,6 +9,9 @@ import NotFoundPage from '../routes/notfound';
 import Header from './header';
 import Footer from './footer';
 import SingleArticle from './single-article';
+
+const CurrentLanugage = createContext('English');
+
 
 const App: FunctionalComponent = () => {
 

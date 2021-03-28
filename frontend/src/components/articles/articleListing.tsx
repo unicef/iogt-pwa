@@ -2,9 +2,10 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
-import Article from './article';
+import ArticleComponent from './articleThumbnail';
+
 import {
-  articleInfo,
+  articlesInfo,
   aboutCoronavirusArticles,
   studentToolkitArticles,
   covidParentingArticles,
@@ -13,7 +14,7 @@ import {
   desktopCoronaArticles,
   desktopStudentArticles,
   desktopParentingArticles,
-} from './articleInfo';
+} from '../articleInfoData';
 import FullWidthButton from '../buttons/fullWidthButton';
 import ViewMore from '../view-more/viewMore';
 
@@ -22,9 +23,10 @@ type Props = {
   section?: string;
 };
 
-const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
-  const articlesList = articleInfo.map((article) => (
-    <Article
+const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
+
+  const articlesList = articlesInfo.map((article) => (
+    <ArticleComponent
       key={article.id}
       id={article.id}
       img_src={article.img_src}
@@ -37,9 +39,9 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
     />
   ));
 
-  const coronaArticles = articleInfo.map((article) => {
+  const coronaArticles = articlesInfo.map((article) => {
     return article.tag.includes('CORONAVIRUS') ? (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -54,9 +56,9 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
       <div></div>
     );
   });
-  const youthArticles = articleInfo.map((article) => {
+  const youthArticles = articlesInfo.map((article) => {
     return article.tag.includes('YOUTH') ? (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -72,9 +74,9 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
     );
   });
 
-  const parentArticles = articleInfo.map((article) => {
+  const parentArticles = articlesInfo.map((article) => {
     return article.tag.includes('PARENTS') ? (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -109,7 +111,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const mobileCovidArticles = aboutCoronavirusArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -125,7 +127,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const mobileStudentArticles = studentToolkitArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -141,7 +143,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const mobileParentingArticles = covidParentingArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -157,7 +159,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const mobileHealthArticles = healthWorkerArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -173,7 +175,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const deskCoronaArticles = desktopCoronaArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -189,7 +191,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const deskStudentArticles = desktopStudentArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -205,7 +207,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
 
   const deskParentArticles = desktopParentingArticles.map((article) => {
     return (
-      <Article
+      <ArticleComponent
         key={article.id}
         id={article.id}
         img_src={article.img_src}
@@ -494,4 +496,4 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
   );
 };
 
-export default ArticlesView;
+export default ArticleListing;
