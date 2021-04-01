@@ -442,18 +442,18 @@
 }
 
 .nav .parents > a {
-  color: #7a432a;
+  color: #4D4392;
 }
 .parents:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
-  background-color: #7a432a;
+  background-color: #4D4392;
 }
 
 /* Allows 1st level to be remain highlighted  when on subtopics*/
 .parents:hover > a:hover {
-  background-color: #7a432a;
+  background-color: #4D4392;
 }
 
 .subtopic-dropdown-content:hover > li:hover > a:hover {
@@ -487,18 +487,18 @@
 }
 
 .nav .youth > a {
-  color: #b39c4d;
+  color: #1CABE2;
 }
 .youth:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 
 /* Allows 1st level to be remain highlighted  when on subtopics*/
 .youth:hover > a:hover {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 
 /*****************************************************************
