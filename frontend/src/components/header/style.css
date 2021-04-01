@@ -339,10 +339,10 @@
 
 
 .parents .subtopic-dropdown-content li {
-  background-color: #7a432a;
+  background-color: #4D4392;
 }
 .parents .subtopic-dropdown-content:hover li {
-  background-color: #7a432a;
+  background-color: #4D4392;
 }
 
 .health-providers .subtopic-dropdown-content li {
@@ -353,10 +353,10 @@
 }
 
 .youth .subtopic-dropdown-content li {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 .youth .subtopic-dropdown-content:hover li {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 
 /* Subtopic dropdown on Topic hover */
