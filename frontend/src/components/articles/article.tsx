@@ -42,10 +42,10 @@ const Article: FunctionalComponent<Props> = ({
     myTag === 'emergency'
       ? '#BF0012'
       : myTag === 'youth'
-      ? '#00A4CB'
-      : myTag === 'parents'
-      ? '#48AB5D'
-      : 'black';
+        ? '#00A4CB'
+        : myTag === 'parents'
+          ? '#48AB5D'
+          : 'black';
 
   return (
     <div class={style.articleContainer}>
@@ -56,16 +56,27 @@ const Article: FunctionalComponent<Props> = ({
               myTag === 'emergency'
                 ? { color: '#BF0012' }
                 : myTag === 'youth'
-                ? { color: '#00A4CB' }
-                : myTag === 'parents'
-                ? { color: '#48AB5D' }
-                : { color: 'black' }
+                  ? { color: '#00A4CB' }
+                  : myTag === 'parents'
+                    ? { color: '#48AB5D' }
+                    : { color: 'black' }
             }
             class={style.tag}
           >
             {tag}
           </p>
-          <h1 class={style.title}>{title}</h1>
+          <Link
+            href={`/section/${tag
+              .split(/\W/)
+              .join('-')
+              .toLowerCase()}/${tag_meta
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <h1 class={style.title}>{title}</h1>
+          </Link>
         </div>
         {img_src !== '' && (
           <div class={style.image}>
@@ -75,9 +86,9 @@ const Article: FunctionalComponent<Props> = ({
                 .split(/\W/)
                 .join('-')
                 .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                  .split(' ')
+                  .join('-')
+                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
             >
               <img class={style.mainImage} src={img_src} />
             </Link>
@@ -92,9 +103,9 @@ const Article: FunctionalComponent<Props> = ({
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-              .split(' ')
-              .join('-')
-              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -126,9 +137,10 @@ const Article: FunctionalComponent<Props> = ({
                 .split(/\W/)
                 .join('-')
                 .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                  .split(' ')
+                  .join('-')
+                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              style={{ textDecoration: 'none' }}
             >
               <span>{title}</span>
             </Link>
@@ -148,9 +160,9 @@ const Article: FunctionalComponent<Props> = ({
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-              .split(' ')
-              .join('-')
-              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -183,9 +195,10 @@ const Article: FunctionalComponent<Props> = ({
                 .split(/\W/)
                 .join('-')
                 .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                  .split(' ')
+                  .join('-')
+                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              style={{ textDecoration: 'none' }}
             >
               <span>{title}</span>
             </Link>

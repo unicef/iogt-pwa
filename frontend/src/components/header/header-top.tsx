@@ -123,7 +123,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
         <Link
           class={style['signin']}
           activeClassName={style.active}
-          onClick={selectModal}
+          onPointerDown={selectModal}
         >
 
           {/* If signed in display profile icon */}
