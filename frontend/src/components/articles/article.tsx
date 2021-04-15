@@ -19,8 +19,8 @@ const Article: FunctionalComponent<Props> = ({
   img_src,
   tag,
   tag_meta,
-  date,
-  author,
+  // date,
+  // author,
   title,
   desc,
 }) => {
@@ -115,9 +115,7 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
+      
           </p>
 
           <div class={style.title}>
@@ -172,9 +170,7 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
+        
           </p>
 
           <div class={style.title}>
