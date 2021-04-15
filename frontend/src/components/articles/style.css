@@ -211,6 +211,9 @@
   .tabletArticleContainer .content .desc{
     padding-left:15px;
     padding-right:15px;
+    max-height: 30px;
+    overflow:hidden;
+    text-overflow: ellipsis;
 
   }
 

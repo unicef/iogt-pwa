@@ -13,6 +13,11 @@ export interface Article {
   relatedArticles: number[]|null // stores article ids
 }
 
+export interface Section {
+  sectionTitle: string
+  articles: Article[]
+}
+
 // As of now this is a assumption of what comment format looks like (Comments with one level of replies), will need to update according to backend format
 export interface Reply {
   userName: string

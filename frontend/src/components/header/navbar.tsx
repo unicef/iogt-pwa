@@ -28,45 +28,54 @@ interface NavLinks {
 
 const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageList, categories }: NavBarProps) => {
 
+
+  // format section url
+  const formatUrl = (text:string) => text.toLowerCase().replace(/[\W]+/g, ' ').replace(/\s/g, '-');
+
+
   const navLinks: NavLinks[] = [
     {
       text: 'Home',
       class: style.articles,
       imgSrc: '../../assets/icons/nav-icons/star-yellow.svg',
       imgSwap: '../../assets/icons/nav-icons/star-white.svg',
-      hrefText: '/section/all-articles',
+      hrefText: '/',
       subtopics: []
     },
     {
       text: 'Parents & Caregivers',
       class: style.parents,
-      imgSrc: '../../assets/icons/nav-icons/family-brown.svg',
+      imgSrc: '../../assets/icons/nav-icons/family-green.svg',
       imgSwap: '../../assets/icons/nav-icons/family-white.svg',
-      hrefText: '/section/parents-and-caregivers',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
       subtopics: []
     },
     {
       text: 'Girls',
       class: style.girls,
-      imgSrc: '../../assets/icons/nav-icons/face1-green.svg',
+      imgSrc: '../../assets/icons/nav-icons/face1-pink.svg',
       imgSwap: '../../assets/icons/nav-icons/face1-white.svg',
-      hrefText: '/section/girls',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
       subtopics: []
     },
     {
       text: 'Youth',
       class: style.youth,
-      imgSrc: '../../assets/icons/nav-icons/robot-tan.svg',
+      imgSrc: '../../assets/icons/nav-icons/robot-blue.svg',
       imgSwap: '../../assets/icons/nav-icons/robot-white.svg',
-      hrefText: '/section/youth',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
       subtopics: []
     },
     {
       text: 'Coronavirus (Covid-19)',
       class: style['health-providers'],
-      imgSrc: '../../assets/icons/nav-icons/doctor-red.svg',
-      imgSwap: '../../assets/icons/nav-icons/doctor-white.svg',
-      hrefText: '/section/health-providers',
+      imgSrc: '../../assets/icons/nav-icons/microbe-red.svg',
+      imgSwap: '../../assets/icons/nav-icons/microbe-white.svg',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
       subtopics: []
     },
     {
@@ -83,7 +92,7 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       class: style['see-more'],
       imgSrc: '',
       icon: 'more_vert',
-      hrefText: '/7',
+      hrefText: '/see-more',
       subtopics: []
     },
   ]

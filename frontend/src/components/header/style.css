@@ -424,27 +424,47 @@
 /*  Nab Bar Item 1, ex. Parents */
 /* Allows 1st level to be remain highlighted when hovering on subtopics*/
 .nav-bar-item1:hover > a:hover {
-  background-color: #7a432a;
+  background-color: #6ec17f;
 }
 
 .nav-bar-item1 .subtopic-dropdown-content li {
-  background-color: #7a432a;
+  background-color: #6ec17f;
 }
 .nav-bar-item1 .subtopic-dropdown-content:hover li {
-  background-color: #7a432a;
+  background-color: #6ec17f;
 }
 
 .nav .nav-bar-item1 > a {
-  color: #7a432a;
+  color: #6ec17f;
 }
 .nav-bar-item1:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
-  background-color: #7a432a;
+  background-color: #6ec17f;
 }
 
 /*  Nab Bar Item 2, ex. Girls */
+.nav-bar-item2:hover > a:hover {
+  background-color: #CB68B3;
+}
+
+.nav-bar-item2 .subtopic-dropdown-content li {
+  background-color: #CB68B3;
+}
+.nav-bar-item2 .subtopic-dropdown-content:hover li {
+  background-color: #CB68B3;
+}
+
+.nav .nav-bar-item2 > a {
+  color: #CB68B3;
+}
+.nav-bar-item2:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #CB68B3;
+}
 
 
 /*  Nab Bar Item 3, ex. Youth */
@@ -453,47 +473,47 @@
 }
 
 .nav .nav-bar-item3 > a {
-  color: #b39c4d;
+  color: #1CABE2;
 }
 .nav-bar-item3:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 
 .nav-bar-item3:hover > a:hover {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 .nav-bar-item3 .subtopic-dropdown-content li {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 .nav-bar-item3 .subtopic-dropdown-content:hover li {
-  background-color: #b39c4d;
+  background-color: #1CABE2;
 }
 
 /*  Nab Bar Item 4 */
 
 .nav-bar-item4 .subtopic-dropdown-content li {
-  background-color: #bf0012;
+  background-color: #E24256;
 }
 .nav-bar-item4 .subtopic-dropdown-content:hover li {
-  background-color: #bf0012;
+  background-color: #E24256;
 }
 
 .nav .nav-bar-item4 > a {
-  color: #bf0012;
+  color: #E24256;
 }
 .nav-bar-item4:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   display: block;
   z-index: 300;
-  background-color: #bf0012;
+  background-color: #E24256;
 }
 
 /* Allows 1st level to be remain highlighted  when on subtopics*/
 .nav-bar-item4:hover > a:hover {
-  background-color: #bf0012;
+  background-color: #E24256;
 }
 
 /*  Nab Bar Item 5 */

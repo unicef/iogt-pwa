@@ -1,9 +1,11 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
+import { useContext } from 'preact/hooks';
 import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
+import { Categories, ArticleInfo } from '../app'
+import { Article, Section } from '../../types'
 import ArticleComponent from './articleThumbnail';
-
 import {
   articlesInfo,
   aboutCoronavirusArticles,
@@ -11,19 +13,44 @@ import {
   covidParentingArticles,
   healthWorkerArticles,
   mobileHomeArticles,
-  desktopCoronaArticles,
-  desktopStudentArticles,
-  desktopParentingArticles,
 } from '../articleInfoData';
 import FullWidthButton from '../buttons/fullWidthButton';
 import ViewMore from '../view-more/viewMore';
 
-
+// section prop should be retrieved if articleListing is accessed from the Section section, otherwise, currently assuming home page (all articles to be displayed - this will be updated in the future when home page design is settled on)
 type Props = {
   section?: string;
 };
 
 const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
+
+  const categories = useContext(Categories);
+
+  const articleInfo = useContext(ArticleInfo);
+
+
+  // Create sections with associated articles:
+
+  let articles: Article[] = []
+  let selectedSection: Section = { sectionTitle: '', articles: [...articles] }
+
+  let sectionsWithArticles: Section[] = categories.map(category => ({ sectionTitle: category.topicTitle, articles: [...articles] }))
+
+  const formatUrl = (text:string) => text.toLowerCase().replace(/[\W]+/g, '-')
+
+  // Sort articles into associated sections
+  articleInfo.map(article => {
+    sectionsWithArticles.map(thisSection => {
+
+      if (article.tag.includes(thisSection.sectionTitle.toUpperCase())) thisSection.articles.push(article)
+
+      if (section === formatUrl(thisSection.sectionTitle)) selectedSection = thisSection;
+    })
+  })
+
+  // ---------------------------------------
+
+  console.log(sectionsWithArticles, "DOES THIS WORK")
 
   const articlesList = articlesInfo.map((article) => (
     <ArticleComponent
@@ -38,6 +65,22 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
       desc={article.desc}
     />
   ));
+
+  const selectedSectionList = selectedSection.sectionTitle && selectedSection.articles.map((article: Article) => (
+    <ArticleComponent
+      key={article.id}
+      id={article.id}
+      img_src={article.img_src}
+      tag={article.tag}
+      tag_meta={article.tag_meta}
+      date={article.date}
+      author={article.author}
+      title={article.title}
+      desc={article.desc}
+    />
+  ));
+
+  console.log(section,selectedSection)
 
   const coronaArticles = articlesInfo.map((article) => {
     return article.tag.includes('CORONAVIRUS') ? (
@@ -92,7 +135,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
     );
   });
 
-  const homeMobileArticles = mobileHomeArticles.map((article) => {
+  const homeMobileArticles = articleInfo.map((article) => {
     return (
       <div class={style.mobileHomeArticleContainer}>
         <div class={style.mobileTagContainer}>
@@ -173,54 +216,6 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
     );
   });
 
-  const deskCoronaArticles = desktopCoronaArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
-  const deskStudentArticles = desktopStudentArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
-  const deskParentArticles = desktopParentingArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
   return (
     // <div class={style.articlesContainer}>
     //   <div class={style.grid}>{articlesList}</div>
@@ -232,8 +227,13 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         rel='stylesheet'
       />
       {/* -----DESKTOP ARTICLES----- */}
+      {section && <div class={style.desktopArticles}>{selectedSectionList}</div>
+
+      }
+
       {!section && <div class={style.desktopArticles}>{articlesList}</div>}
-      {section === 'all-articles' && (
+
+      {!section && (
         <div class={style.desktopArticles}>{articlesList}</div>
       )}
       {/* {section==="health-providers" &&
@@ -267,7 +267,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>About Coronavirus</h1>
-            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
+            <Icon style={{ fontSize: 30 }} class="material-icons">chevron_right</Icon>
             {/* <ChevronRight size='30' /> */}
           </div>
           <div class={style.articlesRow}>{coronaArticles}</div>
@@ -275,14 +275,14 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>Student Toolkit</h1>
-            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
+            <Icon style={{ fontSize: 30 }} class="material-icons">chevron_right</Icon>
           </div>
           <div class={style.articlesRow}>{youthArticles}</div>
         </div>
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>COVID-19 Parenting</h1>
-            <Icon style={{ fontSize: 30 }}class="material-icons">chevron_right</Icon>
+            <Icon style={{ fontSize: 30 }} class="material-icons">chevron_right</Icon>
           </div>
           <div class={style.articlesRow}>{parentArticles}</div>
         </div>
@@ -290,61 +290,58 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
       {/* -----MOBILE PHONE ARTICLES----- */}
       <div class={style.mobileArticles}>
+
         {!section && (
           <div>
             <div>{homeMobileArticles}</div>
           </div>
         )}
-        {section === 'all-articles' && (
-          <div>
-            <div>{homeMobileArticles}</div>
-          </div>
-        )}
+
         {section === 'youth' && <div></div>}
-        {section === 'health-providers' && (
+        {section === 'coronavirus-covid-19-' && (
           <div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileCovidArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>STUDENT TOOLKIT</h1>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileStudentArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>COVID-19 PARENTING</h1>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileParentingArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
             </div>
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>HEALTH WORKER RESOURCES</h1>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
               <div>{mobileHealthArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
             </div>
           </div>
@@ -438,49 +435,49 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
             <a class={style.noUnderline} href='#'>
               <div class={style.searchLink}>
                 <p>Search</p>
-                <Icon style={{ fontSize: 'small' }}class="material-icons">search</Icon>
+                <Icon style={{ fontSize: 'small' }} class="material-icons">search</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Coronavirus</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Youth</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Parents & Caregivers</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Quizzes</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>Surveys</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>How To Use Free Data</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
             <a href='#'>
               <div class={style.featureLink}>
                 <p>About Us</p>
-                <Icon style={{ fontSize: 20 }}class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 20 }} class="material-icons">chevron_right</Icon>
               </div>
             </a>
           </div>
