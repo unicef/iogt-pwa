@@ -1,0 +1,36 @@
+.signup {
+  padding: 56px 20px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.search-bar {
+  width: 49%; /* 320px/650px */
+  font-family: 'Open Sans';
+  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  border-radius: 2px;
+  justify-self: center;
+  flex-grow: 0.5;
+  height: 35px;
+  font-size: 12px;
+}
+
+.search-bar > input {
+  /* background-color: #6B6B6B; */
+  width: 100%;
+  padding: 9px 0px 10px 20px;
+  /* border: 2px solid white; */
+  outline: 2px white;
+}
+
+.search-bar > button {
+  background-color: white;
+  border: 2px solid white;
+  padding: 9px;
+}
+
+::placeholder {
+  font-style: normal;
+  font-size: 12px;
+}

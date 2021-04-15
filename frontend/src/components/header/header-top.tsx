@@ -128,8 +128,18 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
             ''
           )}
 
-          {signedInStatus ? 'Sign out' : 'Sign in'}
+          {signedInStatus ? 'Sign Out' : 'Sign In'}
         </Link>
+        {!signedInStatus && (
+          <Link
+            href='/signup'
+            class={style['signin']}
+            activeClassName={style.active}
+            onClick={selectModal}
+          >
+            Sign Up
+          </Link>
+        )}
 
         <Modal
           isOpen={modalOpen}
