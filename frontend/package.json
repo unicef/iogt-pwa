@@ -55,5 +55,6 @@
       "<rootDir>/tests/__mocks__/setupTests.ts"
     ]
   },
+  
   "historyApiFallback": "true"
 }

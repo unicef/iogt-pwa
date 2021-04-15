@@ -18,6 +18,8 @@
 **********************************************************/
 .header {
   font-family: 'Poppins';
+  min-width: 175px;
+
 }
 
 .tablet-ellipsis,
@@ -249,17 +251,21 @@
   color: #20cd84;
 }
 
-.articles,
-.parents,
-.girls,
-.youth,
-.health-providers,
+/* TODO: Make this more general - Like first item, second item, third item */
+.nav-bar-item0,
+.nav-bar-item1,
+.nav-bar-item2,
+.nav-bar-item3,
+.nav-bar-item4,
 .see-more {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
+.nav-bar-item3 img path{
+ fill: #20CD84;
+}
 .nav div a {
   display: inline-block;
   width: 100%;
@@ -286,23 +292,24 @@
   padding-top: 2px;
 }
 
-.nav div a:hover {
+.nav div > a:hover {
   background-color: #20cd84;
   color: #ffffff;
 }
 
-.nav div a:hover img {
+.nav div > a:hover img {
   display: none;
 }
 
-.nav div a .imgSwap {
+.nav div > a .imgSwap {
   display: none;
   position: relative;
   left: 0;
   z-index: 99;
+  fill: #bf0012;
 }
 
-.nav div a:hover .imgSwap {
+.nav div > a:hover .imgSwap {
   display: block;
   text-align: center;
   margin-left: auto;
@@ -310,20 +317,213 @@
   height: 15px;
 }
 
-.nav div a:hover > i {
+
+.nav div > a:hover > i {
   color: #ffffff;
 }
+
 
 /* Emphasize legibility over rendering speed and geometric precision. */
 .material-icons {
   text-rendering: optimizeLegibility;
 }
 
+/* -------  Feature phone - Multilevel Navbar  ----------- */
+.subtopic-dropdown-content {
+  display: none;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+  width: 100%;
+  font-family: 'Poppins';
+  list-style-type: none;
+  text-align: left;
+  z-index: 300;
+}
+
+.subsubtopic-content,
+.subsubsubtopic-content {
+  list-style-type: none;
+}
+
+/* Navbar- Subtopic dropdown on Topic hover */
+
+/* for each item */
+.subtopic-dropdown-content li a span
+{ display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.subtopic-dropdown-content li a span:hover
+{
+  color: #e5e5e5;
+}
+
+.subtopic-dropdown-content li > a > span > label::after {
+  content: '+';
+  font-size: 10px;
+  font-weight: bold;
+  top: 2px;
+}
+
+.subtopic-dropdown-content li > a:hover > span > label::after {
+  content: '–';
+  top: 3px;
+}
+
+.subtopic-dropdown-content li a {
+  display: block;
+  width: auto;
+  margin: 0px;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+  padding-right: 0;
+}
+
+.subtopic-dropdown-content > li {
+  padding: 0px 28px;
+  text-align: left;
+  line-height: 10px;
+}
+
+
+/* 3nd Level of Navigation */
+.subsubtopic-content {
+  display: none;
+}
+.subsubtopic-content a {
+  margin-left: 0;
+}
+
+.subtopic-dropdown-content > li:hover .subsubtopic-content {
+  display: block;
+}
+
+/* 4th Level of Navigation */
+.subsubsubtopic-content {
+  display: none;
+}
+
+.subsubtopic-content > li:hover .subsubsubtopic-content {
+  display: block;}
+
+/* --- Nav Bar Items custom --- */
+
+/*  Nab Bar Item 0, ex. Home */
+
+
+/*  Nab Bar Item 1, ex. Parents */
+/* Allows 1st level to be remain highlighted when hovering on subtopics*/
+.nav-bar-item1:hover > a:hover {
+  background-color: #6ec17f;
+}
+
+.nav-bar-item1 .subtopic-dropdown-content li {
+  background-color: #6ec17f;
+}
+.nav-bar-item1 .subtopic-dropdown-content:hover li {
+  background-color: #6ec17f;
+}
+
+.nav .nav-bar-item1 > a {
+  color: #6ec17f;
+}
+.nav-bar-item1:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #6ec17f;
+}
+
+/*  Nab Bar Item 2, ex. Girls */
+.nav-bar-item2:hover > a:hover {
+  background-color: #CB68B3;
+}
+
+.nav-bar-item2 .subtopic-dropdown-content li {
+  background-color: #CB68B3;
+}
+.nav-bar-item2 .subtopic-dropdown-content:hover li {
+  background-color: #CB68B3;
+}
+
+.nav .nav-bar-item2 > a {
+  color: #CB68B3;
+}
+.nav-bar-item2:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #CB68B3;
+}
+
+
+/*  Nab Bar Item 3, ex. Youth */
+.nav-bar-item3 {
+  overflow: hidden;
+}
+
+.nav .nav-bar-item3 > a {
+  color: #1CABE2;
+}
+.nav-bar-item3:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #1CABE2;
+}
+
+.nav-bar-item3:hover > a:hover {
+  background-color: #1CABE2;
+}
+.nav-bar-item3 .subtopic-dropdown-content li {
+  background-color: #1CABE2;
+}
+.nav-bar-item3 .subtopic-dropdown-content:hover li {
+  background-color: #1CABE2;
+}
+
+/*  Nab Bar Item 4 */
+
+.nav-bar-item4 .subtopic-dropdown-content li {
+  background-color: #E24256;
+}
+.nav-bar-item4 .subtopic-dropdown-content:hover li {
+  background-color: #E24256;
+}
+
+.nav .nav-bar-item4 > a {
+  color: #E24256;
+}
+.nav-bar-item4:hover .subtopic-dropdown-content,
+.subtopic-dropdown-content:hover {
+  display: block;
+  z-index: 300;
+  background-color: #E24256;
+}
+
+/* Allows 1st level to be remain highlighted  when on subtopics*/
+.nav-bar-item4:hover > a:hover {
+  background-color: #E24256;
+}
+
+/*  Nab Bar Item 5 */
+
+
 /*****************************************************************
 /*********************** FOR MOBILE DEVICES ********************
           (min-width: 321px) and (max-width: 767px)
    Should also adjust for devices with similar screen viewport
-/*The mobile navbar is different from the desktop/ laptop. It uses icons along with link names. The link names are different as well*/
+
 /* Alternate min value: 360
 *****************************************************************/
 @media only screen and (min-width: 321px) and (max-width: 767px) {
@@ -344,14 +544,15 @@
   .current-language,
   .change-language,
   .join-menu,
-  .logo-full, .tabletDesktopSignin .signin {
+  .logo-full,
+  .tabletDesktopSignin .signin {
     display: none;
     visibility: collapse;
   }
 
   .signin-language,
   .signin,
-  .search-menu{
+  .search-menu {
     visibility: visible;
     display: inline-block;
   }
@@ -422,16 +623,17 @@
   }
 
   .language-dropdown a > i::before {
-    content: 'keyboard_arrow_down';
+    content: 'keyboard_arrow_right';
+    vertical-align: -10%;
+    font-size: 8px;
   }
 
   .language-dropdown:hover a > i::before {
-    content: 'keyboard_arrow_up';
+    content: 'keyboard_arrow_down';
   }
 
   .language-dropdown a > i {
     position: relative;
-    line-height: 50%;
     font-size: 1em;
     font-weight: bold;
   }
@@ -486,17 +688,17 @@
     border-radius: 50%;
   }
 
-  .search-bar{
+  .search-bar {
     display: none;
   }
 
-  .mobile-search-bar{
-    border:0;
+  .mobile-search-bar {
+    border: 0;
     width: 0px;
     height: 0px;
   }
 
-  .mobile-search-bar:focus{
+  .mobile-search-bar:focus {
     width: 100%;
     height: 100%;
   }
@@ -518,28 +720,51 @@
     height: 100%;
   }
 
-  .nav div a,
-  .nav div a:hover {
+  .nav div > a,
+  .nav div > a:hover {
     display: inline-block;
     line-height: 8px;
   }
 
   .nav > div > a > img,
   .nav > div > a > i {
-    padding-top: 9.41px;
-    margin-bottom: 4.5px;
-    height: 24px;
+    padding-top: 1px;
+    margin-bottom: 1px;
+    height: 32px;
   }
 
   .nav > div > a:hover > img,
   .nav > div > a:hover > i {
-    padding-top: 9.41px;
-    height: 24px;
+    padding-top: 1px;
+    height: 32px;
   }
 
-  .nav div a:hover .imgSwap {
-    height: 24px;
+  .nav div > a:hover .imgSwap {
+    height: 32px;
   }
+  /* ----------Accordian feature on Mobile ---------*/
+  /* input {
+    display: none;
+  } */
+
+
+
+  .subsubtopic-content {
+    font-size: 13px;
+  }
+
+  .subtopic-dropdown-content li a {
+    font-size: 14px;
+  }
+
+  .subtopic-dropdown-content > li {
+    line-height: 35px;
+  }
+
+  .subtopic-dropdown-content li > a > span > label::after {
+    font-size: 22px;
+  }
+
 }
 
 /***********************************************************
@@ -556,8 +781,8 @@ with similar viewport measurments ***************************
   .logo-small,
   .search-menu,
   .signin-language,
-  .youth,
-  .health-providers,
+  .nav-bar-item3,
+  .nav-bar-item4,
   .see-more {
     display: none;
     visibility: hidden;
@@ -566,8 +791,8 @@ with similar viewport measurments ***************************
   }
 
   .header .nav div > a > img {
-    display: none;
-    visibility: collapse;
+    /* display: none;
+    visibility: collapse; */
   }
 
   .categories-dropdown,
@@ -587,7 +812,7 @@ with similar viewport measurments ***************************
     height: 0;
     border-top: 0;
   }
-  /* Arranged top portion of header in a flexbox arrangement */
+  /* Arranged top portion of header (logo, search bar, sign in) in a flexbox arrangement */
   .header-top {
     min-width: 768px;
     max-width: 1024px;
@@ -657,14 +882,14 @@ with similar viewport measurments ***************************
   }
 
   /* Placed to try to align the logo with the categories button */
-  .logo-full{
+  .logo-full {
 
   }
 
   .logo-full > img {
-    width: 193px;
     height: 60px;
-}
+  }
+
   .logo-full > a {
     height: 100%;
     text-align: left;
@@ -689,9 +914,47 @@ with similar viewport measurments ***************************
   }
   .header .nav > div > a:hover {
     padding: 0;
-    padding-left:3px;
-    padding-right:3px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
+
+
+/* Tablet - Have icon display inline instead of block */
+
+
+  .nav > div > a > img,
+.nav > div > a > i {
+  display: inline;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 19px;
+  max-height: 20px;
+  padding: 0 5px;
+  vertical-align: sub;  /* centers text*/
+}
+
+
+.header > .nav > div > a:hover > img {
+
+}
+
+/* Disable image swap */
+.nav div > a:hover img {
+  display: inline;
+}
+.nav div > a:hover .imgSwap {
+  display:none;
+}
+
+/* Have icon and text display reversed */
+.nav-bar-item {
+  padding-top: 8px;
+}
+
+.nav-bar-item > a {
+  direction: rtl;
+}
 
   .header .nav > div {
     /* height: 100%;
@@ -716,24 +979,24 @@ with similar viewport measurments ***************************
   /* Applied when are links hovered on / Links are active */
   .header .nav > div > a:hover,
   .header .nav > div > a.active {
+    background-color: transparent;
     border-bottom: 2px solid #20cd84;
     color: #303030;
+    padding-top: 2px;
   }
 
   .header > .nav > div > a {
     display: inline-block;
     white-space: nowrap;
-    padding-top: 15px;
+    padding-top: 2px;
     font-size: 12px;
     color: #6b6b6b;
   }
 
   .nav div a:hover > i {
-    /* font-size: 48px; */
     color: #20cd84;
-    /* line-height: 100%; */
-    /* line-height: 50px; */
   }
+
   .nav .tablet-ellipsis {
     height: 100%;
     padding: 0;
@@ -743,20 +1006,16 @@ with similar viewport measurments ***************************
 
   /* Tablet - styles ... large ellipsis in navbar */
   .nav .tablet-ellipsis a:hover > i {
-    font-size: 48px;
+    font-size: 45px;
     color: #20cd84;
-    line-height: 40px;
   }
 
   .nav .tablet-ellipsis a > i {
-    font-size: 48px;
+    font-size: 45px;
     color: #20cd84;
-    line-height: 10px;
   }
 
-  .nav div a:hover,
-  .language div a i,
-  .language div:hover a i {
+  .nav div > a:hover {
     background-color: transparent;
     color: #303030;
     font-size: 12px;
@@ -766,6 +1025,7 @@ with similar viewport measurments ***************************
     font-size: 12px;
     color: #959bac;
   }
+
   /* Two buttons arranged in a split button style */
   .categories-dropdown {
     display: inline-block;
@@ -816,70 +1076,97 @@ with similar viewport measurments ***************************
     outline-color: #199a64;
   }
 
-  /* Drop down content is hidden from view, when user hovers over it, it appears. Items are arranged in a dl tag (description list) in the code for both accessibility and for it's convenient formatting. */
+  /* Drop down content is hidden from view, when user hovers over it, it appears*/
   .categories-dropdown-content {
-    font-family: 'Open Sans';
-    font-size: 12px;
     position: absolute;
     display: block;
     display: none;
-    width: 259px;
+    max-width: 300px;
+    padding: 15px;
+    font-family: 'Open Sans';
+    font-size: 12px;
     background-color: #fff;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    min-width: 160px;
     z-index: 1;
     text-align: left;
-    margin-left: 20px;
-    text-align: left;
-  }
-
-  /* Applies to every topic title in the drop down List */
-  .categories-dropdown-content dt {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 5px 0 10px;
-    font-weight: bold;
-    font-size: 12px;
-    color: #303030;
-  }
-
-  /* Applies to each topic item in the drop down list */
-  .categories-dropdown-content dd {
-    line-height: 18px;
-    margin-left: 20px;
-    text-align: left;
-    font-size: 12px;
-    color: #303030;
-  }
-
-  .categories-dropdown-content span a {
-    width: 100%;
-    color: #303030;
-    padding: 5px 16px;
-    text-decoration: none;
-    display: block;
   }
 
   .categories-dropdown:hover .categories-dropdown-content {
     display: block;
-    width: 259px;
+    max-width: 270px;
   }
 
-  .dl-title > dt > i {
-    color: #20cd84;
+  /* Every ul starts a new level in the dropdown */
+  .categories-dropdown-content ul {
+    font-size: 12px;
+    list-style-type: none;
   }
 
-  .dl-title > dt:hover > i {
-    color: #000000;
-    transition: 0.3s;
+  .categories-dropdown-content ul li a {
+    text-align: left;
+    color: #303030;
+    font-weight: normal;
+    padding-right: 0;
   }
 
-  .categories-dropdown-content span a:hover {
-    background-color: #f7f9f9;
+   /* applies to subtopic category  */
+   .categories-dropdown-content > ul {
+    padding: 0;
   }
-  .dl-item:hover {
-    background-color: #f7f9f9;
+
+     /* applies to suptopic title  */
+  .categories-dropdown-content .subtopic{
+    font-weight: bold;
   }
+
+  /* Applies to each topic item (which is a group) in the drop down list */
+  .categories-dropdown-content li {
+    font-size: normal;
+    line-height: 18px;
+    text-align: left;
+    font-size: 12px;
+    color: #303030;
+  }
+
+  /* Applies to specific items */
+  .categories-dropdown li span {
+    padding: 2px 5px;
+  }
+
+  .categories-dropdown li span:hover {
+    background: #f2f2f2;
+    border-radius: 5px;
+  }
+
+  /* toggle between plus and minus signs */
+  .categories-dropdown-content li > a > span > label::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    top: 2px;
+    color:#20cd84;
+  }
+
+  .categories-dropdown-content li span{  display: flex;
+  flex-direction: row;
+  justify-content: space-between;}
+
+  .categories-dropdown-content li > a:hover > span > label::after {
+    content: '–';
+    top: 3px;
+  }
+  /* 3nd + 4th Level of Navigation */
+.categories-subsubtopic-content,
+.categories-subsubsubtopic-content {
+  display: none;
+}
+
+.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content {
+  display: block;
+}
+
+
 
   /* Last Item in flexbox */
   .language {
@@ -902,7 +1189,6 @@ with similar viewport measurments ***************************
   }
 
   /* Tablet: Header - Language Drop Down */
-  /* Feature: Header - Language Drop Down */
   .nav .language-dropdown {
     text-align: left;
     position: relative;
@@ -941,12 +1227,14 @@ with similar viewport measurments ***************************
   }
 
   .nav .language-dropdown a > i::before {
-    content: 'keyboard_arrow_down';
+    content: 'keyboard_arrow_right';
     font-size: 12px;
+    vertical-align: -10%;
+
   }
 
   .nav .language-dropdown:hover a > i::before {
-    content: 'keyboard_arrow_up';
+    content: 'keyboard_arrow_down';
     font-size: 12px;
   }
 
@@ -979,16 +1267,26 @@ with similar viewport measurments ***************************
     color: #6b6b6b;
     padding: 10px 25px 10px 25px;
   }
+
+
+
+    /* ------ Tablet : Multilevel Navbar (disable feature phone version) ------ */
+  .subtopic-dropdown-content, .subtopic-dropdown-content:hover {
+    display: none;
+  }
+
+  .nav-bar-item:hover .subtopic-dropdown-content{
+    display:none;
+  }
+
+  .nav-bar-item:hover a:hover {
+    background: transparent;
+  }
 }
 /***********************************************************
 DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
 
 @media only screen and (min-width: 1025px) and (max-width: 2400px) {
-  /* this hides the associated icons in each link*/
-  .header .nav div > a > img {
-    display: none;
-    visibility: collapse;
-  }
 
   .header-top-language-strip,
   .current-language,
@@ -1002,11 +1300,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .header-middle,
-  .articles img,
-  .girls img,
-  .parents img,
-  .youth img,
-  .health-providers img,
   .see-more {
     visibility: collapse;
     display: none;
@@ -1022,8 +1315,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .logo-full > img {
-       width: 193px;
-       height: 60px;
+       height: 70px;
   }
 
   .header {
@@ -1036,7 +1328,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   /* Arranged top portion of header in a flexbox arrangement */
   .header-top {
     min-width: 1025px;
-    padding: 22px 135px 22px 135px;
+    padding: 22px 60px 22px 60px;
     width: 100%;
     background: #fff;
     align-items: center;
@@ -1096,9 +1388,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     vertical-align: middle;
   }
 
-  /* Placed to try to align the logo with the categories button */
+  /* Placed to align the logo with the categories button */
   .logo-full > a {
-
     text-align: left;
   }
 
@@ -1109,8 +1400,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     align-items: center;
     min-width: 1024px;
     height: 59px;
-    padding-left: 135px;
-    padding-right: 135px;
+    padding-left: 60px;
+    padding-right: 60px;
     width: 100%;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     z-index: 50;
@@ -1120,6 +1411,11 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 14px;
     background: #fff;
   }
+
+  .nav-bar-item > a {
+    direction: rtl;
+  }
+
   .header .nav > div > a:hover {
     padding: 0;
   }
@@ -1145,16 +1441,44 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #6b6b6b;
     height: 100%;
     text-align: center;
-    padding: 20px 5px 20px 5px;
+    padding: 15px 0px 15px 10px;
     border-left: 1px solid #ececec;
   }
 
   .header > .nav > div > a:hover {
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-
+    padding: 15px 0px 15px 10px;
   }
+
+
+
+/* Desktop - Have icon display inline instead of block */
+
+.nav > div > a > img,
+.nav > div > a > i {
+  display: inline;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 19px;
+  max-height: 20px;
+  padding: 0px 10px;
+  vertical-align: sub;  /* centers text*/
+}
+
+
+.header > .nav > div > a:hover > img {
+  min-height: 19px;
+  max-height: 20px;
+}
+
+/* Disable image swap */
+.nav div > a:hover img {
+  display: inline;
+}
+.nav div > a:hover .imgSwap {
+  display:none;
+}
+
 
   .nav div a > i {
     font-size: 48px;
@@ -1167,7 +1491,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 48px;
     color: #20cd84;
     line-height: 100%;
-    /* line-height: 50px; */
   }
 
   .nav div a:hover,
@@ -1235,48 +1558,20 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     outline-color: #199a64;
   }
 
-  /* Drop down content is hidden from view, when user hovers over it, it appears. Items are arranged in a dl tag (description list) in the code for both accessibility and for it's convenient formatting. */
+  /* Drop down content is hidden from view, when user hovers over it, it appears*/
   .categories-dropdown-content {
-    font-family: 'Open Sans';
-    font-size: 12px;
     position: absolute;
     display: block;
     display: none;
-    max-width: 270px;
+    max-width: 300px;
+    padding: 15px;
+    font-family: 'Open Sans';
+    font-size: 12px;
     background-color: #fff;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     min-width: 160px;
     z-index: 1;
     text-align: left;
-    margin-left: 20px;
-  }
-
-  /* Applies to every topic title in the drop down List */
-  .categories-dropdown-content dt {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 5px 0 10px;
-    font-weight: bold;
-    font-size: 12px;
-    color: #303030;
-  }
-
-  /* Applies to each topic item in the drop down list */
-  .categories-dropdown-content dd {
-    line-height: 18px;
-    margin-left: 20px;
-    text-align: left;
-    font-size: 12px;
-    color: #303030;
-  }
-
-  .categories-dropdown-content span a {
-    width: 100%;
-    color: #303030;
-    padding: 5px 16px;
-    text-decoration: none;
-    display: block;
   }
 
   .categories-dropdown:hover .categories-dropdown-content {
@@ -1284,23 +1579,84 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     max-width: 270px;
   }
 
-  .dl-title > dt > i {
-    color: #20cd84;
+  /* Every ul starts a new level in the dropdown */
+  .categories-dropdown-content ul {
+    font-size: 12px;
+    list-style-type: none;
   }
 
-  .dl-title > dt:hover > i {
-    color: #000000;
-    transition: 0.3s;
+  .categories-dropdown-content ul li a {
+    text-align: left;
+    color: #303030;
+    font-weight: normal;
+    padding-right: 0;
   }
 
-  .categories-dropdown-content span a:hover {
-    background-color: #f7f9f9;
-  }
-  .dl-item:hover {
-    background-color: #f7f9f9;
+   /* applies to subtopic category  */
+   .categories-dropdown-content > ul {
+    padding: 0;
   }
 
-  /* Last Item in flexbox */
+     /* applies to suptopic title  */
+  .categories-dropdown-content .subtopic{
+    font-weight: bold;
+  }
+
+  /* Applies to each topic item (which is a group) in the drop down list */
+  .categories-dropdown-content li {
+    font-size: normal;
+    line-height: 18px;
+    text-align: left;
+    font-size: 12px;
+    color: #303030;
+  }
+
+  /* Applies to specific items */
+  .categories-dropdown li span {
+    padding: 2px 5px;
+  }
+
+  .categories-dropdown li span:hover {
+    background: #f2f2f2;
+    border-radius: 5px;
+  }
+
+  .categories-dropdown-content li span
+  {  display: flex;
+  flex-direction: row;
+  justify-content: space-between;}
+
+  /* toggle between plus and minus signs */
+  .categories-dropdown-content li > a > span > label::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    top: 2px;
+    color:#20cd84;
+    padding-left: 5px;
+  }
+
+  .categories-dropdown-content li > a:hover > span > label::after {
+    content: '–';
+    top: 3px;
+  }
+/* 3nd + 4th Level of Navigation */
+  /* .categories-subtopic-content, 2nd level*/
+.categories-subsubtopic-content,
+.categories-subsubsubtopic-content {
+  display: none;
+}
+
+/* .categories-dropdown-content:hover li:hover .categories-subtopic-content, 2nd level */
+.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content {
+  display: block;
+  transition: .3s;
+}
+
+
+
+
+  /* ------ Desktop : Language Section:  Last Item in flexbox ------ */
   .language {
     font-size: 12px;
     color: #6b6b6b;
@@ -1359,13 +1715,15 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .nav .language-dropdown a > i::before {
-    content: 'keyboard_arrow_down';
+    content: 'keyboard_arrow_right';
     font-size: 12px;
+    vertical-align: -20%;
   }
 
   .nav .language-dropdown:hover a > i::before {
-    content: 'keyboard_arrow_up';
+    content: 'keyboard_arrow_down';
     font-size: 12px;
+    vertical-align: -20%;
   }
 
   .nav .language-dropdown a i {
@@ -1399,7 +1757,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding: 10px 50px 10px 50px;
   }
 
-  .health-providers {
+  .nav-bar-item4 {
     border-right: 1px solid #ececec;
   }
 
@@ -1465,5 +1823,18 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   input::-webkit-input-placeholder {
     font-size: 18px;
     padding:3px;
+  }
+
+  /* Desktop - Multilevel Navbar (disable feature phone version) */
+  .subtopic-dropdown-content, .subtopic-dropdown-content:hover {
+    display: none;
+  }
+
+  .nav-bar-item:hover .subtopic-dropdown-content{
+    display:none;
+  }
+
+  .nav-bar-item:hover a:hover {
+    background: transparent;
   }
 }

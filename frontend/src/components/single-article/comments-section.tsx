@@ -1,24 +1,13 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
-
+import { Comment } from '../../types'
 
 type CommentsSectionProps = {
   comments: Comment[]| null // allow for empty comments as well
   signedInStatus: boolean
 }
 
-// As of now this is a assumption of what comment format looks like (Comments with one level of replies), will need to update according to backend format
-interface Comment {
-  userName: string
-  comment: string
-  replies: Reply[] | null
-}
-
-interface Reply {
-  userName: string
-  comment: string
-}
 // If user is signed in, will display input box. Otherwise, just the comments.
 const CommentsSection: FunctionalComponent<CommentsSectionProps> = ({ comments, signedInStatus }: CommentsSectionProps) => {
   return (

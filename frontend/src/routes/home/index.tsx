@@ -1,11 +1,11 @@
 import { FunctionalComponent, h } from 'preact';
-import ArticlesView from '../../components/articles/articlesView';
+import ArticleListing from '../../components/articles/articleListing';
 import style from './style.css';
 
 const Home: FunctionalComponent = () => {
   return (
     <div class={style.home}>
-      <ArticlesView />
+      <ArticleListing />
     </div>
   );
 };
