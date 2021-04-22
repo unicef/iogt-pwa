@@ -84,9 +84,9 @@
      /* width:330px; */
   }
 
-  .desktopArticleContainer .content .byline{
+  /* .desktopArticleContainer .content .byline{
     color:#6B6B6B;
-  }
+  } */
 
   .tabletArticlesRowContainer {
     margin-bottom: 5%;
@@ -248,14 +248,14 @@
     font-size: 14px;
   }
 
-  .tabletArticleContainer .content .byline {
+  /* .tabletArticleContainer .content .byline {
     color: #6b6b6b;
     font-size: 16px;
-  }
+  } */
 
-  .tabletArticleContainer .content .byline .author {
+  /* .tabletArticleContainer .content .byline .author {
     font-style: italic;
-  }
+  } */
 
   .tabletArticleContainer .content .title {
     color: black;
@@ -451,7 +451,7 @@
   }
 
   .featureLinksContainer a {
-    text-decoration-color: #20cd84;
+    text-decoration-color: #6EC17F;
   }
 
   .featureLinksContainer .noUnderline {
@@ -463,7 +463,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    color: #20cd84;
+    color: #6EC17F;
     font-size: 11px;
     font-weight: 700;
     border-bottom: 1px solid #dadada;
@@ -476,7 +476,7 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
     font-style: italic;
-    color: #20cd84;
+    color: #6EC17F;
     font-size: 11px;
     font-weight: 700;
     border-bottom: 1px solid #dadada;

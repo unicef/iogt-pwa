@@ -24,7 +24,8 @@
 
 .tablet-ellipsis,
 .language,
-.categories-dropdown {
+.categories-dropdown,
+.navlink-tablet-desktop {
   visibility: collapse;
   display: none;
   flex-basis: 100%;
@@ -60,7 +61,7 @@
   width: 100%;
   padding: 4px 0 4px 12px;
   font-size: 8px;
-  color: #20cd84;
+  color: #6ec17f;
   /* border-bottom: 1px solid #DADADA; */
 }
 
@@ -183,7 +184,7 @@
 .header-top .join-menu a {
   font-size: 13px;
   font-weight: bold;
-  color: #20cd84;
+  color: #6ec17f;
   text-decoration: underline;
 }
 
@@ -225,7 +226,7 @@
 
 .search-bar button > i {
   font-size: 9px;
-  color: #20cd84;
+  color: #6EC17F;
 }
 
 ::placeholder {
@@ -243,12 +244,12 @@
   /* max-width: 320px; */
   width: 100%;
   height: 37px;
-  border-bottom: 1px solid #20cd84;
-  border-top: 1px solid #20cd84;
+  border-bottom: 1px solid #6ec17f;
+  border-top: 1px solid #6ec17f;
   font-family: 'Poppins';
   font-weight: 600;
   font-size: 5px;
-  color: #20cd84;
+  color: #6ec17f;
 }
 
 /* TODO: Make this more general - Like first item, second item, third item */
@@ -263,10 +264,7 @@
   text-align: center;
 }
 
-.nav-bar-item3 img path{
- fill: #20CD84;
-}
-.nav div a {
+.nav div > a, .subtopic-dropdown-content a{
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -274,11 +272,16 @@
   top: 10px;
   text-align: center;
   text-decoration: none;
-  color: #20cd84;
+  color: #6ec17f;
 }
 
-.nav > div > a > img,
-.nav > div > a > i {
+.navlink-feature-mobile {
+  width: 100%;
+  height: 100%;
+}
+
+.nav > div a > img,
+.nav > div a > i {
   display: block;
   text-align: center;
   margin-left: auto;
@@ -288,12 +291,12 @@
 
 .nav div a > i {
   font-size: 15px;
-  color: #20cd84;
+  color: #6ec17f;
   padding-top: 2px;
 }
 
 .nav div > a:hover {
-  background-color: #20cd84;
+  background-color: #6ec17f;
   color: #ffffff;
 }
 
@@ -306,7 +309,6 @@
   position: relative;
   left: 0;
   z-index: 99;
-  fill: #bf0012;
 }
 
 .nav div > a:hover .imgSwap {
@@ -316,9 +318,11 @@
   margin-right: auto;
   height: 15px;
 }
+.nav-bar-item:hover a:hover, .navlink-feature-mobile:hover span {
+  color:#ffffff;
+}
 
-
-.nav div > a:hover > i {
+.navlink-feature-mobile:hover > i {
   color: #ffffff;
 }
 
@@ -423,7 +427,11 @@
 
 /*  Nab Bar Item 1, ex. Parents */
 /* Allows 1st level to be remain highlighted when hovering on subtopics*/
-.nav-bar-item1:hover > a:hover {
+.nav .nav-bar-item1 .navlink-feature-mobile a {
+  color: #6ec17f;
+}
+
+.nav-bar-item1:hover .navlink-feature-mobile:hover {
   background-color: #6ec17f;
 }
 
@@ -434,12 +442,10 @@
   background-color: #6ec17f;
 }
 
-.nav .nav-bar-item1 > a {
-  color: #6ec17f;
-}
+
 .nav-bar-item1:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
-  display: block;
+  /* display: block; */
   z-index: 300;
   background-color: #6ec17f;
 }
@@ -449,6 +455,8 @@
   background-color: #CB68B3;
 }
 
+
+
 .nav-bar-item2 .subtopic-dropdown-content li {
   background-color: #CB68B3;
 }
@@ -456,12 +464,15 @@
   background-color: #CB68B3;
 }
 
-.nav .nav-bar-item2 > a {
+.nav-bar-item2 .navlink-feature-mobile  {
   color: #CB68B3;
+}
+.nav-bar-item2:hover span{
+  color: #fff;
 }
 .nav-bar-item2:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
-  display: block;
+  /* display: block; */
   z-index: 300;
   background-color: #CB68B3;
 }
@@ -472,12 +483,16 @@
   overflow: hidden;
 }
 
-.nav .nav-bar-item3 > a {
+.nav-bar-item3 .navlink-feature-mobile {
   color: #1CABE2;
+}
+
+.nav-bar-item3:hover span{
+  color: #fff;
 }
 .nav-bar-item3:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
-  display: block;
+  /* display: block; */
   z-index: 300;
   background-color: #1CABE2;
 }
@@ -501,22 +516,51 @@
   background-color: #E24256;
 }
 
-.nav .nav-bar-item4 > a {
+.nav-bar-item4 .navlink-feature-mobile  {
   color: #E24256;
+}
+
+.nav .nav-bar-item4:hover span{
+  color: #fff;
 }
 .nav-bar-item4:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
-  display: block;
+  /* display: block; */
   z-index: 300;
   background-color: #E24256;
+  color: #ffffff;
+
 }
 
 /* Allows 1st level to be remain highlighted  when on subtopics*/
 .nav-bar-item4:hover > a:hover {
   background-color: #E24256;
+  color: #ffffff;
+
 }
 
 /*  Nab Bar Item 5 */
+
+/* Allow main nav items to toggle on and off */
+
+.nav-bar-item:hover{
+  color: #ffffff;
+}
+.nav-bar-item > label{
+  display:inline-block;
+}
+
+.nav-bar-item input{
+  display: none;
+}
+
+.hiddendiv .subtopic-dropdown-content  {
+  display:none
+}
+
+.nav-bar-item input:checked ~ .hiddendiv > .subtopic-dropdown-content {
+  display: block;
+}
 
 
 /*****************************************************************
@@ -669,7 +713,7 @@
   .signin {
     font-size: 13px;
     text-decoration: none;
-    color: #20cd84;
+    color: #6EC17F;
     padding: 3px;
   }
 
@@ -711,7 +755,7 @@
   .header .nav {
     max-width: 767px;
     height: 58px;
-    border: 2px solid #20cd84;
+    border: 2px solid #6EC17F;
     font-size: 8px;
     font-weight: 600;
   }
@@ -726,27 +770,23 @@
     line-height: 8px;
   }
 
-  .nav > div > a > img,
-  .nav > div > a > i {
+  .nav div a > img,
+  .nav div a > i {
     padding-top: 1px;
     margin-bottom: 1px;
     height: 32px;
   }
 
-  .nav > div > a:hover > img,
-  .nav > div > a:hover > i {
+  .nav div > a:hover > img,
+   .nav div > a:hover> i {
     padding-top: 1px;
+    margin-bottom: 1px;
     height: 32px;
   }
 
   .nav div > a:hover .imgSwap {
     height: 32px;
   }
-  /* ----------Accordian feature on Mobile ---------*/
-  /* input {
-    display: none;
-  } */
-
 
 
   .subsubtopic-content {
@@ -781,9 +821,10 @@ with similar viewport measurments ***************************
   .logo-small,
   .search-menu,
   .signin-language,
+  .navlink-feature-mobile,
   .nav-bar-item3,
   .nav-bar-item4,
-  .see-more {
+  .see-more, .subtopic-dropdown-content {
     display: none;
     visibility: hidden;
     visibility: collapse;
@@ -799,7 +840,7 @@ with similar viewport measurments ***************************
   .language,
   .logo-full,
   .tablet-ellipsis,
-  .signin {
+  .signin, .navlink-tablet-desktop {
     visibility: visible;
     display: inline-block;
   }
@@ -868,7 +909,7 @@ with similar viewport measurments ***************************
   .signin {
     font-size: 15px;
     text-decoration: none;
-    color: #20cd84;
+    color: #6EC17F;
     padding: 0 0 0 20px;
     white-space: nowrap;
   }
@@ -910,7 +951,7 @@ with similar viewport measurments ***************************
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 14px;
-    background: #fff;
+    background: #303030;
   }
   .header .nav > div > a:hover {
     padding: 0;
@@ -922,8 +963,8 @@ with similar viewport measurments ***************************
 /* Tablet - Have icon display inline instead of block */
 
 
-  .nav > div > a > img,
-.nav > div > a > i {
+  .nav > div a > img,
+.nav > div a > i {
   display: inline;
   text-align: center;
   margin-left: auto;
@@ -980,21 +1021,22 @@ with similar viewport measurments ***************************
   .header .nav > div > a:hover,
   .header .nav > div > a.active {
     background-color: transparent;
-    border-bottom: 2px solid #20cd84;
+    border-bottom: 2px solid #6EC17F;
     color: #303030;
-    padding-top: 2px;
+    padding-top: 4px;
+    font-size: 14px;
   }
 
   .header > .nav > div > a {
     display: inline-block;
     white-space: nowrap;
-    padding-top: 2px;
-    font-size: 12px;
+    padding-top: 4px;
+    font-size: 14px;
     color: #6b6b6b;
   }
 
   .nav div a:hover > i {
-    color: #20cd84;
+    color: #6EC17F;
   }
 
   .nav .tablet-ellipsis {
@@ -1007,17 +1049,17 @@ with similar viewport measurments ***************************
   /* Tablet - styles ... large ellipsis in navbar */
   .nav .tablet-ellipsis a:hover > i {
     font-size: 45px;
-    color: #20cd84;
+    color: #6EC17F;
   }
 
   .nav .tablet-ellipsis a > i {
     font-size: 45px;
-    color: #20cd84;
+    color: #6EC17F;
   }
 
   .nav div > a:hover {
     background-color: transparent;
-    color: #303030;
+    color: #fff;
     font-size: 12px;
   }
 
@@ -1033,6 +1075,11 @@ with similar viewport measurments ***************************
     padding-bottom: 13px;
     z-index: 200;
   }
+
+  .categories-dropdown a {
+    text-decoration: none;
+  }
+
   .categories-dropdown .btn-group {
     display: inline-block;
     margin-top: 12px;
@@ -1046,7 +1093,7 @@ with similar viewport measurments ***************************
     vertical-align: middle;
     border: none;
     font-size: 12px;
-    background-color: #20cd84;
+    background-color: #6EC17F;
     color: white;
     border-radius: 2px 0 0 2px;
   }
@@ -1145,7 +1192,7 @@ with similar viewport measurments ***************************
     font-size: 20px;
     font-weight: bold;
     top: 2px;
-    color:#20cd84;
+    color:#6EC17F;
   }
 
   .categories-dropdown-content li span{  display: flex;
@@ -1174,7 +1221,7 @@ with similar viewport measurments ***************************
     padding-bottom: 5px;
     font-size: 12px;
     /* margin-top: 150px; */
-    color: #6b6b6b;
+    color: #fff;
     text-align: right;
   }
   .language > a {
@@ -1185,6 +1232,7 @@ with similar viewport measurments ***************************
   .language a:hover,
   .language > a.active {
     border-bottom: 0;
+    color: #fff;
     /* background: transparent; */
   }
 
@@ -1223,19 +1271,20 @@ with similar viewport measurments ***************************
     line-height: 18px;
     font-size: 12px;
     font-weight: 600px;
-    color: #303030;
+    color: #fff;
   }
 
   .nav .language-dropdown a > i::before {
     content: 'keyboard_arrow_right';
     font-size: 12px;
     vertical-align: -10%;
-
+    color: #6ec17f
   }
 
   .nav .language-dropdown:hover a > i::before {
     content: 'keyboard_arrow_down';
     font-size: 12px;
+    color: #6ec17f
   }
 
   .nav .language-dropdown a i {
@@ -1271,8 +1320,17 @@ with similar viewport measurments ***************************
 
 
     /* ------ Tablet : Multilevel Navbar (disable feature phone version) ------ */
+    .nav-bar-item a {
+      color: #fff
+    }
   .subtopic-dropdown-content, .subtopic-dropdown-content:hover {
     display: none;
+  }
+
+  .navlink-tablet-desktop {
+    text-decoration: none;
+    width: 100%;
+      height: 100%;
   }
 
   .nav-bar-item:hover .subtopic-dropdown-content{
@@ -1294,7 +1352,9 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .join-menu,
   .logo-small,
   .see-more,
-  .tablet-ellipsis {
+  .tablet-ellipsis,
+  .navlink-feature-mobile,
+  .subtopic-dropdown-content {
     visibility: collapse;
     display: none;
   }
@@ -1309,10 +1369,17 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .language,
   .logo-full,
   .tabletDesktopSignin,
-  .signin {
+  .signin,
+  .navlink-tablet-desktop {
     visibility: visible;
     display: inline-block;
   }
+
+  .navlink-tablet-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .logo-full > img {
        height: 70px;
@@ -1375,7 +1442,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .signin {
     font-size: 15px;
     text-decoration: none;
-    color: #20cd84;
+    color: #6EC17F;
     padding: 0 0 0 20px;
     white-space: nowrap;
   }
@@ -1409,7 +1476,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-family: 'Open Sans';
     font-weight: 400;
     font-size: 14px;
-    background: #fff;
+    background: #303030;
   }
 
   .nav-bar-item > a {
@@ -1431,7 +1498,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   /* Applied when are links hovered on / Links are active */
   .header .nav > div > a:hover,
   .header .nav > div > a.active {
-    border-bottom: 2px solid #20cd84;
+    border-bottom: 2px solid #6EC17F;
     color: #303030;
   }
 
@@ -1482,14 +1549,14 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   .nav div a > i {
     font-size: 48px;
-    color: #20cd84;
+    color: #6EC17F;
     padding: 0;
     line-height: 50%;
   }
 
   .nav div a:hover > i {
     font-size: 48px;
-    color: #20cd84;
+    color: #6EC17F;
     line-height: 100%;
   }
 
@@ -1497,7 +1564,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .language div a i,
   .language div:hover a i {
     background-color: transparent;
-    color: #303030;
+    color: #6ec17f;
     font-size: 12px;
   }
 
@@ -1513,7 +1580,9 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 14px;
     z-index: 200;
   }
-
+  .categories-dropdown a {
+    text-decoration: none;
+  }
   .categories-dropdown .btn-group {
     display: inline-block;
     padding-left: 0;
@@ -1528,7 +1597,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     vertical-align: middle;
     border: none;
     font-size: 12px;
-    background-color: #20cd84;
+    background-color: #6EC17F;
     color: white;
     border-radius: 2px 0 0 2px;
   }
@@ -1632,7 +1701,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 20px;
     font-weight: bold;
     top: 2px;
-    color:#20cd84;
+    color:#6EC17F;
     padding-left: 5px;
   }
 
@@ -1659,7 +1728,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   /* ------ Desktop : Language Section:  Last Item in flexbox ------ */
   .language {
     font-size: 12px;
-    color: #6b6b6b;
+    color: #fff;
     text-align: right;
   }
   .language > a {
@@ -1688,6 +1757,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   .nav .language-dropdown a {
     padding: 0;
+    color: #fff;
   }
 
   .nav .language-dropdown-content {
@@ -1720,16 +1790,25 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     vertical-align: -20%;
   }
 
+  .nav .language-dropdown > a {
+    color: #fff;
+  }
+
+  .nav .language-dropdown:hover > a {
+    color: #fff;
+  }
+
   .nav .language-dropdown:hover a > i::before {
     content: 'keyboard_arrow_down';
     font-size: 12px;
     vertical-align: -20%;
+    color: #6EC17F;
   }
 
   .nav .language-dropdown a i {
     position: relative;
     font-weight: bold;
-    color: #6b6b6b;
+    color: #6EC17F;
   }
 
   .nav .language-dropdown-content > a {
@@ -1777,7 +1856,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .signupText {
-    color: #20CD84;
+    color: #6EC17F;
     font-size: 20px;
     text-align: center;
   }
@@ -1799,7 +1878,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .loginContent .forgotPin{
-    color: #20CD84;
+    color: #6EC17F;
     font-weight: 500;
     text-decoration: underline;
     font-size: 13px;
@@ -1826,6 +1905,16 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   /* Desktop - Multilevel Navbar (disable feature phone version) */
+  .nav > div a > img{
+    height: 20px;
+  }
+  .nav-bar-item a {
+    color: #fff
+  }
+  .navlink-tablet-desktop {
+    text-decoration: none;
+  }
+
   .subtopic-dropdown-content, .subtopic-dropdown-content:hover {
     display: none;
   }

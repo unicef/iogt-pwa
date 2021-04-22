@@ -64,7 +64,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
           <label for='handel1'>
             Change Language <i class='material-icons'>keyboard_arrow_down</i>
           </label>
-          <div class={style['content']}>
+          <div class={style.content}>
             <div class={style['language-list-menu-content']}>
               <ul>
                 {languageList.map((language) => (
@@ -156,7 +156,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({ currentLanguage, langu
                 <input type="checkbox" id="horns" name="horns" />
                 <label for="logged-in">Stay logged in</label>
               </div>
-              <FullWidthButton text='Sign In' width='100%' backgroundColor='#20cd84' />
+              <FullWidthButton text='Sign In' width='100%' backgroundColor='#6EC17F' />
             </div>
           </div>
         </Modal>

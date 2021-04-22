@@ -30,9 +30,9 @@ export interface Comment {
   replies: Reply[] | null
 }
 
-
+// Notes: 'Categories' has an array of Topics
 export interface Topic {
   topicTitle: string
-  topicList: string[]
+  subtopics?: Topic[]
 }
 

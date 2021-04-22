@@ -2,6 +2,8 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
+import {Topic} from '../../types'
+
 import NavBar from './navbar';
 import HeaderTop from './header-top';
 
@@ -12,10 +14,6 @@ type HeaderProps = {
     signedInStatus : boolean
 }
 
-interface Topic {
-    topicTitle: string
-    topicList: string[]
-}
 
 const Header: FunctionalComponent<HeaderProps> = ({ currentLanguage, languageList, categories, signedInStatus }: HeaderProps) => {
 

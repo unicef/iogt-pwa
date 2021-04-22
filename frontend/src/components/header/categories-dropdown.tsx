@@ -1,34 +1,28 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
+import { formatUrl} from '../../utils'
 
+
+import { Topic } from '../../types'
 
 type CategoriesDropdownProps = {
   categories: Topic[]
 }
-
-interface Topic {
-  topicTitle: string
-  topicList: string[]
-}
-
 
 const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ categories }: CategoriesDropdownProps) => {
 
   // Add in subsubtopics / article titles
   //TODO: Will need to update this to match with database info
   let thirdLevel = [
-    { title: "Read to Your Child about COVID", link: "" },
+    { topicTitle: "Read to Your Child about COVID", subtopics: [] },
 
-    { title: "Children with Disabilities", link: "" }
+    { topicTitle: "Children with Disabilities", subtopics: [] }
   ]
 
   let fourthLevel = [
-    { title: "Children with Disabilities", link: "" }
+    { topicTitle: "Example" }
   ]
-
-  const formatUrl = (text: string) =>
-    text.split(' ').join('-').toLowerCase()
 
   return (
     <div class={style['categories-dropdown']}>
@@ -50,11 +44,11 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
                 </span>
 
                 <ul class={style['categories-subtopic-content']}>
-                  {topic.topicList.map((topicItem) => (
+                  {topic.subtopics && topic.subtopics.map((topicItem) => (
                     <li>
-                      <Link activeClassName={'dl-item'} href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem)}`}>
+                      <Link activeClassName={'dl-item'} href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}`}>
                         <span>
-                          {topicItem}
+                          {topicItem.topicTitle}
                           <label for={`${topic}${index}`}></label>
                         </span>
 
@@ -63,8 +57,8 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
                         <ul class={style['categories-subsubtopic-content']} >
                           {thirdLevel.map((subsubtopic, index: number) =>
                             <li>
-                              <Link href={subsubtopic.link}>
-                                <span>{subsubtopic.title}
+                              <Link href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`} >
+                                <span>{subsubtopic.topicTitle}
                                   <label for={`subsubtopic${index}`}></label>
                                 </span>
 
@@ -72,8 +66,8 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
 
                                   {fourthLevel.map((subsubsubtopic, index: number) =>
                                     <li>
-                                      <Link href={subsubsubtopic.link}>
-                                        <span>{subsubsubtopic.title}</span>
+                                      <Link href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}/${formatUrl(subsubsubtopic.topicTitle)}`}>
+                                        <span>{subsubsubtopic.topicTitle}</span>
                                         {/* <label for={`subsubtopic${index}`}></label> */}
                                       </Link>
                                     </li>)}

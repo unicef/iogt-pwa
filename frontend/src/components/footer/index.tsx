@@ -2,14 +2,12 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
+import { Topic } from '../../types'
+
 type FooterProps = {
     categories: Topic[]
 }
 
-interface Topic {
-    topicTitle: string
-    topicList: string[]
-}
 
 const Footer: FunctionalComponent<FooterProps> = ({ categories }: FooterProps) => (
     <footer className={style.footer}>
@@ -21,16 +19,16 @@ const Footer: FunctionalComponent<FooterProps> = ({ categories }: FooterProps) =
                     {topic.topicTitle === 'Youth' &&
                         <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
                             {/* <div className={style.column}> */}
-                                {topic.topicList.map((topicItem) => (
+                                {topic.subtopics && topic.subtopics.map((topicItem) => (
                                     <Link style={{ width: '100%' }} activeClassName={style.active} href='/'>
-                                        {topicItem.toUpperCase()}
+                                        {topicItem.topicTitle.toUpperCase()}
                                     </Link>
                                 ))}
                             </div>}
 
-                    {topic.topicTitle !== 'Youth' && topic.topicList.map((topicItem: string) => (
+                    {topic.topicTitle !== 'Youth' && topic.subtopics && topic.subtopics.map((topicItem: Topic) => (
                         <Link activeClassName={style.active} href='/'>
-                            {topicItem.toUpperCase()}
+                            {topicItem.topicTitle.toUpperCase()}
                         </Link>
                     ))}
                 </div>

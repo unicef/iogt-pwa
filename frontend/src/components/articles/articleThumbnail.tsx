@@ -3,6 +3,9 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
+import { formatUrl} from '../../utils'
+
+
 type ArticleProps = {
   id: number;
   img_src: string;
@@ -48,10 +51,8 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
           : 'black';
 
   {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */ }
-  let singleArticleLink = `/section/${tag. toLowerCase().replace(/[\W\\(\\)]+/g, ' ').replace(/\s/, '-')}/${tag_meta
-      .split(' ')
-      .join('-')
-      .toLowerCase()}/${title.toLowerCase().replace(/\W+/g, ' ').replace(/\s/, '-')}}/${id}`
+
+  let singleArticleLink = `/section/${formatUrl(tag)}/${tag_meta? formatUrl(tag_meta)+ '/': ''}${formatUrl(title)}/${id}`
 
 
   return (
@@ -100,11 +101,6 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
                 {tag} | {tag_meta}
               </span>
             </div>
-
-            <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
           </p>
 
           <div class={style.title}>
@@ -146,10 +142,6 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
               </span>
             </div>
 
-            <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
           </p>
 
           <div class={style.title}>

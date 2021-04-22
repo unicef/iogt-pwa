@@ -16,37 +16,37 @@ import { articlesInfo } from './articleInfoData'
 let categories = [
     {
         topicTitle: 'Coronavirus (Covid-19)',
-        topicList: [
-            'About Coronavirus',
-            'Student Toolkit',
-            'COVID-19 Parenting',
-            'Health Worker Resources',
+        subtopics: [
+            {topicTitle: 'About Coronavirus', subtopics: []},
+            {topicTitle: 'Student Toolkit', subtopics: []},
+            {topicTitle: 'COVID-19 Parenting', subtopics: []},
+            {topicTitle: 'Health Worker Resources', subtopics: []}
         ],
     },
     {
         topicTitle: 'Youth',
-        topicList: [
-            'Internet Safety',
-            'Career Advice',
-            "Girl's Zone",
-            'Freedom for Girls',
-            'HIV / AIDS and Safe Sex',
-            'The Future is Yours!',
-            'Act for Climate',
-            'End Violent',
-            'U-Report',
-            'Sustainable Goals - Practical Guide',
-            'Your Rights',
+        subtopics: [
+            {topicTitle: 'Internet Safety', subtopics: []},
+            {topicTitle: 'Career Advice', subtopics: []},
+            {topicTitle: "Girl's Zone", subtopics: []},
+            {topicTitle: 'Freedom for Girls', subtopics: []},
+            {topicTitle: 'HIV / AIDS and Safe Sex', subtopics: []},
+            {topicTitle: 'The Future is Yours!', subtopics: []},
+            {topicTitle: 'Act for Climate', subtopics: []},
+            {topicTitle: 'End Violent', subtopics: []},
+            {topicTitle: 'U-Report', subtopics: []},
+            {topicTitle: 'Sustainable Goals - Practical Guide', subtopics: []},
+            {topicTitle: 'Your Rights', subtopics: []}
         ],
     },
     {
         topicTitle: 'Parents & Caregivers',
-        topicList: [
-            'Vaccines',
-            'Pre-School Years',
-            'Nutrition and Breastfeeding',
-            'Early Life Tips!',
-            'Facts for Life',
+        subtopics: [
+            {topicTitle: 'Vaccines', subtopics: []},
+            {topicTitle: 'Pre-School Years', subtopics: []},
+            {topicTitle: 'Nutrition and Breastfeeding', subtopics: []},
+            {topicTitle: 'Early Life Tips!', subtopics: []},
+            {topicTitle: 'Facts for Life', subtopics: []},
         ],
     },
 ];
