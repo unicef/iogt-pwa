@@ -195,7 +195,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           <label for='logged-in'>I accept the terms and conditions</label>
         </div>
         <FullWidthButton
-          text='Sign In'
+          text='Sign Up'
           width='100%'
           backgroundColor='#20cd84'
         />
@@ -283,18 +283,6 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
 
           {signedInStatus ? 'Sign Out' : 'Sign In'}
         </Link>
-        {!signedInStatus && (
-          <Link
-            class={style['signin']}
-            activeClassName={style.active}
-            onClick={() => {
-              setModalIndex(1);
-              selectModal();
-            }}
-          >
-            Sign Up
-          </Link>
-        )}
 
         <Modal
           isOpen={modalOpen}
