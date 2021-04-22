@@ -344,14 +344,15 @@
   .current-language,
   .change-language,
   .join-menu,
-  .logo-full, .tabletDesktopSignin .signin {
+  .logo-full,
+  .tabletDesktopSignin .signin {
     display: none;
     visibility: collapse;
   }
 
   .signin-language,
   .signin,
-  .search-menu{
+  .search-menu {
     visibility: visible;
     display: inline-block;
   }
@@ -486,17 +487,17 @@
     border-radius: 50%;
   }
 
-  .search-bar{
+  .search-bar {
     display: none;
   }
 
-  .mobile-search-bar{
-    border:0;
+  .mobile-search-bar {
+    border: 0;
     width: 0px;
     height: 0px;
   }
 
-  .mobile-search-bar:focus{
+  .mobile-search-bar:focus {
     width: 100%;
     height: 100%;
   }
@@ -657,14 +658,13 @@ with similar viewport measurments ***************************
   }
 
   /* Placed to try to align the logo with the categories button */
-  .logo-full{
-
+  .logo-full {
   }
 
   .logo-full > img {
     width: 193px;
     height: 60px;
-}
+  }
   .logo-full > a {
     height: 100%;
     text-align: left;
@@ -689,8 +689,8 @@ with similar viewport measurments ***************************
   }
   .header .nav > div > a:hover {
     padding: 0;
-    padding-left:3px;
-    padding-right:3px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   .header .nav > div {
@@ -1022,8 +1022,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .logo-full > img {
-       width: 193px;
-       height: 60px;
+    width: 193px;
+    height: 60px;
   }
 
   .header {
@@ -1098,7 +1098,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   /* Placed to try to align the logo with the categories button */
   .logo-full > a {
-
     text-align: left;
   }
 
@@ -1153,7 +1152,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
-
   }
 
   .nav div a > i {
@@ -1419,7 +1417,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .signupText {
-    color: #20CD84;
+    color: #20cd84;
     font-size: 20px;
     text-align: center;
   }
@@ -1433,30 +1431,30 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 5%;
   }
 
-  .loginContent .textField{
-    font-family:'Roboto';
+  .loginContent .textField {
+    font-family: 'Roboto';
     margin-top: 4%;
     border: none;
-    border-bottom: 1px solid #D3D4D5;
+    border-bottom: 1px solid #d3d4d5;
   }
 
-  .loginContent .forgotPin{
-    color: #20CD84;
+  .loginContent .forgotPin {
+    color: #20cd84;
     font-weight: 500;
     text-decoration: underline;
     font-size: 13px;
-    margin-top:1%;
+    margin-top: 1%;
     margin-bottom: 5%;
   }
 
   .loginContent .checkbox {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     margin-bottom: 5%;
   }
 
   .loginContent label {
-    font-size:13px;
+    font-size: 13px;
     color: #979797;
     margin-left: 0.5%;
   }
@@ -1464,6 +1462,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   input,
   input::-webkit-input-placeholder {
     font-size: 18px;
-    padding:3px;
+    padding: 3px;
   }
 }

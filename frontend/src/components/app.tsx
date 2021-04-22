@@ -9,7 +9,6 @@ import NotFoundPage from '../routes/notfound';
 import Header from './header';
 import Footer from './footer';
 import SingleArticle from './single-article';
-import SignUp from '../routes/signup';
 
 const App: FunctionalComponent = () => {
   let signedInStatus = false;
@@ -80,7 +79,6 @@ const App: FunctionalComponent = () => {
         />
         <Router>
           <Route path='/' component={Home} />
-          <Route path='/signup' component={SignUp} />
           <Route path='/profile/' component={Profile} user='me' />
           <Route path='/profile/:user' component={Profile} />
           <Route path='/section/' component={Section} />
