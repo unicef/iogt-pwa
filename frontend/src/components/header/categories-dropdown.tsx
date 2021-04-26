@@ -1,7 +1,7 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
-import { formatUrl} from '../../utils'
+import { formatUrl } from '../../utils'
 
 
 import { Topic } from '../../types'
@@ -24,15 +24,31 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
     { topicTitle: "Example" }
   ]
 
+  let flag = true;
+
+  // let clickCategoriesButton = () => {
+  //   if (flag)
+  //     document.getElementById('categories-dropdown-content')?.classList.add("show");
+  //   else
+  // }
+
   return (
     <div class={style['categories-dropdown']}>
-      <div class={style['btn-group']}>
-        <button class={style['categories-btn']}>All Categories </button>
-        <button class={style['categories-btn-arrow']}>
-          <i class="material-icons icon">arrow_drop_down</i>
-        </button>
-      </div>
-      <div class={style['categories-dropdown-content']}>
+
+      <input type="checkbox" class={style.collapse} id={'all-categories-checkbox'} />
+
+      {/* All Categories Button for Tablet/ Desktop */}
+      <label class="clicker" for={'all-categories-checkbox'}>
+        <div class={style['btn-group']}>
+          <span class={style['categories-btn']}>All Categories
+          </span>
+          <span class={style['categories-btn-arrow']}>
+            <i class="material-icons icon">arrow_drop_down</i>
+          </span>
+        </div>
+      </label>
+
+      <div class={`${style['categories-dropdown-content']}  `}>
         <ul >
           {categories.map((topic, index) => (
             <li>

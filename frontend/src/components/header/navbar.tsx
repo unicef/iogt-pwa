@@ -119,7 +119,7 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
         // Nav Item and Subtopic dropdown
         <div class={`${link.class} ${style['nav-bar-item']} ${style['nav-bar-item' +index]}`} id={'nav-bar-item' +index}>
 
-          <a>
+          <a href={link.text.toLowerCase()==='home' ? '/':'' }>
 
           <input type="checkbox" class={style.collapse} id={'nav-bar-checkbox' +index}/>
 
