@@ -181,7 +181,6 @@ const Article: FunctionalComponent<Props> = ({
                 .split(' ')
                 .join('-')
                 .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
-          // style={{ textDecoration: 'none', color: "black" }}
           >
             <p style={{ color: colorTheme }} class={style.tag}>
               <div

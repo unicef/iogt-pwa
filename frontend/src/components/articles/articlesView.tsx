@@ -107,6 +107,7 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
               .split(' ')
               .join('-')
               .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
+          style={{ textDecoration: 'none' }}
         >
           <div class="linked-box">
             <div>
