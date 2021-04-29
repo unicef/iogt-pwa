@@ -1,4 +1,5 @@
 import { FunctionalComponent, h } from 'preact';
+import { Icon } from 'preact-material-components/Icon';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 import { formatUrl } from '../../utils'
@@ -21,7 +22,7 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
   ]
 
   let fourthLevel = [
-    { topicTitle: "Example" }
+    { topicTitle: "Example Subsection" }
   ]
 
   let flag = true;
@@ -43,7 +44,7 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
           <span class={style['categories-btn']}>All Categories
           </span>
           <span class={style['categories-btn-arrow']}>
-            <i class="material-icons icon">arrow_drop_down</i>
+            <Icon>arrow_drop_down</Icon>
           </span>
         </div>
       </label>
@@ -66,18 +67,25 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
                         <span>
                           {topicItem.topicTitle}
                           <label for={`${topic}${index}`}></label>
+                          <Icon>chevron_right</Icon>
+
                         </span>
 
                         {/* Level 3 & 4 */}
                         {/*  */}
+                        <div class={style['category-div']}>
+                          {/* <Icon>arrow_left</Icon> */}
                         <ul class={style['categories-subsubtopic-content']} >
                           {thirdLevel.map((subsubtopic, index: number) =>
                             <li>
                               <Link href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`} >
                                 <span>{subsubtopic.topicTitle}
                                   <label for={`subsubtopic${index}`}></label>
+                                  <Icon>chevron_right</Icon>
+
                                 </span>
 
+                            <div class={style['category-div']}>
                                 <ul class={style['categories-subsubsubtopic-content']}>
 
                                   {fourthLevel.map((subsubsubtopic, index: number) =>
@@ -88,11 +96,11 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
                                       </Link>
                                     </li>)}
                                 </ul>
-
+                                </div>
                               </Link>
                             </li>)}
                         </ul>
-
+                          </div>
 
 
                       </Link>

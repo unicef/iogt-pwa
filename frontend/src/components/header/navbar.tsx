@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
+import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
 
 import { Topic } from '../../types'
@@ -130,7 +131,7 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
           {link.imgSrc ? (
               <img src={link.imgSrc} />
             ) : (
-              <i class='material-icons'>{link.icon}</i>
+              <Icon>{link.icon}</Icon>
             )}
             {link.imgSrc ? (
               <img class={style.imgSwap} src={link.imgSwap} />
