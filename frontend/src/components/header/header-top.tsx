@@ -144,33 +144,25 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           you will see this.
         </label>
         <input
+          type='number'
+          min='1900'
+          max='2099'
+          step='1'
           class={style.textField}
-          type='text'
-          id='displayName'
-          name='displayName'
-          placeholder='CHOOSE A DISPLAY NAME'
-        />
-        <label for='displayName'>
-          We value your online security, therefore we hide your username and
-          allow you to comment and interact with the site with a display name.
-        </label>
-        <input
-          class={style.textField}
-          type='date'
           id='birthdate'
           name='birthdate'
-          placeholder='ENTER DATE OF BIRTH'
         />
         <label for='birthdate'>
-          Let us know your birthday to get access to exclusive content.
+          Let us know your birth year to get access to exclusive content.
         </label>
-        <input
-          class={style.textField}
-          type='text'
-          id='gender'
-          name='gender'
-          placeholder='I IDENTIFY MY GENDER AS'
-        />
+        <select class={style.textField} id='gender' name='gender'>
+          <option value=''>--Please choose an option--</option>
+          <option value='male'>Male</option>
+          <option value='female'>Female</option>
+          <option value='transgender'>Transgender</option>
+          <option value='non-binary'>Non-binary</option>
+          <option value='other'>Other</option>
+        </select>
         <label for='gender'>Only you will see this.</label>
         <input
           class={style.textField}
