@@ -26,14 +26,14 @@ const Section: FunctionalComponent<{ section?: string }> = ({ section }) => {
       )}
 
       <h1>Section: {section}</h1>
-			<p>This is the section for a topic { section }.</p>
+      <p>This is the section for a topic {section}.</p>
       {/*
 
       <p>10/21 Setting this up to display each section.</p>
 			<div>Current time: {new Date(time).toLocaleString()}</div>
 
 			<p>
-				<button onClick={() => setCount((count) => count + 1)}>Click Me</button>
+				<button onPointerDown={() => setCount((count) => count + 1)}>Click Me</button>
 				{' '}
 				Clicked {count} times.
 			</p> */}

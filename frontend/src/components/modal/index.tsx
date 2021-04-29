@@ -24,11 +24,11 @@ const Modal: FunctionalComponent<ModalProps> = (props: ModalProps) => {
     return (
         <div
             class={style.modal}
-            onClick={closeModal}
+            onPointerDown={closeModal}
             style={divStyle} >
             <div
                 className={style.modalContent}
-                onClick={e => e.stopPropagation()} >
+                onPointerDown={e => e.stopPropagation()} >
                 {props.children}
             </div>
         </div>
