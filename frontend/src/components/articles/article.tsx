@@ -140,7 +140,7 @@ const Article: FunctionalComponent<Props> = ({
                   .split(' ')
                   .join('-')
                   .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: 'none', color: 'black' }}
             >
               <span>{title}</span>
             </Link>
