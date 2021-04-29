@@ -113,6 +113,16 @@
     text-decoration: none;
     color: black;
   }
+
+  .desktopArticleContainer a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .desktopArticleContainer a:hover {
+    /* text-decoration: none; */
+    color: #585858;
+  }
 }
 
 /* TABLET ARTICLES VIEW COMPONENT */

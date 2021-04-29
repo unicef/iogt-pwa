@@ -171,44 +171,45 @@ const Article: FunctionalComponent<Props> = ({
             <img src='../../assets/mock-images/share.svg' />
           </div>
         </div>
+
         <div class={style.content}>
-          <p style={{ color: colorTheme }} class={style.tag}>
-            <div
-              style={{
-                marginBottom: -22,
-              }}
-            >
-              <span>
-                {tag} | {tag_meta}
-              </span>
-            </div>
-
-            <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
-          </p>
-
-          <div class={style.title}>
-            <Link
-              href={`/section/${tag
-                .split(/\W/)
+          <Link
+            href={`/section/${tag
+              .split(/\W/)
+              .join('-')
+              .toLowerCase()}/${tag_meta
+                .split(' ')
                 .join('-')
-                .toLowerCase()}/${tag_meta
-                  .split(' ')
-                  .join('-')
-                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
-              style={{ textDecoration: 'none' }}
-            >
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+          // style={{ textDecoration: 'none', color: "black" }}
+          >
+            <p style={{ color: colorTheme }} class={style.tag}>
+              <div
+                style={{
+                  marginBottom: -22,
+                }}
+              >
+                <span>
+                  {tag} | {tag_meta}
+                </span>
+              </div>
+
+              <br />
+              <span class={style.byline}>
+                on {date} / <span class={style.author}>by {author}</span>
+              </span>
+            </p>
+
+            <div class={style.title}>
               <span>{title}</span>
-            </Link>
-          </div>
-          <p class={style.desc}>{desc}</p>
-          {/* <hr
+            </div>
+            <p class={style.desc}>{desc}</p>
+            {/* <hr
             style={{ borderColor: colorTheme }
             }
             class={style.hr}
           /> */}
+          </Link>
         </div>
       </div>
     </div>

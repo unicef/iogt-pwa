@@ -99,19 +99,6 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
             <img src='../../assets/mock-images/share.svg' />
           </div>
         </div>
-        <div>
-          <Link
-            href={`/section/${article.tag
-              .split(/\W/)
-              .join('-')
-              .toLowerCase()}/${article.tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
-          >
-            <img src={article.img_src} />
-          </Link>
-        </div>
         <Link
           href={`/section/${article.tag
             .split(/\W/)
@@ -121,7 +108,12 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
               .join('-')
               .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
         >
-          <h1 class={style.mobileHeader}>{article.title}</h1>
+          <div class="linked-box">
+            <div>
+              <img src={article.img_src} />
+            </div>
+            <h1 class={style.mobileHeader}>{article.title}</h1>
+          </div>
         </Link>
       </div>
     );
