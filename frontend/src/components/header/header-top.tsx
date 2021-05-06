@@ -235,9 +235,9 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
 
         <div class={style['signin-language']}>
           <Link
+            href='/account/signin'
             class={style['signin']}
             activeClassName={style.active}
-            href='/signin'
           >
             Sign in
           </Link>

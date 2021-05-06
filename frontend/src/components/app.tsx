@@ -2,6 +2,7 @@ import { FunctionalComponent, h } from 'preact';
 import Router, { Route } from 'preact-router';
 
 import Home from '../routes/home';
+import SignIn from '../routes/signin';
 import Profile from '../routes/profile';
 import Section from '../routes/sections';
 import NotFoundPage from '../routes/notfound';
@@ -79,6 +80,8 @@ const App: FunctionalComponent = () => {
         />
         <Router>
           <Route path='/' component={Home} />
+
+          <Route path='/account/:option' component={SignIn} />
           <Route path='/profile/' component={Profile} user='me' />
           <Route path='/profile/:user' component={Profile} />
           <Route path='/section/' component={Section} />
@@ -88,6 +91,7 @@ const App: FunctionalComponent = () => {
             path='/section/:section/:topic/:articleTitle/:articleId'
             component={SingleArticle}
           />
+
           <NotFoundPage default />
         </Router>
         <Footer />

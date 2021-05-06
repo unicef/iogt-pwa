@@ -1465,3 +1465,27 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding: 3px;
   }
 }
+
+/*  */
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabs a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  top: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #20cd84;
+}
+
+.tabs > a:hover,
+.tabs > a.active {
+  background-color: #20cd84;
+  color: #ffffff;
+}
