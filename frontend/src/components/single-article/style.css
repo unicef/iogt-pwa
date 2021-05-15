@@ -17,7 +17,6 @@ body{
 }
 
 .mobile-banner,
-.date-and-author,
 .tag-section,
 .main-image-tablet-desktop,
 .horizontal-line-desktop,
@@ -204,10 +203,10 @@ body{
   color: #6b6b6b;
 }
 
-    /* Feature- Related Articles */
+    /* Feature- Related Articles
     .related-articles-section {
 
-    }
+    } */
 
     .related-articles-section div a {
       display: flex;
@@ -332,7 +331,6 @@ body{
   }
 
   .mobile-banner,
-  .date-and-author,
   .tag-section,
   .share-save-section {
     visibility: visible;
@@ -421,7 +419,7 @@ body{
     height: 16px;
   }
 
-  .article-content .date-and-author {
+  .article-content {
     font-family: 'Open Sans';
     color: #6b6b6b;
     font-size: 16px;
@@ -752,7 +750,6 @@ with similar viewport measurments ***************************
     visibility: collapse;
   }
 
-  .date-and-author,
   .tag-section,
   .tag_meta,
   .main-image-tablet-desktop,
@@ -813,7 +810,7 @@ with similar viewport measurments ***************************
     height: 16px;
   }
 
-  .article-content .date-and-author {
+  .article-content {
     font-family: 'Open Sans';
     color: #6b6b6b;
     font-size: 12px;
@@ -1145,7 +1142,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .mobile-banner,
   .article-content .tag-section img,
   .main-image-phone,
-  .date-and-author,
   .single-article .share-save-section,
   .related-articles-feature-tag {
     display: none;
@@ -1216,7 +1212,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     height: 16px;
   }
 
-  .article-content .date-and-author {
+  .article-content {
     font-family: 'Open Sans';
     color: #6b6b6b;
     font-size: 12px;
