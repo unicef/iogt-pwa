@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
+
 import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
 

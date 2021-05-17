@@ -987,10 +987,6 @@ with similar viewport measurments ***************************
 }
 
 
-.header > .nav > div > a:hover > img {
-
-}
-
 /* Tablet - Enable image swap */
 .nav div > a:hover img {
   display: none;
@@ -1000,9 +996,7 @@ with similar viewport measurments ***************************
 }
 
 /* Have icon and text display reversed */
-.nav-bar-item {
-  padding-top: 8px;
-}
+
 
 .nav-bar-item > a {
   direction: rtl;
@@ -1028,14 +1022,19 @@ with similar viewport measurments ***************************
     font-family: 'Poppins';
   }
 
+  .header .nav > div > a{
+    padding-top: 8px;
+  }
+
   /* Applied when are links hovered on / Links are active */
   .header .nav > div > a:hover,
   .header .nav > div > a.active {
-    padding-top:3px;
-    background-color: transparent;
+    padding-top:8px;
+    background-color: #303030;
     border-bottom: 3px solid #199a64;
     color: #303030;
     font-size: 14px;
+    transition: .25s;
     }
 
   .header > .nav > div > a {
@@ -1054,17 +1053,20 @@ with similar viewport measurments ***************************
     padding: 0;
     display: flex;
     align-items: center;
+    padding: 0px;
   }
 
   /* Tablet - styles ... large ellipsis in navbar */
   .nav .tablet-ellipsis a:hover > i {
     font-size: 45px;
     color: #fff;
+    line-height: 60%;
   }
 
   .nav .tablet-ellipsis a > i {
     font-size: 45px;
     color: #fff;
+    line-height: 60%;
   }
 
   .nav div > a:hover {
@@ -1136,24 +1138,35 @@ with similar viewport measurments ***************************
   /* Drop down content is hidden from view, when user hovers over it, it appears*/
   .categories-dropdown-content {
     position: absolute;
-    /* display: block;
-    display: none; */
     max-width: 300px;
     padding: 15px;
     font-family: 'Open Sans';
     font-size: 12px;
     background-color: #fff;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.50);
     min-width: 160px;
     z-index: 1;
     text-align: left;
   }
 
-  /* To Display Categorby button content on hover */
+  /* To Display Category button content on hover - currently based on click*/
   .categories-dropdown:hover .categories-dropdown-content {
     /* display: block;
     max-width: 270px; */
   }
+
+
+  /* tablet - CSS for chevron (arrow right) buttons that lock menu items in place */
+  .categories-dropdown-content button {
+    border: 0;
+    transition: .25s;
+  }
+
+  .categories-dropdown-content button:hover {
+    background-color: #303030;
+    transition: .25s;
+  }
+
 
   /* Every ul starts a new level in the dropdown */
   .categories-dropdown-content ul {
@@ -1217,7 +1230,7 @@ with similar viewport measurments ***************************
   }
 
   /* change icon color of '>' chevron */
-  .categories-dropdown-content li span > i {
+  .categories-dropdown-content li span i {
     color: #6ec17f;
   }
   /* 3nd + 4th Level of Navigation */
@@ -1226,32 +1239,28 @@ with similar viewport measurments ***************************
   display: none;
 }
 
-.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content {
+.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content, .visible > .categories-subsubtopic-content, .visible > .categories-subsubsubtopic-content{
   display: block;
-  transition: .3s;
 }
 
-.categories-dropdown-content .categories-subtopic-content li:hover div
+.categories-dropdown-content .categories-subtopic-content li:hover div, .visible
 {
   display:block;
   position: absolute;
-  /* display:flex; take this out if we don't bring back arrow
-  flex-direction: row; */
   left:100%;
   top: 0px;
   z-index:200;
-  width: 200px;
+  width: 250px;
   max-width: 250px;
-  background: #f7f7f9;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-  transition: .5s;
+  background: #ffffff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
-.categories-dropdown-content .categories-subtopic-content li:hover div span {
-  padding: 10px 0;
+.categories-dropdown-content .categories-subtopic-content li:hover div span, .categories-dropdown-content .categories-subtopic-content li .visible span {
+  padding: 10px 10px 10px 0;
 }
 
 .categories-dropdown-content .categories-subtopic-content > li:hover {
-  background: #f7f7f9;
+  background: #efefef;
 }
 
 .categories-subsubsubtopic-content span {
@@ -1561,7 +1570,9 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .header .nav > div > a:hover,
   .header .nav > div > a.active {
     border-bottom: 3px solid #199a64;
-    color: #303030;
+    background-color: #303030;
+    transition: .25s;
+
   }
 
   .header > .nav > div > a {
@@ -1581,7 +1592,12 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
    }
 
 
-
+   /* manually adjust images in navbar */
+   .header > .nav > div > a img {
+     /* background-color: #303030; */
+     /* border-radius: 5px;
+     padding: 3px; */
+   }
 
 /* Desktop - Have icon display inline instead of block */
 .nav > div a > img {
@@ -1674,9 +1690,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     border-radius: 0 2px 2px 0;
   }
 
-  .categories-btn-arrow > i {
-
-  }
 
   .categories-btn:hover,
   .categories-dropdown:hover .categories-btn .categories-btn-arrow {
@@ -1691,8 +1704,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   /* Drop down content is hidden from view, when user hovers over it, it appears*/
   .categories-dropdown-content {
     position: absolute;
-    /* display: block;
-    display: none; */
     max-width: 300px;
     padding: 15px;
     font-family: 'Open Sans';
@@ -1704,10 +1715,23 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     text-align: left;
   }
 
+    /* To Display Category button content on hover - currently based on click*/
   .categories-dropdown:hover .categories-dropdown-content {
     /* display: block;
     max-width: 270px; */
   }
+
+  /* Desktop - CSS for chevron (arrow right) buttons that lock menu items in place */
+  .categories-dropdown-content button {
+    border: 0;
+    transition: .25s;
+  }
+
+  .categories-dropdown-content button:hover {
+    background-color: #303030;
+    transition: .25s;
+  }
+
 
   /* Every ul starts a new level in the dropdown */
   .categories-dropdown-content ul {
@@ -1753,7 +1777,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   .categories-dropdown li span:hover {
     color: rgba(110, 193, 127, 1);
-    /* border-radius: 5px; */
   }
 
   .categories-dropdown-content li span
@@ -1763,7 +1786,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 
   /* toggle between plus and minus signs */
   .categories-dropdown-content li > a > span > label::after {
-    /* content: '+'; */
     font-size: 20px;
     font-weight: bold;
     top: 2px;
@@ -1777,7 +1799,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
     /* change icon color of '>' chevron */
-    .categories-dropdown-content li span > i {
+    .categories-dropdown-content li span i {
       color: #6ec17f;
     }
 
@@ -1789,33 +1811,29 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
 }
 
 /* .categories-dropdown-content:hover li:hover .categories-subtopic-content, 2nd level */
-.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content {
+.categories-dropdown-content .categories-subtopic-content:hover li:hover .categories-subsubtopic-content, .categories-dropdown-content .categories-subsubtopic-content:hover li:hover .categories-subsubsubtopic-content, .visible > .categories-subsubtopic-content, .visible > .categories-subsubsubtopic-content {
   display: block;
-  transition: .3s;
 }
 
 
-.categories-dropdown-content .categories-subtopic-content li:hover div
+.categories-dropdown-content .categories-subtopic-content li:hover div, .visible
 {
   display:block;
   position: absolute;
-  /* display:flex; take this out if we don't bring back arrow
-  flex-direction: row; */
   left:100%;
   top: 0px;
   z-index:200;
-  width: 200px;
+  width: 250px;
   max-width: 250px;
-  background: #f7f7f9;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-  transition: .5s;
+  background: #ffffff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
-.categories-dropdown-content .categories-subtopic-content li:hover div span {
-  padding: 10px 0;
+.categories-dropdown-content .categories-subtopic-content li:hover div span, .categories-subtopic-content li .visible span {
+  padding: 10px 10px 10px 0;
 }
 
 .categories-dropdown-content .categories-subtopic-content > li:hover {
-  background: #f7f7f9;
+  background: #efefef;
 }
 
 /* Desktop - Allow category button to toggle on and off */

@@ -1,4 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
+import { useCallback, useState} from 'preact/hooks';
+
 import { Icon } from 'preact-material-components/Icon';
 import { Link } from 'preact-router/match';
 import style from './style.css';
@@ -25,13 +27,32 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
     { topicTitle: "Example Subsection" }
   ]
 
+
   let flag = true;
 
-  // let clickCategoriesButton = () => {
-  //   if (flag)
-  //     document.getElementById('categories-dropdown-content')?.classList.add("show");
-  //   else
-  // }
+  /** Lock Feature for Categories Dropdown - works only with javascript */
+
+  const [categoryDiv3, setCategoryDiv3] = useState('')
+  const [categoryDiv4, setCategoryDiv4] = useState('')
+
+    let toggleClass = (index1:number, index2:number, index3?:number) => {
+
+    // Toggle lock for 3rd Level
+    let combinedIndex = `${index1} ${index2}`
+    if(categoryDiv3 === combinedIndex) setCategoryDiv3('')
+    else setCategoryDiv3(combinedIndex)
+
+    // Toggle lock for 4th level if clicked
+    if(index3 !== undefined) {
+       combinedIndex = `${index1} ${index2} ${index3}`
+
+      if(categoryDiv4 === combinedIndex) setCategoryDiv4('')
+      else setCategoryDiv4(combinedIndex)
+
+    }
+  }
+
+
 
   return (
     <div class={style['categories-dropdown']}>
@@ -51,41 +72,51 @@ const CategoriesDropdown: FunctionalComponent<CategoriesDropdownProps> = ({ cate
 
       <div class={`${style['categories-dropdown-content']}  `}>
         <ul >
-          {categories.map((topic, index) => (
+          {categories.map((topic, index1) => (
             <li>
               <Link class={style['subtopic']} activeClassName={style.active} href={`/section/${formatUrl(topic.topicTitle)}`}
               >
                 <span>
                   {topic.topicTitle}
-                  <label for={`${topic}${index}`}></label>
+                  <label for={`${topic}${index1}`}></label>
                 </span>
 
                 <ul class={style['categories-subtopic-content']}>
-                  {topic.subtopics && topic.subtopics.map((topicItem) => (
+                  {topic.subtopics && topic.subtopics.map((topicItem, index2) => (
                     <li>
                       <Link activeClassName={'dl-item'} href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}`}>
                         <span>
                           {topicItem.topicTitle}
-                          <label for={`${topic}${index}`}></label>
+                          <label for={`${topic}${index2}`}></label>
+                          <button onClick={()=>toggleClass(index1, index2)}>
                           <Icon>chevron_right</Icon>
+                          </button>
+
 
                         </span>
 
                         {/* Level 3 & 4 */}
                         {/*  */}
-                        <div class={style['category-div']}>
+                        <div class={categoryDiv3 === `${index1} ${index2}` ? style['visible']: style['']}>
                           {/* <Icon>arrow_left</Icon> */}
                         <ul class={style['categories-subsubtopic-content']} >
-                          {thirdLevel.map((subsubtopic, index: number) =>
+                          {thirdLevel.map((subsubtopic, index3: number) =>
                             <li>
                               <Link href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`} >
-                                <span>{subsubtopic.topicTitle}
-                                  <label for={`subsubtopic${index}`}></label>
-                                  <Icon>chevron_right</Icon>
+                                <span>
+
+                                  {subsubtopic.topicTitle}
+                                  <label for={`subsubtopic${index3}`}></label>
+
+                                  <a href=''>
+                                  <button onClick={()=>toggleClass(index1, index2, index3)}>
+                          <Icon>chevron_right</Icon>
+                          </button>
+                          </a>
 
                                 </span>
 
-                            <div class={style['category-div']}>
+                            <div class={categoryDiv4 === `${index1} ${index2} ${index3}` ? style['visible']: style['']}>
                                 <ul class={style['categories-subsubsubtopic-content']}>
 
                                   {fourthLevel.map((subsubsubtopic, index: number) =>

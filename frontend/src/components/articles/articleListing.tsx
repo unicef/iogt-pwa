@@ -50,8 +50,6 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
   // ---------------------------------------
 
-  console.log(sectionsWithArticles, "DOES THIS WORK")
-
   const articlesList = articlesInfo.map((article) => (
     <ArticleComponent
       key={article.id}
@@ -66,7 +64,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
     />
   ));
 
-  const selectedSectionList = selectedSection.sectionTitle && selectedSection.articles.map((article: Article) => (
+  const selectedSectionComponents = selectedSection.sectionTitle && selectedSection.articles.map((article: Article) => (
     <ArticleComponent
       key={article.id}
       id={article.id}
@@ -80,7 +78,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
     />
   ));
 
-  console.log(section, selectedSection)
+  // console.log(section, selectedSection)
 
 
   const mobileArticleComponent = (article: Article) => <div class={style.mobileHomeArticleContainer}>
@@ -242,7 +240,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
 
       {/* ----- DESKTOP ARTICLES ----- */}
-      {section && <div class={style.desktopArticles}>{selectedSectionList}</div>
+      {section && <div class={style.desktopArticles}>{selectedSectionComponents}</div>
 
       }
 
@@ -284,9 +282,9 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
             <h1>{selectedSection.sectionTitle}</h1>
-            <Icon style={{ fontSize: 30 }} class="material-icons">chevron_right</Icon>
+            <Icon style={{ fontSize: 30 }}>chevron_right</Icon>
           </div>
-          <div class={style.articlesRow}>{selectedSectionList}</div>
+          <div class={style.articlesRow}>{selectedSectionComponents}</div>
         </div>
 
       </div>}
@@ -327,9 +325,20 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
           <div>
             <div>{homeMobileArticles}</div>
           </div>
+      {section && homeMobileArticles.length && homeMobileArticles.map((article:any) => {
+                    <div class={style.articleBlock}>
+                    <div class={style.blockHeaderContainer}>
+                      <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
+                      <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                    </div>
+                    <div>{mobileCovidArticles}</div>
+                    <div class={style.articleBlockViewMore}>
+                      <span>View more</span>
+                      <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                    </div>
+                  </div>
+      })}
 
-
-        {section === 'youth' && <div></div>}
         {section === 'coronavirus-covid-19-' && (
           <div>
 
@@ -348,36 +357,36 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>STUDENT TOOLKIT</h1>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
               </div>
               <div>{mobileStudentArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }}>chevron_right</Icon>
               </div>
             </div>
 
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>COVID-19 PARENTING</h1>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
               </div>
               <div>{mobileParentingArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
               </div>
             </div>
 
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
                 <h1 class={style.blockHeader}>HEALTH WORKER RESOURCES</h1>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
               </div>
               <div>{mobileHealthArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
-                <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
               </div>
             </div>
           </div>
