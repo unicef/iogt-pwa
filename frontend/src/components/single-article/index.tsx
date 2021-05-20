@@ -147,10 +147,6 @@ const SingleArticle: FunctionalComponent<SingleArticleProps> = ({ section, topic
 
         <h1>{currentArticle.title}</h1>
 
-        <p class={style['date-and-author']}>
-          <span class={style.date}>on {currentArticle.date} </span>
-          <span class={style.author}>/ by {currentArticle.author}</span>
-        </p>
 
         <img class={style['main-image-tablet-desktop']} src={currentArticle.img_src} />
 
@@ -171,8 +167,7 @@ const SingleArticle: FunctionalComponent<SingleArticleProps> = ({ section, topic
 
           <div class={style['content-grid-right']}>
             <div class={style['article-info-desktop-card']}>
-              <p><span class={style.pheader}>Date Published:</span> {currentArticle.date}</p>
-              <p> <span class={style.pheader}>Author:</span> {currentArticle.author}</p>
+              
               <p> <span class={style.pheader}>Category:</span> {`${currentArticle.tag} ${currentArticle.tag_meta}`}</p>
 
             </div>
