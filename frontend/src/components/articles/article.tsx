@@ -19,8 +19,8 @@ const Article: FunctionalComponent<Props> = ({
   img_src,
   tag,
   tag_meta,
-  date,
-  author,
+  // date,
+  // author,
   title,
   desc,
 }) => {
@@ -126,9 +126,7 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-            <span class={style.byline}>
-              on {date} / <span class={style.author}>by {author}</span>
-            </span>
+      
           </p>
 
           <div class={style.title}>
@@ -171,6 +169,22 @@ const Article: FunctionalComponent<Props> = ({
             <img src='../../assets/mock-images/share.svg' />
           </div>
         </div>
+
+        <div class={style.content}>
+          <p style={{ color: colorTheme }} class={style.tag}>
+            <div
+              style={{
+                marginBottom: -22,
+              }}
+            >
+              <span>
+                {tag} | {tag_meta}
+              </span>
+            </div>
+
+            <br />
+        
+          </p>
 
         <div class={style.content}>
           <Link
