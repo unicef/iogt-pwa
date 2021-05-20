@@ -1,4 +1,5 @@
 @media only screen and (min-device-width: 1025px) and (-webkit-min-device-pixel-ratio: 1) {
+
   /* DESKTOP ARTICLES VIEW COMPONENT */
   .desktopArticles {
     display: grid;
@@ -25,8 +26,8 @@
 
 /* DESKTOP ARTICLE COMPONENT */
 @media only screen and (min-device-width: 1025px) and (-webkit-min-device-pixel-ratio: 1) {
-  .tabletArticleContainer{
-    display:none;
+  .tabletArticleContainer {
+    display: none;
   }
 
   .articleContainer {
@@ -35,7 +36,7 @@
     padding-bottom: 10px;
   }
 
-  .desktopArticleContainer{
+  .desktopArticleContainer {
     margin: 10px;
     height: 100%;
   }
@@ -43,7 +44,7 @@
   .desktopArticleContainer .image {
     width: 100%;
     /* height: 210px; */
-    position:relative;
+    position: relative;
     display: inline-block;
   }
 
@@ -55,10 +56,10 @@
   }
 
   .desktopArticleContainer .share {
-    background-color:white;
+    background-color: white;
     border-radius: 200px;
     padding: 12px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -71,20 +72,20 @@
     font-family: 'Open Sans', sans-serif;
   }
 
-  .desktopArticleContainer .content .title{
-    color:'#303030';
+  .desktopArticleContainer .content .title {
+    color: '#303030';
     font-family: 'Poppins', sans-serif;
-    font-size:25px;
-    font-weight:700;
-    line-height:30px;
-    display:flex;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    display: flex;
     align-items: center;
-    height:80px;
-     /* width:330px; */
+    height: 80px;
+    /* width:330px; */
   }
 
-  .desktopArticleContainer .content .byline{
-    color:#6B6B6B;
+  .desktopArticleContainer .content .byline {
+    color: #6B6B6B;
   }
 
   .tabletArticlesRowContainer {
@@ -95,21 +96,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   .tabletArticlesRowContainer .tabletArticlesHeader h1 {
     font-size: 35px;
-    color:#303030;
-    margin-right:15px;
+    color: #303030;
+    margin-right: 15px;
   }
 
   .articlesRow {
-    display: flex;}
-    
-  .desktopArticleContainer .title a{
+    display: flex;
+  }
+
+  .desktopArticleContainer .title a {
     text-decoration: none;
     color: black;
+  }
+
+  .desktopArticleContainer a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .desktopArticleContainer a:hover {
+    /* text-decoration: none; */
+    color: #585858;
   }
 }
 
@@ -142,13 +154,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Open Sans',sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   .tabletArticlesRowContainer .tabletArticlesHeader h1 {
     font-size: 35px;
-    color:#303030;
-    margin-right:15px;
+    color: #303030;
+    margin-right: 15px;
   }
 
   .articlesRow {
@@ -158,8 +170,8 @@
 
 /* TABLET ARTICLE COMPONENT */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .desktopArticleContainer{
-    display:none;
+  .desktopArticleContainer {
+    display: none;
   }
 
   .mobileAndFeatureArticleContainer {
@@ -170,41 +182,41 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     margin-right: 5%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex:1;
+    flex: 1;
   }
 
-  .tabletArticleContainer .content{
+  .tabletArticleContainer .content {
     text-align: left;
   }
 
-  .tabletArticleContainer .content .tag{
-    padding-left:15px;
-    padding-right:15px;
+  .tabletArticleContainer .content .tag {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .tabletArticleContainer .content .title{
-     padding-left:15px;
-     padding-right:15px;
-     display:flex;
-     align-items: center;
-     height:60px;
-     width:330px;
+  .tabletArticleContainer .content .title {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 330px;
   }
 
-  .tabletArticleContainer .content .desc{
-    padding-left:15px;
-    padding-right:15px;
+  .tabletArticleContainer .content .desc {
+    padding-left: 15px;
+    padding-right: 15px;
 
   }
 
   .tabletArticleContainer .image {
     width: 100%;
     height: 210px;
-    position:relative;
+    position: relative;
     display: inline-block;
   }
 
@@ -216,10 +228,10 @@
   }
 
   .tabletArticleContainer .share {
-    background-color:white;
+    background-color: white;
     border-radius: 200px;
     padding: 12px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -256,7 +268,7 @@
 
 /* MOBILE ARTICLES VIEW COMPONENT */
 @media only screen and (min-device-width: 300px) and (max-device-width: 600px) {
-  .desktopArticleContainer{
+  .desktopArticleContainer {
     display: none;
   }
 
@@ -314,34 +326,34 @@
 
 /* MOBILE ARTICLE COMPONENT */
 @media only screen and (min-device-width: 300px) and (max-width: 600px) {
-  .mobileHomeArticleContainer{
+  .mobileHomeArticleContainer {
     background-color: white;
-    padding-left:25px;
-    padding-right:25px;
-    padding-top:10px;
-    padding-bottom:2px;
-    margin:20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    margin: 20px;
   }
 
-  .mobileTagContainer{
+  .mobileTagContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .mobileTag{
+  .mobileTag {
     font-family: 'Open Sans';
     font-size: 14px;
     font-weight: 400;
   }
 
-  .mobileHeader{
+  .mobileHeader {
     font-family: 'Poppins';
     line-height: 35px;
     font-size: 35px;
     color: black;
   }
-  
+
 
   .desktopArticleContainer {
     display: none;
@@ -393,7 +405,7 @@
 /* FEATURE PHONE ARTICLES VIEW COMPONENT */
 @media only screen and (max-device-width: 300px) {
 
-  .desktopArticleContainer{
+  .desktopArticleContainer {
     display: none;
   }
 

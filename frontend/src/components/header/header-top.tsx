@@ -264,7 +264,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
         <Link
           class={style['signin']}
           activeClassName={style.active}
-          onClick={selectModal}
+          onPointerDown={selectModal}
         >
           {/* If signed in display profile icon */}
           {signedInStatus ? (
