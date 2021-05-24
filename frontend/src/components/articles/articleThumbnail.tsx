@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-import { formatUrl} from '../../utils'
+import { formatUrl } from '../../utils'
 
 
 type ArticleProps = {
@@ -15,6 +15,7 @@ type ArticleProps = {
   author: string;
   title: string;
   desc: string;
+  color?: any;
 };
 
 const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
@@ -26,6 +27,7 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
   author,
   title,
   desc,
+  color
 }: ArticleProps) => {
   const [myTag, setMyTag] = useState('');
 
@@ -41,18 +43,18 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
     }
   });
 
-  let colorTheme =
-    myTag === 'emergency'
-      ? '#E24256'
-      : myTag === 'youth'
-        ? '#1CABE2'
-        : myTag === 'parents'
-          ? '#6EC17F'
-          : 'black';
+  // Let theme be color passed or a default color
+  let colorTheme = color ? color : myTag === 'emergency'
+    ? '#E24256'
+    : myTag === 'youth'
+      ? '#1CABE2'
+      : myTag === 'parents'
+        ? '#6EC17F'
+        : 'black';
 
   {/* Link dynamically goes to a Single Article link based on category and title of article. Creates a route based on tags and title */ }
 
-  let singleArticleLink = `/section/${formatUrl(tag)}/${tag_meta? formatUrl(tag_meta)+ '/': ''}${formatUrl(title)}/${id}`
+  let singleArticleLink = `/section/${formatUrl(tag)}/${tag_meta ? formatUrl(tag_meta) + '/' : ''}${formatUrl(title)}/${id}`
 
 
   return (
@@ -60,14 +62,14 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
       <div class={style.mobileAndFeatureArticleContainer}>
         <div class={style.content}>
           <p
-            style={colorTheme}
+            style={{ color: colorTheme }}
             class={style.tag}
           >
             {tag}
           </p>
           <h1 class={style.title}>{title}</h1>
         </div>
-        {img_src !== '' && (
+        {img_src && (
           <div class={style.image}>
 
             <Link
@@ -79,7 +81,7 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
         )}
       </div>
 
-      <div class={style.tabletArticleContainer}>
+      <div class={style.tabletArticleContainer} style={{ borderBottom: ` solid ${colorTheme}` }}>
         <div class={style.image}>
           <Link
             href={singleArticleLink}
@@ -93,12 +95,9 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
         <div class={style.content}>
           <p style={{ color: colorTheme }} class={style.tag}>
             <div
-              style={{
-                marginBottom: -15,
-              }}
             >
               <span>
-                {tag} | {tag_meta}
+                {tag} {tag_meta && `| ${tag_meta}`}
               </span>
             </div>
           </p>
@@ -110,9 +109,10 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
               <span>{title}</span>
             </Link>
           </div>
-          <p class={style.desc}>{desc}</p>
-          <hr style={{ borderColor: colorTheme }} class={style.hr} />
+          {style.desc && <p class={style.desc}>{desc}</p>}
+
         </div>
+
       </div>
 
       <div
@@ -132,13 +132,9 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
         </div>
         <div class={style.content}>
           <p style={{ color: colorTheme }} class={style.tag}>
-            <div
-              style={{
-                marginBottom: -22,
-              }}
-            >
+            <div>
               <span>
-                {tag} | {tag_meta}
+                {tag} {tag_meta && `| ${tag_meta}`}
               </span>
             </div>
 
@@ -151,12 +147,7 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
               <span>{title}</span>
             </Link>
           </div>
-          <p class={style.desc}>{desc}</p>
-          {/* <hr
-            style={{ borderColor: colorTheme }
-            }
-            class={style.hr}
-          /> */}
+          {style.desc && <p class={style.desc}>{desc}</p>}
         </div>
       </div>
     </div>

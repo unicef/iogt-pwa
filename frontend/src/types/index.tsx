@@ -16,6 +16,7 @@ export interface Article {
 export interface Section {
   sectionTitle: string
   articles: Article[]
+  color?: any // rgb or hex value
 }
 
 // As of now this is a assumption of what comment format looks like (Comments with one level of replies), will need to update according to backend format
@@ -34,5 +35,6 @@ export interface Comment {
 export interface Topic {
   topicTitle: string
   subtopics?: Topic[]
+  color?: any
 }
 

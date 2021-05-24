@@ -16,6 +16,7 @@ import { articlesInfo } from './articleInfoData'
 let categories = [
     {
         topicTitle: 'Coronavirus (Covid-19)',
+        color: '#E24256',
         subtopics: [
             {topicTitle: 'About Coronavirus', subtopics: []},
             {topicTitle: 'Student Toolkit', subtopics: []},
@@ -25,6 +26,7 @@ let categories = [
     },
     {
         topicTitle: 'Youth',
+        color: '#1CABE2',
         subtopics: [
             {topicTitle: 'Internet Safety', subtopics: []},
             {topicTitle: 'Career Advice', subtopics: []},
@@ -41,6 +43,7 @@ let categories = [
     },
     {
         topicTitle: 'Parents & Caregivers',
+        color: '#6EC17F',
         subtopics: [
             {topicTitle: 'Vaccines', subtopics: []},
             {topicTitle: 'Pre-School Years', subtopics: []},

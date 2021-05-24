@@ -9,12 +9,7 @@ import { formatUrl } from '../../utils'
 
 import ArticleComponent from './articleThumbnail';
 import {
-  articlesInfo,
-  aboutCoronavirusArticles,
-  studentToolkitArticles,
-  covidParentingArticles,
-  healthWorkerArticles,
-  mobileHomeArticles,
+  articlesInfo
 } from '../articleInfoData';
 import FullWidthButton from '../buttons/fullWidthButton';
 import ViewMore from '../view-more/viewMore';
@@ -31,14 +26,14 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
   const articleInfo = useContext(ArticleInfo);
 
 
-  // Create sections with associated articles:
+  // Sort articles into associated sections, so can list out according to section
 
   let articles: Article[] = []
   let selectedSection: Section = { sectionTitle: '', articles: [...articles] }
 
-  let sectionsWithArticles: Section[] = categories.map(category => ({ sectionTitle: category.topicTitle, articles: [...articles] }))
+  let sectionsWithArticles: Section[] = categories.map(category => ({ sectionTitle: category.topicTitle, articles: [...articles], sectionColor: category.color }))
 
-  // Sort articles into associated sections
+
   articleInfo.map(article => {
     sectionsWithArticles.map(thisSection => {
 
@@ -50,7 +45,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
   // ---------------------------------------
 
-  const articlesList = articlesInfo.map((article) => (
+  const createArticleComponent = (article: Article, color?: any) =>
     <ArticleComponent
       key={article.id}
       id={article.id}
@@ -61,175 +56,44 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
       author={article.author}
       title={article.title}
       desc={article.desc}
+      color={color}
     />
+
+  const articlesList = articlesInfo.map((article) => (
+    createArticleComponent(article)
   ));
+
 
   const selectedSectionComponents = selectedSection.sectionTitle && selectedSection.articles.map((article: Article) => (
-    <ArticleComponent
-      key={article.id}
-      id={article.id}
-      img_src={article.img_src}
-      tag={article.tag}
-      tag_meta={article.tag_meta}
-      date={article.date}
-      author={article.author}
-      title={article.title}
-      desc={article.desc}
-    />
+    createArticleComponent(article, selectedSection.color)
   ));
 
-  // console.log(section, selectedSection)
 
-
+  // helper function for homeMobileArticles
   const mobileArticleComponent = (article: Article) => <div class={style.mobileHomeArticleContainer}>
     <div class={style.mobileTagContainer}>
-      <h1 class={style.mobileTag}>{article.tag}</h1>
+      <p class={style.mobileTag}>{article.tag}</p>
       <div class={style.share}>
-        <img src='../../assets/mock-images/share.svg' />
+
       </div>
     </div>
-    <div>
-      <img src={article.img_src} />
+    <div >
+      <img class={style.mainImage} src={article.img_src} />
     </div>
-    <h1 class={style.mobileHeader}>{article.title}</h1>
+    <div class={style.title}>
+      <h1 class={style.mobileHeader}>{article.title}</h1>    <img src='../../assets/mock-images/share.svg' />
+    </div>
   </div>
 
+  // Contains either all articles or section articles
   const homeMobileArticles = section ? selectedSection.articles && selectedSection.articles.map(article =>
-    mobileArticleComponent(article)
+    (mobileArticleComponent(article))
   ) :
     sectionsWithArticles.map((section: Section) => section.articles &&
       section.articles.map(article =>
-        mobileArticleComponent(article)
+        (mobileArticleComponent(article))
       )
     );
-
-
-  //take this out
-  const coronaArticles = articlesInfo.map((article) => {
-    return article.tag.includes('CORONAVIRUS') ? (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    ) : (
-      <div></div>
-    );
-  });
-
-  //take this out
-  const youthArticles = articlesInfo.map((article) => {
-    return article.tag.includes('YOUTH') ? (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    ) : (
-      <div></div>
-    );
-  });
-
-
-  //Take this out
-  const mobileCovidArticles = aboutCoronavirusArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
-
-  // Take this out
-  const parentArticles = articlesInfo.map((article) => {
-    return article.tag.includes('PARENTS') ? (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    ) : (
-      <div></div>
-    );
-  });
-
-  //take this out
-  const mobileStudentArticles = studentToolkitArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
-  //take this out
-  const mobileParentingArticles = covidParentingArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
-
-  //take this out
-  const mobileHealthArticles = healthWorkerArticles.map((article) => {
-    return (
-      <ArticleComponent
-        key={article.id}
-        id={article.id}
-        img_src={article.img_src}
-        tag={article.tag}
-        tag_meta={article.tag_meta}
-        date={article.date}
-        author={article.author}
-        title={article.title}
-        desc={article.desc}
-      />
-    );
-  });
 
   return (
     // <div class={style.articlesContainer}>
@@ -246,9 +110,6 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
       {!section && <div class={style.desktopArticles}>{articlesList}</div>}
 
-      {!section && (
-        <div class={style.desktopArticles}>{articlesList}</div>
-      )}
       {/* {section==="health-providers" &&
       <div style={{margin:'5%'}}>
         <div class={style.tabletArticlesRowContainer}>
@@ -310,6 +171,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
                   author={article.author}
                   title={article.title}
                   desc={article.desc}
+                  color={section.color}
                 />
               )}
             </div>
@@ -322,158 +184,68 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
       {/* ----- MOBILE PHONE ARTICLES ----- */}
       <div class={style.mobileArticles}>
 
+        {section &&
           <div>
-            <div>{homeMobileArticles}</div>
-          </div>
-      {section && homeMobileArticles.length && homeMobileArticles.map((article:any) => {
-                    <div class={style.articleBlock}>
-                    <div class={style.blockHeaderContainer}>
-                      <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
-                      <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
-                    </div>
-                    <div>{mobileCovidArticles}</div>
-                    <div class={style.articleBlockViewMore}>
-                      <span>View more</span>
-                      <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
-                    </div>
-                  </div>
-      })}
-
-        {section === 'coronavirus-covid-19-' && (
-          <div>
-
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
-                <h1 class={style.blockHeader}>ABOUT CORONAVIRUS</h1>
+                <h1 class={style.blockHeader}>{selectedSection.sectionTitle}</h1>
                 <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
-              <div>{mobileCovidArticles}</div>
+              <div>{homeMobileArticles}</div>
               <div class={style.articleBlockViewMore}>
                 <span>View more</span>
                 <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
             </div>
-
-            <div class={style.articleBlock}>
-              <div class={style.blockHeaderContainer}>
-                <h1 class={style.blockHeader}>STUDENT TOOLKIT</h1>
-                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
-              </div>
-              <div>{mobileStudentArticles}</div>
-              <div class={style.articleBlockViewMore}>
-                <span>View more</span>
-                <Icon style={{ fontSize: 15 }}>chevron_right</Icon>
-              </div>
-            </div>
-
-            <div class={style.articleBlock}>
-              <div class={style.blockHeaderContainer}>
-                <h1 class={style.blockHeader}>COVID-19 PARENTING</h1>
-                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
-              </div>
-              <div>{mobileParentingArticles}</div>
-              <div class={style.articleBlockViewMore}>
-                <span>View more</span>
-                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
-              </div>
-            </div>
-
-            <div class={style.articleBlock}>
-              <div class={style.blockHeaderContainer}>
-                <h1 class={style.blockHeader}>HEALTH WORKER RESOURCES</h1>
-                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
-              </div>
-              <div>{mobileHealthArticles}</div>
-              <div class={style.articleBlockViewMore}>
-                <span>View more</span>
-                <Icon style={{ fontSize: 15 }} >chevron_right</Icon>
-              </div>
-            </div>
           </div>
-        )}
+        }
+
+        {/* Mobile - Display all articles  */}
+        {!section &&
+          sectionsWithArticles && sectionsWithArticles.map((section: Section, index: number) =>
+            <div>
+              <div class={style.articleBlock}>
+                <div class={style.blockHeaderContainer}>
+                  <h1 class={style.blockHeader}>{section.sectionTitle}</h1>
+                  <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                </div>
+                <div style={style.mobileHomeArticleContainer}>{section.articles.map((article: Article) =>
+                  mobileArticleComponent(article)
+                )}</div>
+                <div class={style.articleBlockViewMore}>
+                  <span>View more</span>
+                  <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
+                </div>
+              </div>
+            </div>
+          )}
       </div>
 
       {/* -----FEATURE PHONE ARTICLES----- */}
       <div class={style.featureArticles}>
-        {/* PARENTS & CAREGIVERS FEATURE ARTICLES */}
-        {section === 'parents-and-caregivers' && (
-          <div>
-            <div>{mobileCovidArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{mobileStudentArticles}</div>
-            <ViewMore text='STUDENT TOOLKIT' />
-            <div>{mobileParentingArticles}</div>
-            <ViewMore text='COVID-19 PARENTING' />
-            <div>{mobileHealthArticles}</div>
-            <ViewMore text='HEALTH WORKER RESOURCES' />
-          </div>
-        )}
 
-        {/* GIRLS FEATURE ARTICLES */}
-        {section === 'girls' && (
-          <div>
-            <div>{mobileCovidArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{mobileStudentArticles}</div>
-            <ViewMore text='STUDENT TOOLKIT' />
-            <div>{mobileParentingArticles}</div>
-            <ViewMore text='COVID-19 PARENTING' />
-            <div>{mobileHealthArticles}</div>
-            <ViewMore text='HEALTH WORKER RESOURCES' />
-          </div>
-        )}
-
-        {/* HEALTH PROVIDERS FEATURE ARTICLES */}
-        {section === 'health-providers' && (
-          <div>
-            <div>{mobileCovidArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{mobileStudentArticles}</div>
-            <ViewMore text='STUDENT TOOLKIT' />
-            <div>{mobileParentingArticles}</div>
-            <ViewMore text='COVID-19 PARENTING' />
-            <div>{mobileHealthArticles}</div>
-            <ViewMore text='HEALTH WORKER RESOURCES' />
-          </div>
-        )}
-
-        {/* YOUTH FEATURE ARTICLES */}
-        {section === 'youth' && (
-          <div>
-            <div>{mobileCovidArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{mobileStudentArticles}</div>
-            <ViewMore text='STUDENT TOOLKIT' />
-            <div>{mobileParentingArticles}</div>
-            <ViewMore text='COVID-19 PARENTING' />
-            <div>{mobileHealthArticles}</div>
-            <ViewMore text='HEALTH WORKER RESOURCES' />
-          </div>
-        )}
-
-        {/* ALL FEATURE ARTICLES */}
-        {section === 'all-articles' && (
-          <div>
-            <div>{coronaArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{youthArticles}</div>
-            <ViewMore text='YOUTH' />
-            <div>{parentArticles}</div>
-            <ViewMore text='PARENTS & CAREGIVERS' />
-          </div>
-        )}
-
-        {/* HOME FEATURE ARTICLES */}
+        {/* all articles */}
         {!section && (
           <div>
-            <div>{coronaArticles}</div>
-            <ViewMore text='CORONAVIRUS (COVID-19)' />
-            <div>{youthArticles}</div>
-            <ViewMore text='YOUTH' />
-            <div>{parentArticles}</div>
-            <ViewMore text='PARENTS & CAREGIVERS' />
+
+            {sectionsWithArticles && sectionsWithArticles.map((section: Section) =>
+              <div>
+                <div> {section.articles.map((article: Article) =>
+                  createArticleComponent(article, section.color))}</div>
+                <ViewMore text={section.sectionTitle} />
+              </div>
+            )}
           </div>
         )}
+
+        {/* Selected Section */}
+        {section && (
+          <div>
+            <div>{selectedSectionComponents}</div>
+            <ViewMore text={selectedSection.sectionTitle} />
+          </div>
+        )}
+
 
         <div class={style.featureLinksContainer}>
           <div class={style.featureLinksWrapper}>

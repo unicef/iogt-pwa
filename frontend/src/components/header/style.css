@@ -1106,7 +1106,7 @@ with similar viewport measurments ***************************
     border: none;
     font-size: 14px;
     background-color: #303030;
-    color: white;
+    color: #ffffff;
     border-radius: 2px 0 0 2px;
   }
 
@@ -1115,7 +1115,7 @@ with similar viewport measurments ***************************
     padding: 3px 0px 4px;
     border: none;
     background-color: #199a64;
-    color: white;
+    color: #ffffff;
     border-radius: 0 2px 2px 0;
     font-size: 12px;
     display:flex;
@@ -1259,8 +1259,8 @@ with similar viewport measurments ***************************
   padding: 10px 10px 10px 0;
 }
 
-.categories-dropdown-content .categories-subtopic-content > li:hover {
-  background: #efefef;
+.categories-dropdown-content .categories-subtopic-content > li:hover button{
+  background: #303030;
 }
 
 .categories-subsubsubtopic-content span {
