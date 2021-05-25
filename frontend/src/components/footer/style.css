@@ -1,6 +1,6 @@
 /* DESKTOP VIEW */
 .footer {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   flex-shrink: 0;
   width: 100%;
   background-color: #f7f9f9;
@@ -106,7 +106,7 @@
   }
 
   .footer .copyright .links {
-    font-size: 14px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;

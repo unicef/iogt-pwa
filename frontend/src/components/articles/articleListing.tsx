@@ -70,20 +70,30 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
 
   // helper function for homeMobileArticles
-  const mobileArticleComponent = (article: Article) => <div class={style.mobileHomeArticleContainer}>
-    <div class={style.mobileTagContainer}>
-      <p class={style.mobileTag}>{article.tag}</p>
-      <div class={style.share}>
+  const mobileArticleComponent = (article: Article) => {
+    let singleArticleLink = `/section/${formatUrl(article.tag)}/${article.tag_meta ? formatUrl(article.tag_meta) + '/' : ''}${formatUrl(article.title)}/${article.id}`
+    return (
+      <div class={style.mobileHomeArticleContainer}>
+        <div class={style.mobileTagContainer}>
+          <p class={style.mobileTag}>{article.tag}</p>
+          <div class={style.share}>
+          </div>
+        </div>
 
-      </div>
-    </div>
-    <div >
-      <img class={style.mainImage} src={article.img_src} />
-    </div>
-    <div class={style.title}>
-      <h1 class={style.mobileHeader}>{article.title}</h1>    <img src='../../assets/mock-images/share.svg' />
-    </div>
-  </div>
+        <div >
+          <Link href={singleArticleLink}>
+            <img class={style.mainImage} src={article.img_src} />
+          </Link>
+        </div>
+        <div class={style.title}>
+          <h1 class={style.mobileHeader}>
+            <Link href={singleArticleLink} style={{ textDecoration: 'none', color: 'black'}}>{article.title}</Link>
+          </h1>
+
+          <img src='../../assets/mock-images/share.svg' />
+        </div>
+      </div>)
+  }
 
   // Contains either all articles or section articles
   const homeMobileArticles = section ? selectedSection.articles && selectedSection.articles.map(article =>
@@ -110,31 +120,6 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
       {!section && <div class={style.desktopArticles}>{articlesList}</div>}
 
-      {/* {section==="health-providers" &&
-      <div style={{margin:'5%'}}>
-        <div class={style.tabletArticlesRowContainer}>
-            <div class={style.tabletArticlesHeader}>
-              <h1>About Coronavirus</h1>
-              <ChevronRight size="30"/>
-            </div>
-            <div class={style.articlesRow}>{deskCoronaArticles}</div>
-        </div>
-        <div class={style.tabletArticlesRowContainer}>
-            <div class={style.tabletArticlesHeader}>
-              <h1>Student Toolkit</h1>
-              <ChevronRight size="30"/>
-            </div>
-            <div class={style.articlesRow}>{deskStudentArticles}</div>
-        </div>
-        <div class={style.tabletArticlesRowContainer}>
-            <div class={style.tabletArticlesHeader}>
-              <h1>COVID-19 Parenting</h1>
-              <ChevronRight size="30"/>
-            </div>
-            <div class={style.articlesRow}>{deskParentArticles}</div>
-        </div>
-      </div>
-      } */}
 
       {/* ----- TABLET ARTICLES ----- */}
 
@@ -161,18 +146,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
             </div>
             <div class={style.articlesRow}>
               {section.articles && section.articles.map(article =>
-                <ArticleComponent
-                  key={article.id}
-                  id={article.id}
-                  img_src={article.img_src}
-                  tag={article.tag}
-                  tag_meta={article.tag_meta}
-                  date={article.date}
-                  author={article.author}
-                  title={article.title}
-                  desc={article.desc}
-                  color={section.color}
-                />
+  createArticleComponent(article, section.color)
               )}
             </div>
           </div>
@@ -246,7 +220,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
           </div>
         )}
 
-
+      {/* TODO: Feature Footer Links : Move this to footer section:  */}
         <div class={style.featureLinksContainer}>
           <div class={style.featureLinksWrapper}>
             <a class={style.noUnderline} href='#'>

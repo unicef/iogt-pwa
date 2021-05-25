@@ -104,7 +104,12 @@
 
   .desktopArticleContainer .title a {
     text-decoration: none;
-    color: black;
+    color: #000;
+  }
+
+  .desktopArticleContainer .title a:hover {
+    /* text-decoration: none; */
+    color: #303030;
   }
 }
 
@@ -196,7 +201,11 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    color: #303030;
+    color: #000;
+  }
+
+  .tabletArticleContainer .content .title a:hover {
+    color:#303030
   }
 
   .tabletArticleContainer .content .desc {
@@ -247,6 +256,7 @@
   .tabletArticleContainer hr {
     height: 0.5px;
   }
+
 }
 
 /* MOBILE ARTICLES VIEW COMPONENT */
@@ -366,7 +376,7 @@
     align-items: center;
   }
 
-  .mobileAndFeatureArticleContainer .title,
+  .mobileAndFeatureArticleContainer .title ,
   .mobileHomeArticleContainer .title {
     line-height: 18px;
     font-family: 'Poppins', sans-serif;
@@ -495,6 +505,16 @@
     margin-top: -5px;
     color: black;
   }
+
+  .mobileAndFeatureArticleContainer .title a {
+    text-decoration:none;
+    color: #000;
+  }
+
+  .mobileAndFeatureArticleContainer .title a:hover {
+    color: #303030;
+  }
+
 
   .mobileAndFeatureArticleContainer .tag {
     font-family: 'Open Sans', sans-serif;

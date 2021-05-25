@@ -308,7 +308,7 @@
   display: none;
   position: relative;
   left: 0;
-  z-index: 99;
+  z-index: 3;
 }
 
 .nav div > a:hover .imgSwap {
@@ -346,7 +346,7 @@
   font-family: 'Poppins';
   list-style-type: none;
   text-align: left;
-  z-index: 300;
+  z-index: 5;
 }
 
 .subsubtopic-content,
@@ -446,7 +446,7 @@
 .nav-bar-item1:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   /* display: block; */
-  z-index: 300;
+  z-index: 5;
   background-color: #6ec17f;
 }
 
@@ -473,7 +473,7 @@
 .nav-bar-item2:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   /* display: block; */
-  z-index: 300;
+  z-index: 5;
   background-color: #CB68B3;
 }
 
@@ -493,7 +493,7 @@
 .nav-bar-item3:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   /* display: block; */
-  z-index: 300;
+  z-index: 5;
   background-color: #1CABE2;
 }
 
@@ -526,7 +526,7 @@
 .nav-bar-item4:hover .subtopic-dropdown-content,
 .subtopic-dropdown-content:hover {
   /* display: block; */
-  z-index: 300;
+  z-index: 5;
   background-color: #E24256;
   color: #ffffff;
 
@@ -550,10 +550,6 @@
   display:inline-block;
 }
 
-.nav-bar-item input{
-  display: none;
-}
-
 .hiddendiv {
   display: none;
 }
@@ -566,6 +562,9 @@
   display: block;
 }
 
+.nav-bar-item input{
+  display: none;
+}
 
 /*****************************************************************
 /*********************** FOR MOBILE DEVICES ********************
@@ -593,7 +592,7 @@
   .change-language,
   .join-menu,
   .logo-full,
-  .tabletDesktopSignin .signin {
+  .tabletDesktopSignin .signin{
     display: none;
     visibility: collapse;
   }
@@ -660,7 +659,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
     width: 100vw;
     margin: auto;
-    z-index: 200;
+    z-index: 5;
     text-align: left;
     white-space: nowrap;
     text-align: center;
@@ -691,7 +690,7 @@
 
   .language-dropdown:hover .language-dropdown-content {
     display: block;
-    z-index: 200;
+    z-index: 5;
   }
 
   .search-menu > a {
@@ -839,6 +838,7 @@ with similar viewport measurments ***************************
     width: 0;
   }
 
+
   .header .nav div > a > img {
     /* display: none;
     visibility: collapse; */
@@ -848,7 +848,7 @@ with similar viewport measurments ***************************
   .language,
   .logo-full,
   .tablet-ellipsis,
-  .signin, .navlink-tablet-desktop {
+  .signin, .navlink-tablet-desktop{
     visibility: visible;
     display: inline-block;
   }
@@ -954,7 +954,7 @@ with similar viewport measurments ***************************
     height: 50px;
     width: 100%;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-    z-index: 50;
+    z-index: 1;
     border: 1px solid #ececec;
     font-family: 'Open Sans';
     font-weight: 400;
@@ -1084,7 +1084,7 @@ with similar viewport measurments ***************************
   .categories-dropdown {
     display: inline-block;
     margin-left: 60px; /* allows margin at beginning of flex box*/
-    z-index: 200;
+    z-index: 5;
   }
 
   .categories-dropdown a {
@@ -1096,6 +1096,7 @@ with similar viewport measurments ***************************
     display: inline-block;
     white-space: nowrap;
     display:flex;
+    cursor: pointer;
   }
 
   .categories-btn {
@@ -1249,7 +1250,7 @@ with similar viewport measurments ***************************
   position: absolute;
   left:100%;
   top: 0px;
-  z-index:200;
+  z-index:1;
   width: 250px;
   max-width: 250px;
   background: #ffffff;
@@ -1316,7 +1317,7 @@ with similar viewport measurments ***************************
     font-weight: 600;
     color: #6b6b6b;
     padding-left: 5px;
-    z-index: 200;
+    z-index: 1;
   }
   .nav .language-dropdown a {
     padding: 0;
@@ -1411,6 +1412,71 @@ with similar viewport measurments ***************************
   .nav-bar-item:hover a:hover {
     background: transparent;
   }
+
+  /* LOGIN MODAL */
+  .loginHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginHeader h3 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 40px;
+    color: #474747;
+    margin-right: 3%;
+  }
+
+  .signupText {
+    color: #6EC17F;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .loginContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .loginContent .textField {
+    font-family: 'Roboto';
+    margin-top: 4%;
+    border: none;
+    border-bottom: 1px solid #d3d4d5;
+  }
+
+  .loginContent .forgotPin{
+    color: #6EC17F;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 13px;
+    margin-top: 1%;
+    margin-bottom: 5%;
+  }
+
+  .loginContent .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+
+  .loginContent label {
+    font-size: 13px;
+    color: #979797;
+    margin-left: 0.5%;
+  }
+
+  .loginContent input,
+  .loginContent input::-webkit-input-placeholder {
+    font-size: 18px;
+    padding: 3px;
+  }
+
 }
 /***********************************************************
 DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and incorporate the differnet parts through CSS Grid ***********************************************************/
@@ -1445,6 +1511,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     visibility: visible;
     display: inline-block;
   }
+
+
 
   .navlink-tablet-desktop {
     display: flex;
@@ -1542,7 +1610,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 60px;
     width: 100%;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-    z-index: 50;
+    z-index: 5;
     border: 1px solid #ececec;
     font-family: 'Open Sans';
     font-weight: 400;
@@ -1653,7 +1721,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     display: inline-block;
     padding: 15px 0;
     font-size: 14px;
-    z-index: 200;
+    z-index: 1;
   }
   .categories-dropdown a {
     text-decoration: none;
@@ -1666,6 +1734,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 10px;
     white-space: nowrap;
     display:flex;
+    cursor: pointer;
   }
 
   .categories-btn {
@@ -1822,7 +1891,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   position: absolute;
   left:100%;
   top: 0px;
-  z-index:200;
+  z-index:1;
   width: 250px;
   max-width: 250px;
   background: #ffffff;
@@ -1906,7 +1975,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-size: 12px;
     font-weight: 600;
     color: #6b6b6b;
-    z-index: 200;
+    z-index: 1;
   }
 
 
@@ -2029,11 +2098,11 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     padding-right: 5%;
   }
 
-  .loginContent .textField{
-    font-family:'Roboto';
+  .loginContent .textField {
+    font-family: 'Roboto';
     margin-top: 4%;
     border: none;
-    border-bottom: 1px solid #D3D4D5;
+    border-bottom: 1px solid #d3d4d5;
   }
 
   .loginContent .forgotPin{
@@ -2041,18 +2110,18 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     font-weight: 500;
     text-decoration: underline;
     font-size: 13px;
-    margin-top:1%;
+    margin-top: 1%;
     margin-bottom: 5%;
   }
 
   .loginContent .checkbox {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     margin-bottom: 5%;
   }
 
   .loginContent label {
-    font-size:13px;
+    font-size: 13px;
     color: #979797;
     margin-left: 0.5%;
   }
@@ -2060,7 +2129,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .loginContent input,
   .loginContent input::-webkit-input-placeholder {
     font-size: 18px;
-    padding:3px;
+    padding: 3px;
   }
 
   /* Desktop - Multilevel Navbar (disable feature phone version) */
@@ -2085,4 +2154,28 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .nav-bar-item:hover a:hover {
     background: transparent;
   }
+}
+
+/*  */
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabs a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  top: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #20cd84;
+}
+
+.tabs > a:hover,
+.tabs > a.active {
+  background-color: #20cd84;
+  color: #ffffff;
 }

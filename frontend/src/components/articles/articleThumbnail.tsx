@@ -67,7 +67,10 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
           >
             {tag}
           </p>
-          <h1 class={style.title}>{title}</h1>
+          <h1 class={style.title}>
+            <Link href={singleArticleLink}
+            >{title}</Link>
+            </h1>
         </div>
         {img_src && (
           <div class={style.image}>
@@ -106,7 +109,7 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
             <Link
               href={singleArticleLink}
             >
-              <span>{title}</span>
+              {title}
             </Link>
           </div>
           {style.desc && <p class={style.desc}>{desc}</p>}
@@ -127,7 +130,11 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
           </Link>
 
           <div class={style.share}>
+          <Link
+            href={singleArticleLink}
+          >
             <img src='../../assets/mock-images/share.svg' />
+            </Link>
           </div>
         </div>
         <div class={style.content}>
@@ -144,7 +151,7 @@ const ArticleThumbnail: FunctionalComponent<ArticleProps> = ({
             <Link
               href={singleArticleLink}
             >
-              <span>{title}</span>
+              {title}
             </Link>
           </div>
           {style.desc && <p class={style.desc}>{desc}</p>}
