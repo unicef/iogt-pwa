@@ -8,7 +8,7 @@
     0,
     0.4
   ); /* Overlay effect: translucent background: black w/ partial opacity */
-  z-index: 1; /* Overlay effect: positioned over other containers */
+  z-index: 100; /* Overlay effect: positioned over other containers */
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   position: fixed; /* Fix position on the top-left corner*/

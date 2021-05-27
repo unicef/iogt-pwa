@@ -11,8 +11,8 @@ const LanguageDropdown: FunctionalComponent<LanguageDropdownProps> = ({ currentL
   return (
     <div class={style['language-dropdown']}>
       <Link>
-        {currentLanguage}
-        <i class='material-icons'></i>
+        <span>{currentLanguage}<i class='material-icons'></i></span>
+
       </Link>
       <div class={style['language-dropdown-content']}>
         {languageList.map((language) => (

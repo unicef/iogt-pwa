@@ -25,6 +25,7 @@ const customStyles = {
     backgroundColor: 'white',
     border: 'none',
   },
+  zIndex:'100',
   overlay: {
     background: 'rgb(218,218,218, 0.5)',
   },
@@ -54,8 +55,20 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
     setModalOpen(false);
   };
 
+ // For Feature and Mobile: Will close Tablet/ Desktop Login Modal if it is open
+ useEffect (()=> {
+  function handleResize() {
+    var x = window.matchMedia("(max-width: 767px)")
+    console.log("MODAL", x)
+    if(x.matches && modalOpen) setModalOpen(false)
+   }
+   window.addEventListener('resize', handleResize)
+  })
+
+
+
   const Login = () => (
-    <div>
+    <div class={style.loginComponent}>
       <div class={style.loginHeader}>
         <h3>Login into</h3>
         <img
@@ -101,14 +114,14 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
         <FullWidthButton
           text='Sign In'
           width='100%'
-          backgroundColor='#20cd84'
+          backgroundColor='#6EC17F'
         />
       </div>
     </div>
   );
 
   const Signup = () => (
-    <div>
+    <div class={style.signupComponent}>
       <div class={style.loginHeader}>
         <h3>Be a part of</h3>
         <img
@@ -210,7 +223,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           <label for='handel1'>
             Change Language <i class='material-icons'>keyboard_arrow_down</i>
           </label>
-          <div class={style['content']}>
+          <div class={style.content}>
             <div class={style['language-list-menu-content']}>
               <ul>
                 {languageList.map((language) => (
@@ -285,7 +298,28 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           style={customStyles}
           contentLabel='Login Modal'
         >
+          <div>
+            {/* <div class={style.loginHeader}>
+              <h3>Login into</h3>
+              <img style={{ width: '35%' }} src={'../../assets/icons/iogt_logo.svg'} />
+            </div>
+            <div class={style.signupText}>
+              <span style={{ fontWeight: 300 }}>Need an account?</span>
+              <span style={{ fontWeight: 400, textDecoration: 'underline', marginLeft: '1%', marginBottom: '3%' }}>Sign up.</span>
+            </div>
+            <div class={style.loginContent}>
+              <input class={style.textField} type="text" id="username" name="username" placeholder="USERNAME"></input>
+              <input class={style.textField} type="password" id="pass" name="password" placeholder="4-DIGIT PIN"></input>
+              <span class={style.forgotPin}>Forgot your pin?</span>
+              <div class={style.checkbox}>
+                <input type="checkbox" id="horns" name="horns" />
+                <label for="logged-in">Stay logged in</label>
+              </div>
+              <FullWidthButton text='Sign In' width='100%' backgroundColor='#6EC17F' />
+            </div>
+          </div> */}
           {modalViews[modalIndex]}
+          </div>
         </Modal>
       </div>
     </div>

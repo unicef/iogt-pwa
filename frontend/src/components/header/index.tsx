@@ -2,6 +2,8 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
+import { Topic } from '../../types'
+
 import NavBar from './navbar';
 import HeaderTop from './header-top';
 import Router, { Route } from 'preact-router';
@@ -13,12 +15,6 @@ type HeaderProps = {
   signedInStatus: boolean;
 };
 
-interface Topic {
-  topicTitle: string;
-  topicList: string[];
-}
-
-const Nothing = () => <></>;
 
 const Tabs = () => (
   <nav class={style.tabs}>

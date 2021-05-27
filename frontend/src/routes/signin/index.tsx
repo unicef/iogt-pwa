@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Login = () => (
-  <>
+  <div>
     <h1 class={style.mobileTag}>Already a member?</h1>
     <h1 class={style.mobileHeader}>Login by signing in below.</h1>
     <form class={style.form}>
@@ -30,11 +30,11 @@ const Login = () => (
         New User? Register Here
       </Link>
     </div>
-  </>
+  </div>
 );
 
 const Register = () => (
-  <>
+  <div>
     <h1 class={style.mobileTag}>Not a member yet?</h1>
     <h1 class={style.mobileHeader}>Join us by signing up below.</h1>
     <form class={style.form}>
@@ -98,13 +98,13 @@ const Register = () => (
         Have an account? Log in
       </Link>
     </div>
-  </>
+  </div>
 );
 
 const SignIn: FunctionalComponent<Props> = ({ option }) => {
   console.log(option);
   return (
-    <div class={style.container}>
+    <div class={style.signupContainer}>
       {option === 'signin' && <Login />}
       {option === 'register' && <Register />}
     </div>
