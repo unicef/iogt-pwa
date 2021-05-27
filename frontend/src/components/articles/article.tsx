@@ -19,8 +19,8 @@ const Article: FunctionalComponent<Props> = ({
   img_src,
   tag,
   tag_meta,
-  // date,
-  // author,
+  date,
+  author,
   title,
   desc,
 }) => {
@@ -42,10 +42,10 @@ const Article: FunctionalComponent<Props> = ({
     myTag === 'emergency'
       ? '#BF0012'
       : myTag === 'youth'
-        ? '#00A4CB'
-        : myTag === 'parents'
-          ? '#48AB5D'
-          : 'black';
+      ? '#00A4CB'
+      : myTag === 'parents'
+      ? '#48AB5D'
+      : 'black';
 
   return (
     <div class={style.articleContainer}>
@@ -56,10 +56,10 @@ const Article: FunctionalComponent<Props> = ({
               myTag === 'emergency'
                 ? { color: '#BF0012' }
                 : myTag === 'youth'
-                  ? { color: '#00A4CB' }
-                  : myTag === 'parents'
-                    ? { color: '#48AB5D' }
-                    : { color: 'black' }
+                ? { color: '#00A4CB' }
+                : myTag === 'parents'
+                ? { color: '#48AB5D' }
+                : { color: 'black' }
             }
             class={style.tag}
           >
@@ -70,9 +70,9 @@ const Article: FunctionalComponent<Props> = ({
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              .split(' ')
+              .join('-')
+              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
             style={{ textDecoration: 'none' }}
           >
             <h1 class={style.title}>{title}</h1>
@@ -86,9 +86,9 @@ const Article: FunctionalComponent<Props> = ({
                 .split(/\W/)
                 .join('-')
                 .toLowerCase()}/${tag_meta
-                  .split(' ')
-                  .join('-')
-                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
             >
               <img class={style.mainImage} src={img_src} />
             </Link>
@@ -103,9 +103,9 @@ const Article: FunctionalComponent<Props> = ({
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              .split(' ')
+              .join('-')
+              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -126,7 +126,6 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-      
           </p>
 
           <div class={style.title}>
@@ -135,9 +134,9 @@ const Article: FunctionalComponent<Props> = ({
                 .split(/\W/)
                 .join('-')
                 .toLowerCase()}/${tag_meta
-                  .split(' ')
-                  .join('-')
-                  .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
               style={{ textDecoration: 'none', color: 'black' }}
             >
               <span>{title}</span>
@@ -158,9 +157,9 @@ const Article: FunctionalComponent<Props> = ({
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              .split(' ')
+              .join('-')
+              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
             <img class={style.mainImage} src={img_src} />
           </Link>
@@ -183,18 +182,17 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-        
           </p>
-
+        </div>
         <div class={style.content}>
           <Link
             href={`/section/${tag
               .split(/\W/)
               .join('-')
               .toLowerCase()}/${tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
+              .split(' ')
+              .join('-')
+              .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
             <p style={{ color: colorTheme }} class={style.tag}>
               <div
