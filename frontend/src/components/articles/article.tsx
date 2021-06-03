@@ -126,7 +126,6 @@ const Article: FunctionalComponent<Props> = ({
             </div>
 
             <br />
-
           </p>
 
           <div class={style.title}>
@@ -143,7 +142,6 @@ const Article: FunctionalComponent<Props> = ({
               <span>{title}</span>
             </Link>
           </div>
-          <p class={style.desc}>{desc}</p>
           <hr style={{ borderColor: colorTheme }} class={style.hr} />
         </div>
       </div>
@@ -180,32 +178,15 @@ const Article: FunctionalComponent<Props> = ({
                 .join('-')
                 .toLowerCase()}/${title.split(/\W/).join('-')}/${id}`}
           >
-            <p style={{ color: colorTheme }} class={style.tag}>
-              <div
-                style={{
-                  marginBottom: -22,
-                }}
-              >
-                <span>
-                  {tag} | {tag_meta}
-                </span>
-              </div>
-
-              <br />
-              <span class={style.byline}>
-                on {date} / <span class={style.author}>by {author}</span>
+            <div style={{ color: colorTheme }} class={style.tag}>
+              <span>
+                {tag} | {tag_meta}
               </span>
-            </p>
+            </div>
 
             <div class={style.title}>
               <span>{title}</span>
             </div>
-            <p class={style.desc}>{desc}</p>
-            {/* <hr
-            style={{ borderColor: colorTheme }
-            }
-            class={style.hr}
-          /> */}
           </Link>
         </div>
       </div>

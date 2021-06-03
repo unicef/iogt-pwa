@@ -93,11 +93,26 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
   const homeMobileArticles = mobileHomeArticles.map((article) => {
     return (
       <div class={style.mobileHomeArticleContainer}>
-        <div class={style.mobileTagContainer}>
-          <h1 class={style.mobileTag}>{article.tag}</h1>
-          <div class={style.share}>
-            <img src='../../assets/mock-images/share.svg' />
+
+        <div class={style.content}>
+          <div class={style.mobileTagContainer}>
+            <h1 class={style.mobileTag}>{article.tag}</h1>
           </div>
+
+          <Link
+            href={`/section/${article.tag
+              .split(/\W/)
+              .join('-')
+              .toLowerCase()}/${article.tag_meta
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <div class={style.title}>
+              <h1 class={style.mobileHeader} style={{ maxWidth: '80%' }}>{article.title}</h1>
+            </div>
+          </Link>
         </div>
         <Link
           href={`/section/${article.tag
@@ -107,15 +122,11 @@ const ArticlesView: FunctionalComponent<Props> = ({ section }) => {
               .split(' ')
               .join('-')
               .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
-          style={{ textDecoration: 'none' }}
+          style={{ width: '45%' }}
         >
-          <div class="linked-box">
-            <div>
-              <img src={article.img_src} />
-            </div>
-            <h1 class={style.mobileHeader}>{article.title}</h1>
-          </div>
+          <img class={style.mainImage} src={article.img_src} />
         </Link>
+
       </div>
     );
   });
