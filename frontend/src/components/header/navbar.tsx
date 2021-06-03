@@ -5,8 +5,7 @@ import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
 
 import { Topic } from '../../types'
-import { formatUrl} from '../../utils'
-
+import { formatUrl } from '../../utils'
 
 import CategoriesDropdown from './categories-dropdown'
 import LanguageDropdown from './language-dropdown'
@@ -45,8 +44,9 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       class: style.parents,
       imgSrc: '../../assets/icons/nav-icons/family-green.svg',
       imgSwap: '../../assets/icons/nav-icons/family-white.svg',
-      get hrefText () {
-        return `/section/${formatUrl(this.text)}`},
+      get hrefText() {
+        return `/section/${formatUrl(this.text)}`
+      },
       subtopics: []
     },
     {
@@ -54,8 +54,9 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       class: style.girls,
       imgSrc: '../../assets/icons/nav-icons/face1-pink.svg',
       imgSwap: '../../assets/icons/nav-icons/face1-white.svg',
-      get hrefText () {
-        return `/section/${formatUrl(this.text)}`},
+      get hrefText() {
+        return `/section/${formatUrl(this.text)}`
+      },
       subtopics: []
     },
     {
@@ -63,8 +64,9 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       class: style.youth,
       imgSrc: '../../assets/icons/nav-icons/robot-blue.svg',
       imgSwap: '../../assets/icons/nav-icons/robot-white.svg',
-      get hrefText () {
-        return `/section/${formatUrl(this.text)}`},
+      get hrefText() {
+        return `/section/${formatUrl(this.text)}`
+      },
       subtopics: []
     },
     {
@@ -72,8 +74,9 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       class: style['health-providers'],
       imgSrc: '../../assets/icons/nav-icons/microbe-red.svg',
       imgSwap: '../../assets/icons/nav-icons/microbe-white.svg',
-      get hrefText () {
-        return `/section/${formatUrl(this.text)}`},
+      get hrefText() {
+        return `/section/${formatUrl(this.text)}`
+      },
       subtopics: []
     },
     {
@@ -119,85 +122,86 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       <CategoriesDropdown categories={categories} />
       {navLinks.map((link, index) => (
         // Nav Item and Subtopic dropdown
-        <div class={`${link.class} ${style['nav-bar-item']} ${style['nav-bar-item' +index]}`} id={'nav-bar-item' +index}>
+        <div class={`${link.class} ${style['nav-bar-item']} ${style['nav-bar-item' + index]}`} id={'nav-bar-item' + index}>
 
-          <a href={link.text.toLowerCase()==='home' ? '/':'' }>
+          <Link href={link.text.toLowerCase() === 'home' ? '/' : link.text}>
 
-          <input type="checkbox" class={style.collapse} id={'nav-bar-checkbox' +index}/>
+            {/* Disabled to prevent click menu */}
+            {/* <input type="checkbox" class={style.collapse} id={'nav-bar-checkbox' +index}/> */}
 
-          <label class="clicker" for={'nav-bar-checkbox' +index}>
+            <label class="clicker" for={'nav-bar-checkbox' + index}>
 
-          {/* Navlink - Feature and Mobile Version - allows for toggling on and off of menu item */}
-          <a class={style['navlink-feature-mobile']}>
-          {link.imgSrc ? (
-              <img src={link.imgSrc} />
-            ) : (
-              <Icon>{link.icon}</Icon>
-            )}
-            {link.imgSrc ? (
-              <img class={style.imgSwap} src={link.imgSwap} />
-            ) : (
-              ''
-            )}
-           <span>{link.text}</span>
-            </a>
-            {/* Navlink - Desktop and Tablet Version - allows user to go to related section */}
-                      <Link class={style['navlink-tablet-desktop']}activeClassName={style.active} href={link.hrefText}>
+              {/* Navlink - Feature and Mobile Version - allows for toggling on and off of menu item */}
+              <Link class={style['navlink-feature-mobile']}>
+                {link.imgSrc ? (
+                  <img src={link.imgSrc} />
+                ) : (
+                  <Icon>{link.icon}</Icon>
+                )}
+                {link.imgSrc ? (
+                  <img class={style.imgSwap} src={link.imgSwap} />
+                ) : (
+                  ''
+                )}
+                <span>{link.text}</span>
+              </Link>
+              {/* Navlink - Desktop and Tablet Version - allows user to go to related section */}
+              <Link class={style['navlink-tablet-desktop']} activeClassName={style.active} href={link.hrefText}>
 
-            {link.imgSrc ? (
-              <img src={link.imgSrc} />
-            ) : (
-              <i class='material-icons'>{link.icon}</i>
-            )}
-            {link.imgSrc ? (
-              <img class={style.imgSwap} src={link.imgSwap} />
-            ) : (
-              ''
-            )}
-            <span>{link.text}</span>
-            </Link>
-          </label>
+                {link.imgSrc ? (
+                  <img src={link.imgSrc} />
+                ) : (
+                  <i class='material-icons'>{link.icon}</i>
+                )}
+                {link.imgSrc ? (
+                  <img class={style.imgSwap} src={link.imgSwap} />
+                ) : (
+                  ''
+                )}
+                <span>{link.text}</span>
+              </Link>
+            </label>
 
             {/* Subtopics - to appear on hover*/}
             <div class={style.hiddendiv}>
-            {link.subtopics && !!link.subtopics.length &&
-              <ul class={`${style['subtopic-dropdown-content']}`} id={'subtopic-dropdown-content' +index}>
-                {link.subtopics.map((subtopic, index) =>
-                  <li>
-                    <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}`}
-                    >
-                      <span>{subtopic.topicTitle}
-                        <label for={`${subtopic}${index}`}></label>
-                      </span>
+              {link.subtopics && !!link.subtopics.length &&
+                <ul class={`${style['subtopic-dropdown-content']}`} id={'subtopic-dropdown-content' + index}>
+                  {link.subtopics.map((subtopic, index) =>
+                    <li>
+                      <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}`}
+                      >
+                        <span>{subtopic.topicTitle}
+                          <label for={`${subtopic}${index}`}></label>
+                        </span>
 
-                      <ul class={style['subsubtopic-content']}>
-                        {thirdLevel.map((subsubtopic, index: number) =>
-                          <li>
-                            <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`}>
-                              <span>{subsubtopic.topicTitle}
-                                <label for={`${index}`}></label>
-                              </span>
+                        <ul class={style['subsubtopic-content']}>
+                          {thirdLevel.map((subsubtopic, index: number) =>
+                            <li>
+                              <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`}>
+                                <span>{subsubtopic.topicTitle}
+                                  <label for={`${index}`}></label>
+                                </span>
 
-                              <ul class={style['subsubsubtopic-content']}>
-                                {fourthLevel.map((subsubsubtopic, index: number) =>
-                                  <li>
-                                    <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}/${formatUrl(subsubsubtopic.topicTitle)}`}>
-                                      <span>{subsubsubtopic.topicTitle}
-                                        {/* <label for={`${index}`}></label> */}
-                                      </span>
-                                    </Link>
-                                  </li>)}
-                              </ul>
-                            </Link>
-                          </li>)}
-                      </ul>
-                    </Link>
-                  </li>
-                )}
-              </ul>
-            }
-             </div>
-          </a>
+                                <ul class={style['subsubsubtopic-content']}>
+                                  {fourthLevel.map((subsubsubtopic, index: number) =>
+                                    <li>
+                                      <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}/${formatUrl(subsubsubtopic.topicTitle)}`}>
+                                        <span>{subsubsubtopic.topicTitle}
+                                          {/* <label for={`${index}`}></label> */}
+                                        </span>
+                                      </Link>
+                                    </li>)}
+                                </ul>
+                              </Link>
+                            </li>)}
+                        </ul>
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              }
+            </div>
+          </Link>
 
 
         </div>

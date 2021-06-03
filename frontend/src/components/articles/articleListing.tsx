@@ -22,26 +22,46 @@ type Props = {
 const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
   const categories = useContext(Categories);
-
+  //all articles
   const articleInfo = useContext(ArticleInfo);
 
 
   // Sort articles into associated sections, so can list out according to section
 
   let articles: Article[] = []
-  let selectedSection: Section = { sectionTitle: '', articles: [...articles] }
+  let selectedSection: Section = {
+    topicTitle: '',
+    articles: [...articles],
+    subtopics: [] }
 
-  let sectionsWithArticles: Section[] = categories.map(category => ({ sectionTitle: category.topicTitle, articles: [...articles], sectionColor: category.color }))
+  // Taking the categories information, create structure for sections which will each contain articles
+  let sectionsWithArticles: Section[] = categories.map(category => ({
+    topicTitle: category.topicTitle,
+    articles: [...articles],
+    sectionColor: category.color }))
 
 
+  // Will go through all articles and place article in corresponding section. If the current section matches the current URL, it is the selected section.
   articleInfo.map(article => {
     sectionsWithArticles.map(thisSection => {
 
-      if (article.tag.includes(thisSection.sectionTitle.toUpperCase())) thisSection.articles.push(article)
+      if (article.tag.includes(thisSection.topicTitle.toUpperCase())) thisSection.articles.push(article)
 
-      if (section === formatUrl(thisSection.sectionTitle)) selectedSection = thisSection;
+      if (section === formatUrl(thisSection.topicTitle)) selectedSection = thisSection;
     })
   })
+
+  // The above helps find a section from categories. Next if a section is selected, list 3rd level subtopics and list them instead of 2nd level subtopics
+  if(section && selectedSection.subtopics){
+      sectionsWithArticles =
+      selectedSection.subtopics.map(subtopic => ({
+        subtopics: subtopic.subtopics,
+        topicTitle: subtopic.topicTitle,
+        articles: [...articles],
+        sectionColor: subtopic.color }))
+        console.log("HEE", sectionsWithArticles)
+
+  }
 
   // ---------------------------------------
 
@@ -64,7 +84,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
   ));
 
 
-  const selectedSectionComponents = selectedSection.sectionTitle && selectedSection.articles.map((article: Article) => (
+  const selectedSectionComponents = selectedSection.topicTitle && selectedSection.articles.map((article: Article) => (
     createArticleComponent(article, selectedSection.color)
   ));
 
@@ -127,7 +147,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
       {section && <div class={style.tabletArticles}>
         <div class={style.tabletArticlesRowContainer}>
           <div class={style.tabletArticlesHeader}>
-            <h1>{selectedSection.sectionTitle}</h1>
+            <h1>{selectedSection.topicTitle}</h1>
             <Icon style={{ fontSize: 30 }}>chevron_right</Icon>
           </div>
           <div class={style.articlesRow}>{selectedSectionComponents}</div>
@@ -141,7 +161,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         {sectionsWithArticles && sectionsWithArticles.map((section: Section, index: number) =>
           <div class={style.tabletArticlesRowContainer}>
             <div class={style.tabletArticlesHeader}>
-              <h1>{section.sectionTitle}</h1>
+              <h1>{section.topicTitle}</h1>
               <Icon style={{ fontSize: 30 }} class="material-icons">chevron_right</Icon>
             </div>
             <div class={style.articlesRow}>
@@ -160,9 +180,11 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
 
         {section &&
           <div>
+            {/* <h1>{selectedSection.topicTitle}</h1> */}
+            {/* {selectedSection.subtopics} */}
             <div class={style.articleBlock}>
               <div class={style.blockHeaderContainer}>
-                <h1 class={style.blockHeader}>{selectedSection.sectionTitle}</h1>
+                <h1 class={style.blockHeader}>{selectedSection.topicTitle}</h1>
                 <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
               </div>
               <div>{homeMobileArticles}</div>
@@ -180,7 +202,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
             <div>
               <div class={style.articleBlock}>
                 <div class={style.blockHeaderContainer}>
-                  <h1 class={style.blockHeader}>{section.sectionTitle}</h1>
+                  <h1 class={style.blockHeader}>{section.topicTitle}</h1>
                   <Icon style={{ fontSize: 15 }} class="material-icons">chevron_right</Icon>
                 </div>
                 <div style={style.mobileHomeArticleContainer}>{section.articles.map((article: Article) =>
@@ -206,7 +228,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
               <div>
                 <div> {section.articles.map((article: Article) =>
                   createArticleComponent(article, section.color))}</div>
-                <ViewMore text={section.sectionTitle} />
+                <ViewMore text={section.topicTitle} />
               </div>
             )}
           </div>
@@ -216,7 +238,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
         {section && (
           <div>
             <div>{selectedSectionComponents}</div>
-            <ViewMore text={selectedSection.sectionTitle} />
+            <ViewMore text={selectedSection.topicTitle} />
           </div>
         )}
 

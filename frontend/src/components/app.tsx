@@ -20,38 +20,38 @@ let categories = [
     topicTitle: 'Coronavirus (Covid-19)',
     color: '#E24256',
     subtopics: [
-      { topicTitle: 'About Coronavirus', subtopics: [] },
-      { topicTitle: 'Student Toolkit', subtopics: [] },
-      { topicTitle: 'COVID-19 Parenting', subtopics: [] },
-      { topicTitle: 'Health Worker Resources', subtopics: [] }
+      { topicTitle: 'About Coronavirus', subtopics: [],  color: '#E24256' },
+      { topicTitle: 'Student Toolkit', subtopics: [],  color: '#E24256' },
+      { topicTitle: 'COVID-19 Parenting', subtopics: [],  color: '#E24256' },
+      { topicTitle: 'Health Worker Resources', subtopics: [],  color: '#E24256' }
     ],
   },
   {
     topicTitle: 'Youth',
     color: '#1CABE2',
     subtopics: [
-      { topicTitle: 'Internet Safety', subtopics: [] },
-      { topicTitle: 'Career Advice', subtopics: [] },
-      { topicTitle: "Girl's Zone", subtopics: [] },
-      { topicTitle: 'Freedom for Girls', subtopics: [] },
-      { topicTitle: 'HIV / AIDS and Safe Sex', subtopics: [] },
-      { topicTitle: 'The Future is Yours!', subtopics: [] },
-      { topicTitle: 'Act for Climate', subtopics: [] },
-      { topicTitle: 'End Violent', subtopics: [] },
-      { topicTitle: 'U-Report', subtopics: [] },
-      { topicTitle: 'Sustainable Goals - Practical Guide', subtopics: [] },
-      { topicTitle: 'Your Rights', subtopics: [] }
+      { topicTitle: 'Internet Safety', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'Career Advice', subtopics: [], color: '#1CABE2' },
+      { topicTitle: "Girl's Zone", subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'Freedom for Girls', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'HIV / AIDS and Safe Sex', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'The Future is Yours!', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'Act for Climate', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'End Violent', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'U-Report', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'Sustainable Goals - Practical Guide', subtopics: [], color: '#1CABE2' },
+      { topicTitle: 'Your Rights', subtopics: [], color: '#1CABE2' }
     ],
   },
   {
     topicTitle: 'Parents & Caregivers',
     color: '#6EC17F',
     subtopics: [
-      { topicTitle: 'Vaccines', subtopics: [] },
-      { topicTitle: 'Pre-School Years', subtopics: [] },
-      { topicTitle: 'Nutrition and Breastfeeding', subtopics: [] },
-      { topicTitle: 'Early Life Tips!', subtopics: [] },
-      { topicTitle: 'Facts for Life', subtopics: [] },
+      { topicTitle: 'Vaccines', subtopics: [], color: '#6EC17F' },
+      { topicTitle: 'Pre-School Years', subtopics: [], color: '#6EC17F' },
+      { topicTitle: 'Nutrition and Breastfeeding', subtopics: [], color: '#6EC17F' },
+      { topicTitle: 'Early Life Tips!', subtopics: [], color: '#6EC17F' },
+      { topicTitle: 'Facts for Life', subtopics: [], color: '#6EC17F' },
     ],
   },
 ];

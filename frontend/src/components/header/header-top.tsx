@@ -2,9 +2,11 @@ import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 import { Icon } from 'preact-material-components/Icon';
+import { formatUrl } from '../../utils'
 
-import { useState, useEffect } from 'preact/hooks';
-
+import { useState, useEffect, useContext } from 'preact/hooks';
+import { Categories } from '../app'
+import CategoriesDropdown from './categories-dropdown'
 import LanguageDropdown from './language-dropdown';
 import SearchBar from './searchbar';
 import modalStyle from '../modal/style.css';
@@ -25,7 +27,7 @@ const customStyles = {
     backgroundColor: 'white',
     border: 'none',
   },
-  zIndex:'100',
+  zIndex: '100',
   overlay: {
     background: 'rgb(218,218,218, 0.5)',
   },
@@ -42,6 +44,8 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
   languageList,
   signedInStatus,
 }: HeaderTopProps) => {
+
+  const categories = useContext(Categories);
   let joinStatus = signedInStatus ? 'My Profile' : 'Join';
 
   // Modal state and related functions
@@ -55,16 +59,27 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
     setModalOpen(false);
   };
 
- // For Feature and Mobile: Will close Tablet/ Desktop Login Modal if it is open
- useEffect (()=> {
-  function handleResize() {
-    var x = window.matchMedia("(max-width: 767px)")
-    console.log("MODAL", x)
-    if(x.matches && modalOpen) setModalOpen(false)
-   }
-   window.addEventListener('resize', handleResize)
+  // For Feature and Mobile: Will close Tablet/ Desktop Login Modal if it is open
+  useEffect(() => {
+    function handleResize() {
+      var x = window.matchMedia("(max-width: 767px)")
+      console.log("MODAL", x)
+      if (x.matches && modalOpen) setModalOpen(false)
+    }
+    window.addEventListener('resize', handleResize)
   })
 
+  // Add in subsubtopics / article titles
+  //TODO: Will need to update this to match with database info
+  let thirdLevel = [
+    { topicTitle: "Read to Your Child about COVID", subtopics: [] },
+
+    { topicTitle: "Children with Disabilities", subtopics: [] }
+  ]
+
+  let fourthLevel = [
+    { topicTitle: "Example Subsection" }
+  ]
 
 
   const Login = () => (
@@ -264,6 +279,61 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           <Link>
             <Icon class='material-icons'>search</Icon>
           </Link>
+
+          <div>
+            <input type="checkbox" id='burger-checkbox' class={style.collapse} />
+            <label class="clicker" for='burger-checkbox' >
+              <Icon class='material-icons'>menu</Icon>
+            </label>
+
+            {/* Burger Menu */}
+            <div class={style.hiddendiv} >
+              <div class={`${style['burger-content']}  `}>
+                <ul >
+                  {categories.map((topic, index1) => (
+                    <li>
+                      <Link
+                        //class={style['subtopic']}
+                        activeClassName={style.active} href={`/section/${formatUrl(topic.topicTitle)}`}
+                      >
+                        <span>
+                          {topic.topicTitle}
+                          <label for={`${topic}${index1}`}></label>
+                        </span>
+
+                        <ul
+                        //class={style['subtopic-dropdown-content']}
+                        >
+                          {topic.subtopics && topic.subtopics.map((topicItem, index2) => (
+                            <li>
+                              <Link href={`/section/${formatUrl(topic.topicTitle)}/${formatUrl(topicItem.topicTitle)}`}>
+                                <span>
+                                  {topicItem.topicTitle}
+                                  <label for={`${topic}${index2}`}></label>
+
+                                  <Icon>chevron_right</Icon>
+
+
+
+                                </span>
+
+                                {/* Level 3 & 4 */}
+
+
+
+                              </Link>
+                            </li>
+                          ))}
+
+                        </ul>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
@@ -318,7 +388,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
               <FullWidthButton text='Sign In' width='100%' backgroundColor='#6EC17F' />
             </div>
           </div> */}
-          {modalViews[modalIndex]}
+            {modalViews[modalIndex]}
           </div>
         </Modal>
       </div>

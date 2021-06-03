@@ -12,10 +12,18 @@ export interface Article {
   comments: Comment[] | null | []
   relatedArticles: number[]|null // stores article ids
 }
+// Notes: 'Categories' has an array of Topics
+export interface Topic {
+  topicTitle: string
+  subtopics?: Topic[]
+  color?: any
+}
 
+// Similar to Topic but this includes articles
 export interface Section {
-  sectionTitle: string
+  topicTitle: string
   articles: Article[]
+  subtopics?: Topic[]
   color?: any // rgb or hex value
 }
 
@@ -31,10 +39,4 @@ export interface Comment {
   replies: Reply[] | null
 }
 
-// Notes: 'Categories' has an array of Topics
-export interface Topic {
-  topicTitle: string
-  subtopics?: Topic[]
-  color?: any
-}
 
