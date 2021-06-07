@@ -74,25 +74,52 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
     let singleArticleLink = `/section/${formatUrl(article.tag)}/${article.tag_meta ? formatUrl(article.tag_meta) + '/' : ''}${formatUrl(article.title)}/${article.id}`
     return (
       <div class={style.mobileHomeArticleContainer}>
-        <div class={style.mobileTagContainer}>
-          <p class={style.mobileTag}>{article.tag}</p>
-          <div class={style.share}>
-          </div>
-        </div>
 
-        <div >
-          <Link href={singleArticleLink}>
-            <img class={style.mainImage} src={article.img_src} />
+        <div class={style.content}>
+          <div class={style.mobileTagContainer}>
+            <h1 class={style.mobileTag}>{article.tag}</h1>
+          </div>
+
+          <Link
+            href={`/section/${article.tag
+              .split(/\W/)
+              .join('-')
+              .toLowerCase()}/${article.tag_meta
+                .split(' ')
+                .join('-')
+                .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <div class={style.title}>
+              <h1 class={style.mobileHeader}>{article.title}</h1>
+            </div>
+
           </Link>
         </div>
-        <div class={style.title}>
+
+
+        {/* <div class={style.title}>
           <h1 class={style.mobileHeader}>
-            <Link href={singleArticleLink} style={{ textDecoration: 'none', color: 'black'}}>{article.title}</Link>
+            <Link href={singleArticleLink} style={{ textDecoration: 'none', color: 'black' }}>{article.title}</Link>
           </h1>
 
           <img src='../../assets/mock-images/share.svg' />
-        </div>
-      </div>)
+        </div> */}
+
+        <Link
+          href={singleArticleLink}
+          style={{ width: '45%' }}
+        >
+          <img class={style.mainImage} src={article.img_src} />
+        </Link>
+
+        {/* <div >
+          <Link href={singleArticleLink}>
+            <img class={style.mainImage} src={article.img_src} />
+          </Link>
+        </div> */}
+      </div>
+    )
   }
 
   // Contains either all articles or section articles
@@ -146,7 +173,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
             </div>
             <div class={style.articlesRow}>
               {section.articles && section.articles.map(article =>
-  createArticleComponent(article, section.color)
+                createArticleComponent(article, section.color)
               )}
             </div>
           </div>
@@ -220,7 +247,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
           </div>
         )}
 
-      {/* TODO: Feature Footer Links : Move this to footer section:  */}
+        {/* TODO: Feature Footer Links : Move this to footer section:  */}
         <div class={style.featureLinksContainer}>
           <div class={style.featureLinksWrapper}>
             <a class={style.noUnderline} href='#'>
