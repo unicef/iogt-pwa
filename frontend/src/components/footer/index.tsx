@@ -1,11 +1,39 @@
-import { h } from 'preact';
+import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style.css';
 
-const Footer = () => (
+import { Topic } from '../../types'
+
+type FooterProps = {
+    categories: Topic[]
+}
+
+
+const Footer: FunctionalComponent<FooterProps> = ({ categories }: FooterProps) => (
     <footer className={style.footer}>
         <nav>
-            <div className={style.links}>
+            {/* Display Topic Titles and Subtopics */}
+            {categories.map((topic) => (
+                <div className={style.links}>
+                    <span>{topic.topicTitle.toUpperCase()}</span>
+                    {topic.topicTitle === 'Youth' &&
+                        <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
+                            {/* <div className={style.column}> */}
+                                {topic.subtopics && topic.subtopics.map((topicItem) => (
+                                    <Link style={{ width: '100%' }} activeClassName={style.active} href='/'>
+                                        {topicItem.topicTitle.toUpperCase()}
+                                    </Link>
+                                ))}
+                            </div>}
+
+                    {topic.topicTitle !== 'Youth' && topic.subtopics && topic.subtopics.map((topicItem: Topic) => (
+                        <Link activeClassName={style.active} href='/'>
+                            {topicItem.topicTitle.toUpperCase()}
+                        </Link>
+                    ))}
+                </div>
+            ))}
+            {/* <div className={style.links}>
                 <span>CORONAVIRUS (COVID-19)</span>
                 <Link activeClassName={style.active} href='/'>
                     ABOUT CORONAVIRUS
@@ -79,7 +107,7 @@ const Footer = () => (
                 <Link activeClassName={style.active} href='/'>
                     FACTS FOR LIFE
                 </Link>
-            </div>
+            </div> */}
         </nav>
         <div className={style.copyright}>
             <div className={style.logo}>

@@ -1,6 +1,12 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
+
+import { Icon } from 'preact-material-components/Icon';
 import style from './style.css';
+
+import { Topic } from '../../types'
+import { formatUrl} from '../../utils'
+
 
 import CategoriesDropdown from './categories-dropdown'
 import LanguageDropdown from './language-dropdown'
@@ -11,34 +17,64 @@ type NavBarProps = {
   categories: Topic[]
 }
 
-interface Topic {
-  topicTitle: string
-  topicList: string[]
+
+interface NavLinks {
+  text: string
+  class: string
+  imgSrc?: string
+  imgSwap?: string
+  icon?: string
+  hrefText: string
+  subtopics?: Topic[]
 }
 
 const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageList, categories }: NavBarProps) => {
 
-  const navLinks = [
+
+  const navLinks: NavLinks[] = [
     {
-      text: 'All Articles',
+      text: 'Home',
       class: style.articles,
-      imgSrc: '../../assets/icons/nav-icons/globe-green.png',
-      imgSwap: '../../assets/icons/nav-icons/globe-white.png',
-      hrefText: '/section/all-articles',
+      imgSrc: '../../assets/icons/nav-icons/star-yellow.svg',
+      imgSwap: '../../assets/icons/nav-icons/star-white.svg',
+      hrefText: '/',
+      subtopics: []
     },
     {
       text: 'Parents & Caregivers',
       class: style.parents,
-      imgSrc: '../../assets/icons/nav-icons/parent-green.png',
-      imgSwap: '../../assets/icons/nav-icons/parent-white.png',
-      hrefText: '/section/parents-and-caregivers',
+      imgSrc: '../../assets/icons/nav-icons/family-green.svg',
+      imgSwap: '../../assets/icons/nav-icons/family-white.svg',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
+      subtopics: []
     },
     {
       text: 'Girls',
       class: style.girls,
-      imgSrc: '../../assets/icons/nav-icons/girl-green.png',
-      imgSwap: '../../assets/icons/nav-icons/girl-white.png',
-      hrefText: '/section/girls',
+      imgSrc: '../../assets/icons/nav-icons/face1-pink.svg',
+      imgSwap: '../../assets/icons/nav-icons/face1-white.svg',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
+      subtopics: []
+    },
+    {
+      text: 'Youth',
+      class: style.youth,
+      imgSrc: '../../assets/icons/nav-icons/robot-blue.svg',
+      imgSwap: '../../assets/icons/nav-icons/robot-white.svg',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
+      subtopics: []
+    },
+    {
+      text: 'Coronavirus (Covid-19)',
+      class: style['health-providers'],
+      imgSrc: '../../assets/icons/nav-icons/microbe-red.svg',
+      imgSwap: '../../assets/icons/nav-icons/microbe-white.svg',
+      get hrefText () {
+        return `/section/${formatUrl(this.text)}`},
+      subtopics: []
     },
     {
       text: '',
@@ -47,52 +83,127 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
       // imgSrc: '../../assets/icons/nav-icons/horiz-ellipsis-green.png',
       icon: 'more_horiz',
       hrefText: '/section',
-    },
-    {
-      text: 'Youth',
-      class: style.youth,
-      imgSrc: '../../assets/icons/nav-icons/boy-green.png',
-      imgSwap: '../../assets/icons/nav-icons/boy-white.png',
-      hrefText: '/section/youth',
-    },
-    {
-      text: 'Health Providers',
-      class: style['health-providers'],
-      imgSrc: '../../assets/icons/nav-icons/healthcare-green.png',
-      imgSwap: '../../assets/icons/nav-icons/healthcare-white.png',
-      hrefText: '/section/health-providers',
+      subtopics: []
     },
     {
       text: 'See More',
       class: style['see-more'],
       imgSrc: '',
       icon: 'more_vert',
-      hrefText: '/7',
-    },
+      hrefText: '/see-more',
+      subtopics: []
+    }
   ]
 
+  navLinks.map(navLink => {
+    // Find associated category for link
+    let category: Topic[] = categories.filter(category => navLink.text === category.topicTitle)
+
+    // Add in subtopics
+    if (category[0] && navLink.subtopics) navLink.subtopics = category[0].subtopics
+
+  })
+  // Add in subsubtopics / article titles
+  //TODO: Will need to update this to match with database info
+  let thirdLevel = [
+    { topicTitle: "Read to Your Child about COVID", subtopics: [] },
+
+    { topicTitle: "Children with Disabilities", subtopics: [] }
+  ]
+
+  let fourthLevel = [
+    { topicTitle: "Example" }
+  ]
   return (
-    <nav class={style.nav}>
-      <CategoriesDropdown
-        // activeClassName={style.active}
-        categories={categories}
-      />
-      {navLinks.map((link) => (
-        <div class={link.class}>
-          <Link activeClassName={style.active} href={link.hrefText}>
-            {link.imgSrc ? (
+    <nav aria-label="primary" class={style.nav}>
+      <CategoriesDropdown categories={categories} />
+      {navLinks.map((link, index) => (
+        // Nav Item and Subtopic dropdown
+        <div class={`${link.class} ${style['nav-bar-item']} ${style['nav-bar-item' +index]}`} id={'nav-bar-item' +index}>
+
+          <a href={link.text.toLowerCase()==='home' ? '/':'' }>
+
+          <input type="checkbox" class={style.collapse} id={'nav-bar-checkbox' +index}/>
+
+          <label class="clicker" for={'nav-bar-checkbox' +index}>
+
+          {/* Navlink - Feature and Mobile Version - allows for toggling on and off of menu item */}
+          <a class={style['navlink-feature-mobile']}>
+          {link.imgSrc ? (
               <img src={link.imgSrc} />
             ) : (
-                <i class='material-icons'>{link.icon}</i>
-              )}
+              <Icon>{link.icon}</Icon>
+            )}
             {link.imgSrc ? (
               <img class={style.imgSwap} src={link.imgSwap} />
             ) : (
-                ''
-              )}
-            {link.text}
-          </Link>
+              ''
+            )}
+           <span>{link.text}</span>
+            </a>
+            {/* Navlink - Desktop and Tablet Version - allows user to go to related section */}
+                      <Link class={style['navlink-tablet-desktop']}activeClassName={style.active} href={link.hrefText}>
+
+            {link.imgSrc ? (
+              <img src={link.imgSrc} />
+            ) : (
+              <i class='material-icons'>{link.icon}</i>
+            )}
+            {link.imgSrc ? (
+              <img class={style.imgSwap} src={link.imgSwap} />
+            ) : (
+              ''
+            )}
+            <span>{link.text}</span>
+            </Link>
+          </label>
+
+            {/* Subtopics - to appear on hover*/}
+            <div class={style.hiddendiv}>
+            {link.subtopics && !!link.subtopics.length &&
+              <ul class={`${style['subtopic-dropdown-content']}`} id={'subtopic-dropdown-content' +index}>
+                {link.subtopics.map((subtopic, index) =>
+                  <li>
+                    <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}`}
+                    >
+                      <span>{subtopic.topicTitle}
+                        <label for={`${subtopic}${index}`}></label>
+                      </span>
+
+                      <ul class={style['subsubtopic-content']}>
+                        {thirdLevel.map((subsubtopic, index: number) =>
+                          <li>
+                            <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}`}>
+                              <span>{subsubtopic.topicTitle}
+                                <label for={`${index}`}></label>
+                              </span>
+
+                              <ul class={style['subsubsubtopic-content']}>
+                                {fourthLevel.map((subsubsubtopic, index: number) =>
+                                  <li>
+                                    <Link href={`/section/${formatUrl(link.text)}/${formatUrl(subtopic.topicTitle)}/${formatUrl(subsubtopic.topicTitle)}/${formatUrl(subsubsubtopic.topicTitle)}`}>
+                                      <span>{subsubsubtopic.topicTitle}
+                                        {/* <label for={`${index}`}></label> */}
+                                      </span>
+                                    </Link>
+                                  </li>)}
+                              </ul>
+                            </Link>
+                          </li>)}
+                      </ul>
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            }
+             </div>
+          </a>
+
+
         </div>
+
+
+
       ))}
       <Link class={style.language}>
         Language:
@@ -106,3 +217,4 @@ const NavBar: FunctionalComponent<NavBarProps> = ({ currentLanguage, languageLis
 };
 
 export default NavBar;
+

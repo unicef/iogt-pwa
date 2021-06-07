@@ -25,6 +25,7 @@ const customStyles = {
     backgroundColor: 'white',
     border: 'none',
   },
+  zIndex:'100',
   overlay: {
     background: 'rgb(218,218,218, 0.5)',
   },
@@ -45,12 +46,169 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
 
   // Modal state and related functions
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalIndex, setModalIndex] = useState(0);
+
   const selectModal = () => {
     setModalOpen(!modalOpen); // true/false toggle
   };
   const closeModal = () => {
     setModalOpen(false);
   };
+
+ // For Feature and Mobile: Will close Tablet/ Desktop Login Modal if it is open
+ useEffect (()=> {
+  function handleResize() {
+    var x = window.matchMedia("(max-width: 767px)")
+    console.log("MODAL", x)
+    if(x.matches && modalOpen) setModalOpen(false)
+   }
+   window.addEventListener('resize', handleResize)
+  })
+
+
+
+  const Login = () => (
+    <div class={style.loginComponent}>
+      <div class={style.loginHeader}>
+        <h3>Login into</h3>
+        <img
+          style={{ width: '35%' }}
+          src={'../../assets/icons/iogt_logo.svg'}
+        />
+      </div>
+      <div class={style.signupText}>
+        <span style={{ fontWeight: 300 }}>Need an account?</span>
+        <span
+          onClick={() => setModalIndex(1)}
+          style={{
+            fontWeight: 400,
+            textDecoration: 'underline',
+            marginLeft: '1%',
+            marginBottom: '3%',
+            cursor: 'pointer',
+          }}
+        >
+          Sign up.
+        </span>
+      </div>
+      <div class={style.loginContent}>
+        <input
+          class={style.textField}
+          type='text'
+          id='username'
+          name='username'
+          placeholder='USERNAME'
+        ></input>
+        <input
+          class={style.textField}
+          type='password'
+          id='pass'
+          name='password'
+          placeholder='4-DIGIT PIN'
+        ></input>
+        <span class={style.forgotPin}>Forgot your pin?</span>
+        <div class={style.checkbox}>
+          <input type='checkbox' id='horns' name='horns' />
+          <label for='logged-in'>Stay logged in</label>
+        </div>
+        <FullWidthButton
+          text='Sign In'
+          width='100%'
+          backgroundColor='#6EC17F'
+        />
+      </div>
+    </div>
+  );
+
+  const Signup = () => (
+    <div class={style.signupComponent}>
+      <div class={style.loginHeader}>
+        <h3>Be a part of</h3>
+        <img
+          style={{ width: '35%' }}
+          src={'../../assets/icons/iogt_logo.svg'}
+        />
+      </div>
+      <div class={style.signupText}>
+        <span style={{ fontWeight: 300 }}>Already have an account?</span>
+        <span
+          onClick={() => setModalIndex(0)}
+          style={{
+            fontWeight: 400,
+            textDecoration: 'underline',
+            marginLeft: '1%',
+            marginBottom: '3%',
+            cursor: 'pointer',
+          }}
+        >
+          Sign in.
+        </span>
+      </div>
+      <div class={style.loginContent}>
+        <input
+          class={style.textField}
+          type='text'
+          id='username'
+          name='username'
+          placeholder='CHOOSE A USERNAME'
+        />
+        <label for='username'>
+          This name you will use to log in and won't appear to other users. Only
+          you will see this.
+        </label>
+        <input
+          type='number'
+          min='1900'
+          max='2099'
+          step='1'
+          class={style.textField}
+          id='birthdate'
+          name='birthdate'
+        />
+        <label for='birthdate'>
+          Let us know your birth year to get access to exclusive content.
+        </label>
+        <select class={style.textField} id='gender' name='gender'>
+          <option value=''>--Please choose an option--</option>
+          <option value='male'>Male</option>
+          <option value='female'>Female</option>
+          <option value='transgender'>Transgender</option>
+          <option value='non-binary'>Non-binary</option>
+          <option value='other'>Other</option>
+        </select>
+        <label for='gender'>Only you will see this.</label>
+        <input
+          class={style.textField}
+          type='text'
+          id='address'
+          name='address'
+          placeholder='WHERE DO YOU LIVE'
+        />
+        <label for='address'>Only you will see this.</label>
+        <input
+          class={style.textField}
+          type='password'
+          id='pass'
+          name='password'
+          placeholder='CHOOSE 4-DIGIT PIN'
+        />
+        <label for='pass' style={{ marginBottom: '5%' }}>
+          e.g. 1234
+        </label>
+        <div class={style.checkbox} style={{ marginTop: 10 }}>
+          <input type='checkbox' id='horns' name='horns' />
+          <label for='logged-in'>I accept the terms and conditions</label>
+        </div>
+        <FullWidthButton
+          text='Sign Up'
+          width='100%'
+          backgroundColor='#20cd84'
+        />
+      </div>
+    </div>
+  );
+
+  const modalViews = [<Login />, <Signup />];
 
   return (
     <div class={style['header-top']}>
@@ -65,7 +223,7 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
           <label for='handel1'>
             Change Language <i class='material-icons'>keyboard_arrow_down</i>
           </label>
-          <div class={style['content']}>
+          <div class={style.content}>
             <div class={style['language-list-menu-content']}>
               <ul>
                 {languageList.map((language) => (
@@ -90,9 +248,9 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
 
         <div class={style['signin-language']}>
           <Link
+            href='/account/signin'
             class={style['signin']}
             activeClassName={style.active}
-            href='/signin'
           >
             Sign in
           </Link>
@@ -128,62 +286,39 @@ const HeaderTop: FunctionalComponent<HeaderTopProps> = ({
             ''
           )}
 
-          {signedInStatus ? 'Sign out' : 'Sign in'}
+          {signedInStatus ? 'Sign Out' : 'Sign In'}
         </Link>
 
         <Modal
           isOpen={modalOpen}
-          onRequestClose={closeModal}
+          closeModal={() => {
+            setModalIndex(0);
+            closeModal();
+          }}
           style={customStyles}
           contentLabel='Login Modal'
         >
           <div>
-            <div class={style.loginHeader}>
+            {/* <div class={style.loginHeader}>
               <h3>Login into</h3>
-              <img
-                style={{ width: '35%' }}
-                src={'../../assets/icons/iogt_logo.svg'}
-              />
+              <img style={{ width: '35%' }} src={'../../assets/icons/iogt_logo.svg'} />
             </div>
             <div class={style.signupText}>
               <span style={{ fontWeight: 300 }}>Need an account?</span>
-              <span
-                style={{
-                  fontWeight: 400,
-                  textDecoration: 'underline',
-                  marginLeft: '1%',
-                  marginBottom: '3%',
-                }}
-              >
-                Sign up.
-              </span>
+              <span style={{ fontWeight: 400, textDecoration: 'underline', marginLeft: '1%', marginBottom: '3%' }}>Sign up.</span>
             </div>
             <div class={style.loginContent}>
-              <input
-                class={style.textField}
-                type='text'
-                id='username'
-                name='username'
-                placeholder='USERNAME'
-              ></input>
-              <input
-                class={style.textField}
-                type='password'
-                id='pass'
-                name='password'
-                placeholder='4-DIGIT PIN'
-              ></input>
+              <input class={style.textField} type="text" id="username" name="username" placeholder="USERNAME"></input>
+              <input class={style.textField} type="password" id="pass" name="password" placeholder="4-DIGIT PIN"></input>
               <span class={style.forgotPin}>Forgot your pin?</span>
               <div class={style.checkbox}>
-                <input type='checkbox' id='horns' name='horns' />
-                <label for='logged-in'>Stay logged in</label>
+                <input type="checkbox" id="horns" name="horns" />
+                <label for="logged-in">Stay logged in</label>
               </div>
-              <FullWidthButton
-                text='Sign In'
-                width='100%'
-                backgroundColor='#20cd84'
-              />
+              <FullWidthButton text='Sign In' width='100%' backgroundColor='#6EC17F' />
             </div>
+          </div> */}
+          {modalViews[modalIndex]}
           </div>
         </Modal>
       </div>
