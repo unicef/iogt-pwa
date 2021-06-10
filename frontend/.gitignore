@@ -1,6 +1,7 @@
 node_modules
 /build
 /*.log
+build
 
 # gatsby files
 .cache/
