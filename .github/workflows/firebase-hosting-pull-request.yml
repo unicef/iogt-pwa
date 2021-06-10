@@ -13,12 +13,10 @@ jobs:
       - uses: bahmutov/npm-install@v1
         with:
           working-directory: frontend
-      - run: npm run build
-        with:
-          working-directory: frontend
+      - run: cd frontend && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          working-directory: frontend
+          entryPoint: ./frontend
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_UNICEF_IOGT_PWA }}'
           projectId: unicef-iogt-pwa
