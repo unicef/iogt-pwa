@@ -81,13 +81,7 @@ const ArticleListing: FunctionalComponent<Props> = ({ section }) => {
           </div>
 
           <Link
-            href={`/section/${article.tag
-              .split(/\W/)
-              .join('-')
-              .toLowerCase()}/${article.tag_meta
-                .split(' ')
-                .join('-')
-                .toLowerCase()}/${article.title.split(/\W/).join('-')}/${article.id}`}
+            href={singleArticleLink}
             style={{ textDecoration: 'none' }}
           >
             <div class={style.title}>
