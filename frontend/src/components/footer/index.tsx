@@ -17,14 +17,14 @@ const Footer: FunctionalComponent<FooterProps> = ({ categories }: FooterProps) =
                 <div className={style.links}>
                     <span>{topic.topicTitle.toUpperCase()}</span>
                     {topic.topicTitle === 'Youth' &&
-                        <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
+                        <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
                             {/* <div className={style.column}> */}
-                                {topic.subtopics && topic.subtopics.map((topicItem) => (
-                                    <Link style={{ width: '100%' }} activeClassName={style.active} href='/'>
-                                        {topicItem.topicTitle.toUpperCase()}
-                                    </Link>
-                                ))}
-                            </div>}
+                            {topic.subtopics && topic.subtopics.map((topicItem) => (
+                                <Link style={{ width: '100%' }} activeClassName={style.active} href='/'>
+                                    {topicItem.topicTitle.toUpperCase()}
+                                </Link>
+                            ))}
+                        </div>}
 
                     {topic.topicTitle !== 'Youth' && topic.subtopics && topic.subtopics.map((topicItem: Topic) => (
                         <Link activeClassName={style.active} href='/'>
@@ -117,6 +117,7 @@ const Footer: FunctionalComponent<FooterProps> = ({ categories }: FooterProps) =
                 <Link>Terms of Use</Link>
                 <Link>Privacy Policy</Link>
                 <Link>About Us</Link>
+                <Link>Use IoGT Free of Data Charges</Link>
             </div>
             <div>
                 <span> &#169; The Internet of Good Things. All Rights Reserved.</span>
