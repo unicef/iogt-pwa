@@ -1,6 +1,7 @@
 /* Alernative sizing: (min-device-width: 1025px) and (-webkit-min-device-pixel-ratio: 1),  */
 
 @media only screen and (min-width: 1025px) and (max-width: 2400px) {
+
   /* DESKTOP ARTICLES VIEW COMPONENT */
   .desktopArticles {
     display: grid;
@@ -116,6 +117,7 @@
 /* TABLET ARTICLES VIEW COMPONENT */
 /* Alternative sizing:(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1), */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
   .featureArticles,
   .mobileArticles,
   .desktopArticles {
@@ -205,7 +207,7 @@
   }
 
   .tabletArticleContainer .content .title a:hover {
-    color:#303030
+    color: #303030
   }
 
   .tabletArticleContainer .content .desc {
@@ -326,34 +328,53 @@
 /* Alternative sizing: (min-device-width: 300px) and (max-width: 600px) */
 @media only screen and (min-width: 321px) and (max-width: 767px) {
   .mobileHomeArticleContainer {
-    background-color: white;
-    /* padding-left:25px;
-    padding-right:25px;
-    padding-top:10px;
-    padding-bottom:2px;
-    margin:20px; */
-    max-width: 410px;
-    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadada;
+    padding: 0 5px;
+  }
+
+  .mobileHomeArticleContainer .content {
+    width: 100%;
+    margin-right: 5px;
+  }
+
+  .mobileHomeArticleContainer .title {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 9.5px;
+    margin-top: -5px;
+    color: black;
+  }
+
+  .mobileHomeArticleContainer .mainImage {
+    width: 100%;
+    height: 100%;
   }
 
   .mobileTagContainer {
-    display: flex;
+    color: rgb(191, 0, 18);
+    /* display: flex;
     align-items: center;
 
-    justify-content: space-between;
+    justify-content: space-between; */
   }
 
   .mobileTag {
     font-family: 'Open Sans';
     font-size: 14px;
     font-weight: 400;
-    display: none;
+    /* display: none; */
   }
 
   .mobileHeader {
     font-family: 'Poppins';
-    font-size: 20px;
+    font-size: 15px;
     color: black;
+    margin-top: -5px;
+    font-weight: 500;
   }
 
   .desktopArticleContainer {
@@ -376,8 +397,7 @@
     align-items: center;
   }
 
-  .mobileAndFeatureArticleContainer .title ,
-  .mobileHomeArticleContainer .title {
+  .mobileAndFeatureArticleContainer .title {
     line-height: 18px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -507,7 +527,7 @@
   }
 
   .mobileAndFeatureArticleContainer .title a {
-    text-decoration:none;
+    text-decoration: none;
     color: #000;
   }
 

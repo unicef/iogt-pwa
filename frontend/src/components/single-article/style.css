@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
 /*  For Feature Phones */
-body{
+body {
   background-color: #ffffff;
 }
 
@@ -22,7 +22,8 @@ body{
 .horizontal-line-desktop,
 .article-info-desktop-card,
 .share-save-section,
-.content-grid-right .share-save-section, .load-more-button {
+.content-grid-right .share-save-section,
+.load-more-button {
   display: none;
   visibility: collapse;
 }
@@ -75,7 +76,8 @@ body{
 }
 
 .article-content .main-image-phone {
-  width: 92%; /* 220px/240px*/
+  width: 92%;
+  /* 220px/240px*/
   height: 115px;
   margin: 6px 10px 6px 10px;
 }
@@ -112,7 +114,8 @@ body{
   width: 100%;
   margin-top: 12px;
   background-color: #f3f3f3;
-  overflow: hidden; /*allows button to show up*/
+  overflow: hidden;
+  /*allows button to show up*/
 }
 
 /* send button */
@@ -203,110 +206,111 @@ body{
   color: #6b6b6b;
 }
 
-    /* Feature- Related Articles
+/* Feature- Related Articles
     .related-articles-section {
 
     } */
 
-    .related-articles-section div a {
-      display: flex;
-      flex-direction: row;
-      align-items: normal;
-      padding-left: 8px;
-      padding-right: 8px;
-    }
+.related-articles-section div a {
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
-    .related-articles-section > div {
-      border-bottom: 1px solid #F3F3F3;
-    }
+.related-articles-section>div {
+  border-bottom: 1px solid #F3F3F3;
+}
 
-    .related-articles-section h1{
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 40px;
+.related-articles-section h1 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 40px;
 
-    }
+}
 
-    .related-articles-section h2{
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0 8px 20px 8px;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 10px;
-      line-height: 12px;
+.related-articles-section h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 8px 20px 8px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
 
-    }
+}
 
-    .related-articles-section a{
-      text-decoration: none;
-      color: black;
-    }
-
-
-    .related-article-img {
-      padding-right: 4px;
-      height: 100%;
-      width: 25%;
-    }
-
-    .related-articles-feature-tag{
-      font-size: 6px;
-    }
+.related-articles-section a {
+  text-decoration: none;
+  color: black;
+}
 
 
-    /* Feature - Survey Section */
-    .survey-section{
-      padding: 12px;
-    }
+.related-article-img {
+  padding-right: 4px;
+  height: 100%;
+  width: 25%;
+}
 
-    .survey-question{
-      margin: 0;
-      font-weight: 800;
-      font-size: 15px;
-      line-height: 22px;
-      color: #6EC17F;
-      mix-blend-mode: normal;
-      font-family: 'Poppins';
-    }
+.related-articles-feature-tag {
+  font-size: 6px;
+}
 
-    .survey-option{
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 14px;
-      letter-spacing: -0.384px;
-      color: #303030;
-      display: flex;
-      align-items: center;
-    }
 
-    .survey-option input[type=checkbox] {
-      background: #EAEAEA;
-      border-radius: 5px;
+/* Feature - Survey Section */
+.survey-section {
+  padding: 12px;
+}
 
-    }
+.survey-question {
+  margin: 0;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 22px;
+  color: #6EC17F;
+  mix-blend-mode: normal;
+  font-family: 'Poppins';
+}
 
-    .survey-option label {
-      padding-left: 10px;
-    }
+.survey-option {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.384px;
+  color: #303030;
+  display: flex;
+  align-items: center;
+}
 
-    .survey-section input[type=submit] {
-      width: 100%;
-      height: 27px;
-      border: 0;
-      background: #6EC17F;
-      color: #ffffff;
-      font-family: Poppins;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 10px;
-      line-height: 15px;
-      text-align: center;
-      color: #FFFFFF;
-    }
+.survey-option input[type=checkbox] {
+  background: #EAEAEA;
+  border-radius: 5px;
+
+}
+
+.survey-option label {
+  padding-left: 10px;
+}
+
+.survey-section input[type=submit] {
+  width: 100%;
+  height: 27px;
+  border: 0;
+  background: #6EC17F;
+  color: #ffffff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
 /*****************************************************************
 /*********************** FOR MOBILE DEVICES ********************
           (min-width: 321px) and (max-width: 767px)
@@ -356,7 +360,7 @@ body{
     mix-blend-mode: normal;
   }
 
-  .mobile-banner > span {
+  .mobile-banner>span {
     margin: auto;
     width: 100%;
   }
@@ -371,7 +375,8 @@ body{
     max-width: 767px;
     margin-left: auto;
     margin-right: auto;
-    width: 87%; /* 329px/375px*/
+    width: 87%;
+    /* 329px/375px*/
     margin-top: 15px;
     padding-bottom: 12px;
     font-family: 'Open Sans';
@@ -385,7 +390,8 @@ body{
   }
 
   .article-content .main-image-phone {
-    width: 100%; /* 339px/375px*/
+    width: 100%;
+    /* 339px/375px*/
     height: 177px;
     margin: 0 0 6px 0;
   }
@@ -417,17 +423,6 @@ body{
   .article-content .tag-section img {
     width: 18.86px;
     height: 16px;
-  }
-
-  .article-content {
-    font-family: 'Open Sans';
-    color: #6b6b6b;
-    font-size: 16px;
-    padding-left: 19px;
-    padding-right: 19px;
-    line-height: 18px;
-    letter-spacing: -0.384px;
-    margin-bottom: 34px;
   }
 
   .article-content .author {
@@ -470,7 +465,7 @@ body{
     line-height: 18px;
   }
 
-  .share-save-section button:hover{
+  .share-save-section button:hover {
     background-color: #F7F9F9;
   }
 
@@ -511,7 +506,8 @@ body{
     width: 100%;
     margin-top: 12px;
     background-color: #f3f3f3;
-    overflow: hidden; /*allows send button to show up*/
+    overflow: hidden;
+    /*allows send button to show up*/
   }
 
   /* send button */
@@ -551,7 +547,8 @@ body{
     margin: 4px 0 12px 0;
   }
 
-  .comment-single, .comment-reply {
+  .comment-single,
+  .comment-reply {
     font-size: 10px;
   }
 
@@ -611,7 +608,7 @@ body{
   }
 
   .load-more-button {
-    margin-left:30%;
+    margin-left: 30%;
 
     border-radius: 4px;
     margin-top: 10px;
@@ -622,107 +619,108 @@ body{
     color: #303030;
   }
 
-    /* Mobile- Related Articles */
-    .related-articles-section {
-        margin-right: 20px;
-        margin-left: 20px;
-    }
+  /* Mobile- Related Articles */
+  .related-articles-section {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 
-    .related-articles-section div a {
-      display: flex;
-      flex-direction: column;
-      align-items: normal;
-      padding-left: 8px;
-      padding-right: 8px;
-    }
+  .related-articles-section div a {
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 
-    .related-articles-section > div {
-      border-bottom: 1px solid #F3F3F3;
-    }
+  .related-articles-section>div {
+    border-bottom: 1px solid #F3F3F3;
+  }
 
-    .related-articles-section h1{
-      margin: 0;
-      padding-bottom: 9px;
-      font-size: 35px;
-      font-weight: 700;
-      line-height: 40px;
-      border-bottom: 1px solid #6B6B6B;
-    }
+  .related-articles-section h1 {
+    margin: 0;
+    padding-bottom: 9px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 40px;
+    border-bottom: 1px solid #6B6B6B;
+  }
 
-    .related-articles-section h2{
-      align-self:auto;
-      margin:0;
-      padding: 0 0 20px 0px;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 25px;
-      line-height: 40px;
+  .related-articles-section h2 {
+    align-self: auto;
+    margin: 0;
+    padding: 0 0 20px 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 40px;
 
-    }
+  }
 
-    .related-articles-section a{
-      text-decoration: none;
-      color: black;
-    }
+  .related-articles-section a {
+    text-decoration: none;
+    color: black;
+  }
 
 
-    .related-article-img {
-      padding-right: 4px;
-      padding-top: 15px;
-      width: 100%; /* 339px/375px*/
-      max-height: 177px;
-    }
+  .related-article-img {
+    padding-right: 4px;
+    padding-top: 15px;
+    width: 100%;
+    /* 339px/375px*/
+    max-height: 177px;
+  }
 
-    /* Mobile - Survey Section */
-    .survey-section{
-      padding: 20px;
-    }
+  /* Mobile - Survey Section */
+  .survey-section {
+    padding: 20px;
+  }
 
-    .survey-question{
-      margin: 0;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 800;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: center;
-      color: #6EC17F;
-      mix-blend-mode: normal;
-    }
+  .survey-question {
+    margin: 0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #6EC17F;
+    mix-blend-mode: normal;
+  }
 
-    .survey-option{
-      font-size: 16px;
-      line-height: 22px;
-      letter-spacing: -0.384px;
-      display: flex;
-      align-items: center;
-    }
+  .survey-option {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.384px;
+    display: flex;
+    align-items: center;
+  }
 
-    .survey-option input[type=checkbox] {
-      background: #EAEAEA;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
+  .survey-option input[type=checkbox] {
+    background: #EAEAEA;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
 
-    .survey-option label {
-      padding-left: 25px;
-    }
+  .survey-option label {
+    padding-left: 25px;
+  }
 
-    .survey-section input[type=submit] {
-      border-radius: 4px;
-      width: 100%;
-      height: 49.53px;
+  .survey-section input[type=submit] {
+    border-radius: 4px;
+    width: 100%;
+    height: 49.53px;
 
-      font-size: 13px;
-      line-height: 19px;
+    font-size: 13px;
+    line-height: 19px;
 
-      border: 0;
-      background: #6EC17F;
-      color: #ffffff;
+    border: 0;
+    background: #6EC17F;
+    color: #ffffff;
 
-      text-align: center;
-    }
+    text-align: center;
+  }
 
 
 }
@@ -753,7 +751,8 @@ with similar viewport measurments ***************************
   .tag-section,
   .tag_meta,
   .main-image-tablet-desktop,
-  .share-save-section, .load-more-button {
+  .share-save-section,
+  .load-more-button {
     visibility: visible;
     display: inline-block;
   }
@@ -762,7 +761,8 @@ with similar viewport measurments ***************************
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    width: 84%; /* 648px/768px*/
+    width: 84%;
+    /* 648px/768px*/
     padding-bottom: 12px;
     font-family: 'Open Sans';
     font-weight: 400;
@@ -775,7 +775,8 @@ with similar viewport measurments ***************************
   }
 
   .article-content .main-image-tablet-desktop {
-    width: 100%; /* 339px/375px*/
+    width: 100%;
+    /* 339px/375px*/
     height: 280px;
     margin: 0 0 6px 0;
   }
@@ -808,15 +809,6 @@ with similar viewport measurments ***************************
   .article-content .tag-section img {
     width: 18.86px;
     height: 16px;
-  }
-
-  .article-content {
-    font-family: 'Open Sans';
-    color: #6b6b6b;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.384px;
-    margin-bottom: 34px;
   }
 
   .article-content .author {
@@ -861,7 +853,7 @@ with similar viewport measurments ***************************
 
   }
 
-  .share-save-section button:hover{
+  .share-save-section button:hover {
     background-color: #F7F9F9;
   }
 
@@ -900,7 +892,8 @@ with similar viewport measurments ***************************
     width: 100%;
     margin-top: 12px;
     background-color: #f3f3f3;
-    overflow: hidden; /*allows send button to show up*/
+    overflow: hidden;
+    /*allows send button to show up*/
   }
 
   /* send button */
@@ -941,7 +934,8 @@ with similar viewport measurments ***************************
     margin: 4px 0 12px 0;
   }
 
-  .comment-single, .comment-reply {
+  .comment-single,
+  .comment-reply {
     font-size: 10px;
   }
 
@@ -1010,13 +1004,13 @@ with similar viewport measurments ***************************
     color: #303030;
   }
 
-    /* Tablet- Related Articles */
-    .related-articles-section {
-      margin-right: 0px;
-      margin-left: 0px;
-   }
+  /* Tablet- Related Articles */
+  .related-articles-section {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
 
-  .related-articles-section > div {
+  .related-articles-section>div {
     display: flex;
     flex-direction: row;
   }
@@ -1029,12 +1023,12 @@ with similar viewport measurments ***************************
     padding-right: 8px;
   }
 
-  .related-articles-section > div > div {
+  .related-articles-section>div>div {
     border-bottom: 1px solid #F3F3F3;
     width: 50%;
   }
 
-  .related-articles-section h1{
+  .related-articles-section h1 {
     position: relative;
     margin: 0;
     padding-bottom: 9px;
@@ -1044,9 +1038,9 @@ with similar viewport measurments ***************************
     border-bottom: 1px solid #6B6B6B;
   }
 
-  .related-articles-section h2{
-    align-self:auto;
-    margin:0;
+  .related-articles-section h2 {
+    align-self: auto;
+    margin: 0;
     padding: 0 0 20px 0px;
     font-family: 'Poppins';
     font-style: normal;
@@ -1056,7 +1050,7 @@ with similar viewport measurments ***************************
 
   }
 
-  .related-articles-section a{
+  .related-articles-section a {
     text-decoration: none;
     color: black;
   }
@@ -1070,60 +1064,60 @@ with similar viewport measurments ***************************
   }
 
 
-    /* tablet - Survey Section */
-    .survey-section{
-      padding: 12px;
-    }
+  /* tablet - Survey Section */
+  .survey-section {
+    padding: 12px;
+  }
 
-    .survey-question{
-      margin: 0;
-      font-weight: 800;
-      font-size: 16px;
-      line-height: 22px;
-      color: #6EC17F;
-      mix-blend-mode: normal;
-      font-family: 'Poppins';
-    }
+  .survey-question {
+    margin: 0;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    color: #6EC17F;
+    mix-blend-mode: normal;
+    font-family: 'Poppins';
+  }
 
-    .survey-option{
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 14px;
-      letter-spacing: -0.384px;
-      color: #303030;
-      display: flex;
-      align-items: center;
-    }
+  .survey-option {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: -0.384px;
+    color: #303030;
+    display: flex;
+    align-items: center;
+  }
 
-    .survey-option input[type=checkbox] {
-      background: #EAEAEA;
-      border-radius: 5px;
+  .survey-option input[type=checkbox] {
+    background: #EAEAEA;
+    border-radius: 5px;
 
-    }
+  }
 
-    .survey-option label {
-      padding-left: 10px;
-    }
+  .survey-option label {
+    padding-left: 10px;
+  }
 
-    .survey-section input[type=submit] {
-      width: 50%;
-      height: 27px;
-      border: 0;
-      background: #6EC17F;
-      color: #ffffff;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 800;
-      font-size: 13px;
-      line-height: 17.7px;
-      text-align: center;
-      color: #FFFFFF;
+  .survey-section input[type=submit] {
+    width: 50%;
+    height: 27px;
+    border: 0;
+    background: #6EC17F;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 17.7px;
+    text-align: center;
+    color: #FFFFFF;
 
 
-      border-radius: 4px;
-    }
+    border-radius: 4px;
+  }
 
 }
 
@@ -1153,7 +1147,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .main-image-tablet-desktop,
   .article-info-desktop-card,
   .share-save-section,
-  .content-grid-right .share-save-section, .load-more-button{
+  .content-grid-right .share-save-section,
+  .load-more-button {
     visibility: visible;
     display: inline-block;
   }
@@ -1176,7 +1171,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   }
 
   .article-content .main-image-tablet-desktop {
-    width: 100%; /* 339px/375px*/
+    width: 100%;
+    /* 339px/375px*/
     height: 280px;
     margin: 0 0 6px 0;
 
@@ -1212,15 +1208,6 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     height: 16px;
   }
 
-  .article-content {
-    font-family: 'Open Sans';
-    color: #6b6b6b;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.384px;
-    margin-bottom: 34px;
-  }
-
   .article-content .author {
     font-style: italic;
   }
@@ -1240,6 +1227,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
   .content-grid-left {
     grid-area: 1 / 1 / 2 / 2;
   }
+
   .content-grid-right {
     grid-area: 1 / 3 / 2 / 4;
   }
@@ -1302,7 +1290,7 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #303030;
   }
 
-  .share-save-section button:hover{
+  .share-save-section button:hover {
     background-color: #F7F9F9;
   }
 
@@ -1344,7 +1332,8 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     width: 100%;
     margin-top: 12px;
     background-color: #f3f3f3;
-    overflow: hidden; /*allows send button to show up*/
+    overflow: hidden;
+    /*allows send button to show up*/
   }
 
   /* send button */
@@ -1379,179 +1368,180 @@ DESKTOP CSS SETTTINGS. At this point, able to reuse some of the sections and inc
     color: #979797;
   }
 
-    /* desktop - comments listing */
-    .comments-listing {
-      font-size: 13px;
-      margin: 4px 0 12px 0;
-      color: #000000;
-      line-height: 18px;
-    }
+  /* desktop - comments listing */
+  .comments-listing {
+    font-size: 13px;
+    margin: 4px 0 12px 0;
+    color: #000000;
+    line-height: 18px;
+  }
 
-    .comment-single, .comment-reply {
-      font-size: 10px;
-    }
+  .comment-single,
+  .comment-reply {
+    font-size: 10px;
+  }
 
-    .comment-single {
-      border-radius: 50px 50px 50px 0px;
-      padding: 0px 54px 4px 54px;
-      margin: 8px 0px 8px 0;
-      line-height: 14px;
-      background: #f3f3f3;
-    }
+  .comment-single {
+    border-radius: 50px 50px 50px 0px;
+    padding: 0px 54px 4px 54px;
+    margin: 8px 0px 8px 0;
+    line-height: 14px;
+    background: #f3f3f3;
+  }
 
-    .comment-single .comment-single-header {
-      /* padding-top: 8px; */
-      margin: 0 0 0 0px;
-      padding-top: 14px;
-      padding-bottom: 4px;
-    }
+  .comment-single .comment-single-header {
+    /* padding-top: 8px; */
+    margin: 0 0 0 0px;
+    padding-top: 14px;
+    padding-bottom: 4px;
+  }
 
-    .comment-single .comment-single-text {
-      margin-top: 10px;
-    }
+  .comment-single .comment-single-text {
+    margin-top: 10px;
+  }
 
-    .comment-reply {
-      background: #f3f3f3;
-      margin: 10px 0px 10px 111px;
-      border-radius: 50px 50px 0px 50px;
-      padding: 14px 54px 4px 54px;
-      line-height: 14px;
-    }
+  .comment-reply {
+    background: #f3f3f3;
+    margin: 10px 0px 10px 111px;
+    border-radius: 50px 50px 0px 50px;
+    padding: 14px 54px 4px 54px;
+    line-height: 14px;
+  }
 
-    .comment-reply .comment-reply-header {
-      text-align: right;
-      margin: 0 0px 0 0;
-      padding-bottom: 0;
-    }
+  .comment-reply .comment-reply-header {
+    text-align: right;
+    margin: 0 0px 0 0;
+    padding-bottom: 0;
+  }
 
-    .comment-reply .comment-reply-text {
-      text-align: left;
-      margin-top: 10px;
+  .comment-reply .comment-reply-text {
+    text-align: left;
+    margin-top: 10px;
 
-      /* padding: 10px 46px 10px 46px; */
-    }
+    /* padding: 10px 46px 10px 46px; */
+  }
 
-    .comments-listing a {
-      font-weight: 700;
-      color: black;
-    }
+  .comments-listing a {
+    font-weight: 700;
+    color: black;
+  }
 
-    .reply-prompt {
-      text-align: right;
-      margin-right: 0;
-      font-size: 8px;
-    }
+  .reply-prompt {
+    text-align: right;
+    margin-right: 0;
+    font-size: 8px;
+  }
 
-    .reply-prompt a {
-      color: #6b6b6b;
-    }
+  .reply-prompt a {
+    color: #6b6b6b;
+  }
 
-    .load-more-button {
-      margin-left: 45%;
-      margin-right: auto;
-      border-radius: 4px;
-      margin-top: 10px;
-      padding: 6px 30px 7px 31px;
-      float: center;
-      border: 0;
-      font-size: 12px;
-      color: #303030;
-    }
-
-
-    /* Desktop - Related Articles */
-    .related-articles-section > div > div{
-      border-bottom: 1px solid #6B6B6B;
-    }
-
-    .related-articles-section h1{
-      text-align: center;
-      font-size: 35px;
-      border-bottom: 1px solid #6B6B6B;
-      padding-bottom: 20px;
-    }
-
-    .related-articles-section h2{
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0 20px 20px 20px;
-      line-height: 40px;
-      font-family: 'Poppins';
-      font-size: 25px;
-    }
-
-    .related-articles-section div a {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .related-articles-section a{
-      text-decoration: none;
-      color: black;
-    }
-
-    .related-articles-section > div {
-      border-bottom: 0;
-    }
-
-    .related-article-img {
-      padding: 20px;
-      width: 100%;
-    }
-
-    /* desktop - Survey Section */
-    .survey-section{
-      padding: 12px;
-    }
-
-    .survey-question{
-      margin: 0;
-      font-weight: 800;
-      font-size: 20px;
-      line-height: 22px;
-      color: #6EC17F;
-      mix-blend-mode: normal;
-      font-family: 'Poppins';
-    }
-
-    .survey-option{
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 14px;
-      letter-spacing: -0.384px;
-      color: #303030;
-      display: flex;
-      align-items: center;
-    }
-
-    .survey-option input[type=checkbox] {
-      background: #EAEAEA;
-      border-radius: 5px;
-
-    }
-
-    .survey-option label {
-      padding-left: 10px;
-    }
-
-    .survey-section input[type=submit] {
-      width: 50%;
-      height: 27px;
-      border: 0;
-      background: #6EC17F;
-      color: #ffffff;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 800;
-      font-size: 13px;
-      line-height: 17.7px;
-      text-align: center;
-      color: #FFFFFF;
+  .load-more-button {
+    margin-left: 45%;
+    margin-right: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 6px 30px 7px 31px;
+    float: center;
+    border: 0;
+    font-size: 12px;
+    color: #303030;
+  }
 
 
-      border-radius: 4px;
-    }
+  /* Desktop - Related Articles */
+  .related-articles-section>div>div {
+    border-bottom: 1px solid #6B6B6B;
+  }
+
+  .related-articles-section h1 {
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 1px solid #6B6B6B;
+    padding-bottom: 20px;
+  }
+
+  .related-articles-section h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 20px 20px 20px;
+    line-height: 40px;
+    font-family: 'Poppins';
+    font-size: 25px;
+  }
+
+  .related-articles-section div a {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-articles-section a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .related-articles-section>div {
+    border-bottom: 0;
+  }
+
+  .related-article-img {
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* desktop - Survey Section */
+  .survey-section {
+    padding: 12px;
+  }
+
+  .survey-question {
+    margin: 0;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 22px;
+    color: #6EC17F;
+    mix-blend-mode: normal;
+    font-family: 'Poppins';
+  }
+
+  .survey-option {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 14px;
+    letter-spacing: -0.384px;
+    color: #303030;
+    display: flex;
+    align-items: center;
+  }
+
+  .survey-option input[type=checkbox] {
+    background: #EAEAEA;
+    border-radius: 5px;
+
+  }
+
+  .survey-option label {
+    padding-left: 10px;
+  }
+
+  .survey-section input[type=submit] {
+    width: 50%;
+    height: 27px;
+    border: 0;
+    background: #6EC17F;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 17.7px;
+    text-align: center;
+    color: #FFFFFF;
+
+
+    border-radius: 4px;
+  }
 
 }
